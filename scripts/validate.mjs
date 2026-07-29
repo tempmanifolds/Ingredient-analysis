@@ -104,6 +104,7 @@ for (const htmlFile of ['index.html', 'about.html', '404.html']) {
 const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!indexHtml.includes('id="overviewIngredientCount">—</div>')) fail('首页成分总数应使用加载前占位符。');
 if (!indexHtml.includes('id="overviewEvidenceCount">—</div>')) fail('首页证据分级数量应由数据动态生成。');
+if (!indexHtml.includes('id="overviewSourceCount">—</div>')) fail('首页可靠来源数量应由数据动态生成。');
 if (!indexHtml.includes('./data/ingredients.json') && !fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('./data/ingredients.json')")) {
   fail('页面未使用相对路径加载 ingredients.json。');
 }
@@ -113,9 +114,21 @@ const prohibitedClaims = [
   '孕妇绝对禁用', 'SPF30 = 延长30倍晒伤时间', 'α-熊果苷效果是β-熊果苷的15倍',
   '抑制能力是曲酸的22倍、熊果苷的100倍', '浓度越高效果越好（30%浓度',
   'MIT单用≤0.01%', '内分泌功能障碍、珊瑚生态破坏', '荧光增白剂</td>',
+  '淋洗与驻留类已限用', 'SCCS 评估中、拟限制', '新型温和防腐剂，安全性高',
 ];
 for (const claim of prohibitedClaims) {
   if (indexHtml.includes(claim) || JSON.stringify(data).includes(claim)) fail(`仍存在已驳回或过度断言：${claim}`);
+}
+
+const requiredTaskASources = [
+  'EU-2024-996', 'EU-2022-1176', 'FDA-SUNSCREEN-ORDER',
+  'EU-MIT-2017', 'EU-MCI-MI-2014', 'EU-PARABENS-2014', 'EU-FRAGRANCE-2023', 'EU-FORMALDEHYDE-2022',
+  'EU-REACH-2024-1328', 'EU-ZPT-2021', 'EU-COSMETICS-CONSOLIDATED-2026',
+  'FDA-DANDRUFF-M032', 'FDA-KETOCONAZOLE-NDA', 'NY-1-4-DIOXANE', 'FDA-HQ-OTC-2022', 'EU-BHT-2022',
+  'EU-ETHYL-LAUROYL-2016', 'FDA-AHA', 'FDA-SALICYLIC-ACNE',
+];
+for (const sourceId of requiredTaskASources) {
+  if (!sourceIds.has(sourceId)) fail(`任务 A 缺少必要来源：${sourceId}`);
 }
 
 if (failures.length) {

@@ -271,6 +271,7 @@
       }));
       document.getElementById('overviewIngredientCount').textContent = String(ingredientDB.length);
       document.getElementById('overviewEvidenceCount').textContent = String(ingredientDB.filter((item) => item.evidence).length);
+      document.getElementById('overviewSourceCount').textContent = String(sourceData.sources.length);
       bindInteractions();
       applyLocation();
     } catch (error) {

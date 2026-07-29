@@ -107,6 +107,38 @@
       "checkedAt": "2026-07-29"
     },
     {
+      "id": "EU-REACH-2024-1328",
+      "title": "Commission Regulation (EU) 2024/1328：D4、D5、D6 的 REACH 限制",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1328/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-PARABENS-2014",
+      "title": "Commission Regulation (EU) 1004/2014：Butylparaben 与 Propylparaben 限制",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2014/1004/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-COSMETICS-CONSOLIDATED-2026",
+      "title": "Regulation (EC) No 1223/2009 consolidated version：Annex V 防腐剂清单",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02009R1223-20260501",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-ETHYL-LAUROYL-2016",
+      "title": "Commission Regulation (EU) 2016/1121：Ethyl Lauroyl Arginate HCl 使用条件",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/1121/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
       "id": "FDA-PREGNANCY-ACOG",
       "title": "Skin Conditions During Pregnancy",
       "publisher": "American College of Obstetricians and Gynecologists",
@@ -151,6 +183,14 @@
       "title": "FDA Warns Consumers of Skin Products Containing Mercury and/or Hydroquinone",
       "publisher": "U.S. Food and Drug Administration",
       "url": "https://www.fda.gov/consumers/health-fraud-scams/fda-warns-consumers-skin-products-containing-mercury-andor-hydroquinone",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-HQ-OTC-2022",
+      "title": "FDA works to protect consumers from potentially harmful OTC skin lightening products",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/drugs/drug-safety-communications/fda-works-protect-consumers-potentially-harmful-otc-skin-lightening-products",
       "type": "regulatory-guidance",
       "checkedAt": "2026-07-29"
     },

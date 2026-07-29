@@ -34,7 +34,7 @@ const updates = {
   'antiaging-001': {
     summary: '外用视黄醇有改善光老化的证据，也常引起干燥、脱屑和刺激。孕期及备孕期按预防原则避免使用；意外少量外用不等同于口服异维A酸暴露，应咨询产科或皮肤科医生。',
     evidence: { level: 'strong', summary: '专业指南建议孕期避免外用维A类；观察性资料未显示明显风险增加，但不足以支持孕期主动使用。', sourceIds: ['FDA-PREGNANCY-ACOG', 'PUBMED-RETINOID-PREG-2015', 'EU-2024-996'] },
-    regulation: { jurisdiction: 'EU', status: 'restricted', summary: 'Retinol/Retinyl Acetate/Retinyl Palmitate：身体乳最高0.05% RE，其他产品最高0.3% RE，并需维A警示语。', sourceIds: ['EU-2024-996'], checkedAt },
+    regulation: { jurisdiction: 'EU', status: 'restricted', summary: 'Retinol/Retinyl Acetate/Retinyl Palmitate：身体乳最高0.05% RE，其他驻留/淋洗产品最高0.3% RE；标签须写“Contains Vitamin A. Consider your daily intake before use”。不合规新品自2025-11-01不得投放欧盟市场，既有产品自2027-05-01不得继续提供。', sourceIds: ['EU-2024-996'], checkedAt },
     cautions: ['孕期及备孕期按预防原则避免；意外接触时无需自行推断结局，应咨询医生。', '可能出现干燥、脱屑、泛红和刺痛。'],
   },
   'acne-001': {
@@ -58,9 +58,9 @@ const updates = {
     evidence: { level: 'strong', summary: '孕期结论来自专业学会指南；不支持“15–20%对所有人效果最佳”的绝对表述。', sourceIds: ['FDA-PREGNANCY-ACOG'] },
   },
   'safety-001': {
-    summary: '氧苯酮是受监管的防晒剂。欧盟按产品部位和用途限量；FDA拟议结论为仍需更多安全数据，并非已判定不安全。现有人体资料不足以证明合规外用会导致HPG轴功能障碍。',
+    summary: '氧苯酮是受监管的防晒剂。欧盟：脸/手/唇产品最高6%，身体产品通常2.2%，其他配方保护用途0.5%；同一配方兼作保护剂时UV滤剂量还会相应下调。FDA拟议结论为仍需更多安全数据，并非已判定不安全。',
     evidence: { level: 'strong', summary: '监管状态和限量证据明确；确定的人体内分泌损害结论证据不足。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'] },
-    regulation: { jurisdiction: 'EU/US', status: 'restricted-or-under-review', summary: '欧盟分用途限量；美国拟议评估为数据不足，不等于不安全。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'], checkedAt },
+    regulation: { jurisdiction: 'EU/US', status: 'restricted-or-under-review', summary: '欧盟：脸/手/唇6%、身体2.2%、其他用途0.5%；美国拟议评估为数据不足，不等于不安全。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'], checkedAt },
   },
   'safety-002': {
     summary: '二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；不宜称为“孕妇婴幼儿首选”或“绝对最安全”。',
@@ -73,8 +73,9 @@ const updates = {
     cautions: ['怀疑化妆品违法添加时停止继续使用并尽快就医；正在按医嘱使用药品者不要自行停药。'],
   },
   'safety-004': {
-    summary: 'Parabens是一个成分家族，不能整体标为“高风险内分泌干扰物”。不同成员和浓度的监管状态不同；FDA表示现有资料不足以证明化妆品当前使用方式会影响人体健康。',
-    evidence: { level: 'strong', summary: '监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。', sourceIds: ['FDA-PARABENS'] },
+    summary: 'Parabens是一个成分家族，不能整体标为“高风险内分泌干扰物”。欧盟对Butylparaben与Propylparaben合计限为0.14%（以酸计），且不得用于3岁以下儿童尿布区驻留产品；FDA表示现有资料不足以证明化妆品当前使用方式会影响人体健康。',
+    evidence: { level: 'strong', summary: '监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。', sourceIds: ['EU-PARABENS-2014', 'FDA-PARABENS'] },
+    regulation: { jurisdiction: 'EU/US', status: 'restricted-by-member-and-use', summary: '欧盟Butylparaben与Propylparaben合计最高0.14%（以酸计），另有儿童尿布区用途限制；美国FDA未把整个家族判定为当前化妆品用法有害。', sourceIds: ['EU-PARABENS-2014', 'FDA-PARABENS'], checkedAt },
   },
   'safety-005': {
     summary: 'MIT与MCI/MI是重要接触致敏关注物。欧盟规定MIT单用或MCI/MI混合物均仅限淋洗类，成品最高0.0015%；原页面“MIT≤0.01%”已修正。',
@@ -82,16 +83,18 @@ const updates = {
     regulation: { jurisdiction: 'EU', status: 'restricted', summary: '仅限淋洗类，最高0.0015%；MIT单用与MCI/MI混合物不能在同一产品并用。', sourceIds: ['EU-MIT-2017', 'EU-MCI-MI-2014'], checkedAt },
   },
   'safety-007': {
-    summary: '香精及部分香料可引起接触过敏，但“无香”不等于零致敏风险。欧盟2023/1545扩展了需单独标示的香精过敏原，并设过渡期。',
+    summary: '香精及部分香料可引起接触过敏，但“无香”不等于零致敏风险。欧盟2023/1545新增56种需单独标示项目，通常在驻留产品超过0.001%、淋洗产品超过0.01%时标示；不合规新品过渡至2026-07-31，既有库存至2028-07-31。',
     evidence: { level: 'strong', summary: '欧盟标签法规明确；个体风险仍取决于具体过敏原和暴露。', sourceIds: ['EU-FRAGRANCE-2023'] },
+    regulation: { jurisdiction: 'EU', status: 'labelled-above-threshold', summary: '新增56种需单独标示项目；通常驻留0.001%、淋洗0.01%，并设2026-07-31/2028-07-31过渡日期。', sourceIds: ['EU-FRAGRANCE-2023'], checkedAt },
   },
   'antiaging-008': {
     summary: '视黄醇棕榈酸酯是维A酯，外用抗老证据通常弱于视黄醇；欧盟将其纳入维A总量限制。孕期及备孕期按预防原则避免维A类外用。',
     evidence: { level: 'strong', summary: '欧盟限制和孕期专业指导明确；具体抗老转化率缺少可靠头对头人体比较。', sourceIds: ['EU-2024-996', 'FDA-PREGNANCY-ACOG'] },
+    regulation: { jurisdiction: 'EU', status: 'restricted', summary: 'Retinyl Palmitate计入维A总量：身体乳最高0.05% RE，其他驻留/淋洗产品最高0.3% RE，并有维A标签和过渡期要求。', sourceIds: ['EU-2024-996'], checkedAt },
   },
   'antiaging-010': {
     summary: '视黄醇丙酸酯属于维A衍生物；“转化率和刺激性均居中”缺少可靠、统一的头对头人体证据。孕期及备孕期按预防原则避免维A类外用。',
-    evidence: { level: 'limited', summary: '缺少足以支持固定强弱排序的人体比较；孕期建议适用于外用维A类。', sourceIds: ['FDA-PREGNANCY-ACOG'] },
+    evidence: { level: 'limited', summary: '缺少足以支持固定强弱排序的人体比较；孕期建议适用于外用维A类。Retinyl Propionate不是欧盟2024/996列名的Retinol、Retinyl Acetate或Retinyl Palmitate，不能自动套用该法规数值。', sourceIds: ['FDA-PREGNANCY-ACOG', 'EU-2024-996'] },
   },
   'antiaging-011': {
     summary: 'HPR是新型维A衍生物；受体作用等实验机制不能直接推出“无需转化且兼具A醇效果与更温和”。独立人体证据有限，孕期及备孕期按预防原则避免。',
@@ -100,25 +103,32 @@ const updates = {
   'sunscreen-001': {
     summary: '奥克立林用于UVB/短波UVA防护，可在部分配方中帮助光稳定。欧盟喷雾产品最高9%、其他产品最高10%；FDA拟议评估为仍需更多安全数据，不等于已判不安全。',
     evidence: { level: 'strong', summary: '法规限量明确；具体配方中的稳定作用不能一概而论。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'] },
+    regulation: { jurisdiction: 'EU/US', status: 'restricted-or-under-review', summary: '欧盟推进剂喷雾最高9%，其他产品最高10%；美国拟议评估仍需更多数据。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'], checkedAt },
   },
   'sunscreen-002': {
     summary: '阿伏苯宗是UVA滤剂，光稳定性取决于完整配方；“30分钟降解50%”“必须搭配奥克立林”等固定结论不能外推到所有成品。FDA拟议评估为仍需更多安全数据。',
     evidence: { level: 'limited', summary: 'UVA滤剂身份明确；定量降解和唯一稳定方案缺少对所有成品可通用的证据。', sourceIds: ['FDA-SUNSCREEN-ORDER'] },
   },
   'safety-011': {
-    summary: 'BHT是配方抗氧化剂。欧盟按口腔、驻留和淋洗产品分别设定上限，不能只用“高浓度有争议”概括。',
+    summary: 'BHT是配方抗氧化剂。欧盟上限为漱口水0.001%、牙膏0.1%、其他驻留或淋洗产品0.8%，不能只用“高浓度有争议”概括。',
     evidence: { level: 'strong', summary: '欧盟法规直接规定分产品类别限量。', sourceIds: ['EU-BHT-2022'] },
+    regulation: { jurisdiction: 'EU', status: 'restricted', summary: '漱口水0.001%、牙膏0.1%、其他驻留或淋洗产品0.8%。', sourceIds: ['EU-BHT-2022'], checkedAt },
+  },
+  'safety-010': {
+    summary: 'Ethyl Lauroyl Arginate HCl可作防腐剂，但“新型温和、安全性高”不是法规结论。欧盟漱口水最高0.15%且不得用于10岁以下儿童；其他允许产品最高0.4%，不得用于唇部、其他口腔或喷雾产品。',
+    evidence: { level: 'strong', summary: '欧盟法规明确区分漱口水与其他产品，并规定浓度、年龄和产品类别限制。', sourceIds: ['EU-ETHYL-LAUROYL-2016'] },
+    regulation: { jurisdiction: 'EU', status: 'restricted-as-preservative', summary: '漱口水0.15%，不得用于10岁以下儿童；其他产品0.4%，排除唇部、其他口腔和喷雾产品。', sourceIds: ['EU-ETHYL-LAUROYL-2016'], checkedAt },
   },
   'cleanse-001': {
     summary: 'SLS清洁力和刺激潜力受浓度、接触时间与完整配方影响。CIR认为在不造成刺激的配方条件下可安全使用；“致癌”没有可靠依据，但也不应写成“可完全洗净、绝无蓄积”。',
     evidence: { level: 'moderate', summary: '专家评估支持按使用条件判断，不能把原料名称单独等同于安全或危险。', sourceIds: ['CIR-SLS'] },
   },
   'cleanse-002': {
-    summary: 'SLES通常比SLS刺激性低，但仍取决于配方。1,4-二氧六环是乙氧基化工艺杂质而非SLES本身；纽约州个人护理产品现行上限为1 ppm。',
+    summary: 'SLES通常比SLS刺激性低，但仍取决于配方。1,4-二氧六环是乙氧基化工艺杂质而非SLES本身；纽约州现行上限按法定类别区分：personal care为1 ppm，cosmetic products为10 ppm。',
     evidence: { level: 'strong', summary: '纽约州法规直接规定1,4-二氧六环限值；不能据此推断任一含SLES产品的实际杂质含量。', sourceIds: ['NY-1-4-DIOXANE'] },
   },
   'cleanse-010': {
-    summary: 'ZPT可抑制马拉色菌。欧盟自2022-03-01禁用于化妆品；美国OTC去屑专论仍规定可用条件。法域差异不等于合规产品使用必然有害。',
+    summary: 'ZPT可抑制马拉色菌。欧盟自2022-03-01禁用于化妆品：其被归为CMR 1B，且豁免所需的“无适当替代物”条件未被证明；这不等于SCCS认定1%去屑淋洗用途必然有害。美国OTC去屑专论仍规定可用条件。',
     evidence: { level: 'strong', summary: '欧盟禁用和美国OTC专论均为直接监管文本。', sourceIds: ['EU-ZPT-2021', 'FDA-DANDRUFF-M032'] },
     regulation: { jurisdiction: 'EU/US', status: 'jurisdiction-dependent', summary: '欧盟化妆品禁用；美国按OTC去屑药专论管理。', sourceIds: ['EU-ZPT-2021', 'FDA-DANDRUFF-M032'], checkedAt },
   },
@@ -127,14 +137,24 @@ const updates = {
     evidence: { level: 'strong', summary: '欧盟法规直接区分去屑用途与防腐用途。', sourceIds: ['EU-CLIMBAZOLE-2019'] },
     regulation: { jurisdiction: 'EU', status: 'restricted', summary: '去屑淋洗洗发水最高2%；防腐用途依产品类别最高0.5%或0.2%。', sourceIds: ['EU-CLIMBAZOLE-2019'], checkedAt },
   },
+  'cleanse-011': {
+    summary: 'Piroctone Olamine可用于去屑配方。欧盟Annex V列出的淋洗1.0%、其他产品0.5%是其作为防腐剂时的规则；用于非防腐去屑目的时，不能把该条目直接当作用途批准或成品安全证明。',
+    evidence: { level: 'strong', summary: '欧盟现行Annex V明确给出防腐用途限量；非防腐用途仍需独立证明其功能和成品安全。', sourceIds: ['EU-COSMETICS-CONSOLIDATED-2026'] },
+    regulation: { jurisdiction: 'EU', status: 'preservative-limits-only', summary: '作为防腐剂：淋洗产品1.0%，其他产品0.5%；非防腐去屑用途不能直接套用该条目。', sourceIds: ['EU-COSMETICS-CONSOLIDATED-2026'], checkedAt },
+  },
+  'cleanse-007': {
+    summary: '线性Dimethicone与环硅氧烷D4/D5/D6不是同一物质。欧盟REACH已对淋洗化妆品中的D4/D5实施各0.1%限制；其他化妆品中的D4/D5/D6限制自2027-06-06适用，不能提前写成“驻留类已全面限用”。',
+    evidence: { level: 'strong', summary: '欧盟REACH法规明确区分物质、产品类别、浓度和适用日期。', sourceIds: ['EU-REACH-2024-1328'] },
+    regulation: { jurisdiction: 'EU', status: 'transitioning-restriction', summary: '淋洗化妆品D4/D5各0.1%限制已生效；其他化妆品D4/D5/D6限制自2027-06-06适用。线性Dimethicone不属于这三种环硅氧烷。', sourceIds: ['EU-REACH-2024-1328'], checkedAt },
+  },
   'cleanse-013': {
     summary: '煤焦油、硫化硒等列于美国OTC专论；酮康唑1% OTC来自单独获批NDA，并非该专论活性物。不同药物、浓度和法域不能合并成一个“中风险成分”。',
     evidence: { level: 'strong', summary: 'FDA专论与NDA记录明确区分了监管路径。', sourceIds: ['FDA-DANDRUFF-M032', 'FDA-KETOCONAZOLE-NDA'] },
   },
   'cleanse-015': {
-    summary: 'DMDM乙内酰脲是甲醛释放体，主要消费者关注点是接触过敏。欧盟要求成品释放总甲醛超过0.001%（10 ppm）时标示“releases formaldehyde”。',
+    summary: 'DMDM乙内酰脲是甲醛释放体，主要消费者关注点是接触过敏。欧盟要求成品释放总甲醛超过0.001%（10 ppm）时标示“releases formaldehyde”；旧规则合规库存仅可提供至2026-07-31。',
     evidence: { level: 'strong', summary: '欧盟法规明确给出标签阈值；不能把甲醛的致癌分类直接等同于合规成品的实际风险。', sourceIds: ['EU-FORMALDEHYDE-2022'] },
-    regulation: { jurisdiction: 'EU', status: 'labelled-with-threshold', summary: '成品释放总甲醛超过0.001%（10 ppm）时需标示“releases formaldehyde”。', sourceIds: ['EU-FORMALDEHYDE-2022'], checkedAt },
+    regulation: { jurisdiction: 'EU', status: 'labelled-with-threshold', summary: '成品释放总甲醛超过0.001%（10 ppm）时需标示“releases formaldehyde”；旧规则合规库存过渡至2026-07-31。', sourceIds: ['EU-FORMALDEHYDE-2022'], checkedAt },
   },
 };
 
