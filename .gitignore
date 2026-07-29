@@ -1,0 +1,13 @@
+# 本地参考资料与协作记录，不同步
+/任务与计划/
+/AI协作记忆.md
+/护肤品成分与代码审查报告.md
+
+# 构建输出与本地工具状态
+/dist/
+/node_modules/
+.DS_Store
+Thumbs.db
+
+# 一次性迁移脚本
+/.codex-migrate-site.mjs

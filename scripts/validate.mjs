@@ -1,0 +1,94 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const failures = [];
+const requiredFiles = [
+  'index.html', 'about.html', '404.html', 'robots.txt', '.nojekyll',
+  'css/main.css', 'js/app.js', 'data/ingredients.json',
+  'legacy/护肤品成分研究报告.html', '.github/workflows/pages.yml',
+];
+
+function fail(message) {
+  failures.push(message);
+}
+
+for (const relativePath of requiredFiles) {
+  if (!fs.existsSync(path.join(root, relativePath))) fail(`缺少文件：${relativePath}`);
+}
+
+const dataPath = path.join(root, 'data', 'ingredients.json');
+const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const ingredients = data.ingredients;
+const allowedCategories = new Set(['moisture', 'whitening', 'antiaging', 'acne', 'repair', 'sunscreen', 'cleanse', 'safety', 'base']);
+
+if (!Array.isArray(ingredients)) fail('ingredients 必须是数组。');
+if (ingredients.length !== data.expectedCount) fail(`成分数量 ${ingredients.length} 与 expectedCount ${data.expectedCount} 不一致。`);
+
+const ids = new Set();
+const names = new Set();
+for (const [index, item] of ingredients.entries()) {
+  const label = `第 ${index + 1} 条`;
+  if (!/^[a-z]+-\d{3}$/.test(item.id || '')) fail(`${label} 的 id 不符合稳定格式：${item.id}`);
+  if (ids.has(item.id)) fail(`重复 id：${item.id}`);
+  ids.add(item.id);
+  if (!item.nameZh?.trim()) fail(`${label} 缺少 nameZh。`);
+  if (names.has(item.nameZh)) fail(`重复中文名：${item.nameZh}`);
+  names.add(item.nameZh);
+  if (!Array.isArray(item.aliases)) fail(`${item.id} 的 aliases 必须是数组。`);
+  if (!Array.isArray(item.categories) || !item.categories.length) fail(`${item.id} 缺少 categories。`);
+  for (const category of item.categories || []) {
+    if (!allowedCategories.has(category)) fail(`${item.id} 使用未知分类：${category}`);
+  }
+  if (!item.categories?.includes(item.targetSection)) fail(`${item.id} 的 targetSection 不在 categories 中。`);
+  if (!item.summary?.trim()) fail(`${item.id} 缺少 summary。`);
+  if (!['高', '中', '低'].includes(item.legacyRisk)) fail(`${item.id} 的旧版风险标签无效。`);
+  if (!item.pinyinInitials?.trim()) fail(`${item.id} 缺少拼音首字母索引。`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(item.updatedAt || '')) fail(`${item.id} 的 updatedAt 格式无效。`);
+}
+
+const categoryCounts = Object.fromEntries([...allowedCategories].map((category) => [category, ingredients.filter((item) => item.categories.includes(category)).length]));
+if (categoryCounts.sunscreen !== 4) fail(`防晒多标签计数应为 4，实际为 ${categoryCounts.sunscreen}。`);
+if (categoryCounts.safety !== 11) fail(`安全多标签计数应为 11，实际为 ${categoryCounts.safety}。`);
+
+const searchMatches = (query, id) => ingredients.some((item) => {
+  const searchText = [item.nameZh, ...item.aliases, item.summary].join(' ').toLowerCase();
+  return item.id === id && (searchText.includes(query) || item.pinyinInitials.includes(query));
+});
+if (!searchMatches('yxa', 'whitening-001')) fail('拼音搜索 yxa 未命中烟酰胺记录。');
+if (!searchMatches('tmzs', 'moisture-001')) fail('拼音搜索 tmzs 未命中透明质酸记录。');
+
+const categoryIndex = Object.fromEntries([...allowedCategories].map((category, index) => [category, index]));
+const sorted = [...ingredients].sort((a, b) => {
+  const categoryDifference = (categoryIndex[a.categories[0]] ?? 99) - (categoryIndex[b.categories[0]] ?? 99);
+  return categoryDifference || a.nameZh.localeCompare(b.nameZh, 'zh-CN');
+});
+if (sorted[0]?.categories[0] !== 'moisture') fail('分类排序未将保湿分类置于首位。');
+
+for (const htmlFile of ['index.html', 'about.html', '404.html']) {
+  const html = fs.readFileSync(path.join(root, htmlFile), 'utf8');
+  if (/\son(?:click|input|change|submit)=/i.test(html)) fail(`${htmlFile} 仍包含内联事件处理器。`);
+  if (/(?:href|src)=["']\/(?!\/)/i.test(html)) fail(`${htmlFile} 含域名根路径资源，不兼容 GitHub Pages 项目子路径。`);
+  for (const match of html.matchAll(/(?:href|src)=["']([^"'#?]+)["']/gi)) {
+    const reference = match[1];
+    if (/^(?:https?:|mailto:|tel:|data:)/i.test(reference)) continue;
+    const resolved = path.resolve(root, path.dirname(htmlFile), reference);
+    if (!fs.existsSync(resolved)) fail(`${htmlFile} 引用的文件不存在：${reference}`);
+  }
+}
+
+const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+if (!indexHtml.includes('id="overviewIngredientCount">—</div>')) fail('首页成分总数应使用加载前占位符。');
+if (!indexHtml.includes('id="overviewRiskCount">—</div>')) fail('首页风险标签数量应由数据动态生成。');
+if (!indexHtml.includes('./data/ingredients.json') && !fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('./data/ingredients.json')")) {
+  fail('页面未使用相对路径加载 ingredients.json。');
+}
+
+if (failures.length) {
+  console.error('校验失败：');
+  failures.forEach((message) => console.error(`- ${message}`));
+  process.exit(1);
+}
+
+console.log(`校验通过：${ingredients.length} 个唯一成分 ID。`);
+console.log('分类展示计数：' + Object.entries(categoryCounts).map(([key, count]) => `${key}=${count}`).join(', '));

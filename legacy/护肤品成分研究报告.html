@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>护肤品成分分析</title>
+<style>
+:root {
+  --primary: #2c7a7b;
+  --primary-light: #e6f4f4;
+  --danger: #e53e3e;
+  --danger-light: #fff5f5;
+  --warning: #dd6b20;
+  --warning-light: #fffaf0;
+  --success: #38a169;
+  --success-light: #f0fff4;
+  --gray-50: #f7fafc;
+  --gray-100: #edf2f7;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  --radius: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--gray-50); color: var(--gray-800); line-height: 1.7; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.header { background: linear-gradient(135deg, #2c7a7b 0%, #38b2ac 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.header h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 8px; letter-spacing: -.5px; }
+.header p { font-size: 1.05em; opacity: .85; max-width: 640px; margin: 0 auto; }
+
+/* Nav tabs */
+.nav { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--gray-200); overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; display: flex; padding: 0 16px; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { display: inline-block; padding: 14px 18px; font-size: .9em; font-weight: 500; color: var(--gray-600); border-bottom: 3px solid transparent; transition: all .2s; }
+.nav a:hover, .nav a.active { color: var(--primary); border-bottom-color: var(--primary); text-decoration: none; }
+.nav a .nav-emoji { margin-right: 4px; }
+
+/* Container */
+.container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+
+/* Section */
+.section { display: none; }
+.section.active { display: block; }
+.section-title { font-size: 1.6em; font-weight: 700; color: var(--gray-900); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-200); }
+
+/* Cards */
+.card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
+.card.danger { border-left-color: var(--danger); background: var(--danger-light); }
+.card.warning { border-left-color: var(--warning); background: var(--warning-light); }
+.card.success { border-left-color: var(--success); background: var(--success-light); }
+.card h3 { font-size: 1.15em; margin-bottom: 8px; }
+.card h3 .badge { font-size: .7em; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+.badge-danger { background: var(--danger); color: #fff; }
+.badge-warning { background: var(--warning); color: #fff; }
+.badge-success { background: var(--success); color: #fff; }
+.badge-primary { background: var(--primary); color: #fff; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: .9em; margin: 12px 0; }
+th { background: var(--gray-100); font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid var(--gray-200); color: var(--gray-700); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--gray-100); }
+tr:hover td { background: var(--primary-light); }
+.risk-high { color: var(--danger); font-weight: 600; }
+.risk-mid { color: var(--warning); font-weight: 600; }
+.risk-low { color: var(--success); font-weight: 600; }
+
+/* Quick search */
+.search-box { position: relative; margin-bottom: 24px; }
+.search-box input { width: 100%; padding: 14px 48px 14px 20px; border: 2px solid var(--gray-200); border-radius: var(--radius); font-size: 1em; outline: none; transition: border-color .2s; background: #fff; }
+.search-box input:focus { border-color: var(--primary); }
+.search-box .search-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-600); width: 20px; height: 20px; }
+
+/* Stats row */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; text-align: center; }
+.stat-card .num { font-size: 2em; font-weight: 700; color: var(--primary); line-height: 1.2; }
+.stat-card .label { font-size: .85em; color: var(--gray-600); margin-top: 4px; }
+
+/* Ingredient accordion */
+.accordion { border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.accordion-item { border-bottom: 1px solid var(--gray-200); }
+.accordion-item:last-child { border-bottom: none; }
+.accordion-header { padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 1em; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .15s; }
+.accordion-header:hover { background: var(--gray-50); }
+.accordion-header .arrow { transition: transform .25s; color: var(--gray-600); font-size: .8em; }
+.accordion-item.open .accordion-header .arrow { transform: rotate(180deg); }
+.accordion-body { display: none; padding: 0 20px 20px; font-size: .92em; }
+.accordion-item.open .accordion-body { display: block; }
+.accordion-body .tag { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: .75em; font-weight: 600; margin-right: 4px; margin-bottom: 4px; }
+.tag-mech { background: #ebf4ff; color: #2b6cb0; }
+.tag-risk { background: var(--danger-light); color: var(--danger); }
+.tag-use { background: var(--success-light); color: var(--success); }
+
+/* Info box */
+.info-box { background: #ebf8ff; border-left: 4px solid #2b6cb0; border-radius: 6px; padding: 16px 20px; margin: 16px 0; font-size: .9em; }
+.info-box.danger-box { background: var(--danger-light); border-left-color: var(--danger); }
+
+/* Paired section */
+.pairing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pair-card { border-radius: var(--radius); padding: 20px; }
+.pair-bad { background: var(--danger-light); border: 1px solid #feb2b2; }
+.pair-good { background: var(--success-light); border: 1px solid #9ae6b4; }
+.pair-title { font-weight: 700; margin-bottom: 10px; font-size: 1em; }
+
+/* Quick nav cards */
+.quick-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.quick-nav-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; cursor: pointer; transition: all .2s; border: 2px solid transparent; text-align: center; }
+.quick-nav-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.quick-nav-card .emoji { font-size: 2em; margin-bottom: 8px; }
+.quick-nav-card .title { font-weight: 600; font-size: .95em; }
+.quick-nav-card .desc { font-size: .8em; color: var(--gray-600); margin-top: 4px; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content: ""; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--gray-300); }
+.timeline-item { position: relative; margin-bottom: 20px; padding-bottom: 4px; }
+.timeline-item::before { content: ""; position: absolute; left: -24px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--primary); z-index: 1; }
+.timeline-date { font-size: .8em; color: var(--gray-600); font-weight: 600; }
+.timeline-text { font-size: .92em; }
+
+/* Print styles */
+@media print {
+  .nav { display: none; }
+  .section { display: block !important; page-break-before: always; }
+  .section:first-of-type { page-break-before: auto; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.5em; }
+  .pairing { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <h1>护肤品成分分析</h1>
+  <p>覆盖保湿、美白、抗老、祛痘、修复、防晒、洗护、安全、基础 九大类成分的功效原理、不良反应与安全风险评估</p>
+</header>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="#overview" class="active" data-tab="overview">📋 总览</a>
+  <a href="#moisture" data-tab="moisture">💧 保湿</a>
+  <a href="#whitening" data-tab="whitening">✨ 美白</a>
+  <a href="#antiaging" data-tab="antiaging">⏳ 抗老</a>
+  <a href="#acne" data-tab="acne">🔬 祛痘</a>
+  <a href="#repair" data-tab="repair">🛡 修复</a>
+  <a href="#sunscreen" data-tab="sunscreen">☀ 防晒</a>
+  <a href="#cleanse" data-tab="cleanse">🚿 洗护</a>
+  <a href="#safety" data-tab="safety">⚠ 安全</a>
+  <a href="#base" data-tab="base">🔧 基础</a>
+  <a href="#all" data-tab="all">📋 全部</a>
+</nav>
+
+<!-- Container -->
+<div class="container">
+
+<!-- ==================== OVERVIEW ==================== -->
+<section class="section active" id="overview">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜索成分名称 (支持拼音首字母，如 yxa → 烟酰胺、tmzs → 透明质酸)" oninput="searchIngredients()">
+    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+  </div>
+
+  <div id="searchResults" style="display:none;">
+    <h3 style="margin-bottom:12px">搜索结果</h3>
+    <div id="searchResultList"></div>
+  </div>
+
+  <div id="overviewContent">
+    <div class="stats">
+      <div class="stat-card"><div class="num" id="overviewIngredientCount">112</div><div class="label">收录成分</div></div>
+      <div class="stat-card"><div class="num">9</div><div class="label">功能分类</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="label">风险等级</div></div>
+      <div class="stat-card"><div class="num">20+</div><div class="label">法规依据</div></div>
+    </div>
+
+    <div class="quick-nav">
+      <div class="quick-nav-card" onclick="switchTab('moisture')"><div class="emoji">💧</div><div class="title">保湿成分</div><div class="desc">透明质酸 · 甘油 · 神经酰胺 · 角鲨烷</div></div>
+      <div class="quick-nav-card" onclick="switchTab('whitening')"><div class="emoji">✨</div><div class="title">美白提亮</div><div class="desc">烟酰胺 · VC · 熊果苷 · 传明酸</div></div>
+      <div class="quick-nav-card" onclick="switchTab('antiaging')"><div class="emoji">⏳</div><div class="title">抗老抗皱</div><div class="desc">视黄醇 · 胜肽 · 玻色因 · 酵母</div></div>
+      <div class="quick-nav-card" onclick="switchTab('acne')"><div class="emoji">🔬</div><div class="title">控油祛痘</div><div class="desc">水杨酸 · 果酸 · 壬二酸 · 茶树</div></div>
+      <div class="quick-nav-card" onclick="switchTab('repair')"><div class="emoji">🛡</div><div class="title">舒缓修复</div><div class="desc">积雪草 · 泛醇 · 芦荟 · 寡肽</div></div>
+      <div class="quick-nav-card" onclick="switchTab('sunscreen')"><div class="emoji">☀</div><div class="title">防晒成分</div><div class="desc">二氧化钛 · 氧化锌 · 防晒剂</div></div>
+      <div class="quick-nav-card" onclick="switchTab('cleanse')"><div class="emoji">🚿</div><div class="title">洗护成分</div><div class="desc">表活 · 硅油调理 · 去屑 · 珠光</div></div>
+      <div class="quick-nav-card" onclick="switchTab('base')"><div class="emoji">🔧</div><div class="title">基础辅助</div><div class="desc">乳化剂 · 增稠剂 · 溶剂</div></div>
+      <div class="quick-nav-card" onclick="switchTab('safety')"><div class="emoji">⚠</div><div class="title">安全风险</div><div class="desc">非法添加 · 内分泌干扰物 · 法规</div></div>
+    </div>
+
+    <div class="card">
+      <h3>🔬 皮肤屏障基础知识</h3>
+      <p><strong>"砖墙结构"：</strong>角质细胞（砖）+ 细胞间脂质（水泥，由神经酰胺、胆固醇、脂肪酸构成）。屏障受损是敏感肌的根本原因。</p>
+      <p><strong>经皮吸收：</strong>分子量 &lt; 500Da 的成分较易渗透，大分子仅停留在表面。这是理解功效成分作用层次的关键。</p>
+      <p><strong>建立耐受：</strong>对刺激性活性成分（视黄醇、果酸、高浓度烟酰胺），需从低浓度开始，逐步增加使用频率让皮肤适应。</p>
+    </div>
+
+    <div class="card">
+      <h3>📊 成分风险速查</h3>
+      <table>
+        <tr><th>风险</th><th>等级</th><th>典型成分</th><th>说明</th></tr>
+        <tr><td>🔴 高风险</td><td class="risk-high">绝对禁区</td><td>糖皮质激素、氢醌、汞、铅</td><td>非法添加物，严禁使用</td></tr>
+        <tr><td>🟠 中高风险</td><td class="risk-mid">严格限制</td><td>视黄醇(孕妇)、高浓度酸类、MIT防腐剂</td><td>特定人群禁用或需专业指导</td></tr>
+        <tr><td>🟡 中等风险</td><td class="risk-mid">注意耐受</td><td>高浓度烟酰胺、水杨酸、酒精</td><td>需建立耐受，注意浓度</td></tr>
+        <tr><td>🟢 低风险</td><td class="risk-low">温和安全</td><td>透明质酸、甘油、神经酰胺、泛醇</td><td>适合大多数肤质</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>✅ 黄金搭档 & ❌ 禁忌搭配</h3>
+      <div class="pairing">
+        <div class="pair-card pair-bad">
+          <div class="pair-title">❌ 禁忌搭配</div>
+          <table style="font-size:.82em">
+            <tr><th>A</th><th>B</th><th>后果</th></tr>
+            <tr><td>蓝铜胜肽</td><td>纯VC/酸类</td><td>破坏铜离子活性</td></tr>
+            <tr><td>视黄醇</td><td>果酸/水杨酸</td><td>严重脱皮</td></tr>
+            <tr><td>VC</td><td>苯甲酸钠</td><td>可能生成苯</td></tr>
+            <tr><td>果酸</td><td>水杨酸</td><td>过度去角质</td></tr>
+          </table>
+        </div>
+        <div class="pair-card pair-good">
+          <div class="pair-title">✅ 黄金搭档</div>
+          <table style="font-size:.82em">
+            <tr><th>A</th><th>B</th><th>增效原理</th></tr>
+            <tr><td>烟酰胺</td><td>视黄醇</td><td>修复屏障减少刺激</td></tr>
+            <tr><td>VC</td><td>VE</td><td>抗氧化1+1>2</td></tr>
+            <tr><td>神经酰胺</td><td>胆固醇+脂肪酸</td><td>模拟皮肤屏障</td></tr>
+            <tr><td>透明质酸</td><td>泛醇</td><td>补水+锁水双重保湿</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MOISTURE ==================== -->
+<section class="section" id="moisture">
+  <h2 class="section-title">💧 保湿成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">皮肤水分来自三个层面：抓水（吸湿剂）→ 锁水（封闭剂）→ 修复屏障（细胞间脂质）。</p>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">透明质酸 (玻尿酸) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 天然存在于皮肤真皮层的大分子多糖，可携带自身重量 500-1000 倍的水分。在皮肤表面形成水合膜，角质细胞吸水膨胀后皮肤显饱满光滑。</p>
+        <p><span class="tag tag-risk">不良反应</span> 基本无刺激。但大分子透明质酸仅停留在表面，不能真正被皮肤吸收。如果环境干燥且未叠加封闭剂，反而会从皮肤内部吸走水分。</p>
+        <p><span class="tag tag-use">使用建议</span> 必须搭配含油脂的封闭剂（角鲨烷、神经酰胺霜）锁水。不同分子量复合使用效果更好：大分子表面抓水 + 小分子深层渗透。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">甘油 (Glycerin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 最经典、最经济的保湿剂。与皮肤天然保湿因子(NMF)结构相似，渗透角质层吸引水分。</p>
+        <p><span class="tag tag-risk">不良反应</span> 高浓度纯甘油反而从皮肤吸水导致更干燥。配方中通常控制在 5-15%。</p>
+        <p><span class="tag tag-use">使用建议</span> 几乎所有乳液面霜的基础保湿成分。注意购买正规配方产品，切勿直接涂纯甘油/开塞露。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">神经酰胺 (Ceramide) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 占细胞间脂质约 50%，是皮肤屏障"水泥"的核心组分。补充神经酰胺可修复屏障、锁住水分、减少经皮水分流失(TEWL)。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极为安全温和，几乎无致敏报告。其本身就是皮肤固有成分。</p>
+        <p><span class="tag tag-use">使用建议</span> 最佳协同配方：神经酰胺 + 胆固醇 + 游离脂肪酸按 3:1:1 比例，模拟天然皮肤屏障。敏感肌修复首选。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">角鲨烷 (Squalane) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 最接近人体皮脂膜的脂类，与皮脂高度相容，能迅速渗透形成保护膜，防止水分流失并抑制脂质过氧化。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极低致敏性，广泛耐受。但本身不能祛痘美白——痘痘肌若表皮角鲨烷偏高反而可能加重粉刺。</p>
+        <p><span class="tag tag-use">使用建议</span> 油皮、干皮均可选角鲨烷（角鲨烯虽更接近皮脂但易氧化、致痘性更高，通常首选氢化后更稳定的角鲨烷）。最好在精华后、面霜前使用以锁住水相成分。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">泛醇 / 维生素B5 (Panthenol) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 转化为泛酸后参与皮肤代谢。强化屏障功能、促进角质层水合、修复受损组织，兼具保湿和修复双重功效。</p>
+        <p><span class="tag tag-risk">不良反应</span> 非常温和安全，敏感肌和医美术后均可使用。</p>
+        <p><span class="tag tag-use">使用建议</span> 浓度 1-5% 即有保湿效果。可与透明质酸搭配：前者深层锁水，后者表面抓水。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">氨基酸保湿剂 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 人体天然保湿因子(NMF)的重要组成部分。通过吸水调节角质层含水量和酸碱平衡，不依赖油脂即可保湿。</p>
+        <p><span class="tag tag-risk">不良反应</span> 安全无刺激，不代表产品本身温和（刺激性可能来自香精、乳化剂等其他成分）。</p>
+        <p><span class="tag tag-use">使用建议</span> 不光存在于洁面，乳液精华中也广泛添加。多种氨基酸复配效果优于单一氨基酸。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">丁二醇 (Butylene Glycol) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 最常见的保湿溶剂之一。吸湿性佳，帮助活性成分渗透角质层，同时带来清爽不黏腻的肤感。</p>
+        <p><span class="tag tag-risk">不良反应</span> 温和安全，几乎所有肤质可用。</p>
+        <p><span class="tag tag-use">使用建议</span> 几乎所有精华、乳液的"幕后配角"。排名靠前说明是溶剂/促渗主力。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">1,2-戊二醇 / 辛甘醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 多元醇类，兼具保湿和辅助防腐双重功能。通过降低产品水分活度抑制微生物，减少传统防腐剂用量。</p>
+        <p><span class="tag tag-risk">不良反应</span> 温和安全，属"无防腐"配方的幕后功臣。</p>
+        <p><span class="tag tag-use">使用建议</span> "无添加防腐剂"宣称的产品通常靠此类多元醇实现防腐。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">丙二醇 / 双丙甘醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 基础保湿剂兼促渗溶剂。双丙甘醇比丙二醇更温和滋润，常用于敏感肌产品。</p>
+        <p><span class="tag tag-risk">不良反应</span> 丙二醇少数人可能轻微刺痛发热；双丙甘醇更温和。整体安全性高。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分表排名靠前说明主要当溶剂而非活性物。</p>
+      </div>
+    </div>
+      <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">1,2-己二醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 多元醇保湿剂兼辅助防腐，比戊二醇更滋润，常见于温和配方。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">海藻糖 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 天然糖类保湿剂，保护细胞膜和蛋白质结构，极端环境下也能锁水。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">霍霍巴籽油 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 与人体皮脂高度相似的液态蜡，滋润保湿不油腻。</p>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- ==================== WHITENING ==================== -->
+<section class="section" id="whitening">
+  <h2 class="section-title">✨ 美白提亮成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">美白成分通过不同通路作用于黑色素：抑制酪氨酸酶→阻断信号→还原已生成黑色素→加速代谢。多通路联用效果最佳。</p>
+
+  <div id="melaninDiagram" style="background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;box-shadow:var(--shadow);text-align:center">
+    <svg viewBox="0 0 680 180" style="max-width:100%;height:auto">
+      <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2c7a7b"/></marker></defs>
+      <rect x="10" y="20" width="100" height="40" rx="6" fill="#e6f4f4" stroke="#2c7a7b" stroke-width="1.5"/><text x="60" y="45" text-anchor="middle" font-size="12" fill="#2d3748">酪氨酸</text>
+      <rect x="160" y="20" width="110" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/><text x="215" y="38" text-anchor="middle" font-size="11" fill="#2d3748">酪氨酸酶</text><text x="215" y="52" text-anchor="middle" font-size="9" fill="#718096">←熊果苷·VC·曲酸</text>
+      <rect x="320" y="20" width="90" height="40" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/><text x="365" y="45" text-anchor="middle" font-size="12" fill="#2d3748">多巴醌</text>
+      <rect x="460" y="20" width="90" height="40" rx="6" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5"/><text x="505" y="45" text-anchor="middle" font-size="12" fill="#2d3748">黑色素</text>
+      <rect x="460" y="80" width="90" height="40" rx="6" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.5"/><text x="505" y="98" text-anchor="middle" font-size="11" fill="#2d3748">转移至表皮</text><text x="505" y="112" text-anchor="middle" font-size="9" fill="#718096">←烟酰胺阻断</text>
+      <rect x="320" y="130" width="90" height="40" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/><text x="365" y="148" text-anchor="middle" font-size="11" fill="#2d3748">PA信号</text><text x="365" y="162" text-anchor="middle" font-size="9" fill="#718096">←传明酸阻断</text>
+      <line x1="110" y1="40" x2="155" y2="40" stroke="#2c7a7b" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="270" y1="40" x2="315" y2="40" stroke="#2c7a7b" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="410" y1="40" x2="455" y2="40" stroke="#2c7a7b" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="505" y1="60" x2="505" y2="75" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="365" y1="110" x2="365" y2="125" stroke="#6b46c1" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+      <path d="M 365 110 C 365 75, 505 75, 505 80" fill="none" stroke="#6b46c1" stroke-width="1" stroke-dasharray="4,3"/>
+      <rect x="600" y="60" width="70" height="24" rx="4" fill="#edf2f7"/><text x="635" y="76" text-anchor="middle" font-size="9" fill="#718096">角质代谢</text>
+      <text x="635" y="95" text-anchor="middle" font-size="8" fill="#a0aec0">←果酸·水杨酸</text>
+    </svg>
+    <p style="font-size:.8em;color:var(--gray-600);margin-top:8px">黑色素生成通路与关键干预靶点</p>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">烟酰胺 (Niacinamide / VB3) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 阻断黑色素从黑色素细胞向表皮角质细胞的转移通路——并非抑制黑色素生成，而是让它"运不出来"。同时具有控油、抗炎、促进神经酰胺合成的多重功效。</p>
+        <p><strong>浓度-功效对应：</strong></p>
+        <table><tr><th>浓度</th><th>功效</th></tr><tr><td>2%</td><td>提亮肤色</td></tr><tr><td>4-5%</td><td>祛痘抗炎、控油</td></tr><tr><td>5%+</td><td>全面美白+A醇协同抗老</td></tr></table>
+        <p><span class="tag tag-risk">不良反应</span> 高浓度（5%以上）刺激性增大——泛红、发热、过敏甚至肿胀。有个体差异的"长毛"现象（促进皮肤代谢导致毛发更健康）。</p>
+        <p><span class="tag tag-use">使用建议</span> 从低浓度开始建立耐受；"烟酰胺+VC会生成烟酸刺激"是基于高温实验的旧观点，常温常规浓度下两者其实兼容甚至协同，仅极敏感者高浓度叠加时可能轻微泛红；搭配视黄醇可增强抗老效果并减轻A醇刺激。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">维生素C / 抗坏血酸 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 双重美白路径：(1)抑制酪氨酸酶活性；(2)将已生成的黑色素还原为无色。同时是强力抗氧化剂，清除自由基、"牺牲"自己保护皮肤免受UV伤害。</p>
+        <p><span class="tag tag-risk">不良反应</span> 左旋C不稳定，易被氧化变黄（不是皮肤变黄，洗掉即可）。高浓度(15-20%)有刺痛感。酸性(pH<3.5)对敏感肌不友好。</p>
+        <p><span class="tag tag-use">使用建议</span> 日间使用+防晒 = 最佳抗氧化方案。与VE搭配1+1>2。衍生物(AA2G、乙基VC)更稳定温和但功效略降。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">熊果苷 (Arbutin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 竞争性抑制酪氨酸酶活性，从源头阻断黑色素合成。α-熊果苷效果是β-熊果苷的15倍以上且更温和。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极温和，适合烟酰胺不耐受人群。高浓度β-熊果苷理论上存在水解释放氢醌的顾虑，市售产品浓度通常较低，安全性良好。</p>
+        <p><span class="tag tag-use">使用建议</span> 选α-熊果苷（成分表会明确标注"α-熊果苷"），比只标"熊果苷"（通常是β型）贵但效果和安全性更优。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">传明酸 (Tranexamic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 抑制纤溶酶原的激活（PA通路），阻断黑色素细胞与角质细胞的信号传递。最早是止血药，后意外发现可减轻黄褐斑。</p>
+        <p><span class="tag tag-risk">不良反应</span> ⚠ 外涂安全，但美白针/美白丸含传明酸属于违规注射用药——有血栓风险，中国严禁。</p>
+        <p><span class="tag tag-use">使用建议</span> 对黄褐斑尤其有效。常与烟酰胺、熊果苷复配多通路美白。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">曲酸 (Kojic Acid) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 由米曲霉发酵产生的代谢产物，通过螯合铜离子抑制酪氨酸酶——铜离子是酪氨酸酶必需的辅因子。</p>
+        <p><span class="tag tag-risk">不良反应</span> 部分人有刺激性皮炎；早期有致癌争议（高剂量动物实验），化妆品浓度下(<2%)被认为安全；光敏性要求夜间使用。</p>
+        <p><span class="tag tag-use">使用建议</span> 高丝集团核心美白成分。稳定性差，选包装严密的产品。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">377 / 苯乙基间苯二酚 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 强效酪氨酸酶抑制剂，从源头阻断黑色素生成。抑制能力是曲酸的22倍、熊果苷的100倍以上。城野医生VC377精华同款核心。</p>
+        <p><span class="tag tag-risk">不良反应</span> 相对温和，少数人可能轻微刺激。中国规定浓度≤0.5%。</p>
+        <p><span class="tag tag-use">使用建议</span> 欧莱雅双萃等产品常与烟酰胺+阿魏酸联用打多通路美白。对光敏感需防晒。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">阿魏酸 (Ferulic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 植物来源酚酸，强力抗氧化——清除自由基的能力与VC协同增强。可显著提高VC和VE的化学稳定性（修丽可CEF精华的核心配方——15%VC+1%VE+0.5%阿魏酸可将VC光保护能力提升至8倍）。同时具有抗炎美白作用。</p>
+        <p><span class="tag tag-risk">不良反应</span> 单独极不稳定（遇到光/氧/热迅速降解）。需要特殊包装保护。</p>
+        <p><span class="tag tag-use">使用建议</span> 欧莱雅双萃采用内管独立储存正是为了稳定阿魏酸。与VC/VE搭配效果最大化。</p>
+      </div>
+    </div>
+      <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">3-邻-乙基抗坏血酸 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> VC乙基醚，维生素C衍生物中最稳定、最易渗透的形式之一。美白提亮+抗氧化。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">光果甘草根提取物 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 含光甘草定，植物来源美白黄金成分，抑制酪氨酸酶同时抗炎舒缓。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">双-二乙氧基二甘醇环己烷1,4-二羧酸酯 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 美白助渗剂，可促进其他美白成分渗透，本身也有提亮效果。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">抗坏血酸棕榈酸酯 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 油溶性VC衍生物，抗氧化+美白，比水溶性VC更稳定，适合加入油脂体系。</p>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- ==================== ANTI-AGING ==================== -->
+<section class="section" id="antiaging">
+  <h2 class="section-title">⏳ 抗老抗皱成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">皮肤老化的核心机制：胶原流失（年均减少1.5%）+ 糖化反应 + 光老化（占80%）+ 自由基损伤。抗老成分分别靶向不同通路。</p>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">视黄醇 / A醇 (Retinol) <span class="badge-warning">⚠ 孕妇禁用</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 维生素A衍生物。在皮肤中转化为视黄酸，直接与核受体(RAR/RXR)结合→调控基因表达，促进I型胶原蛋白合成、加速角质更新、减少细纹、缩小毛孔。是证据等级最高的抗老成分之一。</p>
+        <p><span class="tag tag-risk">不良反应</span> 🟠 <strong>刺激性大：</strong>"A醇反应"期（2-6周）可能出现脱皮、泛红、干燥、刺痛。光和空气会使A醇失活——必须真空包装。⚠ <strong>孕妇绝对禁用：</strong>口服视黄酸已知致畸。</p>
+        <p><span class="tag tag-use">使用建议</span> 从0.1%起步 → 0.3% → 0.5%逐级建立耐受；夜间使用（光敏性）；避免与酸类同时使用；真空包装+避光保存。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">胜肽 (Peptides) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 短链氨基酸片段，作为"信号分子"模拟胶原蛋白降解产物——欺骗皮肤认为"胶原在流失"，从而启动新胶原合成。可同时抑制MMP金属蛋白酶（分解胶原的酶）。</p>
+        <table><tr><th>类型</th><th>代表</th><th>主要功能</th></tr><tr><td>信号肽</td><td>棕榈酰五肽-4</td><td>促胶原合成</td></tr><tr><td>载体肽</td><td>蓝铜胜肽(GHK-Cu)</td><td>铜离子载体，修复+抗炎</td></tr><tr><td>神经递质抑制肽</td><td>乙酰基六肽-8</td><td>类肉毒素，淡化表情纹</td></tr></table>
+        <p><span class="tag tag-risk">不良反应</span> 非常温和，几乎无刺激。分子量较小但有透皮效率问题——需要好的配方技术。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分昂贵，选择大品牌技术和配方有保证。早晚均可用。注意蓝铜胜肽避免与VC/酸类同用。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">玻色因 (Pro-Xylane) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 欧莱雅集团专利成分。木糖衍生物，促进皮肤自身合成透明质酸（内源性）和IV/VII型胶原蛋白，强化真皮-表皮连接(DEJ)，让皮肤从内部紧致饱满。</p>
+        <p><span class="tag tag-risk">不良反应</span> 温和安全，适合敏感肌和视黄醇不耐受人群的抗老替代方案。</p>
+        <p><span class="tag tag-use">使用建议</span> 主要缺点只有一个——太贵。欧家从赫莲娜到巴黎欧莱雅都在用，浓度越高效果越好（30%浓度→专业级效果）。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">酵母提取物 / 二裂酵母 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 促进皮肤细胞代谢和自我修复能力，改善粗糙、暗黄、毛孔、老化现象。</p>
+        <p><span class="tag tag-risk">不良反应</span> 有轻微角质剥落作用。敏感肌、角质层薄者需慎用——可能加重敏感。</p>
+        <p><span class="tag tag-use">使用建议</span> 不是我们吃的酸奶酵母，是酵母发酵提取物。代表产品：SK-II神仙水（半乳糖酵母发酵产物滤液）、雅诗兰黛小棕瓶（二裂酵母发酵产物溶胞物）。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">虾青素 (Astaxanthin) <span class="badge-warning">证据不足</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 强效抗氧化剂（体外实验清除自由基能力为VE的500倍以上）。体外数据漂亮但体内/人体临床试验数据仍偏弱。</p>
+        <p><span class="tag tag-risk">不良反应</span> 目前无严重不良反应报告，但大品牌使用较少。不排除商家炒作体外数据误导消费者。</p>
+        <p><span class="tag tag-use">使用建议</span> 谨慎看待夸张宣传。大品牌出品的虾青素产品可尝试，但不要寄予过高期望。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">咖啡因 (Caffeine) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 促进皮肤微循环→改善暗沉/浮肿；抗氧化清除自由基；抑制磷酸二酯酶→辅助脂肪分解（眼霜消肿原理）。</p>
+        <p><span class="tag tag-risk">不良反应</span> 外用安全，基本无刺激。</p>
+        <p><span class="tag tag-use">使用建议</span> 眼霜常见成分，抗老精华中多为辅助角色。提亮肤色属间接效果。</p>
+      </div>
+    </div>
+      <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">肌肽 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 二肽（β-丙氨酸+组氨酸），抗氧化剂+抗糖化剂，能捕获自由基并抑制糖基化终产物(AGEs)。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">视黄醇棕榈酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 维A酯，比视黄醇温和但转化率低。适合初抗老入门。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">视黄醇丙酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 维A酯，温和度介于视黄醇棕榈酸酯和视黄醇之间。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">羟基频哪酮视黄酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> HPR，新一代维A衍生物。无需转化直接作用于视黄酸受体，兼具A醇效果和温和性。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">植醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 植物来源的脂肪醇，与视黄醇结构相关，具温和抗老和抗炎作用。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">β-胡萝卜素 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 维生素A前体，强抗氧化剂，可辅助抗光老化。</p>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- ==================== ACNE ==================== -->
+<section class="section" id="acne">
+  <h2 class="section-title">🔬 控油祛痘成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">痘痘形成链条：油脂分泌旺盛 → 毛囊口角化异常 → 堵塞 → 痤疮丙酸杆菌繁殖 → 炎症。不同成分靶向不同环节。</p>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">水杨酸 (Salicylic Acid / BHA) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> β-羟基酸，最大特性是<strong>油溶性</strong>——能溶入皮脂、进入毛孔深处溶解堵塞的油脂和废旧角质，同时具有抗炎杀菌作用。是黑头/闭口的首选成分。</p>
+        <p><strong>浓度-功效对应：</strong></p>
+        <table><tr><th>浓度</th><th>功效</th><th>风险</th></tr><tr><td>0.5-2%</td><td>日常控油疏通</td><td>轻微刺激</td></tr><tr><td>2-10%</td><td>医疗级焕肤</td><td>需医生操作</td></tr><tr><td>10%+</td><td>深度焕肤/去闭口</td><td>⚠ 必须医院操作</td></tr></table>
+        <p><span class="tag tag-risk">不良反应</span> 干燥、脱皮、刺痛；具有光敏性需夜间使用。高浓度自刷有严重灼伤风险。</p>
+        <p><span class="tag tag-use">使用建议</span> 2%以内家用安全范围；搭配保湿修复成分减少刺激；白天必须防晒。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">果酸 (AHA / 甘醇酸/乳酸/杏仁酸) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> α-羟基酸，水溶性。降低角质细胞间连接力→加速老废角质脱落。低浓度(5-10%)改善粗糙暗沉；中浓度(10-20%)治疗痘痘暗斑；高浓度(20-70%)医疗焕肤。</p>
+        <p><span class="tag tag-risk">不良反应</span> 强光敏性必须严格防晒；过度使用→屏障破坏→敏感肌。高浓度焕肤必须由医生操作。</p>
+        <p><span class="tag tag-use">使用建议</span> 甘醇酸分子最小渗透最快刺激性最强；乳酸温和些；杏仁酸大分子脂溶性较温和。新手从杏仁酸/低浓度乳酸开始。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">壬二酸 (Azelaic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 天然存在于小麦等谷物的二羧酸。抗菌（抑制痤疮丙酸杆菌）、抗炎、抑制异常黑色素细胞——同时具有祛痘和淡痘印双重功能。</p>
+        <p><span class="tag tag-risk">不良反应</span> 初期可能有短暂瘙痒和灼热感，建立耐受后消退。对正常皮肤细胞无毒性。</p>
+        <p><span class="tag tag-use">使用建议</span> 浓度15-20%效果最佳；适合红肿痘和痘印并存的肌肤；孕期可用（孕期祛痘安全选择）。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">茶树精油 (Tea Tree Oil) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 主要成分萜品烯-4-醇，广谱抗菌。对痤疮丙酸杆菌有良好抑制效果，预防痘痘继续恶化。</p>
+        <p><span class="tag tag-risk">不良反应</span> 100%纯茶树精油直接涂抹可能灼伤皮肤。对内分泌失调型痘痘仅治标不治本。</p>
+        <p><span class="tag tag-use">使用建议</span> 必须稀释使用；适合局部点涂红肿痘；不代表可以根治痘痘，严重痤疮请就医。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">刷酸安全守则 <span class="badge-warning">重要</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <div class="info-box">
+          <strong>⚠ 家庭刷酸安全须知</strong>
+          <ol style="margin:8px 0 0 16px;font-size:.9em">
+            <li>从最低浓度开始，每周1-2次，逐步建立耐受</li>
+            <li>严禁水杨酸+果酸同时使用</li>
+            <li>刷酸当天避免任何其他强功效产品（A醇、高浓度VC等）</li>
+            <li>刷酸后严格防晒（物理防晒优先）——至少1周</li>
+            <li>出现严重脱皮/红肿/刺痛 → 立即停用，用泛醇+神经酰胺修复</li>
+            <li>孕妇避免水杨酸（高浓度，低浓度遵医嘱）</li>
+            <li>中高浓度刷酸(>10%)必须由专业医生操作</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">辛酰水杨酸 (LHA) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 水杨酸的酰化衍生物。在保留BHA油溶性的基础上增加脂溶性——更易渗透毛孔。温和去角质、疏通毛孔，刺激性低于普通水杨酸。</p>
+        <p><span class="tag tag-risk">不良反应</span> 比水杨酸温和但仍属酸类，需防晒。敏感肌循序渐进。</p>
+        <p><span class="tag tag-use">使用建议</span> 欧莱雅集团偏爱成分。常与美白成分搭配促进色斑代谢。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">柠檬酸 (Citric Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> AHA家族中最温和的一员。轻度去角质促进表皮更新 + 调节产品pH + 弱抗氧化效果。</p>
+        <p><span class="tag tag-risk">不良反应</span> 低浓度安全性高。高浓度有刺激性。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分表中排序靠后时主要作用是调节pH而非去角质。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">菠萝果提取物 / 木瓜蛋白酶 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 天然来源的蛋白酶（菠萝蛋白酶/木瓜蛋白酶），温和分解角质蛋白、软化老废角质。比果酸/水杨酸更温和但效果也更弱。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极其温和，对正常皮肤基本无刺激。</p>
+        <p><span class="tag tag-use">使用建议</span> 通常在微量成分表里出现，概念性添加为主，不要指望单靠它去角质。适合极度敏感但又需要轻微焕肤的人群。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REPAIR ==================== -->
+<section class="section" id="repair">
+  <h2 class="section-title">🛡 舒缓修复成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">皮肤屏障受损是敏感、泛红、干燥的根源。修复成分分别从消炎、镇静、促愈合、重建屏障四个维度发挥作用。</p>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">积雪草提取物 / 羟基积雪草苷 (Centella Asiatica) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 核心活性物质为积雪草苷、羟基积雪草苷等三萜皂苷。促进成纤维细胞增殖→加速胶原合成→伤口愈合；抑制炎症因子释放→镇静泛红。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极低致敏性。极少数人对积雪草属植物过敏。</p>
+        <p><span class="tag tag-use">使用建议</span> 敏感肌、医美术后修复的首选成分。可与神经酰胺+泛醇组成"修复三角"。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">芦荟提取物 (Aloe Vera) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 含芦荟多糖、氨基酸、酶等复合物。深层补水（芦荟多糖）＋ 抗炎镇静（抑制前列腺素合成）＋ 促愈合（促进细胞增殖）。</p>
+        <p><span class="tag tag-risk">不良反应</span> 极安全，晒后镇静经典选择。注意区分：新鲜芦荟含大黄素，部分人可能过敏。</p>
+        <p><span class="tag tag-use">使用建议</span> 选纯度高的芦荟胶（配方中排名靠前）。晒后冷敷效果最佳。不能替代防晒。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">尿囊素 (Allantoin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 促进细胞增殖和新陈代谢、软化角质蛋白、加速伤口愈合（溃疡/化脓时）。兼具保湿润肤功效。</p>
+        <p><span class="tag tag-risk">不良反应</span> 目前未发现任何副作用——完美修复成分。</p>
+        <p><span class="tag tag-use">使用建议</span> 与泛醇类似但侧重复合修复。常添加于疤痕修复凝胶和抗敏产品。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">寡肽-1 (Oligopeptide-1) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 小分子肽，深透皮层促进胶原蛋白生成和受损屏障修复。主功能是<strong>修复</strong>，而非祛痘。</p>
+        <p><span class="tag tag-risk">不良反应</span> 温和安全。</p>
+        <p><span class="tag tag-use">使用建议</span> EGF（表皮生长因子）于2019年被中国禁止用于化妆品——确保购买的是寡肽而非EGF。注意辨别HFP等品牌的"寡肽祛痘"宣传：寡肽的主业是修复，祛痘需水杨酸/果酸/壬二酸。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">二裂酵母发酵产物溶胞产物 (Bifida) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 双歧杆菌发酵后裂解的产物，含丰富的氨基酸、多肽、维生素和矿物质。增强皮肤自身的修复和防御能力，减少紫外线引起的DNA损伤，改善皮肤粗糙和暗沉。</p>
+        <p><span class="tag tag-risk">不良反应</span> 非常温和安全，广泛耐受。</p>
+        <p><span class="tag tag-use">使用建议</span> 雅诗兰黛小棕瓶、欧莱雅双萃的核心成分。常作为功效型产品中的"维稳担当"，搭配刺激成分降低不适感。</p>
+      </div>
+    </div>
+      <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">羟基积雪草苷 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 积雪草主要活性成分之一，抗炎修复、促进胶原合成，舒缓效果突出。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">水解蜂王浆蛋白 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 蜂王浆蛋白水解产物，含氨基酸，滋养修复，提升皮肤光泽。</p>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- ==================== SUNSCREEN ==================== -->
+<section class="section" id="sunscreen">
+  <h2 class="section-title">☀ 防晒成分</h2>
+  <p style="margin-bottom:18px;color:var(--gray-600)">光老化占皮肤老化的80%。UVA致老化（直达真皮层），UVB致晒伤。防晒是一切护肤的基石。</p>
+
+  <div class="card">
+    <h3>紫外线类型与防晒指标</h3>
+    <table>
+      <tr><th>UV类型</th><th>波长</th><th>穿透力</th><th>主要危害</th></tr>
+      <tr><td>UVA</td><td>320-400nm</td><td>穿透玻璃，达真皮层</td><td>光老化、晒黑、胶原流失</td></tr>
+      <tr><td>UVB</td><td>290-320nm</td><td>作用于表皮</td><td>晒红、晒伤、DNA损伤</td></tr>
+      <tr><td>UVC</td><td>100-290nm</td><td>被臭氧层阻挡</td><td>—</td></tr>
+    </table>
+    <table style="margin-top:16px">
+      <tr><th>指标</th><th>防护对象</th><th>含义</th></tr>
+      <tr><td>SPF</td><td>UVB（晒伤）</td><td>SPF30 = 延长30倍晒伤时间</td></tr>
+      <tr><td>PA</td><td>UVA（光老化）</td><td>PA+ ~ PA++++，+越多防护越强</td></tr>
+    </table>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">物理防晒剂：二氧化钛 + 氧化锌 <span class="badge-success">最安全</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 在皮肤表面形成保护膜，主要通过吸收紫外线、并辅以反射和散射发挥作用（颗粒本身不被皮肤吸收）。氧化锌可广谱防护UVA+UVB。</p>
+        <p><span class="tag tag-risk">不良反应</span> 🟢 安全性极高，孕妇和婴幼儿可用。缺点：泛白、肤感厚重。选择"微粉化/纳米"技术可改善肤感（但部分人担忧纳米颗粒吸入风险——非喷雾产品安全）。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">化学防晒剂：氧苯酮/二苯甲酮-3 <span class="badge-warning">⚠ 争议成分</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 吸收UV能量后以热的形式释放。覆盖UVA+UVB。</p>
+        <p><span class="tag tag-risk">不良反应</span> 🟠 <strong>主要争议：</strong>可能经皮吸收进入血液 → 干扰HPG激素系统（动物实验下调性激素）；人类尿液中已检出；皮肤刺激和致敏；危害海洋生态（珊瑚白化）。多国海滩地区已限制使用。</p>
+        <p><span class="tag tag-use">使用建议</span> 孕妇、儿童、敏感肌优先选择纯物理防晒。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">防晒使用黄金法则 <span class="badge-warning">关键</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <div class="info-box">
+          <strong>正确防晒四要素</strong>
+          <ol style="margin:8px 0 0 16px;font-size:.9em">
+            <li><strong>用量：</strong>面部 ≈ 1枚一元硬币大小（约1g），用量不足→防护力指数级下降</li>
+            <li><strong>补涂：</strong>通勤午间补涂1次；户外/出汗/游泳每2-3小时补涂</li>
+            <li><strong>卸妆：</strong>防水型必须卸妆；非防水型可用温和洁面</li>
+            <li><strong>四季防晒：</strong>UVA全年强度稳定，阴天也要防晒</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>防晒选择建议</h3>
+    <table>
+      <tr><th>场景</th><th>推荐防护</th><th>类型建议</th></tr>
+      <tr><td>日常通勤</td><td>SPF30+ / PA+++</td><td>物化结合或化学</td></tr>
+      <tr><td>户外活动</td><td>SPF50+ / PA++++</td><td>防水型物理防晒</td></tr>
+      <tr><td>敏感肌/婴幼儿/孕妇</td><td>SPF30+ / PA+++</td><td>纯物理防晒</td></tr>
+      <tr><td>油痘肌</td><td>SPF30+ / PA+++</td><td>清爽凝胶/乳液型</td></tr>
+    </table>
+  </div>
+
+  <div class="accordion" style="margin-top:20px">
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">奥克立林 (Octocrylene) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 化学防晒剂，主要防护UVB和短波UVA(280-320nm)。最大特点：能稳定阿伏苯宗（后者单独光不稳定），二者常成对出现。</p>
+        <p><span class="tag tag-risk">不良反应</span> 少数人致敏。随时间推移可能降解产生二苯甲酮（微量），学术界有争议。</p>
+        <p><span class="tag tag-use">使用建议</span> 精华中出现微量奥克立林通常不是为了防晒，而是保护其他光敏活性成分。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">阿伏苯宗 (Avobenzone) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 最主要的UVA化学防晒剂（320-400nm），防护光老化的关键。但自身光稳定性极差——暴露于光照30分钟后降解50%以上。</p>
+        <p><span class="tag tag-risk">不良反应</span> 光降解产物可能致敏；与矿物防晒剂（氧化锌/二氧化钛）一起使用时降解更快。</p>
+        <p><span class="tag tag-use">使用建议</span> 必须与奥克立林等光稳定剂搭配。精华中微量出现是为保护活性物而非防晒。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLEANSE (SHAMPOO / BODY WASH) ==================== -->
+<section class="section" id="cleanse">
+  <h2 class="section-title">🚿 洗发水 / 沐浴露成分</h2>
+  <p style="margin-bottom:16px;color:var(--gray-600)">洗护产品以<strong>表面活性剂</strong>为核心（负责清洁去油、起泡），再配合调理剂（顺滑抗毛躁）、去屑剂、防腐剂与增稠/珠光剂。以下功效与安全结论主要依据 <strong>美国 CIR（化妆品成分评审专家组）</strong>、<strong>美国 FDA</strong> 与 <strong>欧盟 SCCS / REACH</strong>。</p>
+
+  <div class="card warning">
+    <h3>🌍 欧盟 vs 美国：关键分歧速览</h3>
+    <table>
+      <tr><th>成分</th><th>美国</th><th>欧盟</th></tr>
+      <tr><td>吡硫鎓锌 (ZPT) 去屑剂</td><td class="risk-low">FDA 准用（OTC 去屑活性物）</td><td class="risk-high">2022年3月起全面禁用（重分类为 CMR）</td></tr>
+      <tr><td>椰油酰胺 DEA</td><td class="risk-mid">加州 Prop 65 列名（IARC 2B）</td><td class="risk-mid">限制游离 DEA/亚硝胺含量</td></tr>
+      <tr><td>环硅氧烷 D4/D5/D6</td><td>基本不限（配方常用）</td><td class="risk-mid">REACH 因持久性/生物蓄积限用</td></tr>
+      <tr><td>煤焦油 (Coal Tar)</td><td class="risk-mid">FDA 准用（OTC 去屑/去角质药）</td><td class="risk-high">粗制煤焦油化妆品中禁用/严格限制</td></tr>
+    </table>
+    <p style="margin-top:10px;font-size:.85em;color:var(--gray-600)">同一支去屑洗发水，可能"美国合法上架、欧盟已下架"。中国现行法规对 ZPT 仍允许（限量），与美国更接近。</p>
+  </div>
+
+  <h3 style="margin:20px 0 10px;color:var(--gray-800)">一、表面活性剂（清洁与起泡）</h3>
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header" onclick="toggleAccordion(this)">月桂醇硫酸酯钠 (SLS / Sodium Lauryl Sulfate) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 强力阴离子表活，泡沫丰富、去油力强，成本低。是很多洗发水/牙膏/沐浴露的基础清洁成分。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 结论：淋洗类中安全；驻留类建议 ≤1%。脱脂力强、刺激性较高，是皮肤斑贴试验里的<strong>标准"阳性对照刺激物"</strong>——即用来诱发刺激作参照，敏感肌/干性头皮易干燥泛红。<strong>"SLS 致癌"是网络谣言</strong>，无科学依据；成分可完全洗净、无体内蓄积。</p>
+        <p><span class="tag tag-use">使用建议</span> 油性头皮/追求清爽可接受；敏感、干性、受损发或频繁洗发者宜选更温和的 SLES 或氨基酸表活体系。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">月桂醇聚醚硫酸酯钠 (SLES / Sodium Laureth Sulfate) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> SLS 经乙氧基化改良，泡沫细腻、刺激性明显更低，是当今洗发水/沐浴露<strong>最主流</strong>的主表活。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 认为安全、刺激性低于 SLS。主要顾虑在于乙氧基化工艺可能残留副产物 <strong>1,4-二氧六环（1,4-dioxane，IARC 2B 可能致癌物）</strong>——这是生产杂质、并非成分本身。正规厂商用真空汽提去除，美国纽约州自 2023 起对洗护品限量（≈≤2 ppm）。风险取决于原料纯度而非"含 SLES"本身。</p>
+        <p><span class="tag tag-use">使用建议</span> 大品牌/合规产品残留极低，正常使用无需担心。介意者可选葡糖苷或氨基酸类无硫酸盐（Sulfate-free）配方。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">椰油酰胺丙基甜菜碱 (CAPB / Cocamidopropyl Betaine) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 两性离子温和表活，起泡、增稠，并能<strong>降低 SLES 等主表活的刺激性</strong>。几乎所有"氨基酸/温和"洗护配方的黄金辅表活。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国接触性皮炎学会曾评为 <strong>2004 年"年度致敏原"</strong>，但研究显示致敏主要来自生产杂质（酰胺胺 amidoamine、DMAPA），而非纯化后的 CAPB 本身。美国 CIR 结论：在限制杂质前提下安全。总体温和，仅极少数人接触性皮炎。</p>
+        <p><span class="tag tag-use">使用建议</span> 绝大多数人可放心使用；有明确洗护过敏史者可留意此成分。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">椰油酰胺 DEA / MEA (Cocamide DEA) <span class="badge-warning">⚠ 重点留意</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 增泡、增稠、稳泡的起泡助剂，让洗发水更浓稠、泡沫更绵密。</p>
+        <p><span class="tag tag-risk">安全评估</span> ⚠ 本类中最该留意：<strong>椰油酰胺 DEA 被 IARC 列为 2B（可能致癌物）</strong>，<strong>加州 Prop 65 列名</strong>，多起诉讼促使品牌移除或改配方。欧盟因二乙醇胺(DEA)可与其他成分生成<strong>亚硝胺</strong>而限制其游离 DEA 与亚硝胺残留。MEA（单乙醇胺）类风险低于 DEA。</p>
+        <p><span class="tag tag-use">使用建议</span> 可优先选择不含 Cocamide DEA 的产品；现代配方多已用其他增稠剂替代。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">葡糖苷类 (癸基/椰油基葡糖苷 · APG) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 由椰油 + 葡萄糖合成的非离子"烷基糖苷"表活，极温和、可生物降解，泡沫偏少偏软。儿童、敏感肌、头皮屏障脆弱者的洗护常用。</p>
+        <p><span class="tag tag-risk">安全评估</span> 欧盟与美国均视为温和低刺激。少数报告有致敏性，但整体是公认的温和绿色表活。</p>
+        <p><span class="tag tag-use">使用建议</span> "无硫酸盐"温和配方常靠它 + 氨基酸表活撑起清洁力，适合干敏头皮与频繁清洁人群。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">氨基酸/羟乙磺酸酯类 (SCI · 椰油酰甘氨酸钠等) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 椰油酰羟乙磺酸酯钠(SCI)、椰油酰甘氨酸钠等，来自氨基酸/脂肪酸，肤感"奶油泡"，洗后不紧绷，是皂基与硫酸盐的温和替代。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 评估安全，温和低敏，pH 接近皮肤弱酸性，适合敏感肌与面部氨基酸洁面。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分表中排名越靠前，说明清洁体系越温和；干敏肌与洗脸产品首选此类。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 10px;color:var(--gray-800)">二、调理剂与肤感（顺滑抗毛躁）</h3>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">硅油：聚二甲基硅氧烷 / 氨端硅油 (Dimethicone / Amodimethicone) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 在发丝表面成膜，带来顺滑、抗毛躁、易梳理、减少断发与锁水的效果；氨端硅油带正电，对受损/染烫发更有亲和力、更持久。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 认为惰性、不渗透皮肤、无致敏。<strong>需区分：</strong>受限的是<strong>挥发性环硅氧烷 D4/D5/D6</strong>（欧盟 REACH 因环境持久性/生物蓄积对其在淋洗与驻留类限用），而线性的 Dimethicone(PDMS) 不在该限制之列。"硅油堵毛孔/伤头皮"多为营销话术——它可被表活洗净、不进入毛囊深层。</p>
+        <p><span class="tag tag-use">使用建议</span> 追求顺滑可放心用；极度追求蓬松或头皮易积垢者可交替使用无硅油产品，正常清洁即可去除，不必焦虑。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">聚季铵盐-7/-10 (Polyquaternium) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 阳离子调理聚合物，中和阴离子表活的负电荷，吸附在发丝/皮肤表面形成柔顺膜，减少静电与打结（"洗护二合一"顺滑感来源之一）。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 评估安全，广泛耐受、低致敏。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">瓜尔胶羟丙基三甲基氯化铵 (阳离子瓜尔胶) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 天然瓜尔豆来源的阳离子调理剂，冲洗时沉积在发丝上提供顺滑感，是无硅油"二合一"洗发水的主要柔顺来源。</p>
+        <p><span class="tag tag-risk">安全评估</span> 温和安全，天然来源，广泛用于温和及无硅油配方。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 10px;color:var(--gray-800)">三、去屑成分（欧美分歧最大）</h3>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">吡硫鎓锌 (ZPT / Zinc Pyrithione) <span class="badge-warning">⚠ 欧盟已禁</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 经典去屑剂，抑制头皮马拉色菌（真菌）繁殖，控油、止痒、减少头皮屑。海飞丝等经典去屑洗发水的核心。</p>
+        <p><span class="tag tag-risk">安全评估</span> <strong>美国 FDA</strong> 仍作为 OTC 去屑活性物<strong>准用</strong>（洗发水常见浓度约 1–2%）；而<strong>欧盟自 2022 年 3 月 1 日起全面禁止其用于化妆品</strong>，因其被重新分类为 <strong>CMR（生殖毒性）物质</strong>。这是欧美最典型的一处分歧。中国现行法规仍允许（限量）。</p>
+        <p><span class="tag tag-use">使用建议</span> 有去屑需求可按当地合规产品使用；在欧盟购买的产品已改用吡罗克酮乙醇胺盐等替代。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">吡罗克酮乙醇胺盐 (Piroctone Olamine) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 抑制马拉色菌的去屑抑菌剂，是欧盟禁用 ZPT 后的<strong>主流替代成分</strong>。</p>
+        <p><span class="tag tag-risk">安全评估</span> 欧盟 SCCS 评估安全，作为准用防腐剂（Annex V）允许使用（淋洗类约 ≤1%），温和有效、刺激性低。</p>
+        <p><span class="tag tag-use">使用建议</span> 想避开 ZPT 又需去屑者的优选；温和，可长期使用。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">氯咪巴唑 (Climbazole) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 抗真菌去屑剂，抑制马拉色菌，常与吡罗克酮/ZPT 复配增效。</p>
+        <p><span class="tag tag-risk">安全评估</span> 欧盟经 SCCS 评估后<strong>设限使用</strong>（Reg (EU) 2019/698 规定发用冲洗类、驻留类等各品类最高浓度），限量内安全。</p>
+        <p><span class="tag tag-use">使用建议</span> 合规产品限量内使用安全；勿自行叠加多种去屑活性物。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">二硫化硒 / 煤焦油 / 酮康唑 / 水杨酸（药用去屑活性物） <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-body">
+        <p><span class="tag tag-mech">功效原理</span> 二硫化硒(抑菌控脂)、煤焦油(抑制角质过度增生)、酮康唑(强效抗真菌)、水杨酸(溶解头皮屑角质)——针对较顽固的头皮屑/脂溢性皮炎。</p>
+        <p><span class="tag tag-risk">安全评估</span> <strong>美国 FDA 把它们列为 OTC 去屑"药物"活性物</strong>（酮康唑 1% 为 OTC、2% 为处方；二硫化硒 1% OTC、2.5% 处方）。<strong>煤焦油含多环芳烃(PAHs)</strong>，欧盟对化妆品用粗制煤焦油限制/禁用。这类更接近"药妆/OTC 药"，而非普通化妆品。</p>
+        <p><span class="tag tag-use">使用建议</span> 顽固头皮屑或脂溢性皮炎建议按药品说明或遵医嘱使用，不宜长期无差别当日常洗发水。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 10px;color:var(--gray-800)">四、洗护常见防腐与辅助成分</h3>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table style="margin:0">
+      <thead><tr><th style="width:30%">成分</th><th style="width:16%">作用</th><th>安全评估（EU/US）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>苯甲酸钠 / 山梨酸钾</strong></td><td>温和有机酸防腐</td><td>欧盟与美国均准用，温和安全，弱酸配方常用。注意苯甲酸盐 + 高浓度VC 理论上可微量生成苯（洗护中少见）。</td></tr>
+        <tr><td><strong>DMDM 乙内酰脲</strong></td><td>甲醛释放体防腐</td><td class="risk-mid">缓释甲醛，欧盟要求 ≥0.001% 释放甲醛时标注"含甲醛/释放甲醛"，属常见致敏原，敏感人群留意。</td></tr>
+        <tr><td><strong>氯化钠（盐）</strong></td><td>增稠调节黏度</td><td>安全无虑。高盐配方对染烫发/极干头皮可能偏干。</td></tr>
+        <tr><td><strong>乙二醇二硬脂酸酯</strong></td><td>珠光剂</td><td>美国 CIR 评估安全，纯装饰性——制造洗发水/沐浴露的珠光乳白外观，无功效也无明显风险。</td></tr>
+        <tr><td><strong>甲基异噻唑啉酮 (MIT/CMIT)</strong></td><td>防腐</td><td class="risk-mid">强致敏原，欧盟仅允许淋洗类且严格限量、禁用于驻留类；详见"安全"板块。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 洗护选购思路</strong>
+    <p style="margin-top:6px">① 干敏头皮/儿童/频繁清洁 → 选氨基酸 + 葡糖苷(APG)温和表活，避开高比例 SLS；② 去屑认准<strong>活性物</strong>（吡罗克酮、ZPT、氯咪巴唑等）而非单纯"植物/中药"宣称；③ 介意争议成分 → 优先避开 Cocamide DEA；④ 欧盟版去屑产品已不含 ZPT，认成分表即可；⑤ 硅油顺滑无需恐慌，可正常洗净。<strong>清洁类是淋洗产品、接触时间短，整体安全冗余大于驻留类。</strong></p>
+  </div>
+</section>
+
+<!-- ==================== SAFETY ==================== -->
+<section class="section" id="safety">
+  <h2 class="section-title">⚠ 有害成分与安全风险</h2>
+
+  <div class="card danger">
+    <h3>🔴 非法添加物 — 绝对禁区 <span class="badge-danger">最高风险</span></h3>
+    <table>
+      <tr><th>成分</th><th>常见名称</th><th>危害</th><th>高发产品</th></tr>
+      <tr><td>糖皮质激素</td><td>地塞米松、氯倍他索、氟轻松</td><td>激素依赖性皮炎（"激素脸"）：皮肤变薄、屏障永久损害、停用后爆发反跳</td><td>"速效美白霜""三天祛痘"</td></tr>
+      <tr><td>氢醌</td><td>对苯二酚</td><td>外源性褐黄病（不可逆的蓝黑色色沉）、白斑</td><td>非法"中药祛斑"</td></tr>
+      <tr><td>汞/铅</td><td>—</td><td>肾损伤、神经毒性、体内蓄积</td><td>"速效美白霜""中药祛斑膏"</td></tr>
+      <tr><td>荧光增白剂</td><td>—</td><td>堵塞毛孔、潜在光毒性</td><td>"即时亮白"面膜</td></tr>
+    </table>
+    <div class="info-box danger-box" style="margin-top:16px">
+      ⚠ <strong>警惕信号：</strong>"三天美白""七天祛痘""一次见效"——正常护肤品不可能有此速度。发现立即停用并就医。
+    </div>
+  </div>
+
+  <div class="card warning">
+    <h3>🟠 内分泌干扰物 (EDCs) <span class="badge-warning">学术争议中</span></h3>
+    <p style="margin-bottom:12px">2024-2025年多篇顶级期刊(Springer, Frontiers, MDPI)综述确认：以下成分长期低剂量暴露存在内分泌干扰风险。</p>
+    <table>
+      <tr><th>成分种类</th><th>代表成分</th><th>作用机制</th><th>健康风险</th></tr>
+      <tr><td>对羟基苯甲酸酯类<br>(Parabens)</td><td>对羟基苯甲酸丙酯、丁酯</td><td>模拟雌激素，与雌激素受体结合</td><td>乳腺癌关联、生殖毒性、发育异常</td></tr>
+      <tr><td>邻苯二甲酸酯类<br>(Phthalates)</td><td>DBP（二丁酯）、DEP（二乙酯）</td><td>干扰激素受体结合、影响基因表达</td><td>生殖发育异常、甲状腺干扰</td></tr>
+      <tr><td>三氯生</td><td>Triclosan</td><td>激素干扰 + 诱导抗生素耐药</td><td>耐药菌筛选、环境蓄积</td></tr>
+      <tr><td>氧苯酮</td><td>二苯甲酮-3</td><td>干扰HPG系统 ↓ 性激素</td><td>内分泌功能障碍、珊瑚生态破坏</td></tr>
+      <tr><td>BHA</td><td>丁基羟基茴香醚</td><td>内分泌干扰</td><td>IARC列为可能致癌物；欧盟SCCS评估中，拟限制</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:.85em;color:var(--gray-600)">欧洲人体生物监测：尿液中邻苯二甲酸酯检出率 88-100%。暴露来源：面霜、护手霜、抗衰老霜、沐浴露、洗面奶。</p>
+  </div>
+
+  <div class="card warning">
+    <h3>🟠 高风险防腐剂</h3>
+    <table>
+      <tr><th>防腐剂</th><th>风险</th><th>法规限制</th></tr>
+      <tr><td>MIT/CMIT（甲基异噻唑啉酮/甲基氯异噻唑啉酮）</td><td>中国化妆品最常见过敏原之一，强致敏</td><td>MIT单用≤0.01%，与CMIT混合≤0.0015%（仅淋洗类）</td></tr>
+      <tr><td>甲醛释放体（DMDM乙内酰脲、咪唑烷基脲等）</td><td>缓慢释放甲醛 → 致敏 + 致癌争议(IARC Group 1)</td><td>游离甲醛/多聚甲醛2021年起禁用；释放体本身仍允许(有限量)，敏感人群留意</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>📜 核心法规依据</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2015年版（持续增补）</div>
+        <div class="timeline-text">现行《化妆品安全技术规范（2015年版）》通过滚动"增补/修订"持续更新，最新已增补至2025–2026年，不断新增限用/禁用要求</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2021年</div>
+        <div class="timeline-text">《化妆品禁用原料目录》更新：苄氯酚、甲醛、多聚甲醛列为禁用；化妆品禁用原料共1393种</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019年</div>
+        <div class="timeline-text">EGF（表皮生长因子）等细胞因子禁止用于化妆品</div>
+      </div>
+    </div>
+    <p style="font-size:.85em;color:var(--gray-600);margin-top:12px">消费者可通过国家药监局官网（nmpa.gov.cn）查询产品注册/备案信息。</p>
+  </div>
+
+  <div class="card">
+    <h3>💡 常见功能性辅助成分</h3>
+    <table>
+      <tr><th>成分</th><th>功能</th><th>风险</th><th>说明</th></tr>
+      <tr><td><strong>乙醇 / 变性乙醇</strong></td><td>促渗、清爽肤感、溶剂</td><td class="risk-mid">干皮/敏感肌刺痛</td><td>油皮友好，干皮慎。排在成分表前5位说明浓度不低。</td></tr>
+      <tr><td><strong>香精 (Parfum)</strong></td><td>改善气味</td><td class="risk-mid">最常见致敏原</td><td>无香配方更安全。欧盟列了26种需标注的香精过敏原。</td></tr>
+      <tr><td><strong>苯氧乙醇</strong></td><td>防腐剂</td><td class="risk-low">极少数刺激</td><td>法定浓度≤1%，通常安全，比MIT/甲醛释放体温和得多。</td></tr>
+    </table>
+    <p style="font-size:.85em;color:var(--gray-600);margin-top:8px">以上成分在绝大多数护肤品中可见。关键看浓度和整体配方搭配，而非单一成分就能判断产品好坏。</p>
+  </div>
+
+  <div class="card">
+    <h3>🆘 过敏/刺激应急处理</h3>
+    <ol style="margin-left:20px;font-size:.92em;line-height:2">
+      <li><strong>立即停用</strong>可疑产品</li>
+      <li>温和清水洁面（不用洁面产品）</li>
+      <li><strong>冷敷镇静</strong>（冰毛巾/冷藏喷雾）</li>
+      <li>使用含 <strong>泛醇 + 积雪草</strong> 的修复产品</li>
+      <li>避免日晒，使用 <strong>纯物理防晒</strong></li>
+      <li><strong>就医：</strong>症状持续加重、大面积红肿、渗出</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== BASE/AUXILIARY ==================== -->
+<section class="section" id="base">
+  <h2 class="section-title">🔧 基础与辅助成分</h2>
+  <p style="margin-bottom:16px;color:var(--gray-600)">保湿溶剂、乳化剂、增稠剂、螯合剂、粉体调理剂等配方辅助成分。它们不直接主打护肤功效，但决定了产品质地、稳定性和肤感。</p>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <table style="margin:0">
+      <thead><tr><th style="width:32%">成分</th><th style="width:18%">类型</th><th>作用说明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>月桂酰肌氨酸异丙酯</strong></td><td>柔润剂</td><td>改善涂抹顺滑度，轻度滋润，让肤感更柔和。</td></tr>
+        <tr><td><strong>羟乙基哌嗪乙烷磺酸</strong></td><td>pH缓冲剂</td><td>维持配方弱酸性环境，同时可辅助温和角质代谢。</td></tr>
+        <tr><td><strong>丙烯酰胺/丙烯酰基二甲基牛磺酸钠共聚物</strong></td><td>增稠稳定剂</td><td>赋予精华顺滑凝胶质地，稳定乳化体系。</td></tr>
+        <tr><td><strong>辛基十二醇</strong></td><td>柔润剂/溶剂</td><td>增强肤感润滑，帮助溶解难溶性活性成分。</td></tr>
+        <tr><td><strong>异十六烷</strong></td><td>轻质溶剂</td><td>挥发后留下清爽肤感，不油腻。</td></tr>
+        <tr><td><strong>辛基十二醇木糖苷</strong></td><td>乳化剂</td><td>非离子表面活性剂，帮助水油两相混合均匀。</td></tr>
+        <tr><td><strong>聚山梨醇酯-80</strong></td><td>乳化/增溶剂</td><td>帮助香精和油性成分稳定分散在水基配方中。</td></tr>
+        <tr><td><strong>乙二胺二琥珀酸三钠</strong></td><td>螯合剂</td><td>结合金属离子，防止活性成分氧化变质。</td></tr>
+        <tr><td><strong>聚丙烯酰基二甲基牛磺酸铵</strong></td><td>增稠稳定剂</td><td>改善质地，提供丝滑肤感，常见于高端精华。</td></tr>
+        <tr><td><strong>山梨坦油酸酯</strong></td><td>乳化剂</td><td>常与聚山梨醇酯类搭配，稳定水包油乳液。</td></tr>
+        <tr><td><strong>氧化锡</strong></td><td>着色/珠光剂</td><td>与云母搭配产生亮泽和遮盖效果，即时提亮视觉。</td></tr>
+        <tr><td><strong>聚乙二醇-32</strong></td><td>溶剂/保湿剂</td><td>增加产品润滑感，帮助活性成分溶解。</td></tr>
+        <tr><td><strong>甲硅烷基化硅石</strong></td><td>肤感调节剂</td><td>吸油、改善肤感顺滑度，带来哑光效果。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 判断思路</strong>
+    <p style="margin-top:6px">成分表前几位通常决定产品质地；活性成分（如烟酰胺、377）即使排名不在最前，只要达到有效浓度即可。辅助成分本身不可怕，但敏感肌应重点关注香精、酒精等潜在刺激物。</p>
+  </div>
+</section>
+
+<!-- ==================== ALL INGREDIENTS ==================== -->
+<section class="section" id="all">
+  <h2 class="section-title">📋 全部成分总表</h2>
+  <p style="margin-bottom:16px;color:var(--gray-600)">共收录 <strong id="allCount">112</strong> 种成分，按分类排列。点击行查看详情。</p>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table id="allTable" style="margin:0">
+      <thead><tr><th style="width:30%">成分</th><th style="width:12%">分类</th><th style="width:10%">风险</th><th>功效简介</th></tr></thead>
+      <tbody id="allTableBody"><tr><td colspan="4" style="text-align:center;padding:20px;color:var(--gray-600)">加载中…</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<script>
+// Tab switching
+function switchTab(tabId) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+
+  const target = document.getElementById(tabId);
+  if (target) target.classList.add('active');
+
+  const navLink = document.querySelector(`.nav a[data-tab="${tabId}"]`);
+  if (navLink) navLink.classList.add('active');
+
+  if (tabId === 'all') renderAllTable();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Nav click handlers
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const tabId = this.getAttribute('data-tab');
+    switchTab(tabId);
+    history.pushState(null, '', '#' + tabId);
+  });
+});
+
+// Accordion
+function toggleAccordion(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+  header.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+}
+
+// Pinyin initial map — auto-generated to cover all ingredient names
+const pyMap = {
+  '奥':'a','氨':'a','胺':'a','铵':'a','阿':'a',
+  '丙':'b','倍':'b','卜':'b','巴':'b','波':'b','玻':'b','白':'b','胞':'b','苯':'b','菠':'b','蓖':'b',
+  '产':'c','传':'c','叉':'c','橙':'c','茶':'c','草':'c','菜':'c','醇':'c','陈':'c',
+  '丁':'d','地':'d','多':'d','定':'d','对':'d','甙':'d','胆':'d','蛋':'d',
+  '二':'e',
+  '伏':'f','凤':'f','发':'f','啡':'f','泛':'f','蜂':'f','酚':'f','防':'f',
+  '光':'g','共':'g','寡':'g','构':'g','果':'g','根':'g','桂':'g','瓜':'g','甘':'g','癸':'g','硅':'g','管':'g','苷':'g','谷':'g','鬼':'g',
+  '化':'h','合':'h','坏':'h','海':'h','环':'h','琥':'h','磺':'h','胡':'h','花':'h','荟':'h','荷':'h','蒿':'h','霍':'h','黄':'h',
+  '交':'j','剂':'j','基':'j','季':'j','己':'j','浆':'j','激':'j','甲':'j','碱':'j','积':'j','精':'j','经':'j','聚':'j','肌':'j','胶':'j','角':'j','解':'j','酒':'j','酵':'j','金':'j','间':'j',
+  '克':'k','卡':'k','咖':'k','抗':'k','矿':'k',
+  '六':'l','卵':'l','啉':'l','拉':'l','料':'l','林':'l','梨':'l','榈':'l','氯':'l','滤':'l','理':'l','磷':'l','立':'l','类':'l','联':'l','芦':'l','萝':'l','裂':'l','邻':'l',
+  '墨':'m','姆':'m','明':'m','木':'m','檬':'m','母':'m','米':'m','酶':'m','醚':'m','麻':'m',
+  '凝':'n','哪':'n','囊':'n','尼':'n','尿':'n','柠':'n','牛':'n','钠':'n',
+  '哌':'p','泊':'p','珀':'p','皮':'p','盘':'p','频':'p',
+  '取':'q','嗪':'q','曲':'q','氢':'q','羟':'q','芩':'q','青':'q',
+  '乳':'r','壬':'r','溶':'r','肉':'r',
+  '三':'s','十':'s','双':'s','叔':'s','司':'s','噻':'s','四':'s','塞':'s','山':'s','晒':'s','松':'s','树':'s','桑':'s','水':'s','生':'s','石':'s','神':'s','素':'s','索':'s','羧':'s','胜':'s','色':'s','视':'s','酸':'s','鲨':'s',
+  '他':'t','坦':'t','提':'t','甜':'t','糖':'t','肽':'t','透':'t','酮':'t','钛':'t',
+  '戊':'w','烷':'w','物':'w','王':'w','维':'w','魏':'w',
+  '学':'x','旋':'x','星':'x','烯':'x','熊':'x','细':'x','虾':'x','血':'x','辛':'x','酰':'x','锌':'x','锡':'x','雪':'x','香':'x','馨':'x','鲜':'x',
+  '乙':'y','原':'y','叶':'y','因':'y','嵛':'y','异':'y','月':'y','杨':'y','椰':'y','氧':'y','油':'y','液':'y','烟':'y','玉':'y','盐':'y','硬':'y','茵':'y',
+  '唑':'z','子':'z','宗':'z','左':'z','抓':'z','枝':'z','枣':'z','棕':'z','植':'z','皱':'z','籽':'z','脂':'z','藻':'z','质':'z','酯':'z','针':'z','珠':'z',
+  '硫':'l','罗':'l','葡':'p','吡':'p','尔':'e','鎓':'w','咪':'m','煤':'m','焦':'j','钾':'j','内':'n','脲':'n','硒':'x',
+  '表':'b','活':'h','洁':'j','面':'m','端':'d','阳':'y','离':'l','啶':'d','去':'q','屑':'x','锭':'d','康':'k','药':'y','用':'y','醛':'q','释':'s','放':'f','体':'t','α':'a','β':'b',
+};
+
+function toPinyinInitials(str) {
+  let result = '';
+  for (const ch of str) {
+    if (/[a-zA-Z0-9]/.test(ch)) { result += ch.toLowerCase(); continue; }
+    result += pyMap[ch] || '';
+  }
+  return result;
+}
+
+// Search
+const ingredientDB = [
+  {name:'透明质酸(玻尿酸)',cat:'moisture',risk:'低',desc:'保湿龙头。携带500-1000倍水分子，表面形成水合膜。必须搭配封闭剂锁水。',link:'moisture',alias:'玻尿酸 HA 抓水剂'},
+  {name:'甘油',cat:'moisture',risk:'低',desc:'最经济的保湿剂。渗透角质层吸水。高浓度反而吸水致干。',link:'moisture',alias:''},
+  {name:'神经酰胺',cat:'moisture',risk:'低',desc:'皮肤屏障"水泥"核心组分。修复屏障锁水，减少TEWL。',link:'moisture',alias:'细胞间脂质'},
+  {name:'角鲨烷',cat:'moisture',risk:'低',desc:'最接近人体皮脂膜的脂类。迅速渗透形成保护膜锁水。',link:'moisture',alias:''},
+  {name:'泛醇(B5)',cat:'moisture',risk:'低',desc:'转化为泛酸促屏障修复和水合。敏感肌和医美术后均可。',link:'moisture',alias:'维生素B5 VB5'},
+  {name:'烟酰胺',cat:'whitening',risk:'中',desc:'阻断黑色素转移通路。不同浓度不同功效：2%提亮→5%+美白。',link:'whitening',alias:'VB3 维生素B3'},
+  {name:'维生素C(抗坏血酸)',cat:'whitening',risk:'中',desc:'抑制酪氨酸酶+还原黑色素+强力抗氧化。日间+防晒最佳。',link:'whitening',alias:'VC 左旋C 抗坏血酸'},
+  {name:'熊果苷',cat:'whitening',risk:'低',desc:'竞争性抑制酪氨酸酶。α型效果是β型15倍且更温和。',link:'whitening',alias:'α-熊果苷'},
+  {name:'传明酸',cat:'whitening',risk:'低',desc:'阻断PA信号通路→抑制黑色素合成信号。对黄褐斑尤为有效。',link:'whitening',alias:'凝血酸 氨甲环酸'},
+  {name:'曲酸',cat:'whitening',risk:'中',desc:'螯合铜离子抑制酪氨酸酶。高丝集团核心美白成分。',link:'whitening',alias:''},
+  {name:'视黄醇(A醇)',cat:'antiaging',risk:'高',desc:'最强证据等级抗老。促胶原合成、加速角质更新。孕妇禁用。',link:'antiaging',alias:'维生素A VA 维A醇'},
+  {name:'胜肽',cat:'antiaging',risk:'低',desc:'信号分子启动胶原合成。信号肽/载体肽/类肉毒素三种。温和安全。',link:'antiaging',alias:'多肽'},
+  {name:'玻色因',cat:'antiaging',risk:'低',desc:'欧莱雅专利。促内源透明质酸合成和DEJ强化。温和高级。',link:'antiaging',alias:''},
+  {name:'酵母提取物',cat:'antiaging',risk:'中',desc:'促代谢和修复。轻微角质剥落→敏感肌慎用。',link:'antiaging',alias:'二裂酵母'},
+  {name:'虾青素',cat:'antiaging',risk:'低',desc:'体外抗氧化极强但缺乏人体临床证据。谨慎看待宣传。',link:'antiaging',alias:''},
+  {name:'水杨酸(BHA)',cat:'acne',risk:'中',desc:'油溶性→深入毛孔融解油脂。黑头闭口首选。光敏，需防晒。',link:'acne',alias:'BHA β-羟基酸'},
+  {name:'果酸(AHA)',cat:'acne',risk:'中',desc:'加速角质脱落。甘醇酸最强→乳酸→杏仁酸最温和。光敏。',link:'acne',alias:'AHA α-羟基酸 甘醇酸 乳酸'},
+  {name:'壬二酸',cat:'acne',risk:'低',desc:'抗菌+抗炎+淡痘印三合一。孕期安全。初期短暂灼热感。',link:'acne',alias:''},
+  {name:'茶树精油',cat:'acne',risk:'中',desc:'广谱抗菌抑制痘痘。需稀释。对内分泌痘仅治标。',link:'acne',alias:''},
+  {name:'积雪草',cat:'repair',risk:'低',desc:'促胶原合成+抗炎镇静。敏感肌/医美术后首选。',link:'repair',alias:'羟基积雪草苷'},
+  {name:'芦荟',cat:'repair',risk:'低',desc:'补水+抗炎+促愈合三重功效。晒后镇静经典。',link:'repair',alias:''},
+  {name:'尿囊素',cat:'repair',risk:'低',desc:'促细胞增殖愈合+软化角质。零副作用完美修复成分。',link:'repair',alias:''},
+  {name:'寡肽-1',cat:'repair',risk:'低',desc:'小分子肽促胶原修复。注意≠EGF（已禁用）。主业修复非祛痘。',link:'repair',alias:'EGF'},
+  {name:'氧苯酮(二苯甲酮-3)',cat:'safety',risk:'高',desc:'化学防晒剂。干扰HPG激素系统。多国海滩限制。',link:'sunscreen',alias:'二苯甲酮-3 防晒剂'},
+  {name:'二氧化钛+氧化锌',cat:'safety',risk:'低',desc:'物理防晒金标准。全波段反射防护。孕妇婴幼儿首选。即时提亮视觉修饰（CI 77891即为二氧化钛）。',link:'sunscreen',alias:'物理防晒 矿物防晒 CI 77891 CI77891'},
+  {name:'糖皮质激素',cat:'safety',risk:'高',desc:'非法添加物之首。导致激素依赖性皮炎。发现立即停用。',link:'safety',alias:'地塞米松 激素 氯倍他索'},
+  {name:'Parabens(尼泊金酯)',cat:'safety',risk:'高',desc:'内分泌干扰物。模拟雌激素。丙酯丁酯风险最高。',link:'safety',alias:'对羟基苯甲酸酯 羟苯甲酯 羟苯丙酯'},
+  {name:'MIT/CMIT',cat:'safety',risk:'高',desc:'强致敏防腐剂。中国最常见过敏原。仅限淋洗类。',link:'safety',alias:'甲基异噻唑啉酮 甲基氯异噻唑啉酮'},
+  {name:'377(苯乙基间苯二酚)',cat:'whitening',risk:'低',desc:'强效酪氨酸酶抑制剂，从源头阻断黑色素生成。城野医生377同款核心。',link:'whitening',alias:'苯乙基间苯二酚 phenylethyl resorcinol'},
+  {name:'阿魏酸',cat:'whitening',risk:'低',desc:'强抗氧化剂，可稳定VC活性。抗炎提亮，内管保护防止氧化失活。',link:'whitening',alias:'ferulic acid'},
+  {name:'二裂酵母发酵产物溶胞产物',cat:'repair',risk:'低',desc:'维稳修复增强屏障。雅诗兰黛小棕瓶/欧莱雅双萃同款核心成分。',link:'repair',alias:'二裂酵母 Bifida'},
+  {name:'咖啡因',cat:'antiaging',risk:'低',desc:'促进微循环、抗氧化、辅助消肿。眼霜中常见成分。',link:'antiaging',alias:''},
+  {name:'辛酰水杨酸',cat:'acne',risk:'中',desc:'水杨酸衍生物(LHA)，脂溶性更佳，温和去角质疏通毛孔，淡斑代谢。',link:'acne',alias:'LHA 辛酰水杨酸'},
+  {name:'奥克立林',cat:'sunscreen',risk:'中',desc:'化学防晒剂，防护UVB+短波UVA。常与阿伏苯宗联用。',link:'sunscreen',alias:'octocrylene 化学防晒'},
+  {name:'阿伏苯宗',cat:'sunscreen',risk:'中',desc:'UVA化学防晒剂，光稳定性差需搭配奥克立林稳定。',link:'sunscreen',alias:'avobenzone 丁基甲氧基二苯甲酰基甲烷'},
+  {name:'乙醇(酒精)',cat:'safety',risk:'中',desc:'促渗剂+溶剂，带来清爽肤感。干皮/敏感肌可能刺痛干燥。',link:'safety',alias:'酒精 alcohol'},
+  {name:'香精',cat:'safety',risk:'中',desc:'最常见化妆品致敏原之一。敏感肌建议选无香配方。',link:'safety',alias:'fragrance 香料'},
+  {name:'苯氧乙醇',cat:'safety',risk:'低',desc:'常用温和防腐剂，安全浓度内广泛使用。极少数人可能刺激。',link:'safety',alias:'phenoxyethanol'},
+  {name:'柠檬酸',cat:'acne',risk:'低',desc:'AHA家族最温和成员，轻度去角质+调节pH+抗氧化。',link:'acne',alias:'citric acid AHA'},
+  {name:'菠萝果提取物',cat:'acne',risk:'低',desc:'含菠萝蛋白酶，温和酶解去角质辅助。概念性添加为主。',link:'acne',alias:'菠萝蛋白酶 凤梨'},
+  {name:'木瓜蛋白酶',cat:'acne',risk:'低',desc:'蛋白质水解酶，温和去角质。量少时辅助效果为主。',link:'acne',alias:'papain'},
+  {name:'丁二醇',cat:'moisture',risk:'低',desc:'基础保湿溶剂，温和不刺激。几乎所有精华的基础组分。',link:'moisture',alias:'butylene glycol'},
+  {name:'1,2-戊二醇',cat:'moisture',risk:'低',desc:'保湿兼辅助防腐，减少传统防腐剂用量。温和安全。',link:'moisture',alias:'pentylene glycol'},
+  {name:'丙二醇',cat:'moisture',risk:'低',desc:'基础保湿促渗溶剂。少数人可能轻微刺激。',link:'moisture',alias:'propylene glycol'},
+  {name:'月桂酰肌氨酸异丙酯',cat:'base',risk:'低',desc:'柔润剂和肤感调节剂。改善涂抹顺滑度，轻度滋润。',link:'base',alias:''},
+  {name:'羟乙基哌嗪乙烷磺酸',cat:'base',risk:'低',desc:'pH缓冲剂，能温和维持弱酸性环境并辅助角质代谢。',link:'base',alias:'HEPES'},
+  {name:'丙烯酰胺/丙烯酰基二甲基牛磺酸钠共聚物',cat:'base',risk:'低',desc:'增稠乳化稳定剂，赋予精华顺滑质地。',link:'base',alias:'AVC共聚物'},
+  {name:'辛基十二醇',cat:'base',risk:'低',desc:'柔润剂和溶剂，增强肤感润滑，帮助溶解难溶活性成分。',link:'base',alias:''},
+  {name:'异十六烷',cat:'base',risk:'低',desc:'轻质溶剂和柔润剂，挥发后留下清爽肤感。',link:'base',alias:'异构十六烷'},
+  {name:'辛基十二醇木糖苷',cat:'base',risk:'低',desc:'非离子表面活性剂，帮助水油融合乳化。',link:'base',alias:''},
+  {name:'聚山梨醇酯-80',cat:'base',risk:'低',desc:'乳化剂和增溶剂，帮助香精和油性成分溶于水基配方。',link:'base',alias:'Tween-80'},
+  {name:'乙二胺二琥珀酸三钠',cat:'base',risk:'低',desc:'螯合剂，结合金属离子防止活性成分氧化变质。',link:'base',alias:'EDDS'},
+  {name:'聚丙烯酰基二甲基牛磺酸铵',cat:'base',risk:'低',desc:'增稠稳定剂，改善质地并提供丝滑肤感。',link:'base',alias:'Aristoflex'},
+  {name:'山梨坦油酸酯',cat:'base',risk:'低',desc:'乳化剂，常与Tween-80等搭配稳定乳液。',link:'base',alias:'司盘-80'},
+  {name:'氧化锡',cat:'base',risk:'低',desc:'着色剂/珠光剂，与云母搭配产生亮泽和遮盖效果。',link:'base',alias:'二氧化锡'},
+  {name:'聚乙二醇-32',cat:'base',risk:'低',desc:'溶剂和保湿剂，增加产品润滑感。',link:'base',alias:'PEG-32'},
+  {name:'甲硅烷基化硅石',cat:'base',risk:'低',desc:'硅石处理型粉体，吸油、改善肤感和顺滑度。',link:'base',alias:'甲硅烷基化硅石'},
+  {name:'1,2-己二醇',cat:'moisture',risk:'低',desc:'多元醇保湿剂兼辅助防腐，比戊二醇更滋润，常见于温和配方。',link:'moisture',alias:'hexanediol'},
+  {name:'海藻糖',cat:'moisture',risk:'低',desc:'天然糖类保湿剂，保护细胞膜和蛋白质结构，极端环境下也能锁水。',link:'moisture',alias:'trehalose'},
+  {name:'PEG-12聚二甲基硅氧烷交联聚合物',cat:'base',risk:'低',desc:'硅氧烷类成膜剂和肤感调节剂，带来丝滑水润感，帮助活性成分分散。',link:'base',alias:'硅油聚合物'},
+  {name:'对羟基苯乙酮',cat:'safety',risk:'低',desc:'抗氧化辅助剂，兼具温和防腐增效功能。常与己二醇搭配构成无传统防腐体系。',link:'safety',alias:'馨鲜酮'},
+  {name:'二裂酵母发酵产物滤液',cat:'repair',risk:'低',desc:'二裂酵母发酵后的滤液，含多种小分子活性物质。维稳、提亮、保湿。与溶胞产物来源相同但处理方式不同。',link:'repair',alias:'二裂酵母滤液'},
+  {name:'丙烯酰二甲基牛磺酸铵/山嵛醇聚醚-25甲基丙烯酸酯交联聚合物',cat:'base',risk:'低',desc:'增稠乳化稳定剂，提供顺滑不黏腻的凝胶质地。',link:'base',alias:''},
+  {name:'3-邻-乙基抗坏血酸',cat:'whitening',risk:'低',desc:'VC乙基醚，维生素C衍生物中最稳定、最易渗透的形式之一。美白提亮+抗氧化。',link:'whitening',alias:'VC乙基醚 乙基VC'},
+  {name:'肌肽',cat:'antiaging',risk:'低',desc:'二肽（β-丙氨酸+组氨酸），抗氧化剂+抗糖化剂，能捕获自由基并抑制糖基化终产物(AGEs)。',link:'antiaging',alias:'carnosine'},
+  {name:'光果甘草根提取物',cat:'whitening',risk:'低',desc:'含光甘草定，植物来源美白黄金成分，抑制酪氨酸酶同时抗炎舒缓。',link:'whitening',alias:'光甘草定'},
+  {name:'枣果提取物',cat:'whitening',risk:'低',desc:'植物提取物，含多酚黄酮类，辅助抗氧化和提亮肤色。概念性添加为主。',link:'whitening',alias:''},
+  {name:'茵陈蒿花提取物',cat:'repair',risk:'低',desc:'传统草本提取物，具有抗炎、舒缓、抗氧化功效，常用于敏感肌配方。',link:'repair',alias:''},
+  {name:'黄芩根提取物',cat:'repair',risk:'低',desc:'含黄芩苷，强效抗炎抗氧化，传统中药护肤成分。',link:'repair',alias:'黄芩苷'},
+  {name:'桑根提取物',cat:'whitening',risk:'低',desc:'含桑白皮素等，抑制酪氨酸酶活性，辅助美白淡斑。',link:'whitening',alias:''},
+  {name:'EDTA二钠',cat:'base',risk:'低',desc:'经典螯合剂，结合金属离子稳定配方。环境友好度不如EDDS，但仍广泛使用。',link:'base',alias:'EDTA-2Na'},
+  {name:'PEG-40氢化蓖麻油',cat:'base',risk:'低',desc:'非离子增溶剂，帮助香精和少量油溶性成分溶于水基体系。',link:'base',alias:''},
+  {name:'柠檬酸钠',cat:'base',risk:'低',desc:'pH缓冲剂和螯合剂，调节配方酸碱度，比柠檬酸更温和。',link:'base',alias:'sodium citrate'},
+  {name:'酸橙果皮油',cat:'base',risk:'低',desc:'柑橘类精油，提供天然香气，含少量光敏性呋喃香豆素（含量低通常安全）。',link:'base',alias:'甜橙油'},
+  {name:'硬脂酰谷氨酸钠',cat:'base',risk:'低',desc:'氨基酸类表活/乳化剂，温和亲肤，常用于敏感肌洁面和乳液。',link:'base',alias:''},
+  {name:'磷脂酰胆碱',cat:'base',risk:'低',desc:'卵磷脂主要成分，构成细胞膜的主要磷脂。在护肤品中作乳化剂和皮肤调理剂。',link:'base',alias:'卵磷脂 PC'},
+  {name:'季戊四醇四乙基己酸酯',cat:'base',risk:'低',desc:'轻质合成酯类柔润剂，肤感清爽不油腻，提供顺滑涂抹感。',link:'base',alias:''},
+  {name:'辛基聚甲基硅氧烷',cat:'base',risk:'低',desc:'挥发性硅油，提供顺滑肤感和光泽，涂抹后快速挥发不油腻。',link:'base',alias:''},
+  {name:'山嵛醇',cat:'base',risk:'低',desc:'长链脂肪醇，乳化稳定剂和柔润剂，增强膏体稠度和滋润感。',link:'base',alias:'二十二醇'},
+  {name:'丙烯酸酯类共聚物钠',cat:'base',risk:'低',desc:'成膜剂和乳化稳定剂，帮助活性成分形成均匀薄膜。',link:'base',alias:''},
+  {name:'氢化聚异丁烯',cat:'base',risk:'低',desc:'合成角鲨烷替代品，柔润剂，提供顺滑封闭保湿效果。',link:'base',alias:''},
+  {name:'卵磷脂',cat:'base',risk:'低',desc:'天然磷脂混合物，乳化剂+皮肤调理剂，帮助活性物渗透，修复皮肤屏障。',link:'base',alias:'lecithin'},
+  {name:'视黄醇棕榈酸酯',cat:'antiaging',risk:'中',desc:'维A酯，比视黄醇温和但转化率低。需在体内转化为视黄醇→视黄酸起效，适合初抗老。',link:'antiaging',alias:'维生素A棕榈酸酯'},
+  {name:'精氨酸',cat:'base',risk:'低',desc:'氨基酸，pH调节剂和保湿剂，也是皮肤天然保湿因子(NMF)成分。',link:'base',alias:'arginine'},
+  {name:'丙烯酸酯类/C10-30烷醇丙烯酸酯交联聚合物',cat:'base',risk:'低',desc:'增稠稳定剂，卡波姆家族成员，调节产品黏度和流变特性。',link:'base',alias:'卡波姆共聚物'},
+  {name:'双-二乙氧基二甘醇环己烷1,4-二羧酸酯',cat:'whitening',risk:'低',desc:'美白助渗剂，可促进其他美白成分渗透，本身也有提亮效果。',link:'whitening',alias:'TXC 传明酸酯'},
+  {name:'肌醇',cat:'base',risk:'低',desc:'维生素B族成员，细胞信号分子，保湿并辅助皮肤代谢。',link:'base',alias:'inositol'},
+  {name:'霍霍巴籽油',cat:'moisture',risk:'低',desc:'与人体皮脂高度相似的液态蜡，滋润保湿不油腻，适合大多数肤质。',link:'moisture',alias:'荷荷巴油 jojoba oil'},
+  {name:'植醇',cat:'antiaging',risk:'低',desc:'植物来源的脂肪醇，与视黄醇结构相关，具温和抗老和抗炎作用。',link:'antiaging',alias:'phytol'},
+  {name:'视黄醇丙酸酯',cat:'antiaging',risk:'中',desc:'维A酯，温和度介于视黄醇棕榈酸酯和视黄醇之间。转化率和刺激性均中等。',link:'antiaging',alias:''},
+  {name:'羟基积雪草苷',cat:'repair',risk:'低',desc:'积雪草主要活性成分之一，抗炎修复、促进胶原合成，舒缓效果突出。',link:'repair',alias:''},
+  {name:'羟基频哪酮视黄酸酯',cat:'antiaging',risk:'中',desc:'HPR，新一代维A衍生物。无需转化直接作用于视黄酸受体，兼具A醇效果和温和性。',link:'antiaging',alias:'HPR'},
+  {name:'季戊四醇四双-叔丁基羟基氢化肉桂酸酯',cat:'base',risk:'低',desc:'抗氧化剂，保护配方中的油脂和活性成分不被氧化酸败。',link:'base',alias:''},
+  {name:'羟苯基丙酰胺苯甲酸',cat:'repair',risk:'低',desc:'燕麦来源的舒缓成分（燕麦蒽酰胺类似物），快速缓解瘙痒和刺激。',link:'repair',alias:''},
+  {name:'皱波角叉菜提取物',cat:'moisture',risk:'低',desc:'海藻提取物，富含多糖，保湿成膜，舒缓肌肤。',link:'moisture',alias:'卡拉胶'},
+  {name:'椰子果提取物',cat:'moisture',risk:'低',desc:'含椰子油及多酚，滋润保湿，提供柔润肤感。',link:'moisture',alias:''},
+  {name:'月桂酰精氨酸乙酯盐酸盐',cat:'safety',risk:'低',desc:'新型温和防腐剂/抗菌剂，由月桂酸和精氨酸衍生物组成，安全性高。',link:'safety',alias:''},
+  {name:'三叶鬼针草提取物',cat:'antiaging',risk:'低',desc:'植物视黄醇替代品，含植醇衍生物，具有类似视黄醇的抗老效果但更温和。',link:'antiaging',alias:''},
+  {name:'墨角藻提取物',cat:'moisture',risk:'低',desc:'海藻提取物，富含褐藻糖胶和矿物质，保湿舒缓抗氧化。',link:'moisture',alias:''},
+  {name:'水解蜂王浆蛋白',cat:'repair',risk:'低',desc:'蜂王浆蛋白水解产物，含氨基酸，滋养修复，提升皮肤光泽。',link:'repair',alias:''},
+  {name:'海星枝管藻提取物',cat:'moisture',risk:'低',desc:'海藻多糖提取物，保湿舒缓，形成保护性水膜。',link:'moisture',alias:''},
+  {name:'辛酸/癸酸甘油三酯',cat:'base',risk:'低',desc:'中链甘油三酯，轻质油脂，柔润不油腻，帮助溶解油溶性活性物。',link:'base',alias:'MCT GTCC'},
+  {name:'卡波姆',cat:'base',risk:'低',desc:'聚丙烯酸类增稠剂，调节黏度和流变性，广泛用于乳液凝胶。',link:'base',alias:'carbomer'},
+  {name:'聚山梨醇酯-20',cat:'base',risk:'低',desc:'非离子乳化增溶剂，比Tween-80更亲水，常用于卸妆和精华。',link:'base',alias:'Tween-20'},
+  {name:'黄原胶',cat:'base',risk:'低',desc:'微生物发酵多糖，增稠剂和稳定剂，少量即可显著增加黏度。',link:'base',alias:'xanthan gum'},
+  {name:'丁羟甲苯',cat:'safety',risk:'中',desc:'BHT，合成抗氧化剂，防止油脂氧化。高浓度有争议，化妆品中用量受限。',link:'safety',alias:'BHT'},
+  {name:'C20-22醇',cat:'base',risk:'低',desc:'长链脂肪醇混合物，乳化稳定剂和柔润剂，常见于面霜。',link:'base',alias:''},
+  {name:'聚乙二醇-20',cat:'base',risk:'低',desc:'溶剂和保湿剂，分子量较小的PEG，帮助活性成分溶解分散。',link:'base',alias:'PEG-20'},
+  {name:'玉米油',cat:'base',risk:'低',desc:'植物油，富含亚油酸和维生素E，柔润保湿。',link:'base',alias:'corn oil'},
+  {name:'磷脂',cat:'base',risk:'低',desc:'磷脂混合物，构成脂质体的重要成分，帮助活性物渗透和稳定。',link:'base',alias:'phospholipids'},
+  {name:'β-胡萝卜素',cat:'antiaging',risk:'低',desc:'维生素A前体，强抗氧化剂，橙色色素，可辅助抗光老化。',link:'antiaging',alias:'beta-carotene'},
+  {name:'抗坏血酸棕榈酸酯',cat:'whitening',risk:'低',desc:'油溶性VC衍生物，抗氧化+美白，比水溶性VC更稳定，适合加入油脂体系。',link:'whitening',alias:'AA6P'},
+  {name:'月桂醇硫酸酯钠(SLS)',cat:'cleanse',risk:'中',desc:'强力阴离子表活，泡沫丰富去油强。CIR称淋洗类安全、驻留≤1%；斑贴试验标准刺激对照物，敏感/干性头皮易干燥。"致癌"为谣言。',link:'cleanse',alias:'SLS sodium lauryl sulfate 月桂基硫酸钠 硫酸盐表活'},
+  {name:'月桂醇聚醚硫酸酯钠(SLES)',cat:'cleanse',risk:'中',desc:'最主流洗护主表活，比SLS温和。CIR安全；工艺副产物1,4-二氧六环(IARC 2B)为杂质非成分本身，正规厂真空汽提去除、纽约州限量。',link:'cleanse',alias:'SLES sodium laureth sulfate 硫酸盐 二氧六环 1,4-dioxane'},
+  {name:'椰油酰胺丙基甜菜碱(CAPB)',cat:'cleanse',risk:'中',desc:'两性温和辅表活，起泡增稠并降低主表活刺激。2004年美国"年度致敏原"，但致敏主要来自杂质(酰胺胺/DMAPA)，CIR称限制杂质下安全。',link:'cleanse',alias:'CAPB cocamidopropyl betaine 甜菜碱'},
+  {name:'椰油酰胺DEA',cat:'cleanse',risk:'中',desc:'增泡增稠助剂。IARC列2B可能致癌物、加州Prop65列名，欧盟限游离DEA/亚硝胺。本类最该留意成分，MEA类风险低于DEA。',link:'cleanse',alias:'cocamide dea 椰油酰胺MEA 二乙醇酰胺'},
+  {name:'葡糖苷类(APG/癸基葡糖苷)',cat:'cleanse',risk:'低',desc:'椰油+葡萄糖来源非离子表活，极温和可降解，泡少偏软。欧美均认可温和，儿童/敏感肌无硫酸盐配方常用。',link:'cleanse',alias:'APG 癸基葡糖苷 椰油基葡糖苷 decyl glucoside coco glucoside 烷基糖苷'},
+  {name:'氨基酸表活(SCI/椰油酰甘氨酸钠)',cat:'cleanse',risk:'低',desc:'氨基酸/脂肪酸来源，奶油泡、洗后不紧绷，皂基硫酸盐的温和替代。CIR安全，pH弱酸接近皮肤，敏感肌洁面首选。',link:'cleanse',alias:'SCI 椰油酰羟乙磺酸酯钠 sodium cocoyl isethionate 椰油酰甘氨酸钠 氨基酸洁面'},
+  {name:'硅油(聚二甲基硅氧烷/Dimethicone)',cat:'cleanse',risk:'低',desc:'发丝成膜顺滑抗毛躁易梳理；氨端硅油亲受损发。CIR称惰性不致敏；受限的是挥发性环硅氧烷D4/D5/D6(欧盟REACH)，线性PDMS不在其列。可洗净不堵毛孔。',link:'cleanse',alias:'dimethicone 二甲基硅油 氨端硅油 amodimethicone D4 D5 D6 环硅氧烷'},
+  {name:'聚季铵盐-7/-10',cat:'cleanse',risk:'低',desc:'阳离子调理聚合物，中和阴离子表活负电、成柔顺膜减静电。CIR安全，广泛耐受低敏。',link:'cleanse',alias:'polyquaternium 聚季铵盐'},
+  {name:'瓜尔胶羟丙基三甲基氯化铵',cat:'cleanse',risk:'低',desc:'天然瓜尔豆阳离子调理剂，冲洗时沉积发丝提供顺滑，无硅油"二合一"柔顺来源。温和安全。',link:'cleanse',alias:'guar hydroxypropyltrimonium chloride 阳离子瓜尔胶'},
+  {name:'吡硫鎓锌(ZPT)',cat:'cleanse',risk:'中',desc:'经典去屑剂，抑马拉色菌控油止痒。美国FDA准用(OTC去屑物)，但欧盟2022年3月起全面禁用(重分类为CMR生殖毒性)。中国现行仍允许限量。',link:'cleanse',alias:'ZPT zinc pyrithione 吡啶硫酮锌 去屑'},
+  {name:'吡罗克酮乙醇胺盐',cat:'cleanse',risk:'低',desc:'去屑抑菌剂，欧盟禁ZPT后的主流替代。SCCS评估安全，作准用防腐剂(Annex V)允许，温和有效。',link:'cleanse',alias:'piroctone olamine 奥克锭 去屑'},
+  {name:'氯咪巴唑(Climbazole)',cat:'cleanse',risk:'中',desc:'抗真菌去屑剂，常与吡罗克酮/ZPT复配。欧盟经SCCS评估设限使用(Reg 2019/698各品类限值)，限量内安全。',link:'cleanse',alias:'climbazole 去屑'},
+  {name:'二硫化硒/煤焦油/酮康唑(药用去屑)',cat:'cleanse',risk:'中',desc:'针对顽固头屑/脂溢性皮炎。美国FDA列为OTC去屑药物活性物(酮康唑1%OTC/2%处方，二硫化硒1%OTC/2.5%处方)。煤焦油含多环芳烃，欧盟对粗制煤焦油限制/禁用。',link:'cleanse',alias:'selenium sulfide 二硫化硒 coal tar 煤焦油 ketoconazole 酮康唑 药用去屑'},
+  {name:'苯甲酸钠/山梨酸钾',cat:'cleanse',risk:'低',desc:'温和有机酸防腐，欧美均准用，弱酸配方常用。注意苯甲酸盐+高浓度VC理论可微量生成苯(洗护少见)。',link:'cleanse',alias:'sodium benzoate potassium sorbate 山梨酸钾 苯甲酸钠'},
+  {name:'DMDM乙内酰脲',cat:'cleanse',risk:'中',desc:'甲醛释放体防腐，缓释甲醛。欧盟要求释放甲醛时标注，属常见致敏原，敏感人群留意。',link:'cleanse',alias:'DMDM hydantoin 甲醛释放体'},
+  {name:'乙二醇二硬脂酸酯(珠光剂)',cat:'cleanse',risk:'低',desc:'洗发水/沐浴露的珠光乳白外观来源。CIR评估安全，纯装饰性，无功效也无明显风险。',link:'cleanse',alias:'glycol distearate 珠光剂 EGDS'},
+];
+
+// Pre-compute pinyin initials for each ingredient
+ingredientDB.forEach(item => {
+  item._searchText = (item.name + ' ' + (item.alias || '')).toLowerCase();
+  item._py = toPinyinInitials(item.name);
+  item._pyAlias = toPinyinInitials(item.alias || '');
+});
+
+function searchIngredients() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const resultsDiv = document.getElementById('searchResults');
+  const resultList = document.getElementById('searchResultList');
+  const overviewContent = document.getElementById('overviewContent');
+
+  if (!q) {
+    resultsDiv.style.display = 'none';
+    overviewContent.style.display = '';
+    return;
+  }
+
+  const results = ingredientDB.filter(i =>
+    i._searchText.includes(q) ||
+    i._py.includes(q) ||
+    i._pyAlias.includes(q) ||
+    i.desc.toLowerCase().includes(q)
+  );
+
+  if (results.length === 0) {
+    resultList.innerHTML = '<p style="color:var(--gray-600)">未找到匹配的成分。尝试其他关键词。</p>';
+  } else {
+    overviewContent.style.display = 'none';
+    resultList.innerHTML = results.map(r => `
+      <div class="card" style="cursor:pointer" onclick="switchTab('${r.link}')">
+        <h3>${r.name} <span class="badge ${r.risk==='高'?'badge-danger':r.risk==='中'?'badge-warning':'badge-success'}">${r.risk}风险</span></h3>
+        <p style="font-size:.9em;color:var(--gray-600)">${r.desc}</p>
+        <p style="font-size:.8em;color:var(--primary);margin-top:4px">查看详情 →</p>
+      </div>
+    `).join('');
+  }
+  resultsDiv.style.display = 'block';
+}
+
+// All ingredients table
+const catNames = {moisture:'💧 保湿',whitening:'✨ 美白',antiaging:'⏳ 抗老',acne:'🔬 祛痘',repair:'🛡 修复',sunscreen:'☀ 防晒',cleanse:'🚿 洗护',safety:'⚠ 安全',base:'🔧 基础'};
+const catOrder = ['moisture','whitening','antiaging','acne','repair','sunscreen','cleanse','safety','base'];
+const riskBadge = {高:'<span class="badge badge-danger">高</span>',中:'<span class="badge badge-warning">中</span>',低:'<span class="badge badge-success">低</span>'};
+
+function renderAllTable() {
+  const sortIdx = {};
+  catOrder.forEach((c,i) => sortIdx[c] = i);
+  const sorted = [...ingredientDB].sort((a,b) => {
+    if (a.cat !== b.cat) return (sortIdx[a.cat]||99) - (sortIdx[b.cat]||99);
+    return a.name.localeCompare(b.name,'zh');
+  });
+  document.getElementById('allCount').textContent = sorted.length;
+  document.getElementById('allTableBody').innerHTML = sorted.map(r => `
+    <tr style="cursor:pointer" onclick="switchTab('${r.link}')" title="点击跳转到 ${r.name} 所在分类">
+      <td><strong>${r.name}</strong></td>
+      <td style="font-size:.85em">${catNames[r.cat]||r.cat}</td>
+      <td style="text-align:center">${riskBadge[r.risk]||r.risk}</td>
+      <td style="font-size:.85em;color:var(--gray-600)">${r.desc}</td>
+    </tr>
+  `).join('');
+}
+
+// Verify pinyin coverage — logs missing characters to console
+function verifyPinyinCoverage() {
+  const allChars = new Set();
+  ingredientDB.forEach(item => {
+    for (const ch of (item.name + (item.alias||''))) {
+      if (!/[a-zA-Z0-9\s\(\),\-\+\/\.]/.test(ch)) allChars.add(ch);
+    }
+  });
+  const missing = [...allChars].filter(ch => !pyMap[ch]);
+  if (missing.length) console.warn('⚠ 拼音字符缺失:', missing.join(' '), '| 请更新 pyMap');
+  else console.log('✅ 拼音覆盖率 100% — 共 ' + allChars.size + ' 个中文字符');
+}
+verifyPinyinCoverage();
+
+// ---- 初始化 ----
+// 成分总数动态填充（避免与硬编码不同步）
+document.getElementById('overviewIngredientCount').textContent = ingredientDB.length;
+document.getElementById('allCount').textContent = ingredientDB.length;
+
+// 手风琴键盘可访问性（role/tabindex/aria + Enter/Space 触发）
+document.querySelectorAll('.accordion-header').forEach(h => {
+  h.setAttribute('role', 'button');
+  h.setAttribute('tabindex', '0');
+  h.setAttribute('aria-expanded', h.parentElement.classList.contains('open') ? 'true' : 'false');
+  h.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAccordion(h); }
+  });
+});
+
+// 浏览器前进/后退时同步切换标签页
+window.addEventListener('popstate', () => {
+  const tabId = (window.location.hash || '#overview').substring(1);
+  if (document.getElementById(tabId)) switchTab(tabId);
+});
+
+// 处理初始哈希（放在数据定义之后，确保切到"全部"时 renderAllTable 可用）
+if (window.location.hash) {
+  const tabId = window.location.hash.substring(1);
+  if (document.getElementById(tabId)) switchTab(tabId);
+}
+</script>
+
+</body>
+</html>

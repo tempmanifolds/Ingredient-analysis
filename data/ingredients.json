@@ -1,0 +1,2871 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-29",
+  "expectedCount": 128,
+  "ingredients": [
+    {
+      "id": "moisture-001",
+      "inci": null,
+      "nameZh": "透明质酸(玻尿酸)",
+      "aliases": [
+        "玻尿酸",
+        "HA",
+        "抓水剂"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "保湿龙头。携带500-1000倍水分子，表面形成水合膜。必须搭配封闭剂锁水。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "tmzsbnsbnshazsj",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-002",
+      "inci": null,
+      "nameZh": "甘油",
+      "aliases": [],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "最经济的保湿剂。渗透角质层吸水。高浓度反而吸水致干。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "gy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-003",
+      "inci": null,
+      "nameZh": "神经酰胺",
+      "aliases": [
+        "细胞间脂质"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "皮肤屏障\"水泥\"核心组分。修复屏障锁水，减少TEWL。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "sjxaxbjzz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-004",
+      "inci": null,
+      "nameZh": "角鲨烷",
+      "aliases": [],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "最接近人体皮脂膜的脂类。迅速渗透形成保护膜锁水。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "jsw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-005",
+      "inci": null,
+      "nameZh": "泛醇(B5)",
+      "aliases": [
+        "维生素B5",
+        "VB5"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "转化为泛酸促屏障修复和水合。敏感肌和医美术后均可。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "fcb5wssb5vb5",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-001",
+      "inci": null,
+      "nameZh": "烟酰胺",
+      "aliases": [
+        "VB3",
+        "维生素B3"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "阻断黑色素转移通路。不同浓度不同功效：2%提亮→5%+美白。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "yxavb3wssb3",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-002",
+      "inci": null,
+      "nameZh": "维生素C(抗坏血酸)",
+      "aliases": [
+        "VC",
+        "左旋C",
+        "抗坏血酸"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "抑制酪氨酸酶+还原黑色素+强力抗氧化。日间+防晒最佳。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "wssckhxsvczxckhxs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-003",
+      "inci": null,
+      "nameZh": "熊果苷",
+      "aliases": [
+        "α-熊果苷"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "竞争性抑制酪氨酸酶。α型效果是β型15倍且更温和。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "xggaxgg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-004",
+      "inci": null,
+      "nameZh": "传明酸",
+      "aliases": [
+        "凝血酸",
+        "氨甲环酸"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "阻断PA信号通路→抑制黑色素合成信号。对黄褐斑尤为有效。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "cmsnxsajhs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-005",
+      "inci": null,
+      "nameZh": "曲酸",
+      "aliases": [],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "螯合铜离子抑制酪氨酸酶。高丝集团核心美白成分。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "qs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-001",
+      "inci": null,
+      "nameZh": "视黄醇(A醇)",
+      "aliases": [
+        "维生素A",
+        "VA",
+        "维A醇"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "最强证据等级抗老。促胶原合成、加速角质更新。孕妇禁用。",
+      "legacyRisk": "高",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "shcacwssavawac",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-002",
+      "inci": null,
+      "nameZh": "胜肽",
+      "aliases": [
+        "多肽"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "信号分子启动胶原合成。信号肽/载体肽/类肉毒素三种。温和安全。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "stdt",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-003",
+      "inci": null,
+      "nameZh": "玻色因",
+      "aliases": [],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "欧莱雅专利。促内源透明质酸合成和DEJ强化。温和高级。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "bsy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-004",
+      "inci": null,
+      "nameZh": "酵母提取物",
+      "aliases": [
+        "二裂酵母"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "促代谢和修复。轻微角质剥落→敏感肌慎用。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "jmtqweljm",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-005",
+      "inci": null,
+      "nameZh": "虾青素",
+      "aliases": [],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "体外抗氧化极强但缺乏人体临床证据。谨慎看待宣传。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "xqs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-001",
+      "inci": null,
+      "nameZh": "水杨酸(BHA)",
+      "aliases": [
+        "BHA",
+        "β-羟基酸"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "油溶性→深入毛孔融解油脂。黑头闭口首选。光敏，需防晒。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "sysbhabhabqjs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-002",
+      "inci": null,
+      "nameZh": "果酸(AHA)",
+      "aliases": [
+        "AHA",
+        "α-羟基酸",
+        "甘醇酸",
+        "乳酸"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "加速角质脱落。甘醇酸最强→乳酸→杏仁酸最温和。光敏。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "gsahaahaaqjsgcsrs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-003",
+      "inci": null,
+      "nameZh": "壬二酸",
+      "aliases": [],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "抗菌+抗炎+淡痘印三合一。孕期安全。初期短暂灼热感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "res",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-004",
+      "inci": null,
+      "nameZh": "茶树精油",
+      "aliases": [],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "广谱抗菌抑制痘痘。需稀释。对内分泌痘仅治标。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "csjy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-001",
+      "inci": null,
+      "nameZh": "积雪草",
+      "aliases": [
+        "羟基积雪草苷"
+      ],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "促胶原合成+抗炎镇静。敏感肌/医美术后首选。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "jxcqjjxcg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-002",
+      "inci": null,
+      "nameZh": "芦荟",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "补水+抗炎+促愈合三重功效。晒后镇静经典。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "lh",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-003",
+      "inci": null,
+      "nameZh": "尿囊素",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "促细胞增殖愈合+软化角质。零副作用完美修复成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "nns",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-004",
+      "inci": null,
+      "nameZh": "寡肽-1",
+      "aliases": [
+        "EGF"
+      ],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "小分子肽促胶原修复。注意≠EGF（已禁用）。主业修复非祛痘。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "gt1egf",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-001",
+      "inci": null,
+      "nameZh": "氧苯酮(二苯甲酮-3)",
+      "aliases": [
+        "二苯甲酮-3",
+        "防晒剂"
+      ],
+      "categories": [
+        "safety",
+        "sunscreen"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "化学防晒剂。干扰HPG激素系统。多国海滩限制。",
+      "legacyRisk": "高",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "sunscreen",
+      "pinyinInitials": "ybtebjt3ebjt3fsj",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-002",
+      "inci": null,
+      "nameZh": "二氧化钛+氧化锌",
+      "aliases": [
+        "物理防晒",
+        "矿物防晒",
+        "CI",
+        "77891",
+        "CI77891"
+      ],
+      "categories": [
+        "safety",
+        "sunscreen"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "物理防晒金标准。全波段反射防护。孕妇婴幼儿首选。即时提亮视觉修饰（CI 77891即为二氧化钛）。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "sunscreen",
+      "pinyinInitials": "eyhtyhxwlfskwfsci77891ci77891",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-003",
+      "inci": null,
+      "nameZh": "糖皮质激素",
+      "aliases": [
+        "地塞米松",
+        "激素",
+        "氯倍他索"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "非法添加物之首。导致激素依赖性皮炎。发现立即停用。",
+      "legacyRisk": "高",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "tpzjsdsmsjslbts",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-004",
+      "inci": null,
+      "nameZh": "Parabens(尼泊金酯)",
+      "aliases": [
+        "对羟基苯甲酸酯",
+        "羟苯甲酯",
+        "羟苯丙酯"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "内分泌干扰物。模拟雌激素。丙酯丁酯风险最高。",
+      "legacyRisk": "高",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "parabensnpjzdqjbjszqbjzqbbz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-005",
+      "inci": null,
+      "nameZh": "MIT/CMIT",
+      "aliases": [
+        "甲基异噻唑啉酮",
+        "甲基氯异噻唑啉酮"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "强致敏防腐剂。中国最常见过敏原。仅限淋洗类。",
+      "legacyRisk": "高",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "mitcmitjjyszltjjlyszlt",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-006",
+      "inci": null,
+      "nameZh": "377(苯乙基间苯二酚)",
+      "aliases": [
+        "苯乙基间苯二酚",
+        "phenylethyl",
+        "resorcinol"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "强效酪氨酸酶抑制剂，从源头阻断黑色素生成。城野医生377同款核心。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "377byjjbefbyjjbefphenylethylresorcinol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-007",
+      "inci": null,
+      "nameZh": "阿魏酸",
+      "aliases": [
+        "ferulic",
+        "acid"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "强抗氧化剂，可稳定VC活性。抗炎提亮，内管保护防止氧化失活。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "awsferulicacid",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-005",
+      "inci": null,
+      "nameZh": "二裂酵母发酵产物溶胞产物",
+      "aliases": [
+        "二裂酵母",
+        "Bifida"
+      ],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "维稳修复增强屏障。雅诗兰黛小棕瓶/欧莱雅双萃同款核心成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "eljmfjcwrbcweljmbifida",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-006",
+      "inci": null,
+      "nameZh": "咖啡因",
+      "aliases": [],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "促进微循环、抗氧化、辅助消肿。眼霜中常见成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "kfy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-005",
+      "inci": null,
+      "nameZh": "辛酰水杨酸",
+      "aliases": [
+        "LHA",
+        "辛酰水杨酸"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "水杨酸衍生物(LHA)，脂溶性更佳，温和去角质疏通毛孔，淡斑代谢。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "xxsyslhaxxsys",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "sunscreen-001",
+      "inci": null,
+      "nameZh": "奥克立林",
+      "aliases": [
+        "octocrylene",
+        "化学防晒"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "防晒"
+      ],
+      "summary": "化学防晒剂，防护UVB+短波UVA。常与阿伏苯宗联用。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "sunscreen",
+      "pinyinInitials": "aklloctocrylenehxfs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "sunscreen-002",
+      "inci": null,
+      "nameZh": "阿伏苯宗",
+      "aliases": [
+        "avobenzone",
+        "丁基甲氧基二苯甲酰基甲烷"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "防晒"
+      ],
+      "summary": "UVA化学防晒剂，光稳定性差需搭配奥克立林稳定。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "sunscreen",
+      "pinyinInitials": "afbzavobenzonedjjyjebjxjjw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-006",
+      "inci": null,
+      "nameZh": "乙醇(酒精)",
+      "aliases": [
+        "酒精",
+        "alcohol"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "促渗剂+溶剂，带来清爽肤感。干皮/敏感肌可能刺痛干燥。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "ycjjjjalcohol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-007",
+      "inci": null,
+      "nameZh": "香精",
+      "aliases": [
+        "fragrance",
+        "香料"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "最常见化妆品致敏原之一。敏感肌建议选无香配方。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "xjfragrancexl",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-008",
+      "inci": null,
+      "nameZh": "苯氧乙醇",
+      "aliases": [
+        "phenoxyethanol"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "常用温和防腐剂，安全浓度内广泛使用。极少数人可能刺激。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "byycphenoxyethanol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-006",
+      "inci": null,
+      "nameZh": "柠檬酸",
+      "aliases": [
+        "citric",
+        "acid",
+        "AHA"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "AHA家族最温和成员，轻度去角质+调节pH+抗氧化。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "nmscitricacidaha",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-007",
+      "inci": null,
+      "nameZh": "菠萝果提取物",
+      "aliases": [
+        "菠萝蛋白酶",
+        "凤梨"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "含菠萝蛋白酶，温和酶解去角质辅助。概念性添加为主。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "blgtqwbldbmfl",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "acne-008",
+      "inci": null,
+      "nameZh": "木瓜蛋白酶",
+      "aliases": [
+        "papain"
+      ],
+      "categories": [
+        "acne"
+      ],
+      "functions": [
+        "祛痘"
+      ],
+      "summary": "蛋白质水解酶，温和去角质。量少时辅助效果为主。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "acne",
+      "pinyinInitials": "mgdbmpapain",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-006",
+      "inci": null,
+      "nameZh": "丁二醇",
+      "aliases": [
+        "butylene",
+        "glycol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "基础保湿溶剂，温和不刺激。几乎所有精华的基础组分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "decbutyleneglycol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-007",
+      "inci": null,
+      "nameZh": "1,2-戊二醇",
+      "aliases": [
+        "pentylene",
+        "glycol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "保湿兼辅助防腐，减少传统防腐剂用量。温和安全。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "12wecpentyleneglycol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-008",
+      "inci": null,
+      "nameZh": "丙二醇",
+      "aliases": [
+        "propylene",
+        "glycol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "基础保湿促渗溶剂。少数人可能轻微刺激。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "becpropyleneglycol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-001",
+      "inci": null,
+      "nameZh": "月桂酰肌氨酸异丙酯",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "柔润剂和肤感调节剂。改善涂抹顺滑度，轻度滋润。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "ygxjasybz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-002",
+      "inci": null,
+      "nameZh": "羟乙基哌嗪乙烷磺酸",
+      "aliases": [
+        "HEPES"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "pH缓冲剂，能温和维持弱酸性环境并辅助角质代谢。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "qyjpqywhshepes",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-003",
+      "inci": null,
+      "nameZh": "丙烯酰胺/丙烯酰基二甲基牛磺酸钠共聚物",
+      "aliases": [
+        "AVC共聚物"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "增稠乳化稳定剂，赋予精华顺滑质地。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "bxxabxxjejjnhsngjwavcgjw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-004",
+      "inci": null,
+      "nameZh": "辛基十二醇",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "柔润剂和溶剂，增强肤感润滑，帮助溶解难溶活性成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "xjsec",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-005",
+      "inci": null,
+      "nameZh": "异十六烷",
+      "aliases": [
+        "异构十六烷"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "轻质溶剂和柔润剂，挥发后留下清爽肤感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "yslwygslw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-006",
+      "inci": null,
+      "nameZh": "辛基十二醇木糖苷",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "非离子表面活性剂，帮助水油融合乳化。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "xjsecmtg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-007",
+      "inci": null,
+      "nameZh": "聚山梨醇酯-80",
+      "aliases": [
+        "Tween-80"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "乳化剂和增溶剂，帮助香精和油性成分溶于水基配方。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jslcz80tween80",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-008",
+      "inci": null,
+      "nameZh": "乙二胺二琥珀酸三钠",
+      "aliases": [
+        "EDDS"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "螯合剂，结合金属离子防止活性成分氧化变质。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "yeaehpssnedds",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-009",
+      "inci": null,
+      "nameZh": "聚丙烯酰基二甲基牛磺酸铵",
+      "aliases": [
+        "Aristoflex"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "增稠稳定剂，改善质地并提供丝滑肤感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jbxxjejjnhsaaristoflex",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-010",
+      "inci": null,
+      "nameZh": "山梨坦油酸酯",
+      "aliases": [
+        "司盘-80"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "乳化剂，常与Tween-80等搭配稳定乳液。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "sltyszsp80",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-011",
+      "inci": null,
+      "nameZh": "氧化锡",
+      "aliases": [
+        "二氧化锡"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "着色剂/珠光剂，与云母搭配产生亮泽和遮盖效果。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "yhxeyhx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-012",
+      "inci": null,
+      "nameZh": "聚乙二醇-32",
+      "aliases": [
+        "PEG-32"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "溶剂和保湿剂，增加产品润滑感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jyec32peg32",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-013",
+      "inci": null,
+      "nameZh": "甲硅烷基化硅石",
+      "aliases": [
+        "甲硅烷基化硅石"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "硅石处理型粉体，吸油、改善肤感和顺滑度。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jgwjhgsjgwjhgs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-009",
+      "inci": null,
+      "nameZh": "1,2-己二醇",
+      "aliases": [
+        "hexanediol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "多元醇保湿剂兼辅助防腐，比戊二醇更滋润，常见于温和配方。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "12jechexanediol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-010",
+      "inci": null,
+      "nameZh": "海藻糖",
+      "aliases": [
+        "trehalose"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "天然糖类保湿剂，保护细胞膜和蛋白质结构，极端环境下也能锁水。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "hzttrehalose",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-014",
+      "inci": null,
+      "nameZh": "PEG-12聚二甲基硅氧烷交联聚合物",
+      "aliases": [
+        "硅油聚合物"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "硅氧烷类成膜剂和肤感调节剂，带来丝滑水润感，帮助活性成分分散。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "peg12jejjgywjljhwgyjhw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-009",
+      "inci": null,
+      "nameZh": "对羟基苯乙酮",
+      "aliases": [
+        "馨鲜酮"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "抗氧化辅助剂，兼具温和防腐增效功能。常与己二醇搭配构成无传统防腐体系。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "dqjbytxxt",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-006",
+      "inci": null,
+      "nameZh": "二裂酵母发酵产物滤液",
+      "aliases": [
+        "二裂酵母滤液"
+      ],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "二裂酵母发酵后的滤液，含多种小分子活性物质。维稳、提亮、保湿。与溶胞产物来源相同但处理方式不同。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "eljmfjcwlyeljmly",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-015",
+      "inci": null,
+      "nameZh": "丙烯酰二甲基牛磺酸铵/山嵛醇聚醚-25甲基丙烯酸酯交联聚合物",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "增稠乳化稳定剂，提供顺滑不黏腻的凝胶质地。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "bxxejjnhsasycjm25jjbxszjljhw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-008",
+      "inci": null,
+      "nameZh": "3-邻-乙基抗坏血酸",
+      "aliases": [
+        "VC乙基醚",
+        "乙基VC"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "VC乙基醚，维生素C衍生物中最稳定、最易渗透的形式之一。美白提亮+抗氧化。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "3lyjkhxsvcyjmyjvc",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-007",
+      "inci": null,
+      "nameZh": "肌肽",
+      "aliases": [
+        "carnosine"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "二肽（β-丙氨酸+组氨酸），抗氧化剂+抗糖化剂，能捕获自由基并抑制糖基化终产物(AGEs)。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "jtcarnosine",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-009",
+      "inci": null,
+      "nameZh": "光果甘草根提取物",
+      "aliases": [
+        "光甘草定"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "含光甘草定，植物来源美白黄金成分，抑制酪氨酸酶同时抗炎舒缓。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "gggcgtqwggcd",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-010",
+      "inci": null,
+      "nameZh": "枣果提取物",
+      "aliases": [],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "植物提取物，含多酚黄酮类，辅助抗氧化和提亮肤色。概念性添加为主。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "zgtqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-007",
+      "inci": null,
+      "nameZh": "茵陈蒿花提取物",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "传统草本提取物，具有抗炎、舒缓、抗氧化功效，常用于敏感肌配方。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "ychhtqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-008",
+      "inci": null,
+      "nameZh": "黄芩根提取物",
+      "aliases": [
+        "黄芩苷"
+      ],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "含黄芩苷，强效抗炎抗氧化，传统中药护肤成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "hqgtqwhqg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-011",
+      "inci": null,
+      "nameZh": "桑根提取物",
+      "aliases": [],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "含桑白皮素等，抑制酪氨酸酶活性，辅助美白淡斑。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "sgtqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-016",
+      "inci": null,
+      "nameZh": "EDTA二钠",
+      "aliases": [
+        "EDTA-2Na"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "经典螯合剂，结合金属离子稳定配方。环境友好度不如EDDS，但仍广泛使用。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "edtaenedta2na",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-017",
+      "inci": null,
+      "nameZh": "PEG-40氢化蓖麻油",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "非离子增溶剂，帮助香精和少量油溶性成分溶于水基体系。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "peg40qhbmy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-018",
+      "inci": null,
+      "nameZh": "柠檬酸钠",
+      "aliases": [
+        "sodium",
+        "citrate"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "pH缓冲剂和螯合剂，调节配方酸碱度，比柠檬酸更温和。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "nmsnsodiumcitrate",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-019",
+      "inci": null,
+      "nameZh": "酸橙果皮油",
+      "aliases": [
+        "甜橙油"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "柑橘类精油，提供天然香气，含少量光敏性呋喃香豆素（含量低通常安全）。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "scgpytcy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-020",
+      "inci": null,
+      "nameZh": "硬脂酰谷氨酸钠",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "氨基酸类表活/乳化剂，温和亲肤，常用于敏感肌洁面和乳液。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "yzxgasn",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-021",
+      "inci": null,
+      "nameZh": "磷脂酰胆碱",
+      "aliases": [
+        "卵磷脂",
+        "PC"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "卵磷脂主要成分，构成细胞膜的主要磷脂。在护肤品中作乳化剂和皮肤调理剂。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "lzxdjllzpc",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-022",
+      "inci": null,
+      "nameZh": "季戊四醇四乙基己酸酯",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "轻质合成酯类柔润剂，肤感清爽不油腻，提供顺滑涂抹感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jwscsyjjsz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-023",
+      "inci": null,
+      "nameZh": "辛基聚甲基硅氧烷",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "挥发性硅油，提供顺滑肤感和光泽，涂抹后快速挥发不油腻。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "xjjjjgyw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-024",
+      "inci": null,
+      "nameZh": "山嵛醇",
+      "aliases": [
+        "二十二醇"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "长链脂肪醇，乳化稳定剂和柔润剂，增强膏体稠度和滋润感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "sycesec",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-025",
+      "inci": null,
+      "nameZh": "丙烯酸酯类共聚物钠",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "成膜剂和乳化稳定剂，帮助活性成分形成均匀薄膜。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "bxszlgjwn",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-026",
+      "inci": null,
+      "nameZh": "氢化聚异丁烯",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "合成角鲨烷替代品，柔润剂，提供顺滑封闭保湿效果。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "qhjydx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-027",
+      "inci": null,
+      "nameZh": "卵磷脂",
+      "aliases": [
+        "lecithin"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "天然磷脂混合物，乳化剂+皮肤调理剂，帮助活性物渗透，修复皮肤屏障。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "llzlecithin",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-008",
+      "inci": null,
+      "nameZh": "视黄醇棕榈酸酯",
+      "aliases": [
+        "维生素A棕榈酸酯"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "维A酯，比视黄醇温和但转化率低。需在体内转化为视黄醇→视黄酸起效，适合初抗老。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "shczlszwssazlsz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-028",
+      "inci": null,
+      "nameZh": "精氨酸",
+      "aliases": [
+        "arginine"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "氨基酸，pH调节剂和保湿剂，也是皮肤天然保湿因子(NMF)成分。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jasarginine",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-029",
+      "inci": null,
+      "nameZh": "丙烯酸酯类/C10-30烷醇丙烯酸酯交联聚合物",
+      "aliases": [
+        "卡波姆共聚物"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "增稠稳定剂，卡波姆家族成员，调节产品黏度和流变特性。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "bxszlc1030wcbxszjljhwkbmgjw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-012",
+      "inci": null,
+      "nameZh": "双-二乙氧基二甘醇环己烷1,4-二羧酸酯",
+      "aliases": [
+        "TXC",
+        "传明酸酯"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "美白助渗剂，可促进其他美白成分渗透，本身也有提亮效果。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "seyyjegchjw14essztxccmsz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-030",
+      "inci": null,
+      "nameZh": "肌醇",
+      "aliases": [
+        "inositol"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "维生素B族成员，细胞信号分子，保湿并辅助皮肤代谢。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jcinositol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-011",
+      "inci": null,
+      "nameZh": "霍霍巴籽油",
+      "aliases": [
+        "荷荷巴油",
+        "jojoba",
+        "oil"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "与人体皮脂高度相似的液态蜡，滋润保湿不油腻，适合大多数肤质。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "hhbzyhhbyjojobaoil",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-009",
+      "inci": null,
+      "nameZh": "植醇",
+      "aliases": [
+        "phytol"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "植物来源的脂肪醇，与视黄醇结构相关，具温和抗老和抗炎作用。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "zcphytol",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-010",
+      "inci": null,
+      "nameZh": "视黄醇丙酸酯",
+      "aliases": [],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "维A酯，温和度介于视黄醇棕榈酸酯和视黄醇之间。转化率和刺激性均中等。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "shcbsz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-009",
+      "inci": null,
+      "nameZh": "羟基积雪草苷",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "积雪草主要活性成分之一，抗炎修复、促进胶原合成，舒缓效果突出。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "qjjxcg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-011",
+      "inci": null,
+      "nameZh": "羟基频哪酮视黄酸酯",
+      "aliases": [
+        "HPR"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "HPR，新一代维A衍生物。无需转化直接作用于视黄酸受体，兼具A醇效果和温和性。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "qjpntshszhpr",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-031",
+      "inci": null,
+      "nameZh": "季戊四醇四双-叔丁基羟基氢化肉桂酸酯",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "抗氧化剂，保护配方中的油脂和活性成分不被氧化酸败。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jwscsssdjqjqhrgsz",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-010",
+      "inci": null,
+      "nameZh": "羟苯基丙酰胺苯甲酸",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "燕麦来源的舒缓成分（燕麦蒽酰胺类似物），快速缓解瘙痒和刺激。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "qbjbxabjs",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-012",
+      "inci": null,
+      "nameZh": "皱波角叉菜提取物",
+      "aliases": [
+        "卡拉胶"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "海藻提取物，富含多糖，保湿成膜，舒缓肌肤。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "zbjcctqwklj",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-013",
+      "inci": null,
+      "nameZh": "椰子果提取物",
+      "aliases": [],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "含椰子油及多酚，滋润保湿，提供柔润肤感。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "yzgtqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-010",
+      "inci": null,
+      "nameZh": "月桂酰精氨酸乙酯盐酸盐",
+      "aliases": [],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "新型温和防腐剂/抗菌剂，由月桂酸和精氨酸衍生物组成，安全性高。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "ygxjasyzysy",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-012",
+      "inci": null,
+      "nameZh": "三叶鬼针草提取物",
+      "aliases": [],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "植物视黄醇替代品，含植醇衍生物，具有类似视黄醇的抗老效果但更温和。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "sygzctqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-014",
+      "inci": null,
+      "nameZh": "墨角藻提取物",
+      "aliases": [],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "海藻提取物，富含褐藻糖胶和矿物质，保湿舒缓抗氧化。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "mjztqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "repair-011",
+      "inci": null,
+      "nameZh": "水解蜂王浆蛋白",
+      "aliases": [],
+      "categories": [
+        "repair"
+      ],
+      "functions": [
+        "修复"
+      ],
+      "summary": "蜂王浆蛋白水解产物，含氨基酸，滋养修复，提升皮肤光泽。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "repair",
+      "pinyinInitials": "sjfwjdb",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "moisture-015",
+      "inci": null,
+      "nameZh": "海星枝管藻提取物",
+      "aliases": [],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿"
+      ],
+      "summary": "海藻多糖提取物，保湿舒缓，形成保护性水膜。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "pinyinInitials": "hxzgztqw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-032",
+      "inci": null,
+      "nameZh": "辛酸/癸酸甘油三酯",
+      "aliases": [
+        "MCT",
+        "GTCC"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "中链甘油三酯，轻质油脂，柔润不油腻，帮助溶解油溶性活性物。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "xsgsgyszmctgtcc",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-033",
+      "inci": null,
+      "nameZh": "卡波姆",
+      "aliases": [
+        "carbomer"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "聚丙烯酸类增稠剂，调节黏度和流变性，广泛用于乳液凝胶。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "kbmcarbomer",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-034",
+      "inci": null,
+      "nameZh": "聚山梨醇酯-20",
+      "aliases": [
+        "Tween-20"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "非离子乳化增溶剂，比Tween-80更亲水，常用于卸妆和精华。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jslcz20tween20",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-035",
+      "inci": null,
+      "nameZh": "黄原胶",
+      "aliases": [
+        "xanthan",
+        "gum"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "微生物发酵多糖，增稠剂和稳定剂，少量即可显著增加黏度。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "hyjxanthangum",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "safety-011",
+      "inci": null,
+      "nameZh": "丁羟甲苯",
+      "aliases": [
+        "BHT"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "安全"
+      ],
+      "summary": "BHT，合成抗氧化剂，防止油脂氧化。高浓度有争议，化妆品中用量受限。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "safety",
+      "pinyinInitials": "dqjbbht",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-036",
+      "inci": null,
+      "nameZh": "C20-22醇",
+      "aliases": [],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "长链脂肪醇混合物，乳化稳定剂和柔润剂，常见于面霜。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "c2022c",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-037",
+      "inci": null,
+      "nameZh": "聚乙二醇-20",
+      "aliases": [
+        "PEG-20"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "溶剂和保湿剂，分子量较小的PEG，帮助活性成分溶解分散。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "jyec20peg20",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-038",
+      "inci": null,
+      "nameZh": "玉米油",
+      "aliases": [
+        "corn",
+        "oil"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "植物油，富含亚油酸和维生素E，柔润保湿。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "ymycornoil",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "base-039",
+      "inci": null,
+      "nameZh": "磷脂",
+      "aliases": [
+        "phospholipids"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "基础"
+      ],
+      "summary": "磷脂混合物，构成脂质体的重要成分，帮助活性物渗透和稳定。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "pinyinInitials": "lzphospholipids",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "antiaging-013",
+      "inci": null,
+      "nameZh": "β-胡萝卜素",
+      "aliases": [
+        "beta-carotene"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗老"
+      ],
+      "summary": "维生素A前体，强抗氧化剂，橙色色素，可辅助抗光老化。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "antiaging",
+      "pinyinInitials": "bhlbsbetacarotene",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "whitening-013",
+      "inci": null,
+      "nameZh": "抗坏血酸棕榈酸酯",
+      "aliases": [
+        "AA6P"
+      ],
+      "categories": [
+        "whitening"
+      ],
+      "functions": [
+        "美白"
+      ],
+      "summary": "油溶性VC衍生物，抗氧化+美白，比水溶性VC更稳定，适合加入油脂体系。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "whitening",
+      "pinyinInitials": "khxszlszaa6p",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-001",
+      "inci": null,
+      "nameZh": "月桂醇硫酸酯钠(SLS)",
+      "aliases": [
+        "SLS",
+        "sodium",
+        "lauryl",
+        "sulfate",
+        "月桂基硫酸钠",
+        "硫酸盐表活"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "强力阴离子表活，泡沫丰富去油强。CIR称淋洗类安全、驻留≤1%；斑贴试验标准刺激对照物，敏感/干性头皮易干燥。\"致癌\"为谣言。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "ygclsznslsslssodiumlaurylsulfateygjlsnlsybh",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-002",
+      "inci": null,
+      "nameZh": "月桂醇聚醚硫酸酯钠(SLES)",
+      "aliases": [
+        "SLES",
+        "sodium",
+        "laureth",
+        "sulfate",
+        "硫酸盐",
+        "二氧六环",
+        "1,4-dioxane"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "最主流洗护主表活，比SLS温和。CIR安全；工艺副产物1,4-二氧六环(IARC 2B)为杂质非成分本身，正规厂真空汽提去除、纽约州限量。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "ygcjmlsznslesslessodiumlaurethsulfatelsyeylh14dioxane",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-003",
+      "inci": null,
+      "nameZh": "椰油酰胺丙基甜菜碱(CAPB)",
+      "aliases": [
+        "CAPB",
+        "cocamidopropyl",
+        "betaine",
+        "甜菜碱"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "两性温和辅表活，起泡增稠并降低主表活刺激。2004年美国\"年度致敏原\"，但致敏主要来自杂质(酰胺胺/DMAPA)，CIR称限制杂质下安全。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "yyxabjtcjcapbcapbcocamidopropylbetainetcj",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-004",
+      "inci": null,
+      "nameZh": "椰油酰胺DEA",
+      "aliases": [
+        "cocamide",
+        "dea",
+        "椰油酰胺MEA",
+        "二乙醇酰胺"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "增泡增稠助剂。IARC列2B可能致癌物、加州Prop65列名，欧盟限游离DEA/亚硝胺。本类最该留意成分，MEA类风险低于DEA。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "yyxadeacocamidedeayyxameaeycxa",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-005",
+      "inci": null,
+      "nameZh": "葡糖苷类(APG/癸基葡糖苷)",
+      "aliases": [
+        "APG",
+        "癸基葡糖苷",
+        "椰油基葡糖苷",
+        "decyl",
+        "glucoside",
+        "coco",
+        "glucoside",
+        "烷基糖苷"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "椰油+葡萄糖来源非离子表活，极温和可降解，泡少偏软。欧美均认可温和，儿童/敏感肌无硫酸盐配方常用。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "ptglapggjptgapggjptgyyjptgdecylglucosidecocoglucosidewjtg",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-006",
+      "inci": null,
+      "nameZh": "氨基酸表活(SCI/椰油酰甘氨酸钠)",
+      "aliases": [
+        "SCI",
+        "椰油酰羟乙磺酸酯钠",
+        "sodium",
+        "cocoyl",
+        "isethionate",
+        "椰油酰甘氨酸钠",
+        "氨基酸洁面"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "氨基酸/脂肪酸来源，奶油泡、洗后不紧绷，皂基硫酸盐的温和替代。CIR安全，pH弱酸接近皮肤，敏感肌洁面首选。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "ajsbhsciyyxgasnsciyyxqyhsznsodiumcocoylisethionateyyxgasnajsjm",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-007",
+      "inci": null,
+      "nameZh": "硅油(聚二甲基硅氧烷/Dimethicone)",
+      "aliases": [
+        "dimethicone",
+        "二甲基硅油",
+        "氨端硅油",
+        "amodimethicone",
+        "D4",
+        "D5",
+        "D6",
+        "环硅氧烷"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "发丝成膜顺滑抗毛躁易梳理；氨端硅油亲受损发。CIR称惰性不致敏；受限的是挥发性环硅氧烷D4/D5/D6(欧盟REACH)，线性PDMS不在其列。可洗净不堵毛孔。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "gyjejjgywdimethiconedimethiconeejjgyadgyamodimethiconed4d5d6hgyw",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-008",
+      "inci": null,
+      "nameZh": "聚季铵盐-7/-10",
+      "aliases": [
+        "polyquaternium",
+        "聚季铵盐"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "阳离子调理聚合物，中和阴离子表活负电、成柔顺膜减静电。CIR安全，广泛耐受低敏。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "jjay710polyquaterniumjjay",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-009",
+      "inci": null,
+      "nameZh": "瓜尔胶羟丙基三甲基氯化铵",
+      "aliases": [
+        "guar",
+        "hydroxypropyltrimonium",
+        "chloride",
+        "阳离子瓜尔胶"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "天然瓜尔豆阳离子调理剂，冲洗时沉积发丝提供顺滑，无硅油\"二合一\"柔顺来源。温和安全。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "gejqbjsjjlhaguarhydroxypropyltrimoniumchlorideylzgej",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-010",
+      "inci": null,
+      "nameZh": "吡硫鎓锌(ZPT)",
+      "aliases": [
+        "ZPT",
+        "zinc",
+        "pyrithione",
+        "吡啶硫酮锌",
+        "去屑"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "经典去屑剂，抑马拉色菌控油止痒。美国FDA准用(OTC去屑物)，但欧盟2022年3月起全面禁用(重分类为CMR生殖毒性)。中国现行仍允许限量。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "plwxzptzptzincpyrithionepdltxqx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-011",
+      "inci": null,
+      "nameZh": "吡罗克酮乙醇胺盐",
+      "aliases": [
+        "piroctone",
+        "olamine",
+        "奥克锭",
+        "去屑"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "去屑抑菌剂，欧盟禁ZPT后的主流替代。SCCS评估安全，作准用防腐剂(Annex V)允许，温和有效。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "plktycaypiroctoneolamineakdqx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-012",
+      "inci": null,
+      "nameZh": "氯咪巴唑(Climbazole)",
+      "aliases": [
+        "climbazole",
+        "去屑"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "抗真菌去屑剂，常与吡罗克酮/ZPT复配。欧盟经SCCS评估设限使用(Reg 2019/698各品类限值)，限量内安全。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "lmbzclimbazoleclimbazoleqx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-013",
+      "inci": null,
+      "nameZh": "二硫化硒/煤焦油/酮康唑(药用去屑)",
+      "aliases": [
+        "selenium",
+        "sulfide",
+        "二硫化硒",
+        "coal",
+        "tar",
+        "煤焦油",
+        "ketoconazole",
+        "酮康唑",
+        "药用去屑"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "针对顽固头屑/脂溢性皮炎。美国FDA列为OTC去屑药物活性物(酮康唑1%OTC/2%处方，二硫化硒1%OTC/2.5%处方)。煤焦油含多环芳烃，欧盟对粗制煤焦油限制/禁用。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "elhxmjytkzyyqxseleniumsulfideelhxcoaltarmjyketoconazoletkzyyqx",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-014",
+      "inci": null,
+      "nameZh": "苯甲酸钠/山梨酸钾",
+      "aliases": [
+        "sodium",
+        "benzoate",
+        "potassium",
+        "sorbate",
+        "山梨酸钾",
+        "苯甲酸钠"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "温和有机酸防腐，欧美均准用，弱酸配方常用。注意苯甲酸盐+高浓度VC理论可微量生成苯(洗护少见)。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "bjsnslsjsodiumbenzoatepotassiumsorbateslsjbjsn",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-015",
+      "inci": null,
+      "nameZh": "DMDM乙内酰脲",
+      "aliases": [
+        "DMDM",
+        "hydantoin",
+        "甲醛释放体"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "甲醛释放体防腐，缓释甲醛。欧盟要求释放甲醛时标注，属常见致敏原，敏感人群留意。",
+      "legacyRisk": "中",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "dmdmynxndmdmhydantoinjqsft",
+      "updatedAt": "2026-07-29"
+    },
+    {
+      "id": "cleanse-016",
+      "inci": null,
+      "nameZh": "乙二醇二硬脂酸酯(珠光剂)",
+      "aliases": [
+        "glycol",
+        "distearate",
+        "珠光剂",
+        "EGDS"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "洗护"
+      ],
+      "summary": "洗发水/沐浴露的珠光乳白外观来源。CIR评估安全，纯装饰性，无功效也无明显风险。",
+      "legacyRisk": "低",
+      "evidence": null,
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "pinyinInitials": "yeceyzszzgjglycoldistearatezgjegds",
+      "updatedAt": "2026-07-29"
+    }
+  ]
+}
