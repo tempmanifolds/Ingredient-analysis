@@ -49,7 +49,6 @@ const updates = {
     summary: 'Oligopeptide-1与人寡肽-1（EGF）不是同一名称。仅凭“小分子肽”不能证明其可深透皮层、促进胶原或修复创面；外用生长因子研究也存在制剂异质性，不能反向证明Oligopeptide-1的独立功效。',
     evidence: { level: 'strong', summary: '国家药监局明确了EGF与寡肽-1的名称边界；系统综述也显示外用生长因子研究在制剂与终点上差异较大，不能据此证明Oligopeptide-1的独立功效。', sourceIds: ['CN-NMPA-EGF-2019', 'PUBMED-GROWTH-FACTOR-2023'] },
     regulation: { jurisdiction: 'CN', status: 'naming-boundary', summary: 'EGF不得作为化妆品原料使用，配方或标签不得以EGF名义宣称；寡肽-1不能与EGF混同。', sourceIds: ['CN-NMPA-EGF-2019'], checkedAt },
-    pinyinInitials: 'gt1oligopeptide1',
   },
   'acne-002': {
     summary: 'AHA可促进角质更新；刺激和日晒敏感性取决于游离酸浓度、pH和完整配方。FDA消费者参考条件为AHA不高于10%、成品pH不低于3.5并配合防晒，不能用固定浓度阶梯定义“医疗级功效”。',
@@ -78,7 +77,6 @@ const updates = {
   'safety-004': {
     aliases: ['对羟基苯甲酸酯', '羟苯甲酯', '羟苯乙酯', '羟苯丙酯', '羟苯丁酯', 'methylparaben', 'ethylparaben', 'propylparaben', 'butylparaben'],
     summary: 'Parabens是成分家族，不能整体标为“高风险内分泌干扰物”。欧盟Methylparaben、Ethylparaben单酯最高0.4%（以酸计），允许酯类混合物总量最高0.8%；Butylparaben与Propylparaben合计最高0.14%，并有儿童尿布区用途限制。FDA现有资料不足以证明化妆品当前使用方式会影响人体健康。',
-    legacyRisk: '低',
     evidence: { level: 'strong', summary: '监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。', sourceIds: ['EU-PARABENS-2014', 'EU-COSMETICS-CONSOLIDATED-2026', 'FDA-PARABENS'] },
     regulation: { jurisdiction: 'EU/US', status: 'restricted-by-member-and-use', summary: '欧盟Methylparaben、Ethylparaben单酯0.4%，酯类混合物总量0.8%；Butylparaben与Propylparaben合计0.14%并有儿童尿布区限制。美国FDA未把整个家族判定为当前化妆品用法有害。', sourceIds: ['EU-PARABENS-2014', 'EU-COSMETICS-CONSOLIDATED-2026', 'FDA-PARABENS'], checkedAt },
   },
@@ -168,6 +166,14 @@ for (const ingredient of data.ingredients) {
   const update = updates[ingredient.id];
   if (!update) continue;
   Object.assign(ingredient, update, { updatedAt: checkedAt });
+  delete ingredient.legacyRisk;
+  delete ingredient.pinyinInitials;
+  const irritationCautions = (ingredient.cautions || []).filter((caution) => /刺激|刺痛|灼|脱皮|干燥|泛红|红肿|耐受|致痘/u.test(caution));
+  ingredient.safetyProfile = {
+    irritationPotential: irritationCautions.length ? irritationCautions.join('；') : null,
+    sensitization: null,
+    specialPopulations: (ingredient.cautions || []).filter((caution) => /孕|备孕|婴|儿童|术后|处方|医生|医嘱|专业人士/u.test(caution)),
+  };
 }
 
 const reportPath = new URL('../护肤品成分与代码审查报告.md', import.meta.url);

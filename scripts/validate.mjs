@@ -1,11 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { pinyinInitialsById } from '../js/pinyin.js';
 
 const root = process.cwd();
 const failures = [];
 const requiredFiles = [
   'index.html', 'about.html', '404.html', 'robots.txt', '.nojekyll',
-  'css/main.css', 'js/app.js', 'data/ingredients.json', 'data/sources.json',
+  'css/main.css', 'js/app.js', 'js/config.js', 'js/render.js', 'js/search.js', 'js/pinyin.js',
+  'data/ingredients.json', 'data/sources.json', 'scripts/generate-pinyin.mjs',
   'legacy/护肤品成分研究报告.html', '.github/workflows/pages.yml',
 ];
 
@@ -33,6 +35,8 @@ const allowedCategories = new Set(['moisture', 'whitening', 'antiaging', 'acne',
 
 if (!Array.isArray(ingredients)) fail('ingredients 必须是数组。');
 if (ingredients.length !== data.expectedCount) fail(`成分数量 ${ingredients.length} 与 expectedCount ${data.expectedCount} 不一致。`);
+if (data.schemaVersion !== 2) fail('任务 E 要求使用 schemaVersion 2。');
+if (!data.categoryMetadata || Object.keys(data.categoryMetadata).length !== allowedCategories.size) fail('缺少九类分类元数据。');
 
 const ids = new Set();
 const names = new Set();
@@ -51,8 +55,12 @@ for (const [index, item] of ingredients.entries()) {
   }
   if (!item.categories?.includes(item.targetSection)) fail(`${item.id} 的 targetSection 不在 categories 中。`);
   if (!item.summary?.trim()) fail(`${item.id} 缺少 summary。`);
-  if (!['高', '中', '低'].includes(item.legacyRisk)) fail(`${item.id} 的旧版风险标签无效。`);
-  if (!item.pinyinInitials?.trim()) fail(`${item.id} 缺少拼音首字母索引。`);
+  if ('legacyRisk' in item) fail(`${item.id} 仍保留单一风险总分。`);
+  if ('pinyinInitials' in item) fail(`${item.id} 仍保留手工拼音字段。`);
+  if (!item.safetyProfile || !Object.hasOwn(item.safetyProfile, 'irritationPotential') || !Object.hasOwn(item.safetyProfile, 'sensitization')) {
+    fail(`${item.id} 缺少刺激或致敏维度。`);
+  }
+  if (!Array.isArray(item.safetyProfile?.specialPopulations)) fail(`${item.id} 的特殊人群字段必须是数组。`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(item.updatedAt || '')) fail(`${item.id} 的 updatedAt 格式无效。`);
   if (!item.evidence) fail(`${item.id} 缺少证据等级。`);
   if (!['strong', 'moderate', 'limited', 'insufficient'].includes(item.evidence?.level)) fail(`${item.id} 的证据等级无效。`);
@@ -70,13 +78,26 @@ for (const [index, item] of ingredients.entries()) {
   }
 }
 
+if (Object.keys(pinyinInitialsById).length !== ingredients.length) fail('构建期拼音索引数量与成分数量不一致。');
+for (const id of ids) {
+  if (!pinyinInitialsById[id]?.trim()) fail(`${id} 缺少构建期拼音索引。`);
+}
+for (const guides of Object.values(data.categoryGuides || {})) {
+  for (const guide of guides) {
+    if (!guide.title?.trim() || !Array.isArray(guide.paragraphs) || !guide.paragraphs.length) fail('分类指南缺少标题或正文。');
+    for (const sourceId of guide.sourceIds || []) {
+      if (!sourceIds.has(sourceId)) fail(`分类指南引用未定义来源：${sourceId}`);
+    }
+  }
+}
+
 const categoryCounts = Object.fromEntries([...allowedCategories].map((category) => [category, ingredients.filter((item) => item.categories.includes(category)).length]));
 if (categoryCounts.sunscreen !== 4) fail(`防晒多标签计数应为 4，实际为 ${categoryCounts.sunscreen}。`);
 if (categoryCounts.safety !== 11) fail(`安全多标签计数应为 11，实际为 ${categoryCounts.safety}。`);
 
 const searchMatches = (query, id) => ingredients.some((item) => {
   const searchText = [item.nameZh, ...item.aliases, item.summary].join(' ').toLowerCase();
-  return item.id === id && (searchText.includes(query) || item.pinyinInitials.includes(query));
+  return item.id === id && (searchText.includes(query) || (pinyinInitialsById[item.id] || '').split(' ').some((value) => value.startsWith(query)));
 });
 if (!searchMatches('yxa', 'whitening-001')) fail('拼音搜索 yxa 未命中烟酰胺记录。');
 if (!searchMatches('tmzs', 'moisture-001')) fail('拼音搜索 tmzs 未命中透明质酸记录。');
@@ -108,6 +129,14 @@ if (!indexHtml.includes('./data/ingredients.json') && !fs.readFileSync(path.join
   fail('页面未使用相对路径加载 ingredients.json。');
 }
 if (!fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('./data/sources.json')")) fail('页面未加载 sources.json。');
+if ((indexHtml.match(/data-category-ingredients=/g) || []).length !== allowedCategories.size) fail('九个分类未全部改为数据挂载点。');
+if (indexHtml.includes('class="accordion-item')) fail('index.html 仍含手写成分详情，单一数据源尚未落地。');
+if (!indexHtml.includes('<script type="module" src="./js/app.js"></script>')) fail('页面脚本未使用模块化入口。');
+
+for (const jsFile of ['js/app.js', 'js/render.js', 'js/search.js']) {
+  const source = fs.readFileSync(path.join(root, jsFile), 'utf8');
+  if (/\.innerHTML\b/.test(source)) fail(`${jsFile} 仍使用 innerHTML。`);
+}
 
 const prohibitedClaims = [
   '孕妇绝对禁用', 'SPF30 = 延长30倍晒伤时间', 'α-熊果苷效果是β-熊果苷的15倍',
@@ -129,15 +158,16 @@ for (const wording of prohibitedWording) {
 }
 
 if (ingredients.some((item) => !item.evidence?.sourceIds?.length)) fail('任务 C04 要求全部成分完成证据分级并关联来源。');
-const appJs = fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8');
-if (!appJs.includes('hydrateIngredientAccordions()')) fail('任务 C06 缺少详情卡风险来源的运行时渲染。');
+const renderJs = fs.readFileSync(path.join(root, 'js', 'render.js'), 'utf8');
+if (!renderJs.includes('renderSafetyProfile') || !renderJs.includes('appendSourceLinks')) fail('任务 C06 缺少风险维度与来源的运行时渲染。');
 const requiredTaskDText = [
   '常见机制之一', '不是按分子量截断的二元开关', '叠加可能增加刺激',
   '保湿、肤感或光学提亮可能即时或数天可见', '严重眼唇舌肿胀',
   '人体研究常受混合暴露', '2 mg/cm²', '双指法', '至少每2小时补涂', '6个月以下婴儿',
 ];
+const publishedContent = `${indexHtml}\n${JSON.stringify(data)}`;
 for (const text of requiredTaskDText) {
-  if (!indexHtml.includes(text)) fail(`任务 D 页面描述缺少：${text}`);
+  if (!publishedContent.includes(text)) fail(`任务 D 页面描述缺少：${text}`);
 }
 if (indexHtml.includes('<tr><td>VC</td><td>苯甲酸钠</td>')) fail('任务 D03 要求删除 VC 与苯甲酸钠的通用禁配行。');
 
@@ -172,7 +202,7 @@ const taskBIdentityChecks = [
 for (const [id, alias, message] of taskBIdentityChecks) {
   if (ingredientById.get(id)?.aliases?.includes(alias)) fail(message);
 }
-if (ingredientById.get('safety-004')?.legacyRisk === '高') fail('Parabens不得继续保留整族高风险标签。');
+if ('legacyRisk' in ingredientById.get('safety-004')) fail('Parabens不得继续保留整族风险标签。');
 if (ingredientById.get('antiaging-009')?.functions?.includes('抗老')) fail('植醇不得把抗老保留为已确认配方功能。');
 if (ingredientById.get('antiaging-012')?.evidence?.level !== 'insufficient') fail('三叶鬼针草提取物应标为独立证据不足。');
 

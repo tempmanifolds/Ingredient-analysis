@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updatedAt": "2026-07-30",
   "expectedCount": 128,
   "ingredients": [
@@ -19,7 +19,6 @@
         "保湿"
       ],
       "summary": "成膜和改善角质层水合合理；“携带 500–1000 倍”“干燥时从皮肤内部吸水”“需要搭配封闭剂”“小分子深入皮肤”均不宜写成定律。不同分子量效果的人体证据仍有限。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "有人体随机试验支持保湿，但不支持固定吸水倍数或通用搭配规则。",
@@ -30,8 +29,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "tmzsbnsbnshazsj",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-002",
@@ -45,7 +48,6 @@
         "保湿"
       ],
       "summary": "有较扎实的保湿和屏障证据；“高浓度必然反向吸水致干”过度简化，实际取决于浓度、载体、环境和完整配方。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -56,8 +58,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "gy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-003",
@@ -73,7 +79,6 @@
         "保湿"
       ],
       "summary": "屏障脂质和减少 TEWL 的方向正确；3:1:1 不是所有皮肤、所有神经酰胺体系都通用的最佳比例，“几乎无致敏”也应改成“通常耐受良好”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -84,8 +89,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "sjxaxbjzz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-004",
@@ -99,7 +108,6 @@
         "保湿"
       ],
       "summary": "柔润、减少水分散失合理；“最接近皮脂”“迅速渗透”“油皮干皮都适合”是过强比较和人群概括。不要把角鲨烷与易氧化的角鲨烯风险直接混用。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -110,8 +118,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "jsw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-005",
@@ -128,7 +140,6 @@
         "保湿"
       ],
       "summary": "保湿、改善屏障有临床支持；“敏感肌和所有医美术后均可”需要改为依术式和医生应，泛醇也并非零过敏风险。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -139,8 +150,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "fcb5wssb5vb5",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-001",
@@ -157,7 +172,6 @@
         "美白"
       ],
       "summary": "2%与5%烟酰胺配方均有人体研究显示可改善色沉，但不同研究的配方和终点不同，不能据此建立“浓度越高、功效越全面”的通用剂量阶梯。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "moderate",
         "summary": "小型人体研究支持改善色沉；缺少统一的跨浓度头对头比较。",
@@ -168,8 +182,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "yxavb3wssb3",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-002",
@@ -187,7 +205,6 @@
         "美白"
       ],
       "summary": "抗氧化和改善色沉方向合理，但稳定性、pH、载体影响很大；“把既有黑色素还原成无色”过度简化。系统综述样本量仍不大。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -198,8 +215,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "wssckhxsvczxckhxs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-003",
@@ -215,7 +236,6 @@
         "美白"
       ],
       "summary": "熊果苷可影响酪氨酸酶相关通路；“α型比β型强15倍”主要来自特定实验条件，不能当作人体临床倍数。欧盟按分型和产品类别设有上限。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "欧盟限量结论明确；量化功效比较仅属有限的实验室证据。",
@@ -234,8 +254,12 @@
       },
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "xggaxgg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-004",
@@ -252,7 +276,6 @@
         "美白"
       ],
       "summary": "黄褐斑证据总体支持，但口服、注射、局部给药不能混为一谈；“尤其有效/安全”需说明研究异质性、浓度和医学评估。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -263,8 +286,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "cmsnxsajhs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-005",
@@ -278,7 +305,6 @@
         "美白"
       ],
       "summary": "曲酸可抑制酪氨酸酶相关黑色素生成；刺激性取决于浓度与配方。欧盟现行规则将面部和手部产品上限定为1%，不能再用“低于2%均安全”概括。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟现行法规直接规定使用部位和最高浓度。",
@@ -297,8 +323,12 @@
       },
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "qs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-001",
@@ -316,7 +346,6 @@
         "抗老"
       ],
       "summary": "外用视黄醇有改善光老化的证据，也常引起干燥、脱屑和刺激。孕期及备孕期按预防原则避免使用；意外少量外用不等同于口服异维A酸暴露，应咨询产科或皮肤科医生。",
-      "legacyRisk": "高",
       "evidence": {
         "level": "strong",
         "summary": "专业指南建议孕期避免外用维A类；观察性资料未显示明显风险增加，但不足以支持孕期主动使用。",
@@ -340,8 +369,14 @@
         "可能出现干燥、脱屑、泛红和刺痛。"
       ],
       "targetSection": "antiaging",
-      "pinyinInitials": "shcacwssavawac",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": "可能出现干燥、脱屑、泛红和刺痛。",
+        "sensitization": null,
+        "specialPopulations": [
+          "孕期及备孕期按预防原则避免；意外接触时无需自行推断结局，应咨询医生。"
+        ]
+      }
     },
     {
       "id": "antiaging-002",
@@ -357,7 +392,6 @@
         "抗老"
       ],
       "summary": "“胜肽”是异质性很大的总类，不能统一写成启动胶原、类肉毒和温和安全。2026 系统综述显示外用证据仍少于口服且效果较温和，应按具体 INCI 分开。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -368,8 +402,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "stdt",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-003",
@@ -383,7 +421,6 @@
         "抗老"
       ],
       "summary": "有小样本/企业参与研究，但“强化 DEJ、30%专业级、只有价格较高这一项不足、浓度与效果呈单向增加”远超证据。早期随机人体试验仅为很小样本，且不能反推商业产品中的“玻色因浓度”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -394,8 +431,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "bsy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-004",
@@ -411,7 +452,6 @@
         "抗老"
       ],
       "summary": "酵母提取物不是单一标准化活性物，不存在通用的“轻微剥脱角质”机制；因此也不应据此推断敏感肌存在中风险。耐受性与功效需结合具体原料、用量和成品证据判断。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -422,8 +462,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "jmtqweljm",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-005",
@@ -437,7 +481,6 @@
         "抗老"
       ],
       "summary": "页面承认人体证据有限是对的；“抗氧化为维 E 500 倍”多为特定体外体系，不能等于护肤效果。现有综述中许多研究为口服、小样本或商业资助。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -448,8 +491,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "xqs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-001",
@@ -466,7 +513,6 @@
         "祛痘"
       ],
       "summary": "美国OTC痤疮产品中水杨酸允许浓度为0.5%–2%。刺激性取决于浓度、面积和配方；它不是典型光敏剂。ACOG把外用水杨酸列为孕期可用的OTC成分之一。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "FDA给出OTC痤疮用途浓度；ACOG给出孕期用药指导。",
@@ -488,8 +534,14 @@
         "按产品标签使用；高浓度焕肤、较大面积或破损皮肤使用应先咨询专业人士。"
       ],
       "targetSection": "acne",
-      "pinyinInitials": "sysbhabhabqjs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": [
+          "按产品标签使用；高浓度焕肤、较大面积或破损皮肤使用应先咨询专业人士。"
+        ]
+      }
     },
     {
       "id": "acne-002",
@@ -508,7 +560,6 @@
         "祛痘"
       ],
       "summary": "AHA可促进角质更新；刺激和日晒敏感性取决于游离酸浓度、pH和完整配方。FDA消费者参考条件为AHA不高于10%、成品pH不低于3.5并配合防晒，不能用固定浓度阶梯定义“医疗级功效”。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "FDA消费者安全指导支持浓度、pH和防晒限定，不支持成分间固定强弱排序。",
@@ -522,8 +573,12 @@
         "使用期间及停用后一周加强防晒；出现持续红肿、灼痛或起疱应停用并就医。"
       ],
       "targetSection": "acne",
-      "pinyinInitials": "gsahaahaaqjsgcsrs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": "使用期间及停用后一周加强防晒；出现持续红肿、灼痛或起疱应停用并就医。",
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-003",
@@ -537,7 +592,6 @@
         "祛痘"
       ],
       "summary": "痤疮、炎症后色沉和黄褐斑有医学用途；孕期通常可考虑使用，但应写“ACOG 列为可用成分之一，个体仍咨询医生”，而非无条件“孕期安全”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "孕期结论来自专业学会指南；不支持“15–20%对所有人效果最佳”的绝对表述。",
@@ -548,8 +602,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "res",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-004",
@@ -563,7 +621,6 @@
         "祛痘"
       ],
       "summary": "有一定痤疮辅助证据；需要强调氧化后致敏风险、浓度和载体，不能只写“一定会灼伤/稀释就安全”。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -574,8 +631,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "csjy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-001",
@@ -591,7 +652,6 @@
         "修复"
       ],
       "summary": "部分提取物/标志物有抗炎和创面相关研究；“敏感肌/医美术后优先选择”需限定标准化原料、成品和术后医嘱。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -602,8 +662,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "jxcqjjxcg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-002",
@@ -617,7 +681,6 @@
         "修复"
       ],
       "summary": "舒缓和保湿可作保守表述；“深层补水、促进细胞增殖”证据不足。新鲜叶乳胶相关物主要是芦荟素（aloin）等蒽醌，不能笼统写“大黄素”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -628,8 +691,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "lh",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-003",
@@ -643,7 +710,6 @@
         "修复"
       ],
       "summary": "尿囊素常用于润肤和舒缓类配方；“绝对无不良反应”及仅凭该成分即可治疗疤痕或促进伤口愈合的说法证据不足。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -654,8 +720,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "nns",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-004",
@@ -669,7 +739,6 @@
         "修复"
       ],
       "summary": "Oligopeptide-1与人寡肽-1（EGF）不是同一名称。仅凭“小分子肽”不能证明其可深透皮层、促进胶原或修复创面；外用生长因子研究也存在制剂异质性，不能反向证明Oligopeptide-1的独立功效。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "国家药监局明确了EGF与寡肽-1的名称边界；系统综述也显示外用生长因子研究在制剂与终点上差异较大，不能据此证明Oligopeptide-1的独立功效。",
@@ -689,8 +758,12 @@
       },
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "gt1oligopeptide1",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-001",
@@ -708,7 +781,6 @@
         "安全"
       ],
       "summary": "氧苯酮是受监管的防晒剂。欧盟：脸/手/唇产品最高6%，身体产品通常2.2%，其他配方保护用途0.5%；同一配方兼作保护剂时UV滤剂量还会相应下调。FDA拟议结论为仍需更多安全数据，并非已判定不安全。",
-      "legacyRisk": "高",
       "evidence": {
         "level": "strong",
         "summary": "监管状态和限量证据明确；确定的人体内分泌损害结论证据不足。",
@@ -729,8 +801,12 @@
       },
       "cautions": [],
       "targetSection": "sunscreen",
-      "pinyinInitials": "ybtebjt3ebjt3fsj",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-002",
@@ -751,7 +827,6 @@
         "安全"
       ],
       "summary": "二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线；氧化锌的长波UVA覆盖通常优于二氧化钛。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；皮肤涂抹与喷雾吸入风险需分开评估。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "光学研究支持金属氧化物主要吸收紫外线，并显示氧化锌通常具有更好的长波UVA覆盖；FDA拟议评估支持规定剂型下的安全有效性。",
@@ -765,8 +840,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "sunscreen",
-      "pinyinInitials": "eyhtyhxwlfskwfsci77891ci77891",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-003",
@@ -784,7 +863,6 @@
         "安全"
       ],
       "summary": "糖皮质激素是药物类别；中国禁用原料目录禁止其作为普通化妆品原料。违法的是把药物擅自加入或以化妆品名义销售，不等于经批准、按医嘱使用的外用激素药本身“非法”。",
-      "legacyRisk": "高",
       "evidence": {
         "level": "strong",
         "summary": "中国禁用原料目录对化妆品用途给出明确结论。",
@@ -805,8 +883,14 @@
         "怀疑化妆品违法添加时停止继续使用并尽快就医；正在按医嘱使用药品者不要自行停药。"
       ],
       "targetSection": "safety",
-      "pinyinInitials": "tpzjsdsmsjslbts",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": [
+          "怀疑化妆品违法添加时停止继续使用并尽快就医；正在按医嘱使用药品者不要自行停药。"
+        ]
+      }
     },
     {
       "id": "safety-004",
@@ -830,7 +914,6 @@
         "安全"
       ],
       "summary": "Parabens是成分家族，不能整体标为“高风险内分泌干扰物”。欧盟Methylparaben、Ethylparaben单酯最高0.4%（以酸计），允许酯类混合物总量最高0.8%；Butylparaben与Propylparaben合计最高0.14%，并有儿童尿布区用途限制。FDA现有资料不足以证明化妆品当前使用方式会影响人体健康。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。",
@@ -853,8 +936,12 @@
       },
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "parabensnpjzdqjbjszqbjzqbbz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-005",
@@ -871,7 +958,6 @@
         "安全"
       ],
       "summary": "MIT与MCI/MI是重要接触致敏关注物。欧盟规定MIT单用或MCI/MI混合物均仅限淋洗类，成品最高0.0015%；原页面“MIT≤0.01%”已修正。",
-      "legacyRisk": "高",
       "evidence": {
         "level": "strong",
         "summary": "欧盟法规直接规定产品类别和最高浓度。",
@@ -892,8 +978,12 @@
       },
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "mitcmitjjyszltjjlyszlt",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-006",
@@ -911,7 +1001,6 @@
         "美白"
       ],
       "summary": "苯乙基间苯二酚是酪氨酸酶抑制剂，复配产品有人体研究；“曲酸22倍、熊果苷100倍”来自特定实验比较，不能表示成品在人体上的功效倍数。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "人体资料多为复配产品，无法把效果单独归因于该原料，也不支持通用倍数。",
@@ -922,8 +1011,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "377byjjbefbyjjbefphenylethylresorcinol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-007",
@@ -940,7 +1033,6 @@
         "美白"
       ],
       "summary": "抗氧化和在特定 C+E+阿魏酸配方中提高稳定性合理；不能把该复配配方结果推广为任何含阿魏酸产品均“固定倍数增效”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "结论来自特定配方和受控紫外线实验，不能外推为原料通用倍数。",
@@ -951,8 +1043,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "awsferulicacid",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-005",
@@ -969,7 +1065,6 @@
         "修复"
       ],
       "summary": "二裂酵母发酵产物溶胞产物可作为皮肤调理和保湿原料；仅凭原料名称不能推出减少UV所致DNA损伤、降低其他活性刺激或独立“维稳修复”的人体效果，品牌复配产品也不能替代该原料的独立证据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -980,8 +1075,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "eljmfjcwrbcweljmbifida",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-006",
@@ -995,7 +1094,6 @@
         "抗老"
       ],
       "summary": "眼周暂时性消肿有一定合理性；“促进微循环/脂肪分解”不能直接等同于持久去眼袋或瘦脸。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1006,8 +1104,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "kfy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-005",
@@ -1024,7 +1126,6 @@
         "祛痘"
       ],
       "summary": "脂溶性及角质调理定位合理；“更易渗透毛孔、更温和”是配方/浓度依赖，不应作为整个原料的确定比较。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1035,8 +1136,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "xxsyslhaxxsys",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "sunscreen-001",
@@ -1053,7 +1158,6 @@
         "防晒"
       ],
       "summary": "UVB/短 UVA 及辅助稳定某些阿伏苯宗配方合理；不是所有含量都“中风险”，也不能说精华中出现就一定为了保护活性物。补欧盟 9%/10%限制。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "法规限量明确；具体配方中的稳定作用不能一概而论。",
@@ -1074,8 +1178,12 @@
       },
       "cautions": [],
       "targetSection": "sunscreen",
-      "pinyinInitials": "aklloctocrylenehxfs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "sunscreen-002",
@@ -1092,7 +1200,6 @@
         "防晒"
       ],
       "summary": "阿伏苯宗是UVA滤剂，光稳定性取决于完整配方；“30分钟降解50%”“需要搭配奥克立林”等固定结论不能外推到所有成品。FDA拟议评估为仍需更多安全数据。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "UVA滤剂身份明确；定量降解和唯一稳定方案缺少对所有成品可通用的证据。",
@@ -1104,8 +1211,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "sunscreen",
-      "pinyinInitials": "afbzavobenzonedjjyjebjxjjw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-006",
@@ -1122,7 +1233,6 @@
         "安全"
       ],
       "summary": "溶剂、促渗和清爽肤感合理；刺激/干燥取决于浓度、配方和屏障状态，不能用“成分表前 5 位”推出固定浓度或所有人风险。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1133,8 +1243,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "ycjjjjalcohol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-007",
@@ -1151,7 +1265,6 @@
         "安全"
       ],
       "summary": "香精及部分香料可引起接触过敏，但“无香”不等于零致敏风险。欧盟2023/1545新增56种需单独标示项目，通常在驻留产品超过0.001%、淋洗产品超过0.01%时标示；不合规新品过渡至2026-07-31，既有库存至2028-07-31。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟标签法规明确；个体风险仍取决于具体过敏原和暴露。",
@@ -1170,8 +1283,12 @@
       },
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "xjfragrancexl",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-008",
@@ -1187,7 +1304,6 @@
         "安全"
       ],
       "summary": "常用温和防腐剂，安全浓度内广泛使用。极少数人可能刺激。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -1198,8 +1314,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "byycphenoxyethanol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-006",
@@ -1217,7 +1337,6 @@
         "祛痘"
       ],
       "summary": "柠檬酸常用于调节pH和螯合，也可在特定浓度与pH下发挥AHA角质调节作用；没有通用依据称其为“AHA家族最温和成员”，刺激性取决于游离酸含量、成品pH和完整配方。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -1228,8 +1347,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "nmscitricacidaha",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-007",
@@ -1246,7 +1369,6 @@
         "祛痘"
       ],
       "summary": "是否含有具活性的菠萝蛋白酶取决于原料规格和加工；不能由“果提取物”名称直接保证酶解去角质。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1257,8 +1379,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "blgtqwbldbmfl",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "acne-008",
@@ -1274,7 +1400,6 @@
         "祛痘"
       ],
       "summary": "木瓜蛋白酶可水解蛋白质，但配方中的酶稳定性和成品活性需要验证；其蛋白水解作用也可能引起刺激或致敏，不能概括为“极温和”或推荐给极敏感肌。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "前临床资料提示木瓜蛋白酶可影响皮肤屏障并诱导致敏反应；这不能直接量化化妆品成品风险，但足以否定“基本无刺激”的绝对表述。",
@@ -1285,8 +1410,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
-      "pinyinInitials": "mgdbmpapain",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-006",
@@ -1303,7 +1432,6 @@
         "保湿"
       ],
       "summary": "基础保湿溶剂，温和不刺激。几乎所有精华的基础组分。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -1314,8 +1442,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "decbutyleneglycol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-007",
@@ -1332,7 +1464,6 @@
         "保湿"
       ],
       "summary": "可兼作保湿和防腐增效剂，但刺激性与完整配方和用量有关；采用多元醇抑菌体系也不等于成品“无防腐”或无需防腐挑战测试。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -1343,8 +1474,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "12wecpentyleneglycol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-008",
@@ -1361,7 +1496,6 @@
         "保湿"
       ],
       "summary": "溶剂、保湿和促渗方向正确；刺激性与浓度、破损皮肤和剂型有关。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1372,8 +1506,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "becpropyleneglycol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-001",
@@ -1387,7 +1525,6 @@
         "基础"
       ],
       "summary": "柔润/肤感用途合理；不单独承诺“轻度滋润效果”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1398,8 +1535,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "ygxjasybz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-002",
@@ -1415,7 +1556,6 @@
         "基础"
       ],
       "summary": "缓冲剂定位正确；“辅助角质代谢/温和去角质”多为特定配方宣称，需成品证据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1426,8 +1566,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "qyjpqywhshepes",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-003",
@@ -1443,7 +1587,6 @@
         "基础"
       ],
       "summary": "增稠、乳化稳定和流变调节描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1454,8 +1597,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "bxxabxxjejjnhsngjwavcgjw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-004",
@@ -1469,7 +1616,6 @@
         "基础"
       ],
       "summary": "柔润剂/溶剂描述合理；肤感是配方结果。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1480,8 +1626,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "xjsec",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-005",
@@ -1497,7 +1647,6 @@
         "基础"
       ],
       "summary": "轻质柔润/溶剂描述合理；“挥发”程度应按具体原料和配方表述。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1508,8 +1657,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "yslwygslw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-006",
@@ -1523,7 +1676,6 @@
         "基础"
       ],
       "summary": "非离子乳化/表活功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1534,8 +1686,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "xjsecmtg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-007",
@@ -1551,7 +1707,6 @@
         "基础"
       ],
       "summary": "乳化/增溶功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1562,8 +1717,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jslcz80tween80",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-008",
@@ -1579,7 +1738,6 @@
         "基础"
       ],
       "summary": "螯合和帮助配方稳定合理；“防止活性成分氧化”应改“可降低金属离子催化的氧化”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1590,8 +1748,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "yeaehpssnedds",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-009",
@@ -1607,7 +1769,6 @@
         "基础"
       ],
       "summary": "增稠、稳定和流变调节合理；删除“高端”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1618,8 +1779,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jbxxjejjnhsaaristoflex",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-010",
@@ -1635,7 +1800,6 @@
         "基础"
       ],
       "summary": "低 HLB，常偏向 W/O 乳化；与聚山梨醇酯复配可用于不同体系，不能单凭它断言稳定 O/W。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1646,8 +1810,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "sltyszsp80",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-011",
@@ -1663,7 +1831,6 @@
         "基础"
       ],
       "summary": "彩妆中作着色/不透明/珠光辅助的方向合理；最终视觉效果取决于粉体组合。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1674,8 +1841,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "yhxeyhx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-012",
@@ -1691,7 +1862,6 @@
         "基础"
       ],
       "summary": "保湿剂/溶剂功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1702,8 +1872,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jyec32peg32",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-013",
@@ -1719,7 +1893,6 @@
         "基础"
       ],
       "summary": "吸附、增稠、肤感/粉体处理功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1730,8 +1903,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jgwjhgsjgwjhgs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-009",
@@ -1747,7 +1924,6 @@
         "保湿"
       ],
       "summary": "多元醇保湿剂兼辅助防腐，比戊二醇更滋润，常见于温和配方。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -1758,8 +1934,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "12jechexanediol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-010",
@@ -1775,7 +1955,6 @@
         "保湿"
       ],
       "summary": "吸湿/皮肤调理合理；保护细胞膜和蛋白的机制多来自非人体皮肤模型，不能直接推出“极端环境也锁水”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1786,8 +1965,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "hzttrehalose",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-014",
@@ -1803,7 +1986,6 @@
         "基础"
       ],
       "summary": "肤感、成膜、黏度和分散功能合理；不代表“产生促渗功效”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1814,8 +1996,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "peg12jejjgywjljhwgyjhw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-009",
@@ -1831,7 +2017,6 @@
         "安全"
       ],
       "summary": "抗氧化、配方防腐增效功能合理；“无传统防腐体系”是配方系统属性，不能由这一项单独判断。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1842,8 +2027,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "dqjbytxxt",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-006",
@@ -1859,7 +2048,6 @@
         "修复"
       ],
       "summary": "原料来源、滤液与溶胞产物差异应依据供应商定义；“维稳、提亮、保湿”需分别给成品证据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1870,8 +2058,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "eljmfjcwlyeljmly",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-015",
@@ -1885,7 +2077,6 @@
         "基础"
       ],
       "summary": "增稠、稳定和凝胶肤感描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -1896,8 +2087,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "bxxejjnhsasycjm25jjbxszjljhw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-008",
@@ -1914,7 +2109,6 @@
         "美白"
       ],
       "summary": "VC 衍生物和抗氧化/提亮定位合理；“最稳定、最易渗透之一”缺统一头对头临床比较。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1925,8 +2119,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "3lyjkhxsvcyjmyjvc",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-007",
@@ -1942,7 +2140,6 @@
         "抗老"
       ],
       "summary": "体外抗糖化/抗氧化机制合理；外用成品的人体抗皱证据有限，不能只凭机制标“抗老有效”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1953,8 +2150,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "jtcarnosine",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-009",
@@ -1970,7 +2171,6 @@
         "美白"
       ],
       "summary": "甘草相关分子有体外酪氨酸酶/炎症信号研究；成品效果取决于光甘草定含量，不能把整个提取物称为“营销式高价值称谓”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -1981,8 +2181,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "gggcgtqwggcd",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-010",
@@ -1996,7 +2200,6 @@
         "美白"
       ],
       "summary": "现有资料仅支持“概念性添加为主”，较谨慎；仅保留皮肤调理/抗氧化潜力，不写确定提亮。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2007,8 +2210,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "zgtqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-007",
@@ -2022,7 +2229,6 @@
         "修复"
       ],
       "summary": "抗炎/抗氧化主要为前临床或原料研究；应只写“皮肤调理潜力，人体证据有限”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2033,8 +2239,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "ychhtqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-008",
@@ -2050,7 +2260,6 @@
         "修复"
       ],
       "summary": "黄芩苷相关机制合理，但整个提取物含量不固定；“强效”应删除。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2061,8 +2270,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "hqgtqwhqg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-011",
@@ -2076,7 +2289,6 @@
         "美白"
       ],
       "summary": "抑制酪氨酸酶多为体外或原料数据；缺足够独立人体证据支持“淡斑”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2087,8 +2299,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "sgtqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-016",
@@ -2104,7 +2320,6 @@
         "基础"
       ],
       "summary": "螯合/稳定功能合理；“环境友好度不如 EDDS”若保留需给环境归趋数据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2115,8 +2330,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "edtaenedta2na",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-017",
@@ -2130,7 +2349,6 @@
         "基础"
       ],
       "summary": "增溶/表活用途合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2141,8 +2359,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "peg40qhbmy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-018",
@@ -2159,7 +2381,6 @@
         "基础"
       ],
       "summary": "缓冲/螯合功能合理；“比柠檬酸温和”不能脱离 pH 和浓度比较。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2170,8 +2391,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "nmsnsodiumcitrate",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-019",
@@ -2188,7 +2413,6 @@
         "基础"
       ],
       "summary": "酸橙（Bitter/Sour Orange）与甜橙（Sweet Orange）是不同植物来源，不能互作别名。果皮油的光毒性取决于物种、部位、压榨或蒸馏方式以及呋喃香豆素含量，不能笼统写成“含量低通常安全”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2199,8 +2423,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "scgpybitterorangepeeloilsourorangepeeloil",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-020",
@@ -2214,7 +2442,6 @@
         "基础"
       ],
       "summary": "乳化/表活用途合理；“敏感肌常用”不是安全保证。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2225,8 +2452,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "yzxgasn",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-021",
@@ -2243,7 +2474,6 @@
         "基础"
       ],
       "summary": "乳化/皮肤调理和脂质体相关用途合理；不自动等于产生细胞层面的修复功效。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2254,8 +2484,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "lzxdjllzpc",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-022",
@@ -2269,7 +2503,6 @@
         "基础"
       ],
       "summary": "柔润和肤感调节描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2280,8 +2513,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jwscsyjjsz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-023",
@@ -2295,7 +2532,6 @@
         "基础"
       ],
       "summary": "挥发性肤感调节用途合理；挥发速度和残留肤感依配方。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2306,8 +2542,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "xjjjjgyw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-024",
@@ -2323,7 +2563,6 @@
         "基础"
       ],
       "summary": "脂肪醇柔润、增稠、乳化稳定功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2334,8 +2573,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "sycesec",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-025",
@@ -2349,7 +2592,6 @@
         "基础"
       ],
       "summary": "成膜/稳定功能合理；具体 INCI 范围较宽，最好补完整名称或 CAS。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2360,8 +2602,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "bxszlgjwn",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-026",
@@ -2375,7 +2621,6 @@
         "基础"
       ],
       "summary": "柔润、封闭性肤感合理；“合成角鲨烷替代品”是功能类比，不是化学等同物。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2386,8 +2631,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "qhjydx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-027",
@@ -2403,7 +2652,6 @@
         "基础"
       ],
       "summary": "乳化/皮肤调理合理；“产生促渗功效、修复屏障”需由载体结构和成品数据证明。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2414,8 +2662,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "llzlecithin",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-008",
@@ -2431,7 +2683,6 @@
         "抗老"
       ],
       "summary": "转化链和通常较温和的方向合理，但功效证据弱于视黄醇；属于欧盟 2024/996 管理的维 A 物质，应补 RE 限量。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟限制和孕期专业指导明确；具体抗老转化率缺少可靠头对头人体比较。",
@@ -2451,8 +2702,12 @@
       },
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "shczlszwssazlsz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-028",
@@ -2468,7 +2723,6 @@
         "基础"
       ],
       "summary": "氨基酸，pH调节剂和保湿剂，也是皮肤天然保湿因子(NMF)成分。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -2479,8 +2733,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jasarginine",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-029",
@@ -2496,7 +2754,6 @@
         "基础"
       ],
       "summary": "增稠、稳定和流变调节描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2507,8 +2764,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "bxszlc1030wcbxszjljhwkbmgjw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-012",
@@ -2524,7 +2785,6 @@
         "美白"
       ],
       "summary": "该物质（检索到CAS 922165-31-9）与Tranexamic Acid Cetyl Ester（TXC）不是同一化学物，已删除“TXC/传明酸酯”错误别名。“本身提亮+助渗”的实际功能和安全性仍应以供应商规格书与成品人体资料为准。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2535,8 +2795,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "seyyjegchjw14esszcas922165319",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-030",
@@ -2552,7 +2816,6 @@
         "基础"
       ],
       "summary": "肌醇有时被历史性称为“维生素B8”，但不是公认的必需B族维生素；在化妆品中宜保守描述为保湿和皮肤调理，不能仅凭其参与细胞信号就断言外用可“辅助皮肤代谢”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2563,8 +2826,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jcinositol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-011",
@@ -2582,7 +2849,6 @@
         "保湿"
       ],
       "summary": "本质是液态蜡酯，柔润功能正确；“与皮脂高度相似”“适合大多数肤质”应降格为配方和个体相关。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2593,8 +2859,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "hhbzyhhbyjojobaoil",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-009",
@@ -2611,7 +2881,6 @@
         "皮肤调理"
       ],
       "summary": "植醇是植物来源的脂肪醇。“与视黄醇结构相关”不等于具有视黄醇样的人体抗老效果；在化妆品中的已确认功能主要是香料和皮肤调理，抗老功效尚证据不足。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2622,8 +2891,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "zcphytol",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-010",
@@ -2637,7 +2910,6 @@
         "抗老"
       ],
       "summary": "维 A 酯定位合理，但“刺激性和转化率均居中”缺可靠、统一的头对头人体比较。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "缺少足以支持固定强弱排序的人体比较；孕期建议适用于外用维A类。Retinyl Propionate不是欧盟2024/996列名的Retinol、Retinyl Acetate或Retinyl Palmitate，不能自动套用该法规数值。",
@@ -2649,8 +2921,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "shcbsz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-009",
@@ -2664,7 +2940,6 @@
         "修复"
       ],
       "summary": "比整株提取物更明确，但外用成品的浓度和人体证据仍应注明；不宜直接保证促胶原。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2675,8 +2950,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "qjjxcg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-011",
@@ -2692,7 +2971,6 @@
         "抗老"
       ],
       "summary": "HPR是新型维A衍生物；受体作用等实验机制不能直接推出“无需转化且兼具A醇效果与更温和”。独立人体证据有限，孕期及备孕期按预防原则避免。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "现有人体研究多为复配产品，不能支持与视黄醇的通用等效结论。",
@@ -2704,8 +2982,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "qjpntshszhpr",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-031",
@@ -2719,7 +3001,6 @@
         "基础"
       ],
       "summary": "配方抗氧化剂、保护油脂稳定性的描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2730,8 +3011,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jwscsssdjqjqhrgsz",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-010",
@@ -2745,7 +3030,6 @@
         "修复"
       ],
       "summary": "羟苯基丙酰胺苯甲酸是燕麦蒽酰胺样合成分子，不等于“燕麦来源”。可保守描述为舒缓/皮肤调理原料；“快速缓解瘙痒和刺激”需要具体成品的人体临床资料支持。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2756,8 +3040,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "qbjbxabjs",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-012",
@@ -2773,7 +3061,6 @@
         "保湿"
       ],
       "summary": "多糖带来的成膜/肤感合理；舒缓功效需原料规格和成品人体数据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2784,8 +3071,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "zbjcctqwklj",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-013",
@@ -2799,7 +3090,6 @@
         "保湿"
       ],
       "summary": "该 INCI 名称下的组成由提取部位、溶剂和工艺决定；不能仅凭名称推出“含椰子油及多酚”，应按供应商规格书和成品人体资料描述实际功能。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -2810,8 +3100,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "yzgtqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-010",
@@ -2825,7 +3119,6 @@
         "安全"
       ],
       "summary": "防腐/抗菌用途合理；补充欧盟产品类别、0.4%及喷雾/唇/口腔限制。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "欧盟法规明确区分漱口水与其他产品，并规定浓度、年龄和产品类别限制。",
@@ -2844,8 +3137,12 @@
       },
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "ygxjasyzysy",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-012",
@@ -2859,7 +3156,6 @@
         "抗老"
       ],
       "summary": "三叶鬼针草提取物不能仅凭植物来源称为“植物视黄醇替代品”，也没有足够证据证明其与视黄醇抗老效果等同且更温和；植物外用抗老研究整体存在样本量、配方异质性和偏倚限制。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "植物外用抗老系统综述不能建立三叶鬼针草与视黄醇的等效性；该成分仍缺足够的独立人体比较证据。",
@@ -2870,8 +3166,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "sygzctqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-014",
@@ -2885,7 +3185,6 @@
         "保湿"
       ],
       "summary": "保湿/皮肤调理可作一般功能表述；“富含褐藻糖胶、抗氧化”需批次标准化和成品证据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2896,8 +3195,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "mjztqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "repair-011",
@@ -2911,7 +3214,6 @@
         "修复"
       ],
       "summary": "氨基酸/皮肤调理合理；蜂来源蛋白可能涉及个体过敏，不能只标低风险和“滋养修复”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2922,8 +3224,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "sjfwjdb",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "moisture-015",
@@ -2937,7 +3243,6 @@
         "保湿"
       ],
       "summary": "可保留“皮肤调理/成膜”这类保守表述；具体舒缓和水膜功效证据有限。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -2948,8 +3253,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "moisture",
-      "pinyinInitials": "hxzgztqw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-032",
@@ -2966,7 +3275,6 @@
         "基础"
       ],
       "summary": "柔润、溶剂/载体功能合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -2977,8 +3285,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "xsgsgyszmctgtcc",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-033",
@@ -2994,7 +3306,6 @@
         "基础"
       ],
       "summary": "增稠、悬浮和流变调节描述合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3005,8 +3316,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "kbmcarbomer",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-034",
@@ -3022,7 +3337,6 @@
         "基础"
       ],
       "summary": "增溶/乳化功能合理；具体是否用于卸妆取决于配方。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3033,8 +3347,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jslcz20tween20",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-035",
@@ -3051,7 +3369,6 @@
         "基础"
       ],
       "summary": "增稠和稳定功能正确。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3062,8 +3379,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "hyjxanthangum",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "safety-011",
@@ -3079,7 +3400,6 @@
         "安全"
       ],
       "summary": "配方抗氧化功能正确；应写欧盟口腔和其他驻留/淋洗产品的具体上限，而非笼统“高浓度有争议”。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟法规直接规定分产品类别限量。",
@@ -3098,8 +3418,12 @@
       },
       "cautions": [],
       "targetSection": "safety",
-      "pinyinInitials": "dqjbbht",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-036",
@@ -3113,7 +3437,6 @@
         "基础"
       ],
       "summary": "长链脂肪醇柔润、增稠/助乳化用途合理。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3124,8 +3447,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "c2022c",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-037",
@@ -3141,7 +3468,6 @@
         "基础"
       ],
       "summary": "溶剂/保湿功能合理；“帮助活性成分”不应暗示促渗。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3152,8 +3478,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "jyec20peg20",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-038",
@@ -3170,7 +3500,6 @@
         "基础"
       ],
       "summary": "植物油柔润功能合理；维 E/亚油酸含量随精制程度和批次变化。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
@@ -3181,8 +3510,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "ymycornoil",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "base-039",
@@ -3198,7 +3531,6 @@
         "基础"
       ],
       "summary": "乳化、脂质体/载体稳定用途合理；“产生促渗功效”需具体载体和人体数据。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3209,8 +3541,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "lzphospholipids",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "antiaging-013",
@@ -3226,7 +3562,6 @@
         "抗老"
       ],
       "summary": "色素/抗氧化和维 A 前体身份正确；外用抗光老的人体证据有限，也不能按视黄醇功效理解。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3237,8 +3572,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
-      "pinyinInitials": "bhlbsbetacarotene",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "whitening-013",
@@ -3254,7 +3593,6 @@
         "美白"
       ],
       "summary": "油相抗氧化用途合理；“比水溶性 VC 更稳定”需限定体系，人体美白证据不能由抗坏血酸结构直接外推。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3265,8 +3603,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "khxszlszaa6p",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-001",
@@ -3287,7 +3629,6 @@
         "洗护"
       ],
       "summary": "去污强、可刺激，CIR 对短时淋洗和长期接触的结论方向正确；“彻底洗除、不会在体内蓄积”过度绝对，安全应按成品浓度、接触时间和使用部位表达。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "moderate",
         "summary": "专家评估支持按使用条件判断，不能把原料名称单独等同于安全或危险。",
@@ -3298,8 +3639,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "ygclsznslsslssodiumlaurylsulfateygjlsnlsybh",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-002",
@@ -3321,7 +3666,6 @@
         "洗护"
       ],
       "summary": "SLES通常比SLS刺激性低，但仍取决于配方。1,4-二氧六环是乙氧基化工艺杂质而非SLES本身；纽约州现行上限按法定类别区分：personal care为1 ppm，cosmetic products为10 ppm。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "纽约州法规直接规定1,4-二氧六环限值；不能据此推断任一含SLES产品的实际杂质含量。",
@@ -3332,8 +3676,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "ygcjmlsznslesslessodiumlaurethsulfatelsyeylh14dioxane",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-003",
@@ -3352,7 +3700,6 @@
         "洗护"
       ],
       "summary": "两性表活、降低复配体系刺激，以及 DMAPA/酰胺胺杂质与过敏有关的方向合理；纯 CAPB 也不能保证无人过敏。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3363,8 +3710,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "yyxabjtcjcapbcapbcocamidopropylbetainetcj",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-004",
@@ -3383,7 +3734,6 @@
         "洗护"
       ],
       "summary": "增泡/增稠、IARC 2B 与 Prop 65 提醒合理；危险分类不等于正常淋洗暴露的致癌风险，MEA 也不能笼统称“低风险替代”。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3394,8 +3744,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "yyxadeacocamidedeayyxameaeycxa",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-005",
@@ -3418,7 +3772,6 @@
         "洗护"
       ],
       "summary": "可在适当配方中较温和、可生物降解；CIR 结论是“在配方做到不刺激时安全”，并非“极温和/儿童敏感肌必选”。烷基糖苷也是已知接触过敏原。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3430,8 +3783,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "ptglapggjptgapggjptgyyjptgdecylglucosidecocoglucosidewjtg",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-006",
@@ -3452,7 +3809,6 @@
         "洗护"
       ],
       "summary": "SCI（椰油酰羟乙磺酸酯钠）是羟乙磺酸酯类阴离子表活，不是“氨基酸表活”；椰油酰甘氨酸钠才是氨基酸衍生表活。成品pH、刺激性和温和度取决于完整体系，成分表靠前也不表示体系必然更温和。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "insufficient",
         "summary": "原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。",
@@ -3463,8 +3819,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "sciyyxgasnbtlxbhsciyyxqyhsznsodiumcocoylisethionateyyxgasn",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-007",
@@ -3487,7 +3847,6 @@
         "洗护"
       ],
       "summary": "线性Dimethicone与环硅氧烷D4/D5/D6不是同一物质。欧盟REACH已对淋洗化妆品中的D4/D5实施各0.1%限制；其他化妆品中的D4/D5/D6限制自2027-06-06适用，不能提前写成“驻留类已全面限用”。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "欧盟REACH法规明确区分物质、产品类别、浓度和适用日期。",
@@ -3506,8 +3865,12 @@
       },
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "gyjejjgywdimethiconedimethiconeejjgyadgyamodimethiconed4d5d6hgyw",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-008",
@@ -3524,7 +3887,6 @@
         "洗护"
       ],
       "summary": "阳离子调理聚合物，中和阴离子表活负电、成柔顺膜减静电。CIR安全，广泛耐受低敏。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -3535,8 +3897,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "jjay710polyquaterniumjjay",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-009",
@@ -3555,7 +3921,6 @@
         "洗护"
       ],
       "summary": "阳离子瓜尔胶可作调理聚合物并改善梳理感；“天然来源”不能替代对具体衍生物、用量和成品刺激性的评估。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -3566,8 +3931,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "gejqbjsjjlhaguarhydroxypropyltrimoniumchlorideylzgej",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-010",
@@ -3587,7 +3956,6 @@
         "洗护"
       ],
       "summary": "ZPT可抑制马拉色菌。欧盟自2022-03-01禁用于化妆品：其被归为CMR 1B，且豁免所需的“无适当替代物”条件未被证明；这不等于SCCS认定1%去屑淋洗用途必然有害。美国OTC去屑专论仍规定可用条件。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟禁用和美国OTC专论均为直接监管文本。",
@@ -3608,8 +3976,12 @@
       },
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "plwxzptzptzincpyrithionepdltxqx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-011",
@@ -3628,7 +4000,6 @@
         "洗护"
       ],
       "summary": "Piroctone Olamine可用于去屑配方。欧盟Annex V列出的淋洗1.0%、其他产品0.5%是其作为防腐剂时的规则；用于非防腐去屑目的时，不能把该条目直接当作用途批准或成品安全证明。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "欧盟现行Annex V明确给出防腐用途限量；非防腐用途仍需独立证明其功能和成品安全。",
@@ -3647,8 +4018,12 @@
       },
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "plktycaypiroctoneolamineakdqx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-012",
@@ -3665,7 +4040,6 @@
         "洗护"
       ],
       "summary": "Climbazole为抗真菌去屑成分。欧盟允许去屑淋洗洗发水最高2%；作为防腐剂时按产品类别最高0.5%或0.2%。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟法规直接区分去屑用途与防腐用途。",
@@ -3684,8 +4058,12 @@
       },
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "lmbzclimbazoleclimbazoleqx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-013",
@@ -3709,7 +4087,6 @@
         "洗护"
       ],
       "summary": "同一卡片内需分开判断：二硫化硒属于美国M032 OTC去屑专论活性物；煤焦油也由M032按具体适应证和标签条件管理；酮康唑不在该专论内，1% OTC来自单独获批NDA，2%洗发水走处方药路径。三者不能共用一个风险结论。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "FDA专论与NDA记录明确区分了三类成分及酮康唑1%/2%的监管路径。",
@@ -3722,8 +4099,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "elhxmjytkzyyqxseleniumsulfideelhxcoaltarmjyketoconazoletkzyyqx",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-014",
@@ -3744,7 +4125,6 @@
         "洗护"
       ],
       "summary": "有机酸防腐方向正确；把它与 VC 列为“禁忌搭配”不成立。苯形成资料主要来自特定饮料体系，且受光、热、金属离子、pH 和配方控制影响。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "limited",
         "summary": "核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。",
@@ -3755,8 +4135,12 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "bjsnslsjsodiumbenzoatepotassiumsorbateslsjbjsn",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-015",
@@ -3774,7 +4158,6 @@
         "洗护"
       ],
       "summary": "同 4.7；应给准确欧盟标签阈值，并把主要消费者风险聚焦在接触过敏。",
-      "legacyRisk": "中",
       "evidence": {
         "level": "strong",
         "summary": "欧盟法规明确给出标签阈值；不能把甲醛的致癌分类直接等同于合规成品的实际风险。",
@@ -3793,8 +4176,12 @@
       },
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "dmdmynxndmdmhydantoinjqsft",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     },
     {
       "id": "cleanse-016",
@@ -3813,7 +4200,6 @@
         "洗护"
       ],
       "summary": "洗发水/沐浴露的珠光乳白外观来源。CIR评估安全，纯装饰性，无功效也无明显风险。",
-      "legacyRisk": "低",
       "evidence": {
         "level": "moderate",
         "summary": "配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。",
@@ -3824,8 +4210,92 @@
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "yeceyzszzgjglycoldistearatezgjegds",
-      "updatedAt": "2026-07-30"
+      "updatedAt": "2026-07-30",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     }
-  ]
+  ],
+  "categoryMetadata": {
+    "moisture": {
+      "title": "💧 保湿成分",
+      "description": "从吸湿、柔润和屏障支持等配方角色理解保湿；实际效果取决于完整配方和使用环境。"
+    },
+    "whitening": {
+      "title": "✨ 美白与提亮成分",
+      "description": "区分抗氧化、色素生成通路与医学用途；不把体外倍数直接写成人体效果。"
+    },
+    "antiaging": {
+      "title": "⏳ 抗老成分",
+      "description": "按具体原料、剂型和人体证据判断，不把同类名称或品牌配方外推为通用结论。"
+    },
+    "acne": {
+      "title": "🔬 祛痘与角质调理",
+      "description": "酸类和痤疮相关成分需结合浓度、pH、面积、频率与成品标签使用。"
+    },
+    "repair": {
+      "title": "🛡 舒缓与屏障护理",
+      "description": "植物提取物、发酵产物与肽类不是单一标准化活性物，应按具体原料与成品证据判断。"
+    },
+    "sunscreen": {
+      "title": "☀ 防晒成分",
+      "description": "防护范围、光稳定性与耐水性属于完整配方表现；法规状态需同时看法域、剂型和浓度。"
+    },
+    "cleanse": {
+      "title": "🚿 洗护成分",
+      "description": "表面活性剂、调理剂和去屑成分的表现受复配、接触时间、冲洗方式与监管路径影响。"
+    },
+    "safety": {
+      "title": "⚠ 安全与法规关注",
+      "description": "风险不再用单一高/中/低分数表示，改按刺激、致敏、法规、证据和特殊人群分别阅读。"
+    },
+    "base": {
+      "title": "🔧 基础与辅助成分",
+      "description": "乳化剂、增稠剂、溶剂和柔润剂主要决定质地、稳定性与肤感，不单独证明成品护肤功效。"
+    }
+  },
+  "categoryGuides": {
+    "safety": [
+      {
+        "title": "怎样理解见效速度",
+        "paragraphs": [
+          "保湿、肤感或光学提亮可能即时或数天可见；真正需要警惕的是承诺治疗痤疮、永久美白等夸大或药品式宣称。"
+        ],
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      {
+        "title": "过敏或刺激的应急边界",
+        "paragraphs": [
+          "停用新近添加的可疑化妆品；处方药不要自行停用，应联系开药医生。严重眼唇舌肿胀、呼吸困难、广泛水疱或全身症状应立即寻求急救。"
+        ],
+        "sourceIds": [
+          "FDA-COSMETIC-ALLERGENS"
+        ]
+      },
+      {
+        "title": "内分泌相关证据怎样读",
+        "paragraphs": [
+          "人体研究常受混合暴露、剂量测量和混杂因素影响；危险信号不等于已经证明某个合规化妆品会导致确定的人体因果后果。"
+        ],
+        "sourceIds": [
+          "PUBMED-EDC-HUMAN-2018"
+        ]
+      }
+    ],
+    "sunscreen": [
+      {
+        "title": "防晒使用要点",
+        "paragraphs": [
+          "SPF 与紫外线暴露量相关，不能换算成可安全日晒的时间倍数。测试用量约为 2 mg/cm²；“双指法”只是便捷估算，不同质地会产生误差。至少每2小时补涂，游泳或大量出汗时更频繁，并按 40/80 分钟耐水标签操作；6个月以下婴儿先咨询专业人士。"
+        ],
+        "sourceIds": [
+          "FDA-SUNSCREEN-USE"
+        ]
+      }
+    ]
+  }
 }

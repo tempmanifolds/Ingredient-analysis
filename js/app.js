@@ -1,326 +1,131 @@
-(() => {
-  'use strict';
+import { filterIngredients, prepareIngredients } from './search.js';
+import { renderAllTable, renderCategories, renderCategoryGuides, renderSearchResults } from './render.js';
 
-  const categoryNames = {
-    moisture: '💧 保湿', whitening: '✨ 美白', antiaging: '⏳ 抗老',
-    acne: '🔬 祛痘', repair: '🛡 修复', sunscreen: '☀ 防晒',
-    cleanse: '🚿 洗护', safety: '⚠ 安全', base: '🔧 基础',
-  };
-  const categoryOrder = ['moisture', 'whitening', 'antiaging', 'acne', 'repair', 'sunscreen', 'cleanse', 'safety', 'base'];
-  let ingredientDB = [];
-  let sourcesById = new Map();
+let ingredients = [];
+let sourcesById = new Map();
 
-  const evidenceLabels = {
-    strong: '高等级证据',
-    moderate: '中等级证据',
-    limited: '有限证据',
-    insufficient: '证据不足',
-  };
+function setActiveTab(tabId, { updateHistory = false, scroll = true } = {}) {
+  const target = document.getElementById(tabId);
+  if (!target?.classList.contains('section')) return false;
+  document.querySelectorAll('.section').forEach((section) => section.classList.remove('active'));
+  document.querySelectorAll('.nav a').forEach((link) => link.classList.toggle('active', link.dataset.tab === tabId));
+  target.classList.add('active');
+  if (updateHistory) history.pushState(null, '', `#${tabId}`);
+  if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  return true;
+}
 
-  function setActiveTab(tabId, options) {
-    const settings = Object.assign({ updateHistory: false, scroll: true }, options);
-    const target = document.getElementById(tabId);
-    if (!target || !target.classList.contains('section')) return false;
+function toggleAccordion(header, forceOpen) {
+  const item = header.closest('.accordion-item');
+  const body = item?.querySelector('.accordion-body');
+  if (!item || !body) return;
+  const open = forceOpen ?? !item.classList.contains('open');
+  item.classList.toggle('open', open);
+  header.setAttribute('aria-expanded', String(open));
+  body.hidden = !open;
+}
 
-    document.querySelectorAll('.section').forEach((section) => section.classList.remove('active'));
-    document.querySelectorAll('.nav a').forEach((link) => link.classList.toggle('active', link.dataset.tab === tabId));
-    target.classList.add('active');
-    if (tabId === 'all') renderAllTable();
-    if (settings.updateHistory) history.pushState(null, '', '#' + tabId);
-    if (settings.scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
-    return true;
+function navigateToIngredient(id, { updateHistory = true, focus = true } = {}) {
+  const ingredient = ingredients.find((item) => item.id === id);
+  if (!ingredient) return false;
+  if (updateHistory) history.pushState(null, '', `#ingredient/${encodeURIComponent(id)}`);
+  setActiveTab(ingredient.targetSection, { scroll: false });
+  requestAnimationFrame(() => {
+    const item = document.getElementById(`ingredient-${id}`);
+    const header = item?.querySelector('.accordion-header');
+    if (!item || !header) return;
+    toggleAccordion(header, true);
+    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (focus) header.focus({ preventScroll: true });
+  });
+  return true;
+}
+
+function applyLocation() {
+  let hash;
+  try {
+    hash = decodeURIComponent(location.hash.slice(1));
+  } catch {
+    hash = location.hash.slice(1);
   }
-
-  function toggleAccordion(header, forceOpen) {
-    const item = header.closest('.accordion-item');
-    if (!item) return;
-    const shouldOpen = forceOpen === undefined ? !item.classList.contains('open') : forceOpen;
-    item.classList.toggle('open', shouldOpen);
-    header.setAttribute('aria-expanded', String(shouldOpen));
-  }
-
-  function normalizeName(value) {
-    return value.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-  }
-
-  function findMatchingAccordion(ingredient) {
-    const assigned = document.querySelector('[data-ingredient-id="' + CSS.escape(ingredient.id) + '"] .accordion-header');
-    if (assigned) return assigned;
-    const primary = normalizeName(ingredient.nameZh.replace(/[（(].*?[）)]/g, ''));
-    const candidates = [primary, normalizeName(ingredient.nameZh), ...ingredient.aliases.map(normalizeName)]
-      .filter((value) => value.length >= 2);
-    const headers = Array.from(document.querySelectorAll('#' + ingredient.targetSection + ' .accordion-item:not([data-ingredient-id]) .accordion-header'));
-    return headers
-      .map((header) => {
-        const text = normalizeName(header.childNodes[0]?.textContent || header.textContent);
-        const score = Math.max(...candidates.map((candidate, index) => {
-          if (text === candidate) return 1000 - index;
-          if (text.startsWith(candidate)) return 800 - (text.length - candidate.length) - index;
-          if (text.includes(candidate)) return 500 - (text.length - candidate.length) - index;
-          return -1;
-        }));
-        return { header, score };
-      })
-      .filter((match) => match.score >= 0)
-      .sort((a, b) => b.score - a.score)[0]?.header;
-  }
-
-  function navigateToIngredient(id, options) {
-    const settings = Object.assign({ updateHistory: true }, options);
-    const ingredient = ingredientDB.find((item) => item.id === id);
-    if (!ingredient) return;
-    if (settings.updateHistory) history.pushState(null, '', '#ingredient/' + encodeURIComponent(id));
-
-    setActiveTab(ingredient.targetSection, { updateHistory: false, scroll: false });
-    requestAnimationFrame(() => {
-      const accordion = findMatchingAccordion(ingredient);
-      if (accordion) {
-        toggleAccordion(accordion, true);
-        accordion.id = 'ingredient-' + ingredient.id;
-        accordion.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        accordion.focus({ preventScroll: true });
-        return;
-      }
-      setActiveTab('all', { updateHistory: false, scroll: false });
-      const rowLink = document.querySelector('[data-ingredient-id="' + CSS.escape(id) + '"]');
-      if (rowLink) {
-        rowLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        rowLink.focus({ preventScroll: true });
-      }
-    });
-  }
-
-  function evidenceBadgeFor(evidence) {
-    const badge = document.createElement('span');
-    const level = evidence?.level || 'insufficient';
-    badge.className = 'evidence-chip evidence-' + level;
-    badge.textContent = evidence ? evidenceLabels[level] : '证据未分级';
-    return badge;
-  }
-
-  function appendEvidence(container, ingredient) {
-    const meta = document.createElement('div');
-    meta.className = 'evidence-meta';
-    meta.append(evidenceBadgeFor(ingredient.evidence));
-
-    if (ingredient.evidence?.summary) {
-      const summary = document.createElement('span');
-      summary.className = 'evidence-summary';
-      summary.textContent = ingredient.evidence.summary;
-      meta.append(summary);
+  if (hash.startsWith('ingredient/')) {
+    if (!navigateToIngredient(hash.slice('ingredient/'.length), { updateHistory: false, focus: false })) {
+      setActiveTab('overview', { scroll: false });
     }
-
-    const sourceIds = ingredient.evidence?.sourceIds || [];
-    if (sourceIds.length) {
-      const sourceList = document.createElement('span');
-      sourceList.className = 'source-links';
-      sourceIds.forEach((sourceId) => {
-        const source = sourcesById.get(sourceId);
-        if (!source) return;
-        const link = document.createElement('a');
-        link.href = source.url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = source.publisher + '（核对 ' + source.checkedAt + '）';
-        link.title = source.title;
-        sourceList.append(link);
-      });
-      meta.append(sourceList);
-    }
-    container.append(meta);
+    return;
   }
+  setActiveTab(hash || 'overview', { scroll: false });
+}
 
-  function hydrateIngredientAccordions() {
-    ingredientDB.forEach((ingredient) => {
-      const header = findMatchingAccordion(ingredient);
-      if (!header) return;
-      const item = header.closest('.accordion-item');
-      const body = item?.querySelector('.accordion-body');
-      if (!item || !body) return;
-      item.dataset.ingredientId = ingredient.id;
-      const existingBadge = header.querySelector('.evidence-chip');
-      const badge = evidenceBadgeFor(ingredient.evidence);
-      if (existingBadge) existingBadge.replaceWith(badge);
-      else header.querySelector('.arrow')?.before(badge);
-      body.querySelector('.ingredient-evidence-auto')?.remove();
-      const evidence = document.createElement('div');
-      evidence.className = 'claim-evidence ingredient-evidence-auto';
-      appendEvidence(evidence, ingredient);
-      body.append(evidence);
-    });
-  }
-
-  function showSearchResults(results) {
-    const resultList = document.getElementById('searchResultList');
-    resultList.replaceChildren();
-    if (!results.length) {
-      const empty = document.createElement('p');
-      empty.className = 'status-message';
-      empty.textContent = '未找到匹配的成分。尝试其他关键词。';
-      resultList.append(empty);
+function bindInteractions() {
+  document.addEventListener('click', (event) => {
+    const accordionHeader = event.target.closest('.accordion-header');
+    if (accordionHeader) {
+      toggleAccordion(accordionHeader);
       return;
     }
-
-    const fragment = document.createDocumentFragment();
-    results.forEach((ingredient) => {
-      const card = document.createElement('article');
-      card.className = 'card search-result-card';
-
-      const title = document.createElement('h3');
-      title.append(document.createTextNode(ingredient.nameZh + ' '), evidenceBadgeFor(ingredient.evidence));
-      const summary = document.createElement('p');
-      summary.className = 'ingredient-summary';
-      summary.textContent = ingredient.summary;
-      const action = document.createElement('button');
-      action.type = 'button';
-      action.className = 'ingredient-action';
-      action.dataset.ingredientId = ingredient.id;
-      action.textContent = '查看详情 →';
-      card.append(title, summary);
-      appendEvidence(card, ingredient);
-      card.append(action);
-      fragment.append(card);
-    });
-    resultList.append(fragment);
-  }
-
-  function searchIngredients() {
-    const input = document.getElementById('searchInput');
-    const query = input.value.trim().toLowerCase();
-    const results = document.getElementById('searchResults');
-    const overview = document.getElementById('overviewContent');
-
-    if (!query) {
-      results.style.display = 'none';
-      overview.style.display = '';
-      document.getElementById('searchResultList').replaceChildren();
-      return;
-    }
-
-    overview.style.display = 'none';
-    results.style.display = 'block';
-    showSearchResults(ingredientDB.filter((item) => item.searchText.includes(query) || item.pinyinInitials.includes(query)));
-  }
-
-  function appendCell(row, text, className) {
-    const cell = document.createElement('td');
-    if (className) cell.className = className;
-    cell.textContent = text;
-    row.append(cell);
-    return cell;
-  }
-
-  function renderAllTable() {
-    const categoryIndex = Object.fromEntries(categoryOrder.map((category, index) => [category, index]));
-    const sorted = [...ingredientDB].sort((a, b) => {
-      const categoryDifference = (categoryIndex[a.categories[0]] ?? 99) - (categoryIndex[b.categories[0]] ?? 99);
-      return categoryDifference || a.nameZh.localeCompare(b.nameZh, 'zh-CN');
-    });
-    const tableBody = document.getElementById('allTableBody');
-    const fragment = document.createDocumentFragment();
-
-    sorted.forEach((ingredient) => {
-      const row = document.createElement('tr');
-      const nameCell = appendCell(row, ingredient.nameZh);
-      nameCell.style.fontWeight = '600';
-      appendCell(row, ingredient.categories.map((category) => categoryNames[category] || category).join(' · '));
-      const evidenceCell = document.createElement('td');
-      evidenceCell.className = 'evidence-cell';
-      evidenceCell.append(evidenceBadgeFor(ingredient.evidence));
-      row.append(evidenceCell);
-      const summaryCell = appendCell(row, ingredient.summary, 'summary-cell');
-      appendEvidence(summaryCell, ingredient);
-      const link = document.createElement('button');
-      link.type = 'button';
-      link.className = 'ingredient-link';
-      link.dataset.ingredientId = ingredient.id;
-      link.textContent = '查看';
-      summaryCell.append(document.createElement('br'), link);
-      fragment.append(row);
-    });
-    tableBody.replaceChildren(fragment);
-    document.getElementById('allCount').textContent = String(sorted.length);
-  }
-
-  function applyLocation() {
-    const hash = decodeURIComponent(location.hash.slice(1));
-    if (hash.startsWith('ingredient/')) {
-      navigateToIngredient(hash.slice('ingredient/'.length), { updateHistory: false });
-      return;
-    }
-    setActiveTab(hash || 'overview', { updateHistory: false, scroll: false });
-  }
-
-  function bindInteractions() {
-    document.getElementById('nav').addEventListener('click', (event) => {
-      const link = event.target.closest('a[data-tab]');
-      if (!link) return;
+    const ingredientLink = event.target.closest('a[data-ingredient-id]');
+    if (ingredientLink) {
       event.preventDefault();
-      setActiveTab(link.dataset.tab, { updateHistory: true });
-    });
-
-    document.querySelectorAll('.quick-nav-card[data-tab]').forEach((card) => {
-      const activate = () => setActiveTab(card.dataset.tab, { updateHistory: true });
-      card.addEventListener('click', activate);
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          activate();
-        }
-      });
-    });
-
-    document.querySelectorAll('.accordion-header').forEach((header) => {
-      header.setAttribute('role', 'button');
-      header.setAttribute('tabindex', '0');
-      header.setAttribute('aria-expanded', String(header.closest('.accordion-item')?.classList.contains('open')));
-      header.addEventListener('click', () => toggleAccordion(header));
-      header.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleAccordion(header);
-        }
-      });
-    });
-
-    const searchInput = document.getElementById('searchInput');
-    searchInput.disabled = false;
-    searchInput.addEventListener('input', searchIngredients);
-    document.addEventListener('click', (event) => {
-      const target = event.target.closest('[data-ingredient-id]');
-      if (target) navigateToIngredient(target.dataset.ingredientId);
-    });
-    window.addEventListener('popstate', applyLocation);
-  }
-
-  async function init() {
-    try {
-      const [ingredientResponse, sourceResponse] = await Promise.all([
-        fetch('./data/ingredients.json'),
-        fetch('./data/sources.json'),
-      ]);
-      if (!ingredientResponse.ok || !sourceResponse.ok) throw new Error('HTTP data load failed');
-      const [data, sourceData] = await Promise.all([ingredientResponse.json(), sourceResponse.json()]);
-      sourcesById = new Map(sourceData.sources.map((source) => [source.id, source]));
-      ingredientDB = data.ingredients.map((item) => Object.assign({}, item, {
-        searchText: [item.nameZh, ...item.aliases, item.summary].join(' ').toLowerCase(),
-      }));
-      document.getElementById('overviewIngredientCount').textContent = String(ingredientDB.length);
-      document.getElementById('overviewEvidenceCount').textContent = String(ingredientDB.filter((item) => item.evidence).length);
-      document.getElementById('overviewSourceCount').textContent = String(sourceData.sources.length);
-      hydrateIngredientAccordions();
-      bindInteractions();
-      applyLocation();
-    } catch (error) {
-      const input = document.getElementById('searchInput');
-      input.placeholder = '数据加载失败，请通过本地服务器或 GitHub Pages 打开';
-      const message = document.createElement('p');
-      message.className = 'status-message error';
-      message.textContent = '数据未能加载。请确认 data/ingredients.json 与 data/sources.json 均可访问。';
-      input.closest('.search-box').after(message);
-      console.error(error);
+      navigateToIngredient(ingredientLink.dataset.ingredientId);
+      return;
     }
-  }
+    const tabLink = event.target.closest('a[data-tab]');
+    if (tabLink) {
+      event.preventDefault();
+      setActiveTab(tabLink.dataset.tab, { updateHistory: true });
+    }
+  });
 
-  init();
-})();
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+  const overview = document.getElementById('overviewContent');
+  const resultList = document.getElementById('searchResultList');
+  input.disabled = false;
+  input.addEventListener('input', () => {
+    const query = input.value.trim();
+    if (!query) {
+      results.hidden = true;
+      overview.hidden = false;
+      resultList.replaceChildren();
+      return;
+    }
+    overview.hidden = true;
+    results.hidden = false;
+    renderSearchResults(filterIngredients(ingredients, query), resultList, sourcesById);
+  });
+  window.addEventListener('popstate', applyLocation);
+}
+
+async function init() {
+  try {
+    const [ingredientResponse, sourceResponse] = await Promise.all([
+      fetch('./data/ingredients.json'),
+      fetch('./data/sources.json'),
+    ]);
+    if (!ingredientResponse.ok || !sourceResponse.ok) throw new Error('HTTP data load failed');
+    const [data, sourceData] = await Promise.all([ingredientResponse.json(), sourceResponse.json()]);
+    sourcesById = new Map(sourceData.sources.map((source) => [source.id, source]));
+    ingredients = prepareIngredients(data.ingredients);
+
+    renderCategories(ingredients, sourcesById, data.categoryMetadata);
+    renderCategoryGuides(data.categoryGuides, sourcesById);
+    const count = renderAllTable(ingredients, document.getElementById('allTableBody'), sourcesById);
+    document.getElementById('overviewIngredientCount').textContent = String(count);
+    document.getElementById('overviewEvidenceCount').textContent = String(ingredients.filter((item) => item.evidence).length);
+    document.getElementById('overviewSourceCount').textContent = String(sourceData.sources.length);
+    document.getElementById('allCount').textContent = String(count);
+    bindInteractions();
+    applyLocation();
+  } catch (error) {
+    const input = document.getElementById('searchInput');
+    input.placeholder = '数据加载失败，请通过本地服务器或 GitHub Pages 打开';
+    input.closest('.search-box').after(Object.assign(document.createElement('p'), {
+      className: 'status-message error',
+      textContent: '数据未能加载。请确认结构化数据文件均可访问。',
+    }));
+    console.error(error);
+  }
+}
+
+init();

@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "validate": "node scripts/validate.mjs",
-    "build": "node scripts/prepare-pages.mjs"
+    "generate:pinyin": "node scripts/generate-pinyin.mjs",
+    "validate": "node scripts/generate-pinyin.mjs --check && node scripts/validate.mjs",
+    "build": "npm run generate:pinyin && node scripts/prepare-pages.mjs"
+  },
+  "devDependencies": {
+    "pinyin-pro": "^3.18.2"
   }
 }
