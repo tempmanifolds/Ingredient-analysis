@@ -54,13 +54,12 @@ for (const [index, item] of ingredients.entries()) {
   if (!['高', '中', '低'].includes(item.legacyRisk)) fail(`${item.id} 的旧版风险标签无效。`);
   if (!item.pinyinInitials?.trim()) fail(`${item.id} 缺少拼音首字母索引。`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(item.updatedAt || '')) fail(`${item.id} 的 updatedAt 格式无效。`);
-  if (item.evidence) {
-    if (!['strong', 'moderate', 'limited', 'insufficient'].includes(item.evidence.level)) fail(`${item.id} 的证据等级无效。`);
-    if (!item.evidence.summary?.trim()) fail(`${item.id} 的 evidence.summary 为空。`);
-    if (!Array.isArray(item.evidence.sourceIds) || !item.evidence.sourceIds.length) fail(`${item.id} 的证据结论缺少来源。`);
-    for (const sourceId of item.evidence.sourceIds || []) {
-      if (!sourceIds.has(sourceId)) fail(`${item.id} 引用未定义来源：${sourceId}`);
-    }
+  if (!item.evidence) fail(`${item.id} 缺少证据等级。`);
+  if (!['strong', 'moderate', 'limited', 'insufficient'].includes(item.evidence?.level)) fail(`${item.id} 的证据等级无效。`);
+  if (!item.evidence?.summary?.trim()) fail(`${item.id} 的 evidence.summary 为空。`);
+  if (!Array.isArray(item.evidence?.sourceIds) || !item.evidence.sourceIds.length) fail(`${item.id} 的证据结论缺少来源。`);
+  for (const sourceId of item.evidence?.sourceIds || []) {
+    if (!sourceIds.has(sourceId)) fail(`${item.id} 引用未定义来源：${sourceId}`);
   }
   if (item.regulation) {
     if (!Array.isArray(item.regulation.sourceIds) || !item.regulation.sourceIds.length) fail(`${item.id} 的法规结论缺少来源。`);
@@ -119,6 +118,28 @@ const prohibitedClaims = [
 for (const claim of prohibitedClaims) {
   if (indexHtml.includes(claim) || JSON.stringify(data).includes(claim)) fail(`仍存在已驳回或过度断言：${claim}`);
 }
+
+const prohibitedWording = [
+  '最强', '首选', '零副作用', '未发现任何副作用', '完美修复', '必须搭配', '必须使用',
+  '浓度越高越好', '深层渗透', '唯一缺点是贵', '黄金成分', '全波段反射',
+  '同等抗老', '完全洗净', '无体内蓄积', '100%会灼伤', '100% 会灼伤', '同款核心',
+];
+for (const wording of prohibitedWording) {
+  if (indexHtml.includes(wording) || JSON.stringify(data).includes(wording)) fail(`任务 C 仍存在禁用措辞：${wording}`);
+}
+
+if (ingredients.some((item) => !item.evidence?.sourceIds?.length)) fail('任务 C04 要求全部成分完成证据分级并关联来源。');
+const appJs = fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8');
+if (!appJs.includes('hydrateIngredientAccordions()')) fail('任务 C06 缺少详情卡风险来源的运行时渲染。');
+const requiredTaskDText = [
+  '常见机制之一', '不是按分子量截断的二元开关', '叠加可能增加刺激',
+  '保湿、肤感或光学提亮可能即时或数天可见', '严重眼唇舌肿胀',
+  '人体研究常受混合暴露', '2 mg/cm²', '双指法', '至少每2小时补涂', '6个月以下婴儿',
+];
+for (const text of requiredTaskDText) {
+  if (!indexHtml.includes(text)) fail(`任务 D 页面描述缺少：${text}`);
+}
+if (indexHtml.includes('<tr><td>VC</td><td>苯甲酸钠</td>')) fail('任务 D03 要求删除 VC 与苯甲酸钠的通用禁配行。');
 
 const requiredTaskASources = [
   'EU-2024-996', 'EU-2022-1176', 'FDA-SUNSCREEN-ORDER',

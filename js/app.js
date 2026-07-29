@@ -40,13 +40,29 @@
   }
 
   function normalizeName(value) {
-    return value.toLowerCase().replace(/[\s()（）/·+\-]/g, '');
+    return value.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
   }
 
   function findMatchingAccordion(ingredient) {
-    const needle = normalizeName(ingredient.nameZh).slice(0, 8);
-    return Array.from(document.querySelectorAll('#' + ingredient.targetSection + ' .accordion-header'))
-      .find((header) => normalizeName(header.textContent).includes(needle));
+    const assigned = document.querySelector('[data-ingredient-id="' + CSS.escape(ingredient.id) + '"] .accordion-header');
+    if (assigned) return assigned;
+    const primary = normalizeName(ingredient.nameZh.replace(/[（(].*?[）)]/g, ''));
+    const candidates = [primary, normalizeName(ingredient.nameZh), ...ingredient.aliases.map(normalizeName)]
+      .filter((value) => value.length >= 2);
+    const headers = Array.from(document.querySelectorAll('#' + ingredient.targetSection + ' .accordion-item:not([data-ingredient-id]) .accordion-header'));
+    return headers
+      .map((header) => {
+        const text = normalizeName(header.childNodes[0]?.textContent || header.textContent);
+        const score = Math.max(...candidates.map((candidate, index) => {
+          if (text === candidate) return 1000 - index;
+          if (text.startsWith(candidate)) return 800 - (text.length - candidate.length) - index;
+          if (text.includes(candidate)) return 500 - (text.length - candidate.length) - index;
+          return -1;
+        }));
+        return { header, score };
+      })
+      .filter((match) => match.score >= 0)
+      .sort((a, b) => b.score - a.score)[0]?.header;
   }
 
   function navigateToIngredient(id, options) {
@@ -112,6 +128,26 @@
       meta.append(sourceList);
     }
     container.append(meta);
+  }
+
+  function hydrateIngredientAccordions() {
+    ingredientDB.forEach((ingredient) => {
+      const header = findMatchingAccordion(ingredient);
+      if (!header) return;
+      const item = header.closest('.accordion-item');
+      const body = item?.querySelector('.accordion-body');
+      if (!item || !body) return;
+      item.dataset.ingredientId = ingredient.id;
+      const existingBadge = header.querySelector('.evidence-chip');
+      const badge = evidenceBadgeFor(ingredient.evidence);
+      if (existingBadge) existingBadge.replaceWith(badge);
+      else header.querySelector('.arrow')?.before(badge);
+      body.querySelector('.ingredient-evidence-auto')?.remove();
+      const evidence = document.createElement('div');
+      evidence.className = 'claim-evidence ingredient-evidence-auto';
+      appendEvidence(evidence, ingredient);
+      body.append(evidence);
+    });
   }
 
   function showSearchResults(results) {
@@ -272,6 +308,7 @@
       document.getElementById('overviewIngredientCount').textContent = String(ingredientDB.length);
       document.getElementById('overviewEvidenceCount').textContent = String(ingredientDB.filter((item) => item.evidence).length);
       document.getElementById('overviewSourceCount').textContent = String(sourceData.sources.length);
+      hydrateIngredientAccordions();
       bindInteractions();
       applyLocation();
     } catch (error) {

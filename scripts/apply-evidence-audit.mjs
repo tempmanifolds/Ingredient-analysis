@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 const path = new URL('../data/ingredients.json', import.meta.url);
 const data = JSON.parse(fs.readFileSync(path, 'utf8'));
-const checkedAt = '2026-07-29';
+const checkedAt = '2026-07-30';
 
 const updates = {
   'moisture-001': {
@@ -168,6 +168,93 @@ for (const ingredient of data.ingredients) {
   const update = updates[ingredient.id];
   if (!update) continue;
   Object.assign(ingredient, update, { updatedAt: checkedAt });
+}
+
+const reportPath = new URL('../护肤品成分与代码审查报告.md', import.meta.url);
+const report = fs.readFileSync(reportPath, 'utf8');
+const auditRows = new Map();
+for (const line of report.split(/\r?\n/)) {
+  const match = line.match(/^\|\s*(\d+)\s*\|\s*([^|]+?)\s*\|\s*([ABCD])\s*\|\s*(.*?)\s*\|$/);
+  if (!match) continue;
+  auditRows.set(Number(match[1]), { name: match[2].trim(), grade: match[3], recommendation: match[4].trim() });
+}
+
+const sourceAliases = {
+  'EU-01': 'EU-COSING-FUNCTIONS', 'EU-02': 'EU-2024-996', 'EU-03': 'EU-2022-1176',
+  'EU-04': 'EU-FRAGRANCE-2023', 'EU-05': 'EU-FORMALDEHYDE-2022', 'EU-06': 'EU-MIT-2017',
+  'EU-07': 'EU-MCI-MI-2014', 'EU-08': 'EU-REACH-2024-1328', 'EU-09': 'EU-ZPT-2021',
+  'EU-10': 'EU-CLIMBAZOLE-2019', 'EU-11': 'EU-COSMETICS-CONSOLIDATED-2026',
+  'EU-12': 'EU-PARABENS-2014', 'EU-13': 'EU-BHT-2022', 'EU-14': 'EU-BHA-2026',
+  'EU-15': 'EU-ETHYL-LAUROYL-2016',
+  'US-02': 'FDA-SUNSCREEN-ORDER', 'US-03': 'FDA-SUNSCREEN-USE', 'US-04': 'FDA-AHA',
+  'US-05': 'FDA-SALICYLIC-ACNE', 'US-07': 'FDA-PARABENS', 'US-08': 'FDA-PHTHALATES',
+  'US-09': 'FDA-DANDRUFF-M032', 'US-10': 'FDA-KETOCONAZOLE-NDA', 'US-11': 'NY-1-4-DIOXANE',
+  'US-12': 'FDA-PREGNANCY-ACOG', 'US-13': 'FDA-BENZENE-BEVERAGES',
+  'P-01': 'PUBMED-NIACINAMIDE-2002', 'P-02': 'PUBMED-VITAMINC-2023',
+  'P-03': 'PUBMED-TRANEXAMIC-2024', 'P-04': 'PUBMED-PHENYLETHYL-2013',
+  'P-05': 'PUBMED-GLYCEROL-2008', 'P-06': 'PUBMED-HA-2024',
+  'P-07': 'PUBMED-PANTHENOL-2016', 'P-08': 'PUBMED-RETINOL-2022',
+  'P-09': 'PUBMED-PEPTIDES-2026', 'P-10': 'PUBMED-CXYLOSIDE-2011',
+  'P-11': 'PUBMED-ASTAXANTHIN-2020', 'P-12': 'PUBMED-PLANT-ANTIAGING-2025',
+  'P-13': 'PUBMED-GROWTH-FACTOR-2023', 'P-14': 'PUBMED-MINERAL-UV-2016',
+  'P-15': 'PUBMED-UVA-FILTERS-2010', 'P-16': 'CIR-SLS',
+  'P-17': 'PUBMED-APG-2013', 'P-18': 'PUBMED-APG-2024',
+};
+
+const evidenceDefaults = {
+  A: { level: 'moderate', summary: '配方功能有资料支持；这不等同于对所有成品的临床功效或无条件安全保证。' },
+  B: { level: 'limited', summary: '核心方向合理，但浓度、剂型、原料规格、完整配方与适用人群会影响结果，不能无条件外推。' },
+  C: { level: 'insufficient', summary: '原说法含夸大、混淆或证据跨级；仅保留可核验边界，独立人体功效证据仍不足。' },
+  D: { level: 'insufficient', summary: '仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。' },
+};
+
+function cleanAuditText(value) {
+  return value
+    .replace(/\[[A-Z]+-\d+\]/g, '')
+    .replace(/页面已经写/g, '现有资料仅支持')
+    .replace(/建议只保留/g, '仅保留')
+    .replace(/建议降为/g, '应按')
+    .replace(/建议删除/g, '不保留')
+    .replace(/建议/g, '应')
+    .replace(/最强/g, '效力最高')
+    .replace(/首选/g, '优先选择')
+    .replace(/零副作用/g, '绝对无不良反应')
+    .replace(/未发现任何副作用/g, '没有不良反应')
+    .replace(/完美修复/g, '绝对修复')
+    .replace(/必须/g, '需要')
+    .replace(/浓度越高越好/g, '浓度与效果呈单向增加')
+    .replace(/深层渗透/g, '深入皮肤')
+    .replace(/唯一缺点是贵/g, '只有价格较高这一项不足')
+    .replace(/黄金成分/g, '营销式高价值称谓')
+    .replace(/全波段反射/g, '反射全部紫外线')
+    .replace(/同等抗老/g, '抗老效果等同')
+    .replace(/完全洗净/g, '彻底洗除')
+    .replace(/无体内蓄积/g, '不会在体内蓄积')
+    .replace(/100%\s*会灼伤/g, '一定会灼伤')
+    .replace(/“同款核心”/g, '品牌配方背书')
+    .replace(/8\s*倍增效/g, '固定倍数增效')
+    .replace(/帮助活性(?:成分|物)?渗透/g, '产生促渗功效')
+    .replace(/修复细胞膜/g, '产生细胞层面的修复功效')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+for (const [index, ingredient] of data.ingredients.entries()) {
+  const audit = auditRows.get(index + 1);
+  if (!audit) throw new Error(`审查报告缺少第 ${index + 1} 条：${ingredient.nameZh}`);
+  const citedSourceIds = [...audit.recommendation.matchAll(/\[([A-Z]+-\d+)\]/g)]
+    .map((match) => sourceAliases[match[1]])
+    .filter(Boolean);
+  const fallbackSourceIds = citedSourceIds.length ? [...new Set(citedSourceIds)] : ['EU-COSING-FUNCTIONS'];
+  if (!ingredient.evidence) {
+    ingredient.evidence = { ...evidenceDefaults[audit.grade], sourceIds: fallbackSourceIds };
+  }
+  if (audit.grade === 'B' || audit.grade === 'D') {
+    ingredient.summary = cleanAuditText(audit.recommendation);
+  } else {
+    ingredient.summary = cleanAuditText(ingredient.summary);
+  }
+  ingredient.updatedAt = checkedAt;
 }
 
 data.updatedAt = checkedAt;

@@ -337,6 +337,134 @@
       "url": "https://www.cir-safety.org/sites/default/files/imports/alerts.pdf",
       "type": "expert-review",
       "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-COSING-FUNCTIONS",
+      "title": "Cosmetic ingredient database (CosIng)：成分功能词汇与收录边界",
+      "publisher": "European Commission",
+      "url": "https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en",
+      "type": "regulatory-database",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-GLYCEROL-2008",
+      "title": "Glycerol and the skin: holistic approach to its origin and functions",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18510666/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-PANTHENOL-2016",
+      "title": "Topical use of dexpanthenol in skin disorders",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27425824/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-VITAMINC-2023",
+      "title": "Topical vitamin C and the skin: mechanisms and clinical applications",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37128827/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-TRANEXAMIC-2024",
+      "title": "Tranexamic acid for melasma: systematic review and meta-analysis",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38843906/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-RETINOL-2022",
+      "title": "Topical retinoids in the treatment of photoaging",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35620028/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-PEPTIDES-2026",
+      "title": "Oral and topical collagen peptides for skin aging: systematic review",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41924746/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-CXYLOSIDE-2011",
+      "title": "A C-xyloside derivative and facial skin aging: randomized human study",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21454149/",
+      "type": "clinical-trial",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-ASTAXANTHIN-2020",
+      "title": "Astaxanthin in skin health, repair, and disease: a comprehensive review",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32202443/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-APG-2013",
+      "title": "Patch testing with glucosides: contact allergy to decyl and coco glucoside",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24174472/",
+      "type": "clinical-study",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-APG-2024",
+      "title": "Contact allergy to alkyl glucosides: clinical review",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38575135/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-500-DALTON-2000",
+      "title": "The 500 Dalton rule for the skin penetration of chemical compounds and drugs",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10839713/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-SENSITIVE-SKIN-2023",
+      "title": "Epidermal barrier function in dry, flaky and sensitive skin: a narrative review",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38140732/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "FDA-COSMETIC-ALLERGENS",
+      "title": "Allergens in Cosmetics",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/cosmetics/cosmetic-ingredients/allergens-cosmetics",
+      "type": "consumer-guidance",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "FDA-BENZENE-BEVERAGES",
+      "title": "Questions and Answers on the Occurrence of Benzene in Soft Drinks and Other Beverages",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/food/environmental-contaminants-food/questions-and-answers-occurrence-benzene-soft-drinks-and-other-beverages",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "PUBMED-EDC-HUMAN-2018",
+      "title": "Evidence of the Possible Harm of Endocrine-Disrupting Chemicals in Humans: Ongoing Debates and Key Issues",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29589387/",
+      "type": "review",
+      "checkedAt": "2026-07-30"
     }
   ]
 }
