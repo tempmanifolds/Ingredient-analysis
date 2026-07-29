@@ -362,8 +362,8 @@
       "functions": [
         "抗老"
       ],
-      "summary": "促代谢和修复。轻微角质剥落→敏感肌慎用。",
-      "legacyRisk": "中",
+      "summary": "酵母提取物不是单一标准化活性物，不存在通用的“轻微剥脱角质”机制；因此也不应据此推断敏感肌存在中风险。耐受性与功效需结合具体原料、用量和成品证据判断。",
+      "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
       "cautions": [],
@@ -575,24 +575,23 @@
     },
     {
       "id": "repair-004",
-      "inci": null,
+      "inci": "Oligopeptide-1",
       "nameZh": "寡肽-1",
-      "aliases": [
-        "EGF"
-      ],
+      "aliases": [],
       "categories": [
         "repair"
       ],
       "functions": [
         "修复"
       ],
-      "summary": "“寡肽-1”与表皮生长因子（EGF）不是同一名称。国家药监局明确：EGF不得作为化妆品原料使用，配方或标签不得以EGF名义宣称；这项监管结论不能反向证明寡肽-1具有祛痘或修复功效。",
+      "summary": "Oligopeptide-1与人寡肽-1（EGF）不是同一名称。仅凭“小分子肽”不能证明其可深透皮层、促进胶原或修复创面；外用生长因子研究也存在制剂异质性，不能反向证明Oligopeptide-1的独立功效。",
       "legacyRisk": "低",
       "evidence": {
         "level": "strong",
-        "summary": "EGF的监管边界有国家药监局官方解释；寡肽-1的具体功效仍需看原料、浓度和成品人体证据。",
+        "summary": "国家药监局明确了EGF与寡肽-1的名称边界；系统综述也显示外用生长因子研究在制剂与终点上差异较大，不能据此证明Oligopeptide-1的独立功效。",
         "sourceIds": [
-          "CN-NMPA-EGF-2019"
+          "CN-NMPA-EGF-2019",
+          "PUBMED-GROWTH-FACTOR-2023"
         ]
       },
       "regulation": {
@@ -606,7 +605,7 @@
       },
       "cautions": [],
       "targetSection": "repair",
-      "pinyinInitials": "gt1egf",
+      "pinyinInitials": "gt1oligopeptide1",
       "updatedAt": "2026-07-29"
     },
     {
@@ -667,14 +666,16 @@
       "functions": [
         "安全"
       ],
-      "summary": "二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；不宜称为“孕妇婴幼儿首选”或“绝对最安全”。",
+      "summary": "二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线；氧化锌的长波UVA覆盖通常优于二氧化钛。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；皮肤涂抹与喷雾吸入风险需分开评估。",
       "legacyRisk": "低",
       "evidence": {
         "level": "strong",
-        "summary": "FDA拟议评估支持规定条件下的安全有效性；不支持对所有人群作绝对排名。",
+        "summary": "光学研究支持金属氧化物主要吸收紫外线，并显示氧化锌通常具有更好的长波UVA覆盖；FDA拟议评估支持规定剂型下的安全有效性。",
         "sourceIds": [
           "FDA-SUNSCREEN-ORDER",
-          "FDA-SUNSCREEN-USE"
+          "FDA-SUNSCREEN-USE",
+          "PUBMED-MINERAL-UV-2016",
+          "PUBMED-UVA-FILTERS-2010"
         ]
       },
       "regulation": null,
@@ -730,7 +731,13 @@
       "aliases": [
         "对羟基苯甲酸酯",
         "羟苯甲酯",
-        "羟苯丙酯"
+        "羟苯乙酯",
+        "羟苯丙酯",
+        "羟苯丁酯",
+        "methylparaben",
+        "ethylparaben",
+        "propylparaben",
+        "butylparaben"
       ],
       "categories": [
         "safety"
@@ -738,22 +745,24 @@
       "functions": [
         "安全"
       ],
-      "summary": "Parabens是一个成分家族，不能整体标为“高风险内分泌干扰物”。欧盟对Butylparaben与Propylparaben合计限为0.14%（以酸计），且不得用于3岁以下儿童尿布区驻留产品；FDA表示现有资料不足以证明化妆品当前使用方式会影响人体健康。",
-      "legacyRisk": "高",
+      "summary": "Parabens是成分家族，不能整体标为“高风险内分泌干扰物”。欧盟Methylparaben、Ethylparaben单酯最高0.4%（以酸计），允许酯类混合物总量最高0.8%；Butylparaben与Propylparaben合计最高0.14%，并有儿童尿布区用途限制。FDA现有资料不足以证明化妆品当前使用方式会影响人体健康。",
+      "legacyRisk": "低",
       "evidence": {
         "level": "strong",
         "summary": "监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。",
         "sourceIds": [
           "EU-PARABENS-2014",
+          "EU-COSMETICS-CONSOLIDATED-2026",
           "FDA-PARABENS"
         ]
       },
       "regulation": {
         "jurisdiction": "EU/US",
         "status": "restricted-by-member-and-use",
-        "summary": "欧盟Butylparaben与Propylparaben合计最高0.14%（以酸计），另有儿童尿布区用途限制；美国FDA未把整个家族判定为当前化妆品用法有害。",
+        "summary": "欧盟Methylparaben、Ethylparaben单酯0.4%，酯类混合物总量0.8%；Butylparaben与Propylparaben合计0.14%并有儿童尿布区限制。美国FDA未把整个家族判定为当前化妆品用法有害。",
         "sourceIds": [
           "EU-PARABENS-2014",
+          "EU-COSMETICS-CONSOLIDATED-2026",
           "FDA-PARABENS"
         ],
         "checkedAt": "2026-07-29"
@@ -863,7 +872,7 @@
     },
     {
       "id": "repair-005",
-      "inci": null,
+      "inci": "Bifida Ferment Lysate",
       "nameZh": "二裂酵母发酵产物溶胞产物",
       "aliases": [
         "二裂酵母",
@@ -875,7 +884,7 @@
       "functions": [
         "修复"
       ],
-      "summary": "维稳修复增强屏障。雅诗兰黛小棕瓶/欧莱雅双萃同款核心成分。",
+      "summary": "二裂酵母发酵产物溶胞产物可作为皮肤调理和保湿原料；仅凭原料名称不能推出减少UV所致DNA损伤、降低其他活性刺激或独立“维稳修复”的人体效果，品牌复配产品也不能替代该原料的独立证据。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -986,7 +995,8 @@
         "level": "limited",
         "summary": "UVA滤剂身份明确；定量降解和唯一稳定方案缺少对所有成品可通用的证据。",
         "sourceIds": [
-          "FDA-SUNSCREEN-ORDER"
+          "FDA-SUNSCREEN-ORDER",
+          "PUBMED-UVA-FILTERS-2010"
         ]
       },
       "regulation": null,
@@ -1092,7 +1102,7 @@
       "functions": [
         "祛痘"
       ],
-      "summary": "AHA家族最温和成员，轻度去角质+调节pH+抗氧化。",
+      "summary": "柠檬酸常用于调节pH和螯合，也可在特定浓度与pH下发挥AHA角质调节作用；没有通用依据称其为“AHA家族最温和成员”，刺激性取决于游离酸含量、成品pH和完整配方。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -1137,9 +1147,15 @@
       "functions": [
         "祛痘"
       ],
-      "summary": "蛋白质水解酶，温和去角质。量少时辅助效果为主。",
+      "summary": "木瓜蛋白酶可水解蛋白质，但配方中的酶稳定性和成品活性需要验证；其蛋白水解作用也可能引起刺激或致敏，不能概括为“极温和”或推荐给极敏感肌。",
       "legacyRisk": "低",
-      "evidence": null,
+      "evidence": {
+        "level": "limited",
+        "summary": "前临床资料提示木瓜蛋白酶可影响皮肤屏障并诱导致敏反应；这不能直接量化化妆品成品风险，但足以否定“基本无刺激”的绝对表述。",
+        "sourceIds": [
+          "PUBMED-PAPAIN-2015"
+        ]
+      },
       "regulation": null,
       "cautions": [],
       "targetSection": "acne",
@@ -1841,10 +1857,11 @@
     },
     {
       "id": "base-019",
-      "inci": null,
+      "inci": "Citrus Aurantium Amara (Bitter Orange) Peel Oil",
       "nameZh": "酸橙果皮油",
       "aliases": [
-        "甜橙油"
+        "bitter orange peel oil",
+        "sour orange peel oil"
       ],
       "categories": [
         "base"
@@ -1852,13 +1869,13 @@
       "functions": [
         "基础"
       ],
-      "summary": "柑橘类精油，提供天然香气，含少量光敏性呋喃香豆素（含量低通常安全）。",
+      "summary": "酸橙（Bitter/Sour Orange）与甜橙（Sweet Orange）是不同植物来源，不能互作别名。果皮油的光毒性取决于物种、部位、压榨或蒸馏方式以及呋喃香豆素含量，不能笼统写成“含量低通常安全”。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
       "cautions": [],
       "targetSection": "base",
-      "pinyinInitials": "scgpytcy",
+      "pinyinInitials": "scgpybitterorangepeeloilsourorangepeeloil",
       "updatedAt": "2026-07-29"
     },
     {
@@ -2111,11 +2128,10 @@
     },
     {
       "id": "whitening-012",
-      "inci": null,
+      "inci": "Bis-Ethoxydiglycol Cyclohexane 1,4-Dicarboxylate",
       "nameZh": "双-二乙氧基二甘醇环己烷1,4-二羧酸酯",
       "aliases": [
-        "TXC",
-        "传明酸酯"
+        "CAS 922165-31-9"
       ],
       "categories": [
         "whitening"
@@ -2123,13 +2139,13 @@
       "functions": [
         "美白"
       ],
-      "summary": "美白助渗剂，可促进其他美白成分渗透，本身也有提亮效果。",
+      "summary": "该物质（检索到CAS 922165-31-9）与Tranexamic Acid Cetyl Ester（TXC）不是同一化学物，已删除“TXC/传明酸酯”错误别名。“本身提亮+助渗”的实际功能和安全性仍应以供应商规格书与成品人体资料为准。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
       "cautions": [],
       "targetSection": "whitening",
-      "pinyinInitials": "seyyjegchjw14essztxccmsz",
+      "pinyinInitials": "seyyjegchjw14esszcas922165319",
       "updatedAt": "2026-07-29"
     },
     {
@@ -2145,7 +2161,7 @@
       "functions": [
         "基础"
       ],
-      "summary": "维生素B族成员，细胞信号分子，保湿并辅助皮肤代谢。",
+      "summary": "肌醇有时被历史性称为“维生素B8”，但不是公认的必需B族维生素；在化妆品中宜保守描述为保湿和皮肤调理，不能仅凭其参与细胞信号就断言外用可“辅助皮肤代谢”。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -2180,7 +2196,7 @@
     },
     {
       "id": "antiaging-009",
-      "inci": null,
+      "inci": "Phytol",
       "nameZh": "植醇",
       "aliases": [
         "phytol"
@@ -2189,9 +2205,10 @@
         "antiaging"
       ],
       "functions": [
-        "抗老"
+        "香料",
+        "皮肤调理"
       ],
-      "summary": "植物来源的脂肪醇，与视黄醇结构相关，具温和抗老和抗炎作用。",
+      "summary": "植醇是植物来源的脂肪醇。“与视黄醇结构相关”不等于具有视黄醇样的人体抗老效果；在化妆品中的已确认功能主要是香料和皮肤调理，抗老功效尚证据不足。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -2249,7 +2266,7 @@
     },
     {
       "id": "antiaging-011",
-      "inci": null,
+      "inci": "Hydroxypinacolone Retinoate",
       "nameZh": "羟基频哪酮视黄酸酯",
       "aliases": [
         "HPR"
@@ -2266,6 +2283,7 @@
         "level": "limited",
         "summary": "现有人体研究多为复配产品，不能支持与视黄醇的通用等效结论。",
         "sourceIds": [
+          "PUBMED-HPR-COMBO-2015",
           "FDA-PREGNANCY-ACOG"
         ]
       },
@@ -2297,7 +2315,7 @@
     },
     {
       "id": "repair-010",
-      "inci": null,
+      "inci": "Hydroxyphenyl Propamidobenzoic Acid",
       "nameZh": "羟苯基丙酰胺苯甲酸",
       "aliases": [],
       "categories": [
@@ -2306,7 +2324,7 @@
       "functions": [
         "修复"
       ],
-      "summary": "燕麦来源的舒缓成分（燕麦蒽酰胺类似物），快速缓解瘙痒和刺激。",
+      "summary": "羟苯基丙酰胺苯甲酸是燕麦蒽酰胺样合成分子，不等于“燕麦来源”。可保守描述为舒缓/皮肤调理原料；“快速缓解瘙痒和刺激”需要具体成品的人体临床资料支持。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -2348,7 +2366,7 @@
       "functions": [
         "保湿"
       ],
-      "summary": "含椰子油及多酚，滋润保湿，提供柔润肤感。",
+      "summary": "该 INCI 名称下的组成由提取部位、溶剂和工艺决定；不能仅凭名称推出“含椰子油及多酚”，应按供应商规格书和成品人体资料描述实际功能。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
@@ -2393,7 +2411,7 @@
     },
     {
       "id": "antiaging-012",
-      "inci": null,
+      "inci": "Bidens Pilosa Extract",
       "nameZh": "三叶鬼针草提取物",
       "aliases": [],
       "categories": [
@@ -2402,9 +2420,15 @@
       "functions": [
         "抗老"
       ],
-      "summary": "植物视黄醇替代品，含植醇衍生物，具有类似视黄醇的抗老效果但更温和。",
+      "summary": "三叶鬼针草提取物不能仅凭植物来源称为“植物视黄醇替代品”，也没有足够证据证明其与视黄醇同等抗老且更温和；植物外用抗老研究整体存在样本量、配方异质性和偏倚限制。",
       "legacyRisk": "低",
-      "evidence": null,
+      "evidence": {
+        "level": "insufficient",
+        "summary": "植物外用抗老系统综述不能建立三叶鬼针草与视黄醇的等效性；该成分仍缺足够的独立人体比较证据。",
+        "sourceIds": [
+          "PUBMED-PLANT-ANTIAGING-2025"
+        ]
+      },
       "regulation": null,
       "cautions": [],
       "targetSection": "antiaging",
@@ -2877,15 +2901,14 @@
     {
       "id": "cleanse-006",
       "inci": null,
-      "nameZh": "氨基酸表活(SCI/椰油酰甘氨酸钠)",
+      "nameZh": "SCI/椰油酰甘氨酸钠(不同类型表活)",
       "aliases": [
         "SCI",
         "椰油酰羟乙磺酸酯钠",
         "sodium",
         "cocoyl",
         "isethionate",
-        "椰油酰甘氨酸钠",
-        "氨基酸洁面"
+        "椰油酰甘氨酸钠"
       ],
       "categories": [
         "cleanse"
@@ -2893,13 +2916,13 @@
       "functions": [
         "洗护"
       ],
-      "summary": "不同氨基酸表活及完整体系的清洁力、pH和刺激潜力不同；不能仅凭“氨基酸”名称认定弱酸、低刺激或敏感肌首选。",
+      "summary": "SCI（椰油酰羟乙磺酸酯钠）是羟乙磺酸酯类阴离子表活，不是“氨基酸表活”；椰油酰甘氨酸钠才是氨基酸衍生表活。成品pH、刺激性和温和度取决于完整体系，成分表靠前也不表示体系必然更温和。",
       "legacyRisk": "低",
       "evidence": null,
       "regulation": null,
       "cautions": [],
       "targetSection": "cleanse",
-      "pinyinInitials": "ajsbhsciyyxgasnsciyyxqyhsznsodiumcocoylisethionateyyxgasnajsjm",
+      "pinyinInitials": "sciyyxgasnbtlxbhsciyyxqyhsznsodiumcocoylisethionateyyxgasn",
       "updatedAt": "2026-07-29"
     },
     {
@@ -3132,14 +3155,15 @@
       "functions": [
         "洗护"
       ],
-      "summary": "煤焦油、硫化硒等列于美国OTC专论；酮康唑1% OTC来自单独获批NDA，并非该专论活性物。不同药物、浓度和法域不能合并成一个“中风险成分”。",
+      "summary": "同一卡片内需分开判断：二硫化硒属于美国M032 OTC去屑专论活性物；煤焦油也由M032按具体适应证和标签条件管理；酮康唑不在该专论内，1% OTC来自单独获批NDA，2%洗发水走处方药路径。三者不能共用一个风险结论。",
       "legacyRisk": "中",
       "evidence": {
         "level": "strong",
-        "summary": "FDA专论与NDA记录明确区分了监管路径。",
+        "summary": "FDA专论与NDA记录明确区分了三类成分及酮康唑1%/2%的监管路径。",
         "sourceIds": [
           "FDA-DANDRUFF-M032",
-          "FDA-KETOCONAZOLE-NDA"
+          "FDA-KETOCONAZOLE-NDA",
+          "FDA-KETOCONAZOLE-2-RX"
         ]
       },
       "regulation": null,

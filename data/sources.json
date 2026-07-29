@@ -227,6 +227,14 @@
       "checkedAt": "2026-07-29"
     },
     {
+      "id": "FDA-KETOCONAZOLE-2-RX",
+      "title": "Nizoral A-D 1% NDA review：ketoconazole 2% shampoo 的处方药路径",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/97/20310_NIZORAL%20A-D%201%25_pharmr.pdf",
+      "type": "regulatory-review",
+      "checkedAt": "2026-07-29"
+    },
+    {
       "id": "NY-1-4-DIOXANE",
       "title": "1,4-Dioxane Limits for Household Cleansing, Personal Care, and Cosmetic Products",
       "publisher": "New York State Department of Environmental Conservation",
@@ -272,6 +280,54 @@
       "publisher": "PubMed",
       "url": "https://pubmed.ncbi.nlm.nih.gov/16185284/",
       "type": "human-experimental-study",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-HPR-COMBO-2015",
+      "title": "Treatment of mild to moderate acne with a fixed combination of hydroxypinacolone retinoate, retinol glycospheres and papain glycospheres",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25876142/",
+      "type": "open-label-combination-study",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-PLANT-ANTIAGING-2025",
+      "title": "Efficacy and Safety of Topical Application of Plant-Based Products on Skin Aging in Healthy Individuals: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39654386/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-GROWTH-FACTOR-2023",
+      "title": "Topical growth factor preparations for facial skin rejuvenation: A systematic review",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37222303/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-MINERAL-UV-2016",
+      "title": "Metal oxide sunscreens protect skin by absorption, not by reflection or scattering",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26431814/",
+      "type": "optical-study",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-UVA-FILTERS-2010",
+      "title": "Characterization of the UVA protection provided by avobenzone, zinc oxide, and titanium dioxide in broad-spectrum sunscreen products",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20806994/",
+      "type": "comparative-study",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-PAPAIN-2015",
+      "title": "Papain degrades tight junction proteins of human keratinocytes in vitro and sensitizes mice via the skin",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25705851/",
+      "type": "preclinical-study",
       "checkedAt": "2026-07-29"
     },
     {

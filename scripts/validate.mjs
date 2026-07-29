@@ -131,6 +131,30 @@ for (const sourceId of requiredTaskASources) {
   if (!sourceIds.has(sourceId)) fail(`任务 A 缺少必要来源：${sourceId}`);
 }
 
+const requiredTaskBSources = [
+  'PUBMED-NIACINAMIDE-2002', 'PUBMED-PHENYLETHYL-2013', 'PUBMED-HPR-COMBO-2015',
+  'PUBMED-PLANT-ANTIAGING-2025', 'PUBMED-GROWTH-FACTOR-2023', 'PUBMED-MINERAL-UV-2016',
+  'PUBMED-UVA-FILTERS-2010', 'PUBMED-PAPAIN-2015', 'FDA-KETOCONAZOLE-2-RX',
+];
+for (const sourceId of requiredTaskBSources) {
+  if (!sourceIds.has(sourceId)) fail(`任务 B 缺少必要来源：${sourceId}`);
+}
+
+const ingredientById = new Map(ingredients.map((item) => [item.id, item]));
+const taskBIdentityChecks = [
+  ['repair-004', 'EGF', '寡肽-1不得把EGF保留为搜索别名'],
+  ['whitening-012', 'TXC', '双-二乙氧基二甘醇环己烷条目不得保留TXC错误别名'],
+  ['whitening-012', '传明酸酯', '双-二乙氧基二甘醇环己烷条目不得保留传明酸酯错误别名'],
+  ['base-019', '甜橙油', '酸橙果皮油不得保留甜橙油错误别名'],
+  ['cleanse-006', '氨基酸洁面', 'SCI组合条目不得用氨基酸洁面概括'],
+];
+for (const [id, alias, message] of taskBIdentityChecks) {
+  if (ingredientById.get(id)?.aliases?.includes(alias)) fail(message);
+}
+if (ingredientById.get('safety-004')?.legacyRisk === '高') fail('Parabens不得继续保留整族高风险标签。');
+if (ingredientById.get('antiaging-009')?.functions?.includes('抗老')) fail('植醇不得把抗老保留为已确认配方功能。');
+if (ingredientById.get('antiaging-012')?.evidence?.level !== 'insufficient') fail('三叶鬼针草提取物应标为独立证据不足。');
+
 if (failures.length) {
   console.error('校验失败：');
   failures.forEach((message) => console.error(`- ${message}`));

@@ -44,9 +44,12 @@ const updates = {
     cautions: ['按产品标签使用；高浓度焕肤、较大面积或破损皮肤使用应先咨询专业人士。'],
   },
   'repair-004': {
-    summary: '“寡肽-1”与表皮生长因子（EGF）不是同一名称。国家药监局明确：EGF不得作为化妆品原料使用，配方或标签不得以EGF名义宣称；这项监管结论不能反向证明寡肽-1具有祛痘或修复功效。',
-    evidence: { level: 'strong', summary: 'EGF的监管边界有国家药监局官方解释；寡肽-1的具体功效仍需看原料、浓度和成品人体证据。', sourceIds: ['CN-NMPA-EGF-2019'] },
+    inci: 'Oligopeptide-1',
+    aliases: [],
+    summary: 'Oligopeptide-1与人寡肽-1（EGF）不是同一名称。仅凭“小分子肽”不能证明其可深透皮层、促进胶原或修复创面；外用生长因子研究也存在制剂异质性，不能反向证明Oligopeptide-1的独立功效。',
+    evidence: { level: 'strong', summary: '国家药监局明确了EGF与寡肽-1的名称边界；系统综述也显示外用生长因子研究在制剂与终点上差异较大，不能据此证明Oligopeptide-1的独立功效。', sourceIds: ['CN-NMPA-EGF-2019', 'PUBMED-GROWTH-FACTOR-2023'] },
     regulation: { jurisdiction: 'CN', status: 'naming-boundary', summary: 'EGF不得作为化妆品原料使用，配方或标签不得以EGF名义宣称；寡肽-1不能与EGF混同。', sourceIds: ['CN-NMPA-EGF-2019'], checkedAt },
+    pinyinInitials: 'gt1oligopeptide1',
   },
   'acne-002': {
     summary: 'AHA可促进角质更新；刺激和日晒敏感性取决于游离酸浓度、pH和完整配方。FDA消费者参考条件为AHA不高于10%、成品pH不低于3.5并配合防晒，不能用固定浓度阶梯定义“医疗级功效”。',
@@ -63,8 +66,8 @@ const updates = {
     regulation: { jurisdiction: 'EU/US', status: 'restricted-or-under-review', summary: '欧盟：脸/手/唇6%、身体2.2%、其他用途0.5%；美国拟议评估为数据不足，不等于不安全。', sourceIds: ['EU-2022-1176', 'FDA-SUNSCREEN-ORDER'], checkedAt },
   },
   'safety-002': {
-    summary: '二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；不宜称为“孕妇婴幼儿首选”或“绝对最安全”。',
-    evidence: { level: 'strong', summary: 'FDA拟议评估支持规定条件下的安全有效性；不支持对所有人群作绝对排名。', sourceIds: ['FDA-SUNSCREEN-ORDER', 'FDA-SUNSCREEN-USE'] },
+    summary: '二氧化钛和氧化锌防晒主要通过吸收并辅以散射/反射紫外线；氧化锌的长波UVA覆盖通常优于二氧化钛。FDA拟议评估支持非喷雾等规定剂型至25%的GRASE结论；皮肤涂抹与喷雾吸入风险需分开评估。',
+    evidence: { level: 'strong', summary: '光学研究支持金属氧化物主要吸收紫外线，并显示氧化锌通常具有更好的长波UVA覆盖；FDA拟议评估支持规定剂型下的安全有效性。', sourceIds: ['FDA-SUNSCREEN-ORDER', 'FDA-SUNSCREEN-USE', 'PUBMED-MINERAL-UV-2016', 'PUBMED-UVA-FILTERS-2010'] },
   },
   'safety-003': {
     summary: '糖皮质激素是药物类别；中国禁用原料目录禁止其作为普通化妆品原料。违法的是把药物擅自加入或以化妆品名义销售，不等于经批准、按医嘱使用的外用激素药本身“非法”。',
@@ -73,9 +76,11 @@ const updates = {
     cautions: ['怀疑化妆品违法添加时停止继续使用并尽快就医；正在按医嘱使用药品者不要自行停药。'],
   },
   'safety-004': {
-    summary: 'Parabens是一个成分家族，不能整体标为“高风险内分泌干扰物”。欧盟对Butylparaben与Propylparaben合计限为0.14%（以酸计），且不得用于3岁以下儿童尿布区驻留产品；FDA表示现有资料不足以证明化妆品当前使用方式会影响人体健康。',
-    evidence: { level: 'strong', summary: '监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。', sourceIds: ['EU-PARABENS-2014', 'FDA-PARABENS'] },
-    regulation: { jurisdiction: 'EU/US', status: 'restricted-by-member-and-use', summary: '欧盟Butylparaben与Propylparaben合计最高0.14%（以酸计），另有儿童尿布区用途限制；美国FDA未把整个家族判定为当前化妆品用法有害。', sourceIds: ['EU-PARABENS-2014', 'FDA-PARABENS'], checkedAt },
+    aliases: ['对羟基苯甲酸酯', '羟苯甲酯', '羟苯乙酯', '羟苯丙酯', '羟苯丁酯', 'methylparaben', 'ethylparaben', 'propylparaben', 'butylparaben'],
+    summary: 'Parabens是成分家族，不能整体标为“高风险内分泌干扰物”。欧盟Methylparaben、Ethylparaben单酯最高0.4%（以酸计），允许酯类混合物总量最高0.8%；Butylparaben与Propylparaben合计最高0.14%，并有儿童尿布区用途限制。FDA现有资料不足以证明化妆品当前使用方式会影响人体健康。',
+    legacyRisk: '低',
+    evidence: { level: 'strong', summary: '监管机构结论支持按具体成员和用量判断，不支持把乳腺癌或生殖毒性写成合规使用的确定后果。', sourceIds: ['EU-PARABENS-2014', 'EU-COSMETICS-CONSOLIDATED-2026', 'FDA-PARABENS'] },
+    regulation: { jurisdiction: 'EU/US', status: 'restricted-by-member-and-use', summary: '欧盟Methylparaben、Ethylparaben单酯0.4%，酯类混合物总量0.8%；Butylparaben与Propylparaben合计0.14%并有儿童尿布区限制。美国FDA未把整个家族判定为当前化妆品用法有害。', sourceIds: ['EU-PARABENS-2014', 'EU-COSMETICS-CONSOLIDATED-2026', 'FDA-PARABENS'], checkedAt },
   },
   'safety-005': {
     summary: 'MIT与MCI/MI是重要接触致敏关注物。欧盟规定MIT单用或MCI/MI混合物均仅限淋洗类，成品最高0.0015%；原页面“MIT≤0.01%”已修正。',
@@ -97,8 +102,9 @@ const updates = {
     evidence: { level: 'limited', summary: '缺少足以支持固定强弱排序的人体比较；孕期建议适用于外用维A类。Retinyl Propionate不是欧盟2024/996列名的Retinol、Retinyl Acetate或Retinyl Palmitate，不能自动套用该法规数值。', sourceIds: ['FDA-PREGNANCY-ACOG', 'EU-2024-996'] },
   },
   'antiaging-011': {
+    inci: 'Hydroxypinacolone Retinoate',
     summary: 'HPR是新型维A衍生物；受体作用等实验机制不能直接推出“无需转化且兼具A醇效果与更温和”。独立人体证据有限，孕期及备孕期按预防原则避免。',
-    evidence: { level: 'limited', summary: '现有人体研究多为复配产品，不能支持与视黄醇的通用等效结论。', sourceIds: ['FDA-PREGNANCY-ACOG'] },
+    evidence: { level: 'limited', summary: '现有人体研究多为复配产品，不能支持与视黄醇的通用等效结论。', sourceIds: ['PUBMED-HPR-COMBO-2015', 'FDA-PREGNANCY-ACOG'] },
   },
   'sunscreen-001': {
     summary: '奥克立林用于UVB/短波UVA防护，可在部分配方中帮助光稳定。欧盟喷雾产品最高9%、其他产品最高10%；FDA拟议评估为仍需更多安全数据，不等于已判不安全。',
@@ -107,7 +113,7 @@ const updates = {
   },
   'sunscreen-002': {
     summary: '阿伏苯宗是UVA滤剂，光稳定性取决于完整配方；“30分钟降解50%”“必须搭配奥克立林”等固定结论不能外推到所有成品。FDA拟议评估为仍需更多安全数据。',
-    evidence: { level: 'limited', summary: 'UVA滤剂身份明确；定量降解和唯一稳定方案缺少对所有成品可通用的证据。', sourceIds: ['FDA-SUNSCREEN-ORDER'] },
+    evidence: { level: 'limited', summary: 'UVA滤剂身份明确；定量降解和唯一稳定方案缺少对所有成品可通用的证据。', sourceIds: ['FDA-SUNSCREEN-ORDER', 'PUBMED-UVA-FILTERS-2010'] },
   },
   'safety-011': {
     summary: 'BHT是配方抗氧化剂。欧盟上限为漱口水0.001%、牙膏0.1%、其他驻留或淋洗产品0.8%，不能只用“高浓度有争议”概括。',
@@ -148,8 +154,8 @@ const updates = {
     regulation: { jurisdiction: 'EU', status: 'transitioning-restriction', summary: '淋洗化妆品D4/D5各0.1%限制已生效；其他化妆品D4/D5/D6限制自2027-06-06适用。线性Dimethicone不属于这三种环硅氧烷。', sourceIds: ['EU-REACH-2024-1328'], checkedAt },
   },
   'cleanse-013': {
-    summary: '煤焦油、硫化硒等列于美国OTC专论；酮康唑1% OTC来自单独获批NDA，并非该专论活性物。不同药物、浓度和法域不能合并成一个“中风险成分”。',
-    evidence: { level: 'strong', summary: 'FDA专论与NDA记录明确区分了监管路径。', sourceIds: ['FDA-DANDRUFF-M032', 'FDA-KETOCONAZOLE-NDA'] },
+    summary: '同一卡片内需分开判断：二硫化硒属于美国M032 OTC去屑专论活性物；煤焦油也由M032按具体适应证和标签条件管理；酮康唑不在该专论内，1% OTC来自单独获批NDA，2%洗发水走处方药路径。三者不能共用一个风险结论。',
+    evidence: { level: 'strong', summary: 'FDA专论与NDA记录明确区分了三类成分及酮康唑1%/2%的监管路径。', sourceIds: ['FDA-DANDRUFF-M032', 'FDA-KETOCONAZOLE-NDA', 'FDA-KETOCONAZOLE-2-RX'] },
   },
   'cleanse-015': {
     summary: 'DMDM乙内酰脲是甲醛释放体，主要消费者关注点是接触过敏。欧盟要求成品释放总甲醛超过0.001%（10 ppm）时标示“releases formaldehyde”；旧规则合规库存仅可提供至2026-07-31。',
