@@ -8,6 +8,14 @@
   };
   const categoryOrder = ['moisture', 'whitening', 'antiaging', 'acne', 'repair', 'sunscreen', 'cleanse', 'safety', 'base'];
   let ingredientDB = [];
+  let sourcesById = new Map();
+
+  const evidenceLabels = {
+    strong: '高等级证据',
+    moderate: '中等级证据',
+    limited: '有限证据',
+    insufficient: '证据不足',
+  };
 
   function setActiveTab(tabId, options) {
     const settings = Object.assign({ updateHistory: false, scroll: true }, options);
@@ -66,11 +74,44 @@
     });
   }
 
-  function badgeFor(risk) {
+  function evidenceBadgeFor(evidence) {
     const badge = document.createElement('span');
-    badge.className = 'badge ' + (risk === '高' ? 'badge-danger' : risk === '中' ? 'badge-warning' : 'badge-success');
-    badge.textContent = risk + '风险';
+    const level = evidence?.level || 'insufficient';
+    badge.className = 'evidence-chip evidence-' + level;
+    badge.textContent = evidence ? evidenceLabels[level] : '证据未分级';
     return badge;
+  }
+
+  function appendEvidence(container, ingredient) {
+    const meta = document.createElement('div');
+    meta.className = 'evidence-meta';
+    meta.append(evidenceBadgeFor(ingredient.evidence));
+
+    if (ingredient.evidence?.summary) {
+      const summary = document.createElement('span');
+      summary.className = 'evidence-summary';
+      summary.textContent = ingredient.evidence.summary;
+      meta.append(summary);
+    }
+
+    const sourceIds = ingredient.evidence?.sourceIds || [];
+    if (sourceIds.length) {
+      const sourceList = document.createElement('span');
+      sourceList.className = 'source-links';
+      sourceIds.forEach((sourceId) => {
+        const source = sourcesById.get(sourceId);
+        if (!source) return;
+        const link = document.createElement('a');
+        link.href = source.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = source.publisher + '（核对 ' + source.checkedAt + '）';
+        link.title = source.title;
+        sourceList.append(link);
+      });
+      meta.append(sourceList);
+    }
+    container.append(meta);
   }
 
   function showSearchResults(results) {
@@ -86,20 +127,22 @@
 
     const fragment = document.createDocumentFragment();
     results.forEach((ingredient) => {
-      const card = document.createElement('button');
-      card.type = 'button';
+      const card = document.createElement('article');
       card.className = 'card search-result-card';
-      card.dataset.ingredientId = ingredient.id;
 
       const title = document.createElement('h3');
-      title.append(document.createTextNode(ingredient.nameZh + ' '), badgeFor(ingredient.legacyRisk));
+      title.append(document.createTextNode(ingredient.nameZh + ' '), evidenceBadgeFor(ingredient.evidence));
       const summary = document.createElement('p');
       summary.className = 'ingredient-summary';
       summary.textContent = ingredient.summary;
-      const action = document.createElement('p');
+      const action = document.createElement('button');
+      action.type = 'button';
       action.className = 'ingredient-action';
+      action.dataset.ingredientId = ingredient.id;
       action.textContent = '查看详情 →';
-      card.append(title, summary, action);
+      card.append(title, summary);
+      appendEvidence(card, ingredient);
+      card.append(action);
       fragment.append(card);
     });
     resultList.append(fragment);
@@ -145,11 +188,12 @@
       const nameCell = appendCell(row, ingredient.nameZh);
       nameCell.style.fontWeight = '600';
       appendCell(row, ingredient.categories.map((category) => categoryNames[category] || category).join(' · '));
-      const riskCell = document.createElement('td');
-      riskCell.className = 'risk-cell';
-      riskCell.append(badgeFor(ingredient.legacyRisk));
-      row.append(riskCell);
+      const evidenceCell = document.createElement('td');
+      evidenceCell.className = 'evidence-cell';
+      evidenceCell.append(evidenceBadgeFor(ingredient.evidence));
+      row.append(evidenceCell);
       const summaryCell = appendCell(row, ingredient.summary, 'summary-cell');
+      appendEvidence(summaryCell, ingredient);
       const link = document.createElement('button');
       link.type = 'button';
       link.className = 'ingredient-link';
@@ -215,14 +259,18 @@
 
   async function init() {
     try {
-      const response = await fetch('./data/ingredients.json');
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      const data = await response.json();
+      const [ingredientResponse, sourceResponse] = await Promise.all([
+        fetch('./data/ingredients.json'),
+        fetch('./data/sources.json'),
+      ]);
+      if (!ingredientResponse.ok || !sourceResponse.ok) throw new Error('HTTP data load failed');
+      const [data, sourceData] = await Promise.all([ingredientResponse.json(), sourceResponse.json()]);
+      sourcesById = new Map(sourceData.sources.map((source) => [source.id, source]));
       ingredientDB = data.ingredients.map((item) => Object.assign({}, item, {
         searchText: [item.nameZh, ...item.aliases, item.summary].join(' ').toLowerCase(),
       }));
       document.getElementById('overviewIngredientCount').textContent = String(ingredientDB.length);
-      document.getElementById('overviewRiskCount').textContent = String(new Set(ingredientDB.map((item) => item.legacyRisk)).size);
+      document.getElementById('overviewEvidenceCount').textContent = String(ingredientDB.filter((item) => item.evidence).length);
       bindInteractions();
       applyLocation();
     } catch (error) {
@@ -230,7 +278,7 @@
       input.placeholder = '数据加载失败，请通过本地服务器或 GitHub Pages 打开';
       const message = document.createElement('p');
       message.className = 'status-message error';
-      message.textContent = '成分数据未能加载。请确认 data/ingredients.json 可访问。';
+      message.textContent = '数据未能加载。请确认 data/ingredients.json 与 data/sources.json 均可访问。';
       input.closest('.search-box').after(message);
       console.error(error);
     }

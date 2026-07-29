@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-29",
+  "sources": [
+    {
+      "id": "CN-NMPA-BANNED-2021",
+      "title": "国家药监局：化妆品禁用原料目录（2021年第74号）",
+      "publisher": "国家药品监督管理局",
+      "url": "https://www.nmpa.gov.cn/xxgk/ggtg/hzhpggtg/jmhzhptg/20210528174051160.html",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "CN-NMPA-MERCURY-2026",
+      "title": "国家药监局：将《汞及其化合物》等标准纳入化妆品安全技术规范（2026年第48号）",
+      "publisher": "国家药品监督管理局 / 中国食品药品检定研究院",
+      "url": "https://www.nifdc.org.cn/directory/web/nifdc/bshff/hzhpbzh/hzhpbzhtzgg/202605201425242049203.html",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "CN-NMPA-EGF-2019",
+      "title": "化妆品监督管理常见问题解答（一）：寡肽-1与人寡肽-1（EGF）",
+      "publisher": "国家药品监督管理局（北京市药监局转载）",
+      "url": "https://yjj.beijing.gov.cn/yjj/zwgk20/gg17/1694879/index.html",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-2024-996",
+      "title": "Commission Regulation (EU) 2024/996：维生素A、熊果苷与曲酸限制",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/996/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-2022-1176",
+      "title": "Commission Regulation (EU) 2022/1176：Benzophenone-3 与 Octocrylene 限制",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/1176/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-MIT-2017",
+      "title": "Commission Regulation (EU) 2017/1224：MIT 仅限淋洗类且最高0.0015%",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2017/1224/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-MCI-MI-2014",
+      "title": "Commission Regulation (EU) 1003/2014：MCI/MI 混合物限制",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014R1003",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-FORMALDEHYDE-2022",
+      "title": "Commission Regulation (EU) 2022/1181：释放甲醛标签阈值",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/1181/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-FRAGRANCE-2023",
+      "title": "Commission Regulation (EU) 2023/1545：香精过敏原标签",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/1545/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-ZPT-2021",
+      "title": "Commission Regulation (EU) 2021/1902：Zinc Pyrithione 禁用于欧盟化妆品",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2021/1902/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-CLIMBAZOLE-2019",
+      "title": "Commission Regulation (EU) 2019/698：Climbazole 使用条件",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2019/698/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-BHT-2022",
+      "title": "Commission Regulation (EU) 2022/2195：BHT 分产品类别限量",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2195/oj/eng",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "EU-BHA-2026",
+      "title": "SCCS Scientific Advice on Butylated Hydroxyanisole (BHA), SCCS/1682/25",
+      "publisher": "European Commission SCCS",
+      "url": "https://health.ec.europa.eu/publications/sccs-scientific-advice-butylated-hydroxyanisole-bha_en",
+      "type": "expert-opinion",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-PREGNANCY-ACOG",
+      "title": "Skin Conditions During Pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "url": "https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy",
+      "type": "clinical-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-SUNSCREEN-ORDER",
+      "title": "FDA Q&A：OTC 防晒 deemed final order 与 proposed order",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/drugs/understanding-over-counter-medicines/questions-and-answers-fda-posts-deemed-final-order-and-proposed-order-over-counter-sunscreen",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-SUNSCREEN-USE",
+      "title": "Sunscreen: How to Help Protect Your Skin from the Sun",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/drugs/understanding-over-counter-medicines/sunscreen-how-help-protect-your-skin-sun",
+      "type": "consumer-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-AHA",
+      "title": "Alpha Hydroxy Acids",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-SALICYLIC-ACNE",
+      "title": "OTC Acne Drug Products Final Rule：Salicylic acid 0.5%–2%",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/media/80442/download",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-HQ-MERCURY",
+      "title": "FDA Warns Consumers of Skin Products Containing Mercury and/or Hydroquinone",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/consumers/health-fraud-scams/fda-warns-consumers-skin-products-containing-mercury-andor-hydroquinone",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-PARABENS",
+      "title": "Parabens in Cosmetics",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/cosmetics/ingredients/parabens-cosmetics",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-PHTHALATES",
+      "title": "Phthalates in Cosmetics",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/cosmetics/cosmetic-ingredients/phthalates-cosmetics",
+      "type": "regulatory-guidance",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-DANDRUFF-M032",
+      "title": "OTC Monograph M032：去屑、脂溢性皮炎与银屑病药物",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/omuf/OTC%20Monograph_M032-Drug%20Products%20for%20the%20Control%20of%20Dandruff%20Seborrheic%20Dermatitis%20and%20Psoriasis%2012.16.2021.pdf",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "FDA-KETOCONAZOLE-NDA",
+      "title": "Nizoral A-D (ketoconazole 1%) NDA 020310",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/97/20310_Nizoral.htm",
+      "type": "regulatory-record",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "NY-1-4-DIOXANE",
+      "title": "1,4-Dioxane Limits for Household Cleansing, Personal Care, and Cosmetic Products",
+      "publisher": "New York State Department of Environmental Conservation",
+      "url": "https://dec.ny.gov/environmental-protection/pollution-prevention/household-personal-cosmetic-dioxane-limits",
+      "type": "regulation",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-HA-2024",
+      "title": "Effectiveness of topical hyaluronic acid of different molecular weights in xerosis cutis",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38829483/",
+      "type": "randomized-trial",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-NIACINAMIDE-2002",
+      "title": "The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12100180/",
+      "type": "clinical-trial",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-RETINOID-PREG-2015",
+      "title": "Pregnancy outcomes following first-trimester exposure to topical retinoids: systematic review and meta-analysis",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26215715/",
+      "type": "systematic-review",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-PHENYLETHYL-2013",
+      "title": "Efficacy of hydroquinone-free skin-lightening cream for photoaging",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23438137/?format=pubmed",
+      "type": "clinical-trial",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "PUBMED-FERULIC-2005",
+      "title": "Ferulic acid stabilizes a solution of vitamins C and E and doubles its photoprotection of skin",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16185284/",
+      "type": "human-experimental-study",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "CIR-SLS",
+      "title": "Final Report on the Safety Assessment of Sodium Lauryl Sulfate and Ammonium Lauryl Sulfate",
+      "publisher": "Cosmetic Ingredient Review",
+      "url": "https://www.cir-safety.org/sites/default/files/imports/alerts.pdf",
+      "type": "expert-review",
+      "checkedAt": "2026-07-29"
+    }
+  ]
+}

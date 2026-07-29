@@ -5,7 +5,7 @@ const root = process.cwd();
 const failures = [];
 const requiredFiles = [
   'index.html', 'about.html', '404.html', 'robots.txt', '.nojekyll',
-  'css/main.css', 'js/app.js', 'data/ingredients.json',
+  'css/main.css', 'js/app.js', 'data/ingredients.json', 'data/sources.json',
   'legacy/护肤品成分研究报告.html', '.github/workflows/pages.yml',
 ];
 
@@ -20,6 +20,15 @@ for (const relativePath of requiredFiles) {
 const dataPath = path.join(root, 'data', 'ingredients.json');
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const ingredients = data.ingredients;
+const sourceData = JSON.parse(fs.readFileSync(path.join(root, 'data', 'sources.json'), 'utf8'));
+const sourceIds = new Set();
+for (const source of sourceData.sources || []) {
+  if (!source.id?.trim()) fail('来源缺少 id。');
+  if (sourceIds.has(source.id)) fail(`重复来源 id：${source.id}`);
+  sourceIds.add(source.id);
+  if (!/^https:\/\//.test(source.url || '')) fail(`${source.id} 的链接必须使用 HTTPS。`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt || '')) fail(`${source.id} 缺少有效 checkedAt。`);
+}
 const allowedCategories = new Set(['moisture', 'whitening', 'antiaging', 'acne', 'repair', 'sunscreen', 'cleanse', 'safety', 'base']);
 
 if (!Array.isArray(ingredients)) fail('ingredients 必须是数组。');
@@ -45,6 +54,21 @@ for (const [index, item] of ingredients.entries()) {
   if (!['高', '中', '低'].includes(item.legacyRisk)) fail(`${item.id} 的旧版风险标签无效。`);
   if (!item.pinyinInitials?.trim()) fail(`${item.id} 缺少拼音首字母索引。`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(item.updatedAt || '')) fail(`${item.id} 的 updatedAt 格式无效。`);
+  if (item.evidence) {
+    if (!['strong', 'moderate', 'limited', 'insufficient'].includes(item.evidence.level)) fail(`${item.id} 的证据等级无效。`);
+    if (!item.evidence.summary?.trim()) fail(`${item.id} 的 evidence.summary 为空。`);
+    if (!Array.isArray(item.evidence.sourceIds) || !item.evidence.sourceIds.length) fail(`${item.id} 的证据结论缺少来源。`);
+    for (const sourceId of item.evidence.sourceIds || []) {
+      if (!sourceIds.has(sourceId)) fail(`${item.id} 引用未定义来源：${sourceId}`);
+    }
+  }
+  if (item.regulation) {
+    if (!Array.isArray(item.regulation.sourceIds) || !item.regulation.sourceIds.length) fail(`${item.id} 的法规结论缺少来源。`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(item.regulation.checkedAt || '')) fail(`${item.id} 的法规结论缺少有效 checkedAt。`);
+    for (const sourceId of item.regulation.sourceIds || []) {
+      if (!sourceIds.has(sourceId)) fail(`${item.id} 的法规结论引用未定义来源：${sourceId}`);
+    }
+  }
 }
 
 const categoryCounts = Object.fromEntries([...allowedCategories].map((category) => [category, ingredients.filter((item) => item.categories.includes(category)).length]));
@@ -79,9 +103,19 @@ for (const htmlFile of ['index.html', 'about.html', '404.html']) {
 
 const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (!indexHtml.includes('id="overviewIngredientCount">—</div>')) fail('首页成分总数应使用加载前占位符。');
-if (!indexHtml.includes('id="overviewRiskCount">—</div>')) fail('首页风险标签数量应由数据动态生成。');
+if (!indexHtml.includes('id="overviewEvidenceCount">—</div>')) fail('首页证据分级数量应由数据动态生成。');
 if (!indexHtml.includes('./data/ingredients.json') && !fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('./data/ingredients.json')")) {
   fail('页面未使用相对路径加载 ingredients.json。');
+}
+if (!fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('./data/sources.json')")) fail('页面未加载 sources.json。');
+
+const prohibitedClaims = [
+  '孕妇绝对禁用', 'SPF30 = 延长30倍晒伤时间', 'α-熊果苷效果是β-熊果苷的15倍',
+  '抑制能力是曲酸的22倍、熊果苷的100倍', '浓度越高效果越好（30%浓度',
+  'MIT单用≤0.01%', '内分泌功能障碍、珊瑚生态破坏', '荧光增白剂</td>',
+];
+for (const claim of prohibitedClaims) {
+  if (indexHtml.includes(claim) || JSON.stringify(data).includes(claim)) fail(`仍存在已驳回或过度断言：${claim}`);
 }
 
 if (failures.length) {

@@ -145,16 +145,14 @@ a:focus-visible {
 }
 .search-result-card {
   width: 100%;
-  border: 0;
   border-left: 4px solid var(--primary);
   text-align: left;
   font: inherit;
   color: inherit;
-  cursor: pointer;
 }
 .search-result-card:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .ingredient-summary { font-size: .9em; color: var(--gray-600); margin-top: 6px; }
-.ingredient-action { font-size: .8em; color: var(--primary); margin-top: 6px; }
+.ingredient-action { border: 0; background: transparent; font: inherit; font-size: .8em; color: var(--primary); margin-top: 8px; padding: 4px 0; cursor: pointer; }
 .ingredient-link {
   border: 0;
   background: transparent;
@@ -163,8 +161,20 @@ a:focus-visible {
   font: inherit;
   padding: 4px 0;
 }
-.risk-cell { text-align: center; white-space: nowrap; }
+.evidence-cell { text-align: center; white-space: nowrap; }
 .summary-cell { font-size: .85em; color: var(--gray-600); }
+.evidence-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px; font-size: .78em; }
+.evidence-chip { display: inline-block; border-radius: 999px; padding: 3px 9px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
+.evidence-strong { color: #22543d; background: #c6f6d5; }
+.evidence-moderate { color: #744210; background: #fefcbf; }
+.evidence-limited { color: #7b341e; background: #feebc8; }
+.evidence-insufficient { color: #742a2a; background: #fed7d7; }
+.evidence-summary { color: var(--gray-600); }
+.source-links { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; }
+.source-links a, .claim-sources a { color: #2b6cb0; text-decoration: underline; text-underline-offset: 2px; }
+.claim-evidence { margin-top: 8px; color: var(--gray-600); font-size: .82em; line-height: 1.65; }
+.claim-sources { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; margin-left: 6px; }
+.evidence-legend { border-left: 4px solid var(--primary); }
 .status-message { color: var(--gray-600); padding: 12px 0; }
 .status-message.error { color: var(--danger); }
 .site-footer {

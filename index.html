@@ -13,7 +13,7 @@
 <!-- Header -->
 <header class="header">
   <h1>护肤品成分分析</h1>
-  <p>覆盖保湿、美白、抗老、祛痘、修复、防晒、洗护、安全、基础 九大类成分的功效原理、不良反应与安全风险评估</p>
+  <p>覆盖九大类成分的配方作用、人体证据、使用注意与分法域监管状态</p>
 </header>
 
 <!-- Nav -->
@@ -50,8 +50,8 @@
     <div class="stats">
       <div class="stat-card"><div class="num" id="overviewIngredientCount">—</div><div class="label">收录成分</div></div>
       <div class="stat-card"><div class="num">9</div><div class="label">功能分类</div></div>
-      <div class="stat-card"><div class="num" id="overviewRiskCount">—</div><div class="label">数据风险标签</div></div>
-      <div class="stat-card"><div class="num">20+</div><div class="label">法规依据</div></div>
+      <div class="stat-card"><div class="num" id="overviewEvidenceCount">—</div><div class="label">已核验证据条目</div></div>
+      <div class="stat-card"><div class="num">30+</div><div class="label">可靠来源</div></div>
     </div>
 
     <div class="quick-nav">
@@ -73,28 +73,36 @@
       <p><strong>建立耐受：</strong>对刺激性活性成分（视黄醇、果酸、高浓度烟酰胺），需从低浓度开始，逐步增加使用频率让皮肤适应。</p>
     </div>
 
-    <div class="card">
-      <h3>📊 成分风险速查</h3>
-      <table>
-        <tr><th>风险</th><th>等级</th><th>典型成分</th><th>说明</th></tr>
-        <tr><td>🔴 高风险</td><td class="risk-high">绝对禁区</td><td>糖皮质激素、氢醌、汞、铅</td><td>非法添加物，严禁使用</td></tr>
-        <tr><td>🟠 中高风险</td><td class="risk-mid">严格限制</td><td>视黄醇(孕妇)、高浓度酸类、MIT防腐剂</td><td>特定人群禁用或需专业指导</td></tr>
-        <tr><td>🟡 中等风险</td><td class="risk-mid">注意耐受</td><td>高浓度烟酰胺、水杨酸、酒精</td><td>需建立耐受，注意浓度</td></tr>
-        <tr><td>🟢 低风险</td><td class="risk-low">温和安全</td><td>透明质酸、甘油、神经酰胺、泛醇</td><td>适合大多数肤质</td></tr>
-      </table>
+    <div class="card evidence-legend">
+      <h3>证据等级与阅读方式</h3>
+      <p>证据等级评的是<strong>当前这条结论</strong>，不是给原料贴永久的“安全/危险”标签。安全性会随法域、产品类别、浓度、剂型、使用面积与个体情况改变。</p>
+      <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span> 权威法规、专业指南或系统综述　 <span class="evidence-chip evidence-moderate">中等级证据</span> 有人体研究但样本或配方有限　 <span class="evidence-chip evidence-limited">有限证据</span> 体外、动物、间接或复配外推　 <span class="evidence-chip evidence-insufficient">证据不足</span> 无法可靠核验或主要来自营销材料</p>
+      <p class="claim-evidence">文献与法规最近核对日期：2026-07-29。点击每条结论旁的来源可直达原文。</p>
     </div>
 
     <div class="card">
-      <h3>✅ 黄金搭档 & ❌ 禁忌搭配</h3>
+      <h3>📊 风险判断速查</h3>
+      <table>
+        <tr><th>判断维度</th><th>示例</th><th>应怎样读</th></tr>
+        <tr><td>法规禁用</td><td>糖皮质激素作为中国普通化妆品原料</td><td>只在明确法域和产品类别下成立，不等于合规药品“非法”</td></tr>
+        <tr><td>法规限用</td><td>MIT、曲酸、部分防晒剂</td><td>必须同时看用途、剂型和最高浓度</td></tr>
+        <tr><td>特殊人群</td><td>孕期避免外用维A类</td><td>是预防性专业建议；意外少量接触不等于已造成伤害</td></tr>
+        <tr><td>耐受与过敏</td><td>酸类、香精、防腐剂</td><td>不能只凭一个原料名预测整件产品或某个人的反应</td></tr>
+      </table>
+      <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.nmpa.gov.cn/xxgk/ggtg/hzhpggtg/jmhzhptg/20210528174051160.html" target="_blank" rel="noopener noreferrer">国家药监局禁用原料目录（核对 2026-07-29）</a><a href="https://eur-lex.europa.eu/eli/reg/2024/996/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2024/996（核对 2026-07-29）</a><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG 孕期皮肤用药（核对 2026-07-29）</a></span></p>
+    </div>
+
+    <div class="card">
+      <h3>搭配提示：重点是叠加刺激，不是化学“禁忌”</h3>
       <div class="pairing">
         <div class="pair-card pair-bad">
-          <div class="pair-title">❌ 禁忌搭配</div>
+          <div class="pair-title">⚠ 可能增加刺激或需看配方</div>
           <table style="font-size:.82em">
             <tr><th>A</th><th>B</th><th>后果</th></tr>
-            <tr><td>蓝铜胜肽</td><td>纯VC/酸类</td><td>破坏铜离子活性</td></tr>
-            <tr><td>视黄醇</td><td>果酸/水杨酸</td><td>严重脱皮</td></tr>
-            <tr><td>VC</td><td>苯甲酸钠</td><td>可能生成苯</td></tr>
-            <tr><td>果酸</td><td>水杨酸</td><td>过度去角质</td></tr>
+            <tr><td>蓝铜胜肽</td><td>低pH酸类</td><td>稳定性取决于具体配方，不能一概判定失活</td></tr>
+            <tr><td>视黄醇</td><td>果酸/水杨酸</td><td>同一时段叠加可能增加刺激</td></tr>
+            <tr><td>VC</td><td>苯甲酸钠</td><td>没有足够证据作为护肤品通用禁配</td></tr>
+            <tr><td>果酸</td><td>水杨酸</td><td>叠加去角质可能增加刺激</td></tr>
           </table>
         </div>
         <div class="pair-card pair-good">
@@ -119,79 +127,82 @@
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">透明质酸 (玻尿酸) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">透明质酸 (玻尿酸) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 天然存在于皮肤真皮层的大分子多糖，可携带自身重量 500-1000 倍的水分。在皮肤表面形成水合膜，角质细胞吸水膨胀后皮肤显饱满光滑。</p>
+        <p><span class="tag tag-mech">功效原理</span> 透明质酸具有保水和成膜作用；外用成品可改善角质层含水量，但效果受分子量、配方和使用环境影响。“携带500–1000倍水分”是材料性质的简化说法，不能直接当作皮肤保湿的临床倍数。</p>
         <p><span class="tag tag-risk">不良反应</span> 基本无刺激。但大分子透明质酸仅停留在表面，不能真正被皮肤吸收。如果环境干燥且未叠加封闭剂，反而会从皮肤内部吸走水分。</p>
-        <p><span class="tag tag-use">使用建议</span> 必须搭配含油脂的封闭剂（角鲨烷、神经酰胺霜）锁水。不同分子量复合使用效果更好：大分子表面抓水 + 小分子深层渗透。</p>
+        <p><span class="tag tag-use">使用建议</span> 是否需要叠加面霜取决于完整配方、肤质和环境；不同分子量可能影响肤感与作用部位，但“小分子深层渗透”“复配一定更好”缺少可通用于所有产品的人体证据。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/38829483/" target="_blank" rel="noopener noreferrer">随机对照试验：不同分子量透明质酸保湿（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">甘油 (Glycerin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">甘油 (Glycerin) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 最经典、最经济的保湿剂。与皮肤天然保湿因子(NMF)结构相似，渗透角质层吸引水分。</p>
-        <p><span class="tag tag-risk">不良反应</span> 高浓度纯甘油反而从皮肤吸水导致更干燥。配方中通常控制在 5-15%。</p>
+        <p><span class="tag tag-risk">不良反应</span> 甘油的保湿表现取决于浓度、载体、环境湿度和完整配方；“高浓度一定从皮肤反向吸水致干”以及“通常固定在5–15%”都不宜当作通用定律。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/18510666/" target="_blank" rel="noopener noreferrer">甘油与角质层水合综述（核对 2026-07-29）</a></span></p>
         <p><span class="tag tag-use">使用建议</span> 几乎所有乳液面霜的基础保湿成分。注意购买正规配方产品，切勿直接涂纯甘油/开塞露。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">神经酰胺 (Ceramide) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">神经酰胺 (Ceramide) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 占细胞间脂质约 50%，是皮肤屏障"水泥"的核心组分。补充神经酰胺可修复屏障、锁住水分、减少经皮水分流失(TEWL)。</p>
-        <p><span class="tag tag-risk">不良反应</span> 极为安全温和，几乎无致敏报告。其本身就是皮肤固有成分。</p>
-        <p><span class="tag tag-use">使用建议</span> 最佳协同配方：神经酰胺 + 胆固醇 + 游离脂肪酸按 3:1:1 比例，模拟天然皮肤屏障。敏感肌修复首选。</p>
+        <p><span class="tag tag-risk">不良反应</span> 外用神经酰胺通常用于屏障护理，但不能由“皮肤固有成分”直接推出任一成品都不会刺激或致敏。</p>
+        <p><span class="tag tag-use">使用建议</span> 神经酰胺、胆固醇与游离脂肪酸的组合有配方学依据，但固定 3:1:1 并非适用于所有原料与肤质的临床最优比例。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">角鲨烷 (Squalane) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">角鲨烷 (Squalane) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 最接近人体皮脂膜的脂类，与皮脂高度相容，能迅速渗透形成保护膜，防止水分流失并抑制脂质过氧化。</p>
-        <p><span class="tag tag-risk">不良反应</span> 极低致敏性，广泛耐受。但本身不能祛痘美白——痘痘肌若表皮角鲨烷偏高反而可能加重粉刺。</p>
-        <p><span class="tag tag-use">使用建议</span> 油皮、干皮均可选角鲨烷（角鲨烯虽更接近皮脂但易氧化、致痘性更高，通常首选氢化后更稳定的角鲨烷）。最好在精华后、面霜前使用以锁住水相成分。</p>
+        <p><span class="tag tag-risk">不良反应</span> 多数成品可耐受，但致痘性和刺激性仍取决于完整配方与个体；不能用皮脂中的角鲨烯研究直接判断外用角鲨烷必然致痘或不致痘。</p>
+        <p><span class="tag tag-use">使用建议</span> 角鲨烷比角鲨烯更稳定，可作为柔润剂使用；是否适合油皮、干皮以及使用顺序，应以成品说明和实际耐受为准。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">泛醇 / 维生素B5 (Panthenol) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">泛醇 / 维生素B5 (Panthenol) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 转化为泛酸后参与皮肤代谢。强化屏障功能、促进角质层水合、修复受损组织，兼具保湿和修复双重功效。</p>
-        <p><span class="tag tag-risk">不良反应</span> 非常温和安全，敏感肌和医美术后均可使用。</p>
-        <p><span class="tag tag-use">使用建议</span> 浓度 1-5% 即有保湿效果。可与透明质酸搭配：前者深层锁水，后者表面抓水。</p>
+        <p><span class="tag tag-risk">不良反应</span> 泛醇通常耐受性较好，但不能保证所有配方或医美术后皮肤均适用；术后护理应遵医嘱。</p>
+        <p><span class="tag tag-use">使用建议</span> 部分1–5%泛醇配方有人体保湿/屏障研究，但不能据此保证任一成品在该区间都有效；与透明质酸搭配也不是“深层锁水+表面抓水”的固定分工。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/27425824/" target="_blank" rel="noopener noreferrer">外用泛醇人体研究综述（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">氨基酸保湿剂 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">氨基酸保湿剂 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 人体天然保湿因子(NMF)的重要组成部分。通过吸水调节角质层含水量和酸碱平衡，不依赖油脂即可保湿。</p>
-        <p><span class="tag tag-risk">不良反应</span> 安全无刺激，不代表产品本身温和（刺激性可能来自香精、乳化剂等其他成分）。</p>
-        <p><span class="tag tag-use">使用建议</span> 不光存在于洁面，乳液精华中也广泛添加。多种氨基酸复配效果优于单一氨基酸。</p>
+        <p><span class="tag tag-risk">不良反应</span> 不能仅凭“氨基酸”一词认定无刺激；需看具体成分、浓度和完整配方。</p>
+        <p><span class="tag tag-use">使用建议</span> 氨基酸类成分可见于洁面、乳液和精华；缺少证据时，不应宣称多种复配必然优于单一成分。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">丁二醇 (Butylene Glycol) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">丁二醇 (Butylene Glycol) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 最常见的保湿溶剂之一。吸湿性佳，帮助活性成分渗透角质层，同时带来清爽不黏腻的肤感。</p>
-        <p><span class="tag tag-risk">不良反应</span> 温和安全，几乎所有肤质可用。</p>
+        <p><span class="tag tag-risk">不良反应</span> 常作为溶剂和保湿剂使用；个体仍可能出现刺激或接触反应，不能概括为适合所有肤质。</p>
         <p><span class="tag tag-use">使用建议</span> 几乎所有精华、乳液的"幕后配角"。排名靠前说明是溶剂/促渗主力。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">1,2-戊二醇 / 辛甘醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">1,2-戊二醇 / 辛甘醇 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 多元醇类，兼具保湿和辅助防腐双重功能。通过降低产品水分活度抑制微生物，减少传统防腐剂用量。</p>
-        <p><span class="tag tag-risk">不良反应</span> 温和安全，属"无防腐"配方的幕后功臣。</p>
-        <p><span class="tag tag-use">使用建议</span> "无添加防腐剂"宣称的产品通常靠此类多元醇实现防腐。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可兼作保湿和防腐增效剂，但刺激性与完整配方和用量有关，不能因此把成品称为“无防腐”或无刺激。</p>
+        <p><span class="tag tag-use">使用建议</span> 部分“未添加传统防腐剂”配方会采用多元醇等多重抑菌体系；这不等于产品无需通过防腐挑战测试。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">丙二醇 / 双丙甘醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">丙二醇 / 双丙甘醇 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 基础保湿剂兼促渗溶剂。双丙甘醇比丙二醇更温和滋润，常用于敏感肌产品。</p>
         <p><span class="tag tag-risk">不良反应</span> 丙二醇少数人可能轻微刺痛发热；双丙甘醇更温和。整体安全性高。</p>
@@ -199,21 +210,21 @@
       </div>
     </div>
       <div class="accordion-item">
-      <div class="accordion-header">1,2-己二醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">1,2-己二醇 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 多元醇保湿剂兼辅助防腐，比戊二醇更滋润，常见于温和配方。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">海藻糖 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">海藻糖 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 天然糖类保湿剂，保护细胞膜和蛋白质结构，极端环境下也能锁水。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">霍霍巴籽油 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">霍霍巴籽油 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 与人体皮脂高度相似的液态蜡，滋润保湿不油腻。</p>
       </div>
@@ -249,92 +260,97 @@
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">烟酰胺 (Niacinamide / VB3) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">烟酰胺 (Niacinamide / VB3) <span class="evidence-chip evidence-moderate">中等级证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 阻断黑色素从黑色素细胞向表皮角质细胞的转移通路——并非抑制黑色素生成，而是让它"运不出来"。同时具有控油、抗炎、促进神经酰胺合成的多重功效。</p>
-        <p><strong>浓度-功效对应：</strong></p>
-        <table><tr><th>浓度</th><th>功效</th></tr><tr><td>2%</td><td>提亮肤色</td></tr><tr><td>4-5%</td><td>祛痘抗炎、控油</td></tr><tr><td>5%+</td><td>全面美白+A醇协同抗老</td></tr></table>
-        <p><span class="tag tag-risk">不良反应</span> 高浓度（5%以上）刺激性增大——泛红、发热、过敏甚至肿胀。有个体差异的"长毛"现象（促进皮肤代谢导致毛发更健康）。</p>
-        <p><span class="tag tag-use">使用建议</span> 从低浓度开始建立耐受；"烟酰胺+VC会生成烟酸刺激"是基于高温实验的旧观点，常温常规浓度下两者其实兼容甚至协同，仅极敏感者高浓度叠加时可能轻微泛红；搭配视黄醇可增强抗老效果并减轻A醇刺激。</p>
+        <p><strong>浓度证据：</strong>2%与5%的特定成品均有人体研究，但研究配方、对象和终点不同，不能据此建立“2%=提亮、4–5%=控油祛痘、5%+=全面抗老”的通用剂量阶梯。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可能出现刺痛、泛红或不耐受；概率不能仅凭“5%以上”这一阈值判断。“长毛”缺少可靠临床依据，已删除。</p>
+        <p><span class="tag tag-use">使用建议</span> 从较低频率开始观察耐受；能否与VC或视黄醇同用取决于成品配方与个人耐受，不应写成必然“协同”或“减轻刺激”。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener noreferrer">2%/5%烟酰胺人体研究（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">维生素C / 抗坏血酸 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">维生素C / 抗坏血酸 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 双重美白路径：(1)抑制酪氨酸酶活性；(2)将已生成的黑色素还原为无色。同时是强力抗氧化剂，清除自由基、"牺牲"自己保护皮肤免受UV伤害。</p>
-        <p><span class="tag tag-risk">不良反应</span> 左旋C不稳定，易被氧化变黄（不是皮肤变黄，洗掉即可）。高浓度(15-20%)有刺痛感。酸性(pH<3.5)对敏感肌不友好。</p>
-        <p><span class="tag tag-use">使用建议</span> 日间使用+防晒 = 最佳抗氧化方案。与VE搭配1+1>2。衍生物(AA2G、乙基VC)更稳定温和但功效略降。</p>
+        <p><span class="tag tag-risk">不良反应</span> 左旋维C稳定性和刺激性受浓度、pH、载体与包装共同影响；不能把15–20%或pH&lt;3.5写成人人都会刺痛的阈值。</p>
+        <p><span class="tag tag-use">使用建议</span> 人体研究提示可能改善色沉和部分光老化表现，但系统综述仅纳入7项研究、139人，理想浓度尚不能确定。维C衍生物也不能统一概括为“更温和但功效略降”。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/37128827/" target="_blank" rel="noopener noreferrer">外用维C系统综述（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">熊果苷 (Arbutin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">熊果苷 (Arbutin) <span class="evidence-chip evidence-limited">量化比较证据有限</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 竞争性抑制酪氨酸酶活性，从源头阻断黑色素合成。α-熊果苷效果是β-熊果苷的15倍以上且更温和。</p>
-        <p><span class="tag tag-risk">不良反应</span> 极温和，适合烟酰胺不耐受人群。高浓度β-熊果苷理论上存在水解释放氢醌的顾虑，市售产品浓度通常较低，安全性良好。</p>
-        <p><span class="tag tag-use">使用建议</span> 选α-熊果苷（成分表会明确标注"α-熊果苷"），比只标"熊果苷"（通常是β型）贵但效果和安全性更优。</p>
+        <p><span class="tag tag-mech">功效原理</span> 可影响酪氨酸酶相关通路。“α型比β型强15倍”来自特定实验条件，不能当作人体临床倍数，也不能据此断言更温和。</p>
+        <p><span class="tag tag-risk">法规与安全</span> 欧盟规定 Alpha-Arbutin 用于面霜最高2%、身体乳0.5%；Arbutin（β型）用于面霜最高7%，并要求氢醌仅为不可避免痕量。</p>
+        <p><span class="tag tag-use">使用建议</span> 先确认成分分型、产品类别与所在法域；个体耐受不能由α/β分型单独推断。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据（法规）</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2024/996/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2024/996（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">传明酸 (Tranexamic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">传明酸 (Tranexamic Acid) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 抑制纤溶酶原的激活（PA通路），阻断黑色素细胞与角质细胞的信号传递。最早是止血药，后意外发现可减轻黄褐斑。</p>
-        <p><span class="tag tag-risk">不良反应</span> ⚠ 外涂安全，但美白针/美白丸含传明酸属于违规注射用药——有血栓风险，中国严禁。</p>
-        <p><span class="tag tag-use">使用建议</span> 对黄褐斑尤其有效。常与烟酰胺、熊果苷复配多通路美白。</p>
+        <p><span class="tag tag-risk">不良反应</span> 外用、口服和注射的暴露与风险不能混为一谈。口服或注射传明酸属于医疗用药场景，存在禁忌证与血栓风险，不能自行用于“美白”。</p>
+        <p><span class="tag tag-use">使用建议</span> 外用改善黄褐斑的研究结果受浓度、配方和病情差异影响；黄褐斑或正在使用抗凝/促凝药物者应先咨询医生。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">曲酸 (Kojic Acid) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">曲酸 (Kojic Acid) <span class="evidence-chip evidence-strong">高等级法规证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 由米曲霉发酵产生的代谢产物，通过螯合铜离子抑制酪氨酸酶——铜离子是酪氨酸酶必需的辅因子。</p>
-        <p><span class="tag tag-risk">不良反应</span> 部分人有刺激性皮炎；早期有致癌争议（高剂量动物实验），化妆品浓度下(<2%)被认为安全；光敏性要求夜间使用。</p>
-        <p><span class="tag tag-use">使用建议</span> 高丝集团核心美白成分。稳定性差，选包装严密的产品。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可能引起刺激或接触性皮炎。原页“低于2%安全”已过时：欧盟现行规则为面部和手部产品最高1%。没有可靠依据要求所有曲酸产品只能夜间使用。</p>
+        <p><span class="tag tag-use">使用建议</span> 按成品标签使用并观察耐受；法规限量不等于对个体零风险。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2024/996/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2024/996（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">377 / 苯乙基间苯二酚 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">377 / 苯乙基间苯二酚 <span class="evidence-chip evidence-limited">有限证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 强效酪氨酸酶抑制剂，从源头阻断黑色素生成。抑制能力是曲酸的22倍、熊果苷的100倍以上。城野医生VC377精华同款核心。</p>
-        <p><span class="tag tag-risk">不良反应</span> 相对温和，少数人可能轻微刺激。中国规定浓度≤0.5%。</p>
-        <p><span class="tag tag-use">使用建议</span> 欧莱雅双萃等产品常与烟酰胺+阿魏酸联用打多通路美白。对光敏感需防晒。</p>
+        <p><span class="tag tag-mech">功效原理</span> 是酪氨酸酶抑制剂；“曲酸22倍、熊果苷100倍”来自特定实验比较，不能表示成品在人体上的临床功效倍数。</p>
+        <p><span class="tag tag-risk">不良反应</span> 复配产品的人体研究数量有限，也有接触性皮炎个案；不能笼统写成“低风险”或比其他美白剂更安全。</p>
+        <p><span class="tag tag-use">使用建议</span> 品牌是否采用该原料不能作为功效证据；重点看具体成品的人体功效评价和耐受资料。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-limited">有限证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/23438137/?format=pubmed" target="_blank" rel="noopener noreferrer">复配美白产品人体研究（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">阿魏酸 (Ferulic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">阿魏酸 (Ferulic Acid) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 植物来源酚酸，强力抗氧化——清除自由基的能力与VC协同增强。可显著提高VC和VE的化学稳定性（修丽可CEF精华的核心配方——15%VC+1%VE+0.5%阿魏酸可将VC光保护能力提升至8倍）。同时具有抗炎美白作用。</p>
+        <p><span class="tag tag-mech">功效原理</span> 阿魏酸具有抗氧化作用。受控紫外线实验中，15%维C+1%维E+0.5%阿魏酸这一特定配方相对维C+维E约增加一倍光保护；这不能外推成所有含阿魏酸产品“提升8倍”。</p>
         <p><span class="tag tag-risk">不良反应</span> 单独极不稳定（遇到光/氧/热迅速降解）。需要特殊包装保护。</p>
-        <p><span class="tag tag-use">使用建议</span> 欧莱雅双萃采用内管独立储存正是为了稳定阿魏酸。与VC/VE搭配效果最大化。</p>
+        <p><span class="tag tag-use">使用建议</span> 包装、pH和完整配方会影响稳定性；不能由品牌包装形式反推临床效果。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-limited">有限证据（特定配方）</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/16185284/" target="_blank" rel="noopener noreferrer">维C+维E+阿魏酸受控光保护研究（核对 2026-07-29）</a></span></p>
       </div>
     </div>
       <div class="accordion-item">
-      <div class="accordion-header">3-邻-乙基抗坏血酸 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">3-邻-乙基抗坏血酸 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> VC乙基醚，维生素C衍生物中最稳定、最易渗透的形式之一。美白提亮+抗氧化。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">光果甘草根提取物 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">光果甘草根提取物 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 含光甘草定，植物来源美白黄金成分，抑制酪氨酸酶同时抗炎舒缓。</p>
+        <p><span class="tag tag-mech">功效原理</span> 甘草来源成分复杂，光甘草定等成分有实验研究；不能仅凭“甘草提取物”名称推断标准化含量或人体美白强度。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">双-二乙氧基二甘醇环己烷1,4-二羧酸酯 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">双-二乙氧基二甘醇环己烷1,4-二羧酸酯 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 美白助渗剂，可促进其他美白成分渗透，本身也有提亮效果。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">抗坏血酸棕榈酸酯 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">抗坏血酸棕榈酸酯 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 油溶性VC衍生物，抗氧化+美白，比水溶性VC更稳定，适合加入油脂体系。</p>
       </div>
@@ -345,20 +361,21 @@
 <!-- ==================== ANTI-AGING ==================== -->
 <section class="section" id="antiaging">
   <h2 class="section-title">⏳ 抗老抗皱成分</h2>
-  <p style="margin-bottom:18px;color:var(--gray-600)">皮肤老化的核心机制：胶原流失（年均减少1.5%）+ 糖化反应 + 光老化（占80%）+ 自由基损伤。抗老成分分别靶向不同通路。</p>
+  <p style="margin-bottom:18px;color:var(--gray-600)">皮肤老化涉及内源性变化、紫外线暴露、糖化和氧化应激等多种机制。“胶原每年减少1.5%”“光老化占80%”缺少可通用于所有年龄和人群的统一依据，已删除。</p>
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">视黄醇 / A醇 (Retinol) <span class="badge-warning">⚠ 孕妇禁用</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">视黄醇 / A醇 (Retinol) <span class="evidence-chip evidence-strong">孕期预防性避免</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 维生素A衍生物。在皮肤中转化为视黄酸，直接与核受体(RAR/RXR)结合→调控基因表达，促进I型胶原蛋白合成、加速角质更新、减少细纹、缩小毛孔。是证据等级最高的抗老成分之一。</p>
-        <p><span class="tag tag-risk">不良反应</span> 🟠 <strong>刺激性大：</strong>"A醇反应"期（2-6周）可能出现脱皮、泛红、干燥、刺痛。光和空气会使A醇失活——必须真空包装。⚠ <strong>孕妇绝对禁用：</strong>口服视黄酸已知致畸。</p>
-        <p><span class="tag tag-use">使用建议</span> 从0.1%起步 → 0.3% → 0.5%逐级建立耐受；夜间使用（光敏性）；避免与酸类同时使用；真空包装+避光保存。</p>
+        <p><span class="tag tag-mech">功效原理</span> 维生素A衍生物，可在皮肤中转化并影响维A酸受体通路；有改善部分光老化表现的人体证据，但不能与处方维A酸的证据完全等同。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可能出现脱皮、泛红、干燥和刺痛。ACOG建议孕期避免外用维A类；这是基于预防原则，不应写成“外用视黄醇已被证实绝对致畸”。意外少量接触不等于口服异维A酸暴露。</p>
+        <p><span class="tag tag-use">使用建议</span> 从较低强度和频率开始，按成品标签使用并做好日间防晒。欧盟还按产品类别限制维A总量；刺激性与稳定性取决于完整配方和包装，不能规定人人采用同一0.1%→0.3%→0.5%阶梯。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG孕期指导（核对 2026-07-29）</a><a href="https://pubmed.ncbi.nlm.nih.gov/26215715/" target="_blank" rel="noopener noreferrer">意外外用暴露系统综述（核对 2026-07-29）</a><a href="https://eur-lex.europa.eu/eli/reg/2024/996/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2024/996（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">胜肽 (Peptides) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">胜肽 (Peptides) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 短链氨基酸片段，作为"信号分子"模拟胶原蛋白降解产物——欺骗皮肤认为"胶原在流失"，从而启动新胶原合成。可同时抑制MMP金属蛋白酶（分解胶原的酶）。</p>
         <table><tr><th>类型</th><th>代表</th><th>主要功能</th></tr><tr><td>信号肽</td><td>棕榈酰五肽-4</td><td>促胶原合成</td></tr><tr><td>载体肽</td><td>蓝铜胜肽(GHK-Cu)</td><td>铜离子载体，修复+抗炎</td></tr><tr><td>神经递质抑制肽</td><td>乙酰基六肽-8</td><td>类肉毒素，淡化表情纹</td></tr></table>
@@ -368,16 +385,17 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">玻色因 (Pro-Xylane) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">玻色因 (Pro-Xylane) <span class="evidence-chip evidence-limited">有限证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 欧莱雅集团专利成分。木糖衍生物，促进皮肤自身合成透明质酸（内源性）和IV/VII型胶原蛋白，强化真皮-表皮连接(DEJ)，让皮肤从内部紧致饱满。</p>
-        <p><span class="tag tag-risk">不良反应</span> 温和安全，适合敏感肌和视黄醇不耐受人群的抗老替代方案。</p>
-        <p><span class="tag tag-use">使用建议</span> 主要缺点只有一个——太贵。欧家从赫莲娜到巴黎欧莱雅都在用，浓度越高效果越好（30%浓度→专业级效果）。</p>
+        <p><span class="tag tag-risk">证据边界</span> 有小样本、企业参与的人体研究，但不足以证明对敏感肌普遍安全，也不能作为与视黄醇等效的“抗老替代”。</p>
+        <p><span class="tag tag-use">使用建议</span> “30%专业级”“浓度越高效果越好”没有可靠的独立头对头人体证据，且商业产品标示的“玻色因浓度”未必等于纯 C-Xyloside 浓度。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-limited">有限证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/21454149/" target="_blank" rel="noopener noreferrer">小样本随机人体研究（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">酵母提取物 / 二裂酵母 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">酵母提取物 / 二裂酵母 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 促进皮肤细胞代谢和自我修复能力，改善粗糙、暗黄、毛孔、老化现象。</p>
         <p><span class="tag tag-risk">不良反应</span> 有轻微角质剥落作用。敏感肌、角质层薄者需慎用——可能加重敏感。</p>
@@ -388,14 +406,15 @@
     <div class="accordion-item">
       <div class="accordion-header">虾青素 (Astaxanthin) <span class="badge-warning">证据不足</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 强效抗氧化剂（体外实验清除自由基能力为VE的500倍以上）。体外数据漂亮但体内/人体临床试验数据仍偏弱。</p>
+        <p><span class="tag tag-mech">功效原理</span> 虾青素在实验体系中显示抗氧化活性；“是维E的500倍”高度依赖测定体系，不能表示外用护肤功效倍数。</p>
         <p><span class="tag tag-risk">不良反应</span> 目前无严重不良反应报告，但大品牌使用较少。不排除商家炒作体外数据误导消费者。</p>
-        <p><span class="tag tag-use">使用建议</span> 谨慎看待夸张宣传。大品牌出品的虾青素产品可尝试，但不要寄予过高期望。</p>
+        <p><span class="tag tag-use">使用建议</span> 人体研究多为口服、样本较小或商业资助，外用成品应看自身功效评价，不能以品牌规模替代证据。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-limited">有限证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/32202443/" target="_blank" rel="noopener noreferrer">虾青素皮肤研究综述（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">咖啡因 (Caffeine) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">咖啡因 (Caffeine) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 促进皮肤微循环→改善暗沉/浮肿；抗氧化清除自由基；抑制磷酸二酯酶→辅助脂肪分解（眼霜消肿原理）。</p>
         <p><span class="tag tag-risk">不良反应</span> 外用安全，基本无刺激。</p>
@@ -403,42 +422,42 @@
       </div>
     </div>
       <div class="accordion-item">
-      <div class="accordion-header">肌肽 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">肌肽 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 二肽（β-丙氨酸+组氨酸），抗氧化剂+抗糖化剂，能捕获自由基并抑制糖基化终产物(AGEs)。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">视黄醇棕榈酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">视黄醇棕榈酸酯 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 维A酯，比视黄醇温和但转化率低。适合初抗老入门。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">视黄醇丙酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">视黄醇丙酸酯 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 维A酯，温和度介于视黄醇棕榈酸酯和视黄醇之间。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">羟基频哪酮视黄酸酯 <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">羟基频哪酮视黄酸酯 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> HPR，新一代维A衍生物。无需转化直接作用于视黄酸受体，兼具A醇效果和温和性。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">植醇 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">植醇 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 植物来源的脂肪醇，与视黄醇结构相关，具温和抗老和抗炎作用。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">β-胡萝卜素 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">β-胡萝卜素 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 维生素A前体，强抗氧化剂，可辅助抗光老化。</p>
       </div>
@@ -453,40 +472,42 @@
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">水杨酸 (Salicylic Acid / BHA) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">水杨酸 (Salicylic Acid / BHA) <span class="evidence-chip evidence-strong">高等级法规/指南证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> β-羟基酸，最大特性是<strong>油溶性</strong>——能溶入皮脂、进入毛孔深处溶解堵塞的油脂和废旧角质，同时具有抗炎杀菌作用。是黑头/闭口的首选成分。</p>
-        <p><strong>浓度-功效对应：</strong></p>
-        <table><tr><th>浓度</th><th>功效</th><th>风险</th></tr><tr><td>0.5-2%</td><td>日常控油疏通</td><td>轻微刺激</td></tr><tr><td>2-10%</td><td>医疗级焕肤</td><td>需医生操作</td></tr><tr><td>10%+</td><td>深度焕肤/去闭口</td><td>⚠ 必须医院操作</td></tr></table>
-        <p><span class="tag tag-risk">不良反应</span> 干燥、脱皮、刺痛；具有光敏性需夜间使用。高浓度自刷有严重灼伤风险。</p>
-        <p><span class="tag tag-use">使用建议</span> 2%以内家用安全范围；搭配保湿修复成分减少刺激；白天必须防晒。</p>
+        <p><span class="tag tag-mech">功效原理</span> 具有角质调节作用。美国OTC痤疮产品规则规定水杨酸0.5%–2%；这是一项特定法域和适应证的规则，不等于所有2%以下产品对每个人都“安全”。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可能干燥、脱皮或刺痛；它不是典型光敏剂，但痤疮护理仍应做好日间防晒。高浓度焕肤、较大面积或破损皮肤使用不应照搬OTC范围。</p>
+        <p><span class="tag tag-use">孕期说明</span> ACOG把外用水杨酸列为孕期可用的OTC成分之一。专业焕肤、高浓度或大面积使用仍应先咨询产科/皮肤科医生。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.fda.gov/media/80442/download" target="_blank" rel="noopener noreferrer">FDA OTC痤疮规则（核对 2026-07-29）</a><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG孕期指导（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">果酸 (AHA / 甘醇酸/乳酸/杏仁酸) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">果酸 (AHA / 甘醇酸/乳酸/杏仁酸) <span class="evidence-chip evidence-strong">高等级指导证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> α-羟基酸，水溶性。降低角质细胞间连接力→加速老废角质脱落。低浓度(5-10%)改善粗糙暗沉；中浓度(10-20%)治疗痘痘暗斑；高浓度(20-70%)医疗焕肤。</p>
-        <p><span class="tag tag-risk">不良反应</span> 强光敏性必须严格防晒；过度使用→屏障破坏→敏感肌。高浓度焕肤必须由医生操作。</p>
-        <p><span class="tag tag-use">使用建议</span> 甘醇酸分子最小渗透最快刺激性最强；乳酸温和些；杏仁酸大分子脂溶性较温和。新手从杏仁酸/低浓度乳酸开始。</p>
+        <p><span class="tag tag-mech">功效原理</span> AHA可促进角质更新。不能用“5–10%美容、10–20%治疗、20–70%医疗”的固定分档定义功效；游离酸浓度、pH、载体和使用方式共同决定效果与刺激。</p>
+        <p><span class="tag tag-risk">不良反应</span> 可增加日晒敏感性。FDA给消费者的参考条件是AHA不高于10%、成品pH不低于3.5并配合日间防护，日晒敏感性可能持续到停用后一周。</p>
+        <p><span class="tag tag-use">使用建议</span> “甘醇酸最强、乳酸其次、杏仁酸最温和”不是通用排序；应按具体成品说明逐步观察耐受。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids" target="_blank" rel="noopener noreferrer">FDA AHA消费者指导（核对 2026-07-29）</a><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG孕期指导（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">壬二酸 (Azelaic Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">壬二酸 (Azelaic Acid) <span class="evidence-chip evidence-strong">孕期指南支持</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 天然存在于小麦等谷物的二羧酸。抗菌（抑制痤疮丙酸杆菌）、抗炎、抑制异常黑色素细胞——同时具有祛痘和淡痘印双重功能。</p>
-        <p><span class="tag tag-risk">不良反应</span> 初期可能有短暂瘙痒和灼热感，建立耐受后消退。对正常皮肤细胞无毒性。</p>
-        <p><span class="tag tag-use">使用建议</span> 浓度15-20%效果最佳；适合红肿痘和痘印并存的肌肤；孕期可用（孕期祛痘安全选择）。</p>
+        <p><span class="tag tag-risk">不良反应</span> 初期可能瘙痒、刺痛或灼热；不能保证一定随时间消退，也不应写成“对正常皮肤细胞无毒性”的绝对结论。</p>
+        <p><span class="tag tag-use">使用建议</span> ACOG将壬二酸列为孕期可用的OTC成分之一；这不代表15–20%对所有人“效果最佳”，仍应按产品标签和个体情况使用。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG孕期指导（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">茶树精油 (Tea Tree Oil) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">茶树精油 (Tea Tree Oil) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 主要成分萜品烯-4-醇，广谱抗菌。对痤疮丙酸杆菌有良好抑制效果，预防痘痘继续恶化。</p>
-        <p><span class="tag tag-risk">不良反应</span> 100%纯茶树精油直接涂抹可能灼伤皮肤。对内分泌失调型痘痘仅治标不治本。</p>
-        <p><span class="tag tag-use">使用建议</span> 必须稀释使用；适合局部点涂红肿痘；不代表可以根治痘痘，严重痤疮请就医。</p>
+        <p><span class="tag tag-risk">不良反应</span> 未稀释茶树油可能引起刺激或接触过敏，氧化后致敏风险还会变化。“对内分泌痘只治标”不是可操作的成分风险分类。</p>
+        <p><span class="tag tag-use">使用建议</span> SCCS 2025最终意见只对符合ISO组成、成人、非喷雾的四类成品和特定上限作出安全结论，并认定茶树油为中等皮肤致敏物；不要自行用纯精油点涂。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级专家评估</span><span class="claim-sources"><a href="https://health.ec.europa.eu/publications/sccs-scientific-opinion-tea-tree-oil-casec-no-68647-73-4-285-377-1_en" target="_blank" rel="noopener noreferrer">SCCS Tea Tree Oil最终意见（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
@@ -497,19 +518,20 @@
           <strong>⚠ 家庭刷酸安全须知</strong>
           <ol style="margin:8px 0 0 16px;font-size:.9em">
             <li>从最低浓度开始，每周1-2次，逐步建立耐受</li>
-            <li>严禁水杨酸+果酸同时使用</li>
-            <li>刷酸当天避免任何其他强功效产品（A醇、高浓度VC等）</li>
-            <li>刷酸后严格防晒（物理防晒优先）——至少1周</li>
+            <li>水杨酸与果酸同一时段叠加可能增加刺激，并非化学上的绝对禁配</li>
+            <li>与视黄醇等刺激性产品叠加时降低频率并观察耐受</li>
+            <li>AHA使用期间及停用后一周加强防晒；无需强制只选物理防晒</li>
             <li>出现严重脱皮/红肿/刺痛 → 立即停用，用泛醇+神经酰胺修复</li>
-            <li>孕妇避免水杨酸（高浓度，低浓度遵医嘱）</li>
-            <li>中高浓度刷酸(>10%)必须由专业医生操作</li>
+            <li>ACOG列出孕期可用的外用水杨酸与果酸；专业焕肤、高浓度或大面积使用先咨询医生</li>
+            <li>家用与专业焕肤不能只用“超过10%”一条线判断，还要看pH、游离酸和操作方式</li>
           </ol>
         </div>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids" target="_blank" rel="noopener noreferrer">FDA AHA指导（核对 2026-07-29）</a><a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy" target="_blank" rel="noopener noreferrer">ACOG孕期指导（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">辛酰水杨酸 (LHA) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">辛酰水杨酸 (LHA) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 水杨酸的酰化衍生物。在保留BHA油溶性的基础上增加脂溶性——更易渗透毛孔。温和去角质、疏通毛孔，刺激性低于普通水杨酸。</p>
         <p><span class="tag tag-risk">不良反应</span> 比水杨酸温和但仍属酸类，需防晒。敏感肌循序渐进。</p>
@@ -518,7 +540,7 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">柠檬酸 (Citric Acid) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">柠檬酸 (Citric Acid) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> AHA家族中最温和的一员。轻度去角质促进表皮更新 + 调节产品pH + 弱抗氧化效果。</p>
         <p><span class="tag tag-risk">不良反应</span> 低浓度安全性高。高浓度有刺激性。</p>
@@ -527,7 +549,7 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">菠萝果提取物 / 木瓜蛋白酶 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">菠萝果提取物 / 木瓜蛋白酶 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 天然来源的蛋白酶（菠萝蛋白酶/木瓜蛋白酶），温和分解角质蛋白、软化老废角质。比果酸/水杨酸更温和但效果也更弱。</p>
         <p><span class="tag tag-risk">不良反应</span> 极其温和，对正常皮肤基本无刺激。</p>
@@ -544,58 +566,58 @@
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">积雪草提取物 / 羟基积雪草苷 (Centella Asiatica) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">积雪草提取物 / 羟基积雪草苷 (Centella Asiatica) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 核心活性物质为积雪草苷、羟基积雪草苷等三萜皂苷。促进成纤维细胞增殖→加速胶原合成→伤口愈合；抑制炎症因子释放→镇静泛红。</p>
         <p><span class="tag tag-risk">不良反应</span> 极低致敏性。极少数人对积雪草属植物过敏。</p>
-        <p><span class="tag tag-use">使用建议</span> 敏感肌、医美术后修复的首选成分。可与神经酰胺+泛醇组成"修复三角"。</p>
+        <p><span class="tag tag-use">使用建议</span> 积雪草成分常用于舒缓配方，但“医美术后首选”及固定“修复三角”缺少可通用于所有成品的临床依据；术后按医嘱护理。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">芦荟提取物 (Aloe Vera) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">芦荟提取物 (Aloe Vera) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 含芦荟多糖、氨基酸、酶等复合物。深层补水（芦荟多糖）＋ 抗炎镇静（抑制前列腺素合成）＋ 促愈合（促进细胞增殖）。</p>
-        <p><span class="tag tag-risk">不良反应</span> 极安全，晒后镇静经典选择。注意区分：新鲜芦荟含大黄素，部分人可能过敏。</p>
-        <p><span class="tag tag-use">使用建议</span> 选纯度高的芦荟胶（配方中排名靠前）。晒后冷敷效果最佳。不能替代防晒。</p>
+        <p><span class="tag tag-risk">不良反应</span> 芦荟成品并非无条件安全；植物成分及完整配方均可能导致刺激或过敏，新鲜植株也不能等同于规范成品。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分表排名不能单独证明纯度或效果；晒后应先避开继续暴晒，明显水疱、疼痛或全身不适应就医。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">尿囊素 (Allantoin) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">尿囊素 (Allantoin) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 促进细胞增殖和新陈代谢、软化角质蛋白、加速伤口愈合（溃疡/化脓时）。兼具保湿润肤功效。</p>
-        <p><span class="tag tag-risk">不良反应</span> 目前未发现任何副作用——完美修复成分。</p>
-        <p><span class="tag tag-use">使用建议</span> 与泛醇类似但侧重复合修复。常添加于疤痕修复凝胶和抗敏产品。</p>
+        <p><span class="tag tag-risk">不良反应</span> “零副作用”没有依据；尿囊素在常见配方中通常可耐受，但仍需考虑浓度、配方和个体反应。</p>
+        <p><span class="tag tag-use">使用建议</span> 常见于润肤和舒缓类产品；不能仅凭含有尿囊素推断能够治疗疤痕或完成伤口修复。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">寡肽-1 (Oligopeptide-1) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">寡肽-1 (Oligopeptide-1) <span class="evidence-chip evidence-strong">高等级监管证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 小分子肽，深透皮层促进胶原蛋白生成和受损屏障修复。主功能是<strong>修复</strong>，而非祛痘。</p>
-        <p><span class="tag tag-risk">不良反应</span> 温和安全。</p>
-        <p><span class="tag tag-use">使用建议</span> EGF（表皮生长因子）于2019年被中国禁止用于化妆品——确保购买的是寡肽而非EGF。注意辨别HFP等品牌的"寡肽祛痘"宣传：寡肽的主业是修复，祛痘需水杨酸/果酸/壬二酸。</p>
+        <p><span class="tag tag-mech">结论边界</span> “寡肽-1”与表皮生长因子（EGF）不是同一名称。国家药监局明确的是 EGF 不得作为化妆品原料使用；该监管结论本身不能证明寡肽-1具有祛痘、促胶原或修复功效。</p>
+        <p><span class="tag tag-risk">不良反应</span> 安全性和功效需结合具体原料、用量及成品资料判断，不能用“寡肽”名称概括。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级监管证据</span><span class="claim-sources"><a href="https://www.nmpa.gov.cn/xxgk/zhcjd/zhcjdhzhp/20190111165701425.html" target="_blank" rel="noopener noreferrer">国家药监局：EGF 与寡肽-1 的名称边界（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">二裂酵母发酵产物溶胞产物 (Bifida) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">二裂酵母发酵产物溶胞产物 (Bifida) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 双歧杆菌发酵后裂解的产物，含丰富的氨基酸、多肽、维生素和矿物质。增强皮肤自身的修复和防御能力，减少紫外线引起的DNA损伤，改善皮肤粗糙和暗沉。</p>
-        <p><span class="tag tag-risk">不良反应</span> 非常温和安全，广泛耐受。</p>
+        <p><span class="tag tag-risk">不良反应</span> 缺少足以支持“所有肤质均安全”的独立证据；耐受性仍取决于成品配方与个体。</p>
         <p><span class="tag tag-use">使用建议</span> 雅诗兰黛小棕瓶、欧莱雅双萃的核心成分。常作为功效型产品中的"维稳担当"，搭配刺激成分降低不适感。</p>
       </div>
     </div>
       <div class="accordion-item">
-      <div class="accordion-header">羟基积雪草苷 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">羟基积雪草苷 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 积雪草主要活性成分之一，抗炎修复、促进胶原合成，舒缓效果突出。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">水解蜂王浆蛋白 <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">水解蜂王浆蛋白 <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 蜂王浆蛋白水解产物，含氨基酸，滋养修复，提升皮肤光泽。</p>
       </div>
@@ -606,7 +628,7 @@
 <!-- ==================== SUNSCREEN ==================== -->
 <section class="section" id="sunscreen">
   <h2 class="section-title">☀ 防晒成分</h2>
-  <p style="margin-bottom:18px;color:var(--gray-600)">光老化占皮肤老化的80%。UVA致老化（直达真皮层），UVB致晒伤。防晒是一切护肤的基石。</p>
+  <p style="margin-bottom:18px;color:var(--gray-600)">紫外线是皮肤光老化和皮肤癌的重要可控风险因素。原页“光老化占皮肤老化80%”并非可通用于所有人群的固定比例，已删除。</p>
 
   <div class="card">
     <h3>紫外线类型与防晒指标</h3>
@@ -618,17 +640,18 @@
     </table>
     <table style="margin-top:16px">
       <tr><th>指标</th><th>防护对象</th><th>含义</th></tr>
-      <tr><td>SPF</td><td>UVB（晒伤）</td><td>SPF30 = 延长30倍晒伤时间</td></tr>
+      <tr><td>SPF</td><td>UVB（晒伤）</td><td>表示在标准测试条件下的相对UVB防护；FDA明确说明SPF并不与可日晒时间直接成比例</td></tr>
       <tr><td>PA</td><td>UVA（光老化）</td><td>PA+ ~ PA++++，+越多防护越强</td></tr>
     </table>
   </div>
 
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">物理防晒剂：二氧化钛 + 氧化锌 <span class="badge-success">最安全</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">矿物防晒剂：二氧化钛 + 氧化锌 <span class="evidence-chip evidence-strong">高等级监管证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 在皮肤表面形成保护膜，主要通过吸收紫外线、并辅以反射和散射发挥作用（颗粒本身不被皮肤吸收）。氧化锌可广谱防护UVA+UVB。</p>
-        <p><span class="tag tag-risk">不良反应</span> 🟢 安全性极高，孕妇和婴幼儿可用。缺点：泛白、肤感厚重。选择"微粉化/纳米"技术可改善肤感（但部分人担忧纳米颗粒吸入风险——非喷雾产品安全）。</p>
+        <p><span class="tag tag-mech">功效原理</span> 主要通过吸收并辅以散射/反射紫外线发挥作用；“全波段反射”不准确，实际防护取决于滤剂组合、粒径、分散和成膜。</p>
+        <p><span class="tag tag-risk">安全边界</span> FDA拟议评估支持规定剂型中二氧化钛和氧化锌至25%的GRASE结论，但这不是“对孕妇和婴幼儿绝对最安全”的排名。喷雾吸入与皮肤涂抹也不能混为一谈。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/questions-and-answers-fda-posts-deemed-final-order-and-proposed-order-over-counter-sunscreen" target="_blank" rel="noopener noreferrer">FDA防晒拟议评估（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
@@ -636,8 +659,9 @@
       <div class="accordion-header">化学防晒剂：氧苯酮/二苯甲酮-3 <span class="badge-warning">⚠ 争议成分</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 吸收UV能量后以热的形式释放。覆盖UVA+UVB。</p>
-        <p><span class="tag tag-risk">不良反应</span> 🟠 <strong>主要争议：</strong>可能经皮吸收进入血液 → 干扰HPG激素系统（动物实验下调性激素）；人类尿液中已检出；皮肤刺激和致敏；危害海洋生态（珊瑚白化）。多国海滩地区已限制使用。</p>
-        <p><span class="tag tag-use">使用建议</span> 孕妇、儿童、敏感肌优先选择纯物理防晒。</p>
+        <p><span class="tag tag-risk">安全与法规</span> 氧苯酮可发生系统吸收，也存在潜在内分泌和环境关注；但现有人体资料不足以证明合规外用会导致HPG轴功能障碍。欧盟按产品部位和用途设限；FDA拟议评估为仍需更多数据，并非已判定不安全。</p>
+        <p><span class="tag tag-use">使用建议</span> 孕期或儿童选防晒时可根据标签、肤感和医生建议选择矿物或其他合规滤剂，不应把“纯物理”写成唯一或绝对首选。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级监管证据</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2022/1176/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2022/1176（核对 2026-07-29）</a><a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/questions-and-answers-fda-posts-deemed-final-order-and-proposed-order-over-counter-sunscreen" target="_blank" rel="noopener noreferrer">FDA防晒评估（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
@@ -647,12 +671,13 @@
         <div class="info-box">
           <strong>正确防晒四要素</strong>
           <ol style="margin:8px 0 0 16px;font-size:.9em">
-            <li><strong>用量：</strong>面部 ≈ 1枚一元硬币大小（约1g），用量不足→防护力指数级下降</li>
-            <li><strong>补涂：</strong>通勤午间补涂1次；户外/出汗/游泳每2-3小时补涂</li>
-            <li><strong>卸妆：</strong>防水型必须卸妆；非防水型可用温和洁面</li>
-            <li><strong>四季防晒：</strong>UVA全年强度稳定，阴天也要防晒</li>
+            <li><strong>用量：</strong>按产品标签足量、均匀涂抹；“一枚硬币/约1g”会受脸部面积、剂型和硬币大小影响</li>
+            <li><strong>补涂：</strong>FDA建议至少每2小时补涂，游泳或大量出汗时按40/80分钟耐水标签更频繁补涂</li>
+            <li><strong>清洁：</strong>按成膜性和产品标签选择清洁方式，防水型不等于一律必须使用卸妆油</li>
+            <li><strong>综合防护：</strong>防晒霜与遮阴、衣物、帽子等共同使用</li>
           </ol>
         </div>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/sunscreen-how-help-protect-your-skin-sun" target="_blank" rel="noopener noreferrer">FDA防晒使用指南（核对 2026-07-29）</a></span></p>
       </div>
     </div>
   </div>
@@ -663,27 +688,30 @@
       <tr><th>场景</th><th>推荐防护</th><th>类型建议</th></tr>
       <tr><td>日常通勤</td><td>SPF30+ / PA+++</td><td>物化结合或化学</td></tr>
       <tr><td>户外活动</td><td>SPF50+ / PA++++</td><td>防水型物理防晒</td></tr>
-      <tr><td>敏感肌/婴幼儿/孕妇</td><td>SPF30+ / PA+++</td><td>纯物理防晒</td></tr>
+      <tr><td>敏感肌/孕期</td><td>结合实际暴露选择</td><td>矿物滤剂可作为选项，但并非唯一合规选择；既往过敏者看具体成分</td></tr>
+      <tr><td>6个月以下婴儿</td><td>优先遮阴与衣物</td><td>使用防晒前咨询专业人士</td></tr>
       <tr><td>油痘肌</td><td>SPF30+ / PA+++</td><td>清爽凝胶/乳液型</td></tr>
     </table>
   </div>
 
   <div class="accordion" style="margin-top:20px">
     <div class="accordion-item">
-      <div class="accordion-header">奥克立林 (Octocrylene) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">奥克立林 (Octocrylene) <span class="evidence-chip evidence-strong">高等级法规证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 化学防晒剂，主要防护UVB和短波UVA(280-320nm)。最大特点：能稳定阿伏苯宗（后者单独光不稳定），二者常成对出现。</p>
         <p><span class="tag tag-risk">不良反应</span> 少数人致敏。随时间推移可能降解产生二苯甲酮（微量），学术界有争议。</p>
-        <p><span class="tag tag-use">使用建议</span> 精华中出现微量奥克立林通常不是为了防晒，而是保护其他光敏活性成分。</p>
+        <p><span class="tag tag-use">法规与证据</span> 欧盟喷雾产品最高9%、其他产品最高10%。在非防晒产品中出现时，必须依据产品功能和配方资料判断，不能自动认定是“保护其他活性”。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2022/1176/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2022/1176（核对 2026-07-29）</a><a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/questions-and-answers-fda-posts-deemed-final-order-and-proposed-order-over-counter-sunscreen" target="_blank" rel="noopener noreferrer">FDA防晒评估（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">阿伏苯宗 (Avobenzone) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">阿伏苯宗 (Avobenzone) <span class="evidence-chip evidence-limited">定量外推证据有限</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 最主要的UVA化学防晒剂（320-400nm），防护光老化的关键。但自身光稳定性极差——暴露于光照30分钟后降解50%以上。</p>
-        <p><span class="tag tag-risk">不良反应</span> 光降解产物可能致敏；与矿物防晒剂（氧化锌/二氧化钛）一起使用时降解更快。</p>
-        <p><span class="tag tag-use">使用建议</span> 必须与奥克立林等光稳定剂搭配。精华中微量出现是为保护活性物而非防晒。</p>
+        <p><span class="tag tag-mech">功效原理</span> 阿伏苯宗是UVA滤剂。其光稳定性高度依赖溶剂、稳定剂、包裹技术和完整配方；“30分钟降解50%以上”不能外推到所有成品。</p>
+        <p><span class="tag tag-risk">不良反应</span> 少数人可能刺激或致敏；不能仅凭与矿物滤剂同时出现在成分表中就判断配方必然更快降解。</p>
+        <p><span class="tag tag-use">使用建议</span> 现代稳定策略不只奥克立林，因此“必须搭配奥克立林”已删除。以成品的广谱测试、标签和耐受为准。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-limited">有限证据（不可跨配方外推）</span><span class="claim-sources"><a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/questions-and-answers-fda-posts-deemed-final-order-and-proposed-order-over-counter-sunscreen" target="_blank" rel="noopener noreferrer">FDA防晒评估（核对 2026-07-29）</a></span></p>
       </div>
     </div>
   </div>
@@ -697,37 +725,38 @@
   <div class="card warning">
     <h3>🌍 欧盟 vs 美国：关键分歧速览</h3>
     <table>
-      <tr><th>成分</th><th>美国</th><th>欧盟</th></tr>
-      <tr><td>吡硫鎓锌 (ZPT) 去屑剂</td><td class="risk-low">FDA 准用（OTC 去屑活性物）</td><td class="risk-high">2022年3月起全面禁用（重分类为 CMR）</td></tr>
-      <tr><td>椰油酰胺 DEA</td><td class="risk-mid">加州 Prop 65 列名（IARC 2B）</td><td class="risk-mid">限制游离 DEA/亚硝胺含量</td></tr>
-      <tr><td>环硅氧烷 D4/D5/D6</td><td>基本不限（配方常用）</td><td class="risk-mid">REACH 因持久性/生物蓄积限用</td></tr>
-      <tr><td>煤焦油 (Coal Tar)</td><td class="risk-mid">FDA 准用（OTC 去屑/去角质药）</td><td class="risk-high">粗制煤焦油化妆品中禁用/严格限制</td></tr>
+      <tr><th>结论</th><th>美国</th><th>欧盟</th></tr>
+      <tr><td>吡硫鎓锌 (ZPT)</td><td>按OTC去屑药专论规定用途和浓度</td><td>自2022-03-01禁用于化妆品</td></tr>
+      <tr><td>Climbazole</td><td>不能直接套用欧盟限量</td><td>去屑淋洗洗发水最高2%；防腐用途另按0.5%或0.2%</td></tr>
+      <tr><td>1,4-二氧六环</td><td>纽约州个人护理产品现行上限1 ppm</td><td>是乙氧基化工艺杂质问题，不能等同于“SLES本身致癌”</td></tr>
     </table>
-    <p style="margin-top:10px;font-size:.85em;color:var(--gray-600)">同一支去屑洗发水，可能"美国合法上架、欧盟已下架"。中国现行法规对 ZPT 仍允许（限量），与美国更接近。</p>
+    <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.accessdata.fda.gov/drugsatfda_docs/omuf/OTC%20Monograph_M032-Drug%20Products%20for%20the%20Control%20of%20Dandruff%20Seborrheic%20Dermatitis%20and%20Psoriasis%2012.16.2021.pdf" target="_blank" rel="noopener noreferrer">FDA M032专论</a><a href="https://eur-lex.europa.eu/eli/reg/2021/1902/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 ZPT 禁用</a><a href="https://eur-lex.europa.eu/eli/reg/2019/698/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 Climbazole 限制</a><a href="https://dec.ny.gov/environmental-protection/pollution-prevention/household-personal-cosmetic-dioxane-limits" target="_blank" rel="noopener noreferrer">纽约州1,4-二氧六环限值</a></span>（均核对 2026-07-29）</p>
   </div>
 
   <h3 style="margin:20px 0 10px;color:var(--gray-800)">一、表面活性剂（清洁与起泡）</h3>
   <div class="accordion">
     <div class="accordion-item open">
-      <div class="accordion-header">月桂醇硫酸酯钠 (SLS / Sodium Lauryl Sulfate) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">月桂醇硫酸酯钠 (SLS / Sodium Lauryl Sulfate) <span class="evidence-chip evidence-moderate">中等级证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 强力阴离子表活，泡沫丰富、去油力强，成本低。是很多洗发水/牙膏/沐浴露的基础清洁成分。</p>
-        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 结论：淋洗类中安全；驻留类建议 ≤1%。脱脂力强、刺激性较高，是皮肤斑贴试验里的<strong>标准"阳性对照刺激物"</strong>——即用来诱发刺激作参照，敏感肌/干性头皮易干燥泛红。<strong>"SLS 致癌"是网络谣言</strong>，无科学依据；成分可完全洗净、无体内蓄积。</p>
-        <p><span class="tag tag-use">使用建议</span> 油性头皮/追求清爽可接受；敏感、干性、受损发或频繁洗发者宜选更温和的 SLES 或氨基酸表活体系。</p>
+        <p><span class="tag tag-risk">安全评估</span> 刺激潜力取决于浓度、接触时间和完整配方。CIR结论不能简化成“淋洗类一律安全/驻留≤1%”；更准确的条件是成品配方应做到不刺激。没有可靠证据支持“SLS致癌”，但“可完全洗净、无任何蓄积”也属于无必要的绝对化断言。</p>
+        <p><span class="tag tag-use">使用建议</span> 根据成品使用后的紧绷、刺痛和干燥情况判断；不能仅凭“SLES/氨基酸”名称保证更温和。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://www.cir-safety.org/sites/default/files/imports/alerts.pdf" target="_blank" rel="noopener noreferrer">CIR SLS安全评估（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">月桂醇聚醚硫酸酯钠 (SLES / Sodium Laureth Sulfate) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">月桂醇聚醚硫酸酯钠 (SLES / Sodium Laureth Sulfate) <span class="evidence-chip evidence-strong">杂质限值证据高</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> SLS 经乙氧基化改良，泡沫细腻、刺激性明显更低，是当今洗发水/沐浴露<strong>最主流</strong>的主表活。</p>
-        <p><span class="tag tag-risk">安全评估</span> 美国 CIR 认为安全、刺激性低于 SLS。主要顾虑在于乙氧基化工艺可能残留副产物 <strong>1,4-二氧六环（1,4-dioxane，IARC 2B 可能致癌物）</strong>——这是生产杂质、并非成分本身。正规厂商用真空汽提去除，美国纽约州自 2023 起对洗护品限量（≈≤2 ppm）。风险取决于原料纯度而非"含 SLES"本身。</p>
-        <p><span class="tag tag-use">使用建议</span> 大品牌/合规产品残留极低，正常使用无需担心。介意者可选葡糖苷或氨基酸类无硫酸盐（Sulfate-free）配方。</p>
+        <p><span class="tag tag-risk">安全评估</span> 1,4-二氧六环是乙氧基化工艺杂质，不是SLES本身。纽约州个人护理产品现行上限为1 ppm，原页“约≤2 ppm”是旧阶段限值；产品实际含量仍需检测，不能由品牌规模推断。</p>
+        <p><span class="tag tag-use">使用建议</span> 刺激性由完整表活体系决定；“无硫酸盐”也不自动等于更温和。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级法规证据</span><span class="claim-sources"><a href="https://dec.ny.gov/environmental-protection/pollution-prevention/household-personal-cosmetic-dioxane-limits" target="_blank" rel="noopener noreferrer">纽约州1,4-二氧六环限值（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">椰油酰胺丙基甜菜碱 (CAPB / Cocamidopropyl Betaine) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">椰油酰胺丙基甜菜碱 (CAPB / Cocamidopropyl Betaine) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 两性离子温和表活，起泡、增稠，并能<strong>降低 SLES 等主表活的刺激性</strong>。几乎所有"氨基酸/温和"洗护配方的黄金辅表活。</p>
         <p><span class="tag tag-risk">安全评估</span> 美国接触性皮炎学会曾评为 <strong>2004 年"年度致敏原"</strong>，但研究显示致敏主要来自生产杂质（酰胺胺 amidoamine、DMAPA），而非纯化后的 CAPB 本身。美国 CIR 结论：在限制杂质前提下安全。总体温和，仅极少数人接触性皮炎。</p>
@@ -745,20 +774,20 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">葡糖苷类 (癸基/椰油基葡糖苷 · APG) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">葡糖苷类 (癸基/椰油基葡糖苷 · APG) <span class="evidence-chip evidence-moderate">中等级证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
-        <p><span class="tag tag-mech">功效原理</span> 由椰油 + 葡萄糖合成的非离子"烷基糖苷"表活，极温和、可生物降解，泡沫偏少偏软。儿童、敏感肌、头皮屏障脆弱者的洗护常用。</p>
-        <p><span class="tag tag-risk">安全评估</span> 欧盟与美国均视为温和低刺激。少数报告有致敏性，但整体是公认的温和绿色表活。</p>
-        <p><span class="tag tag-use">使用建议</span> "无硫酸盐"温和配方常靠它 + 氨基酸表活撑起清洁力，适合干敏头皮与频繁清洁人群。</p>
+        <p><span class="tag tag-mech">功效原理</span> 烷基糖苷是非离子表活，可用于较温和的清洁体系；“天然/绿色/无硫酸盐”本身不能证明成品低刺激。</p>
+        <p><span class="tag tag-risk">安全评估</span> CIR结论以“配方做到不刺激”为条件；癸基葡糖苷和椰油基葡糖苷也是已知接触过敏原，不能作为儿童或敏感肌的无条件首选。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-moderate">中等级证据</span><span class="claim-sources"><a href="https://pubmed.ncbi.nlm.nih.gov/24174472/" target="_blank" rel="noopener noreferrer">烷基糖苷安全评估（核对 2026-07-29）</a><a href="https://pubmed.ncbi.nlm.nih.gov/38575135/" target="_blank" rel="noopener noreferrer">接触过敏资料（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">氨基酸/羟乙磺酸酯类 (SCI · 椰油酰甘氨酸钠等) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">氨基酸/羟乙磺酸酯类 (SCI · 椰油酰甘氨酸钠等) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 椰油酰羟乙磺酸酯钠(SCI)、椰油酰甘氨酸钠等，来自氨基酸/脂肪酸，肤感"奶油泡"，洗后不紧绷，是皂基与硫酸盐的温和替代。</p>
         <p><span class="tag tag-risk">安全评估</span> 美国 CIR 评估安全，温和低敏，pH 接近皮肤弱酸性，适合敏感肌与面部氨基酸洁面。</p>
-        <p><span class="tag tag-use">使用建议</span> 成分表中排名越靠前，说明清洁体系越温和；干敏肌与洗脸产品首选此类。</p>
+        <p><span class="tag tag-use">使用建议</span> 成分表排名不能直接表示清洁体系更温和；应结合完整表活组合、pH、使用频率及个人耐受选择。</p>
       </div>
     </div>
   </div>
@@ -766,7 +795,7 @@
   <h3 style="margin:20px 0 10px;color:var(--gray-800)">二、调理剂与肤感（顺滑抗毛躁）</h3>
   <div class="accordion">
     <div class="accordion-item">
-      <div class="accordion-header">硅油：聚二甲基硅氧烷 / 氨端硅油 (Dimethicone / Amodimethicone) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">硅油：聚二甲基硅氧烷 / 氨端硅油 (Dimethicone / Amodimethicone) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 在发丝表面成膜，带来顺滑、抗毛躁、易梳理、减少断发与锁水的效果；氨端硅油带正电，对受损/染烫发更有亲和力、更持久。</p>
         <p><span class="tag tag-risk">安全评估</span> 美国 CIR 认为惰性、不渗透皮肤、无致敏。<strong>需区分：</strong>受限的是<strong>挥发性环硅氧烷 D4/D5/D6</strong>（欧盟 REACH 因环境持久性/生物蓄积对其在淋洗与驻留类限用），而线性的 Dimethicone(PDMS) 不在该限制之列。"硅油堵毛孔/伤头皮"多为营销话术——它可被表活洗净、不进入毛囊深层。</p>
@@ -775,7 +804,7 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">聚季铵盐-7/-10 (Polyquaternium) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">聚季铵盐-7/-10 (Polyquaternium) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 阳离子调理聚合物，中和阴离子表活的负电荷，吸附在发丝/皮肤表面形成柔顺膜，减少静电与打结（"洗护二合一"顺滑感来源之一）。</p>
         <p><span class="tag tag-risk">安全评估</span> 美国 CIR 评估安全，广泛耐受、低致敏。</p>
@@ -783,10 +812,10 @@
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">瓜尔胶羟丙基三甲基氯化铵 (阳离子瓜尔胶) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">瓜尔胶羟丙基三甲基氯化铵 (阳离子瓜尔胶) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 天然瓜尔豆来源的阳离子调理剂，冲洗时沉积在发丝上提供顺滑感，是无硅油"二合一"洗发水的主要柔顺来源。</p>
-        <p><span class="tag tag-risk">安全评估</span> 温和安全，天然来源，广泛用于温和及无硅油配方。</p>
+        <p><span class="tag tag-risk">安全评估</span> 可用于调理配方；“天然来源”不能替代对具体衍生物、用量和成品刺激性的评估。</p>
       </div>
     </div>
   </div>
@@ -794,38 +823,41 @@
   <h3 style="margin:20px 0 10px;color:var(--gray-800)">三、去屑成分（欧美分歧最大）</h3>
   <div class="accordion">
     <div class="accordion-item">
-      <div class="accordion-header">吡硫鎓锌 (ZPT / Zinc Pyrithione) <span class="badge-warning">⚠ 欧盟已禁</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">吡硫鎓锌 (ZPT / Zinc Pyrithione) <span class="evidence-chip evidence-strong">法域差异明确</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 经典去屑剂，抑制头皮马拉色菌（真菌）繁殖，控油、止痒、减少头皮屑。海飞丝等经典去屑洗发水的核心。</p>
-        <p><span class="tag tag-risk">安全评估</span> <strong>美国 FDA</strong> 仍作为 OTC 去屑活性物<strong>准用</strong>（洗发水常见浓度约 1–2%）；而<strong>欧盟自 2022 年 3 月 1 日起全面禁止其用于化妆品</strong>，因其被重新分类为 <strong>CMR（生殖毒性）物质</strong>。这是欧美最典型的一处分歧。中国现行法规仍允许（限量）。</p>
-        <p><span class="tag tag-use">使用建议</span> 有去屑需求可按当地合规产品使用；在欧盟购买的产品已改用吡罗克酮乙醇胺盐等替代。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国OTC专论按产品用途和浓度管理ZPT；欧盟自2022-03-01禁用于化妆品。法规分歧不能简化为“美国证明安全”或“欧盟证明使用必然有害”。本页暂不对中国现行限量作无来源数字转述。</p>
+        <p><span class="tag tag-use">使用建议</span> 按销售地产品标签和监管类别使用；持续头屑、红斑或渗出应就医。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级法规证据</span><span class="claim-sources"><a href="https://www.accessdata.fda.gov/drugsatfda_docs/omuf/OTC%20Monograph_M032-Drug%20Products%20for%20the%20Control%20of%20Dandruff%20Seborrheic%20Dermatitis%20and%20Psoriasis%2012.16.2021.pdf" target="_blank" rel="noopener noreferrer">FDA M032专论</a><a href="https://eur-lex.europa.eu/eli/reg/2021/1902/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2021/1902</a></span>（均核对 2026-07-29）</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">吡罗克酮乙醇胺盐 (Piroctone Olamine) <span class="badge-success">低风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">吡罗克酮乙醇胺盐 (Piroctone Olamine) <span class="evidence-chip evidence-insufficient">证据未分级</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 抑制马拉色菌的去屑抑菌剂，是欧盟禁用 ZPT 后的<strong>主流替代成分</strong>。</p>
-        <p><span class="tag tag-risk">安全评估</span> 欧盟 SCCS 评估安全，作为准用防腐剂（Annex V）允许使用（淋洗类约 ≤1%），温和有效、刺激性低。</p>
-        <p><span class="tag tag-use">使用建议</span> 想避开 ZPT 又需去屑者的优选；温和，可长期使用。</p>
+        <p><span class="tag tag-risk">安全评估</span> 欧盟 Annex V 的1%/0.5%条目是其<strong>作为防腐剂</strong>时的规则，不能直接当作去屑用途获准或“温和有效”的证明；去屑用途仍需完整成品安全评估。</p>
+        <p><span class="tag tag-use">使用建议</span> 不能仅凭原料名称断言可长期使用；按成品标签和个人耐受判断。</p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">氯咪巴唑 (Climbazole) <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">氯咪巴唑 (Climbazole) <span class="evidence-chip evidence-strong">高等级法规证据</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 抗真菌去屑剂，抑制马拉色菌，常与吡罗克酮/ZPT 复配增效。</p>
-        <p><span class="tag tag-risk">安全评估</span> 欧盟经 SCCS 评估后<strong>设限使用</strong>（Reg (EU) 2019/698 规定发用冲洗类、驻留类等各品类最高浓度），限量内安全。</p>
-        <p><span class="tag tag-use">使用建议</span> 合规产品限量内使用安全；勿自行叠加多种去屑活性物。</p>
+        <p><span class="tag tag-risk">安全评估</span> 欧盟规定去屑淋洗洗发水最高2%；作为防腐剂时按产品类别最高0.5%或0.2%。用途与浓度必须一起写，不能只说“限量内安全”。</p>
+        <p><span class="tag tag-use">使用建议</span> 按合规成品标签使用；不要自行把原料浓度规则换算成DIY配方。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级法规证据</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2019/698/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 2019/698（核对 2026-07-29）</a></span></p>
       </div>
     </div>
 
     <div class="accordion-item">
-      <div class="accordion-header">二硫化硒 / 煤焦油 / 酮康唑 / 水杨酸（药用去屑活性物） <span class="badge-warning">中风险</span><span class="arrow">▼</span></div>
+      <div class="accordion-header">二硫化硒 / 煤焦油 / 酮康唑 / 水杨酸（药用去屑活性物） <span class="evidence-chip evidence-strong">监管路径不同</span><span class="arrow">▼</span></div>
       <div class="accordion-body">
         <p><span class="tag tag-mech">功效原理</span> 二硫化硒(抑菌控脂)、煤焦油(抑制角质过度增生)、酮康唑(强效抗真菌)、水杨酸(溶解头皮屑角质)——针对较顽固的头皮屑/脂溢性皮炎。</p>
-        <p><span class="tag tag-risk">安全评估</span> <strong>美国 FDA 把它们列为 OTC 去屑"药物"活性物</strong>（酮康唑 1% 为 OTC、2% 为处方；二硫化硒 1% OTC、2.5% 处方）。<strong>煤焦油含多环芳烃(PAHs)</strong>，欧盟对化妆品用粗制煤焦油限制/禁用。这类更接近"药妆/OTC 药"，而非普通化妆品。</p>
-        <p><span class="tag tag-use">使用建议</span> 顽固头皮屑或脂溢性皮炎建议按药品说明或遵医嘱使用，不宜长期无差别当日常洗发水。</p>
+        <p><span class="tag tag-risk">安全评估</span> 美国M032专论覆盖煤焦油、ZPT、水杨酸和硫化硒等；酮康唑1% OTC来自单独获批NDA，并非M032专论活性物。把四类成分合并成一个“中风险”标签会掩盖药物、浓度和监管路径差异。</p>
+        <p><span class="tag tag-use">使用建议</span> 顽固头皮屑或脂溢性皮炎按具体药品说明或医嘱使用。</p>
+        <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级法规证据</span><span class="claim-sources"><a href="https://www.accessdata.fda.gov/drugsatfda_docs/omuf/OTC%20Monograph_M032-Drug%20Products%20for%20the%20Control%20of%20Dandruff%20Seborrheic%20Dermatitis%20and%20Psoriasis%2012.16.2021.pdf" target="_blank" rel="noopener noreferrer">FDA M032专论</a><a href="https://www.accessdata.fda.gov/drugsatfda_docs/nda/97/20310_Nizoral.htm" target="_blank" rel="noopener noreferrer">Ketoconazole 1% NDA</a></span>（均核对 2026-07-29）</p>
       </div>
     </div>
   </div>
@@ -835,11 +867,11 @@
     <table style="margin:0">
       <thead><tr><th style="width:30%">成分</th><th style="width:16%">作用</th><th>安全评估（EU/US）</th></tr></thead>
       <tbody>
-        <tr><td><strong>苯甲酸钠 / 山梨酸钾</strong></td><td>温和有机酸防腐</td><td>欧盟与美国均准用，温和安全，弱酸配方常用。注意苯甲酸盐 + 高浓度VC 理论上可微量生成苯（洗护中少见）。</td></tr>
-        <tr><td><strong>DMDM 乙内酰脲</strong></td><td>甲醛释放体防腐</td><td class="risk-mid">缓释甲醛，欧盟要求 ≥0.001% 释放甲醛时标注"含甲醛/释放甲醛"，属常见致敏原，敏感人群留意。</td></tr>
-        <tr><td><strong>氯化钠（盐）</strong></td><td>增稠调节黏度</td><td>安全无虑。高盐配方对染烫发/极干头皮可能偏干。</td></tr>
+        <tr><td><strong>苯甲酸钠 / 山梨酸钾</strong></td><td>有机酸盐防腐</td><td>是否合规和耐受取决于具体成员、浓度、pH、产品类别与法域；本页未核验“与高浓度维C会生成苯”在化妆品成品中的通用风险，故不作该结论。</td></tr>
+        <tr><td><strong>DMDM 乙内酰脲</strong></td><td>甲醛释放体防腐</td><td class="risk-mid">主要关注接触过敏。欧盟要求成品释放总甲醛超过0.001%（10 ppm）时标示“releases formaldehyde”。 <a href="https://eur-lex.europa.eu/eli/reg/2022/1181/oj/eng" target="_blank" rel="noopener noreferrer">欧盟原文（核对 2026-07-29）</a></td></tr>
+        <tr><td><strong>氯化钠（盐）</strong></td><td>增稠调节黏度</td><td>常用于调节体系黏度；是否干燥或刺激取决于用量、表活体系和个体头皮状态。</td></tr>
         <tr><td><strong>乙二醇二硬脂酸酯</strong></td><td>珠光剂</td><td>美国 CIR 评估安全，纯装饰性——制造洗发水/沐浴露的珠光乳白外观，无功效也无明显风险。</td></tr>
-        <tr><td><strong>甲基异噻唑啉酮 (MIT/CMIT)</strong></td><td>防腐</td><td class="risk-mid">强致敏原，欧盟仅允许淋洗类且严格限量、禁用于驻留类；详见"安全"板块。</td></tr>
+        <tr><td><strong>甲基异噻唑啉酮 (MIT/MCI/MI)</strong></td><td>防腐</td><td class="risk-mid">接触致敏关注物；欧盟仅限淋洗类且最高0.0015%，详见“安全”板块及对应法规来源。</td></tr>
       </tbody>
     </table>
   </div>
@@ -852,43 +884,44 @@
 
 <!-- ==================== SAFETY ==================== -->
 <section class="section" id="safety">
-  <h2 class="section-title">⚠ 有害成分与安全风险</h2>
+  <h2 class="section-title">⚠ 安全、禁限用与证据边界</h2>
 
   <div class="card danger">
-    <h3>🔴 非法添加物 — 绝对禁区 <span class="badge-danger">最高风险</span></h3>
+    <h3>中国普通化妆品中的禁用原料 <span class="evidence-chip evidence-strong">高等级法规证据</span></h3>
     <table>
-      <tr><th>成分</th><th>常见名称</th><th>危害</th><th>高发产品</th></tr>
-      <tr><td>糖皮质激素</td><td>地塞米松、氯倍他索、氟轻松</td><td>激素依赖性皮炎（"激素脸"）：皮肤变薄、屏障永久损害、停用后爆发反跳</td><td>"速效美白霜""三天祛痘"</td></tr>
-      <tr><td>氢醌</td><td>对苯二酚</td><td>外源性褐黄病（不可逆的蓝黑色色沉）、白斑</td><td>非法"中药祛斑"</td></tr>
-      <tr><td>汞/铅</td><td>—</td><td>肾损伤、神经毒性、体内蓄积</td><td>"速效美白霜""中药祛斑膏"</td></tr>
-      <tr><td>荧光增白剂</td><td>—</td><td>堵塞毛孔、潜在光毒性</td><td>"即时亮白"面膜</td></tr>
+      <tr><th>原料/类别</th><th>中国化妆品结论</th><th>必须保留的边界</th></tr>
+      <tr><td>糖皮质激素</td><td>激素类不得作为化妆品原料</td><td>违法的是擅自加入普通化妆品；经批准、按医嘱使用的外用药不因此成为“非法成分”</td></tr>
+      <tr><td>氢醌（对苯二酚）</td><td>列入中国化妆品禁用原料目录</td><td>法域与产品类别必须写明；美国仍存在处方含氢醌产品，不能把全球所有医疗用途一概称为非法</td></tr>
+      <tr><td>汞及其化合物</td><td>2026年7月1日起实施的新标准取消原眼部防腐例外</td><td>汞的蓄积、肾脏和神经风险有监管依据；重金属污染限值与故意添加应分开表述</td></tr>
+      <tr><td>人寡肽-1 / EGF</td><td>不得作为化妆品原料，且不能与合法的“寡肽-1”混淆</td><td>“寡肽-1”与“人寡肽-1（EGF）”不是同一物质</td></tr>
     </table>
     <div class="info-box danger-box" style="margin-top:16px">
-      ⚠ <strong>警惕信号：</strong>"三天美白""七天祛痘""一次见效"——正常护肤品不可能有此速度。发现立即停用并就医。
+      <strong>消费者提示：</strong>“三天美白”“一次见效”等速效宣称值得核查备案与功效评价，但不能单凭广告速度断定产品非法添加。怀疑化妆品违法添加时停止继续使用并尽快就医；正在按医嘱使用药品者不要自行停药。
     </div>
+    <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://www.nmpa.gov.cn/xxgk/ggtg/hzhpggtg/jmhzhptg/20210528174051160.html" target="_blank" rel="noopener noreferrer">国家药监局禁用原料目录（核对 2026-07-29）</a><a href="https://www.nifdc.org.cn/directory/web/nifdc/bshff/hzhpbzh/hzhpbzhtzgg/202605201425242049203.html" target="_blank" rel="noopener noreferrer">汞及其化合物新标准（核对 2026-07-29）</a><a href="https://yjj.beijing.gov.cn/yjj/zwgk20/gg17/1694879/index.html" target="_blank" rel="noopener noreferrer">国家药监局EGF问答（核对 2026-07-29）</a><a href="https://www.fda.gov/consumers/health-fraud-scams/fda-warns-consumers-skin-products-containing-mercury-andor-hydroquinone" target="_blank" rel="noopener noreferrer">FDA汞/氢醌警示（核对 2026-07-29）</a></span></p>
   </div>
 
   <div class="card warning">
-    <h3>🟠 内分泌干扰物 (EDCs) <span class="badge-warning">学术争议中</span></h3>
-    <p style="margin-bottom:12px">2024-2025年多篇顶级期刊(Springer, Frontiers, MDPI)综述确认：以下成分长期低剂量暴露存在内分泌干扰风险。</p>
+    <h3>潜在内分泌关注：不能把危害信号写成人体定论</h3>
+    <p style="margin-bottom:12px">体外受体活性、动物高剂量信号、人体检出和合规化妆品使用造成临床伤害是不同层级的证据。出版社名称或“多篇综述”不能替代逐条风险评估。</p>
     <table>
-      <tr><th>成分种类</th><th>代表成分</th><th>作用机制</th><th>健康风险</th></tr>
-      <tr><td>对羟基苯甲酸酯类<br>(Parabens)</td><td>对羟基苯甲酸丙酯、丁酯</td><td>模拟雌激素，与雌激素受体结合</td><td>乳腺癌关联、生殖毒性、发育异常</td></tr>
-      <tr><td>邻苯二甲酸酯类<br>(Phthalates)</td><td>DBP（二丁酯）、DEP（二乙酯）</td><td>干扰激素受体结合、影响基因表达</td><td>生殖发育异常、甲状腺干扰</td></tr>
-      <tr><td>三氯生</td><td>Triclosan</td><td>激素干扰 + 诱导抗生素耐药</td><td>耐药菌筛选、环境蓄积</td></tr>
-      <tr><td>氧苯酮</td><td>二苯甲酮-3</td><td>干扰HPG系统 ↓ 性激素</td><td>内分泌功能障碍、珊瑚生态破坏</td></tr>
-      <tr><td>BHA</td><td>丁基羟基茴香醚</td><td>内分泌干扰</td><td>IARC列为可能致癌物；欧盟SCCS评估中，拟限制</td></tr>
+      <tr><th>成分/类别</th><th>经核验的结论</th><th>证据等级</th></tr>
+      <tr><td>Parabens</td><td>是成分家族，需区分具体成员和用量。FDA目前没有资料证明化妆品实际使用方式会影响人体健康，不支持整类标为“高风险”或写成乳腺癌定论。</td><td><span class="evidence-chip evidence-strong">高等级监管证据</span></td></tr>
+      <tr><td>Phthalates</td><td>不同成员风险和用途不同。FDA对DEP当前化妆品使用方式没有安全担忧，也未建立化妆品使用与人体健康风险的因果关系；不能把DBP与DEP合并下结论。</td><td><span class="evidence-chip evidence-strong">高等级监管证据</span></td></tr>
+      <tr><td>氧苯酮</td><td>存在吸收和潜在内分泌关注，欧盟已分用途限量；FDA要求更多数据，但明确“数据不足”不等于“不安全”。</td><td><span class="evidence-chip evidence-strong">高等级监管证据</span></td></tr>
+      <tr><td>BHA（丁基羟基茴香醚）</td><td>欧盟SCCS在2026年最终科学建议中认为皮肤驻留/淋洗产品至0.07%安全；该建议不适用于口腔或吸入暴露，也不等于已经立法。</td><td><span class="evidence-chip evidence-strong">高等级专家评估</span></td></tr>
     </table>
-    <p style="margin-top:12px;font-size:.85em;color:var(--gray-600)">欧洲人体生物监测：尿液中邻苯二甲酸酯检出率 88-100%。暴露来源：面霜、护手霜、抗衰老霜、沐浴露、洗面奶。</p>
+    <p class="claim-evidence"><span class="claim-sources"><a href="https://www.fda.gov/cosmetics/ingredients/parabens-cosmetics" target="_blank" rel="noopener noreferrer">FDA Parabens（核对 2026-07-29）</a><a href="https://www.fda.gov/cosmetics/cosmetic-ingredients/phthalates-cosmetics" target="_blank" rel="noopener noreferrer">FDA Phthalates（核对 2026-07-29）</a><a href="https://eur-lex.europa.eu/eli/reg/2022/1176/oj/eng" target="_blank" rel="noopener noreferrer">欧盟防晒剂限制（核对 2026-07-29）</a><a href="https://health.ec.europa.eu/publications/sccs-scientific-advice-butylated-hydroxyanisole-bha_en" target="_blank" rel="noopener noreferrer">SCCS BHA最终建议（核对 2026-07-29）</a></span></p>
   </div>
 
   <div class="card warning">
-    <h3>🟠 高风险防腐剂</h3>
+    <h3>防腐剂：致敏与法规条件</h3>
     <table>
       <tr><th>防腐剂</th><th>风险</th><th>法规限制</th></tr>
-      <tr><td>MIT/CMIT（甲基异噻唑啉酮/甲基氯异噻唑啉酮）</td><td>中国化妆品最常见过敏原之一，强致敏</td><td>MIT单用≤0.01%，与CMIT混合≤0.0015%（仅淋洗类）</td></tr>
-      <tr><td>甲醛释放体（DMDM乙内酰脲、咪唑烷基脲等）</td><td>缓慢释放甲醛 → 致敏 + 致癌争议(IARC Group 1)</td><td>游离甲醛/多聚甲醛2021年起禁用；释放体本身仍允许(有限量)，敏感人群留意</td></tr>
+      <tr><td>MIT / MCI/MI</td><td>重要接触致敏关注物</td><td>欧盟：MIT单用或MCI/MI混合物均仅限淋洗类、最高0.0015%；两种体系不得在同一产品并用</td></tr>
+      <tr><td>甲醛释放体（如DMDM乙内酰脲）</td><td>主要消费者关注点是接触过敏；不能把甲醛的致癌分类直接等同于合规成品的实际风险</td><td>欧盟：成品释放总甲醛超过0.001%（10 ppm）时标示“releases formaldehyde”</td></tr>
     </table>
+    <p class="claim-evidence"><span class="evidence-chip evidence-strong">高等级证据</span><span class="claim-sources"><a href="https://eur-lex.europa.eu/eli/reg/2017/1224/oj/eng" target="_blank" rel="noopener noreferrer">欧盟 MIT 规则（核对 2026-07-29）</a><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014R1003" target="_blank" rel="noopener noreferrer">欧盟 MCI/MI 规则（核对 2026-07-29）</a><a href="https://eur-lex.europa.eu/eli/reg/2022/1181/oj/eng" target="_blank" rel="noopener noreferrer">欧盟释放甲醛标签规则（核对 2026-07-29）</a></span></p>
   </div>
 
   <div class="card">
@@ -896,18 +929,22 @@
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-date">2015年版（持续增补）</div>
-        <div class="timeline-text">现行《化妆品安全技术规范（2015年版）》通过滚动"增补/修订"持续更新，最新已增补至2025–2026年，不断新增限用/禁用要求</div>
+        <div class="timeline-text">中国现行《化妆品安全技术规范（2015年版）》仍通过公告增补；法规结论必须核对具体公告和实施日期，不能只写“最新版”。</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">2021年</div>
-        <div class="timeline-text">《化妆品禁用原料目录》更新：苄氯酚、甲醛、多聚甲醛列为禁用；化妆品禁用原料共1393种</div>
+        <div class="timeline-text">国家药监局发布《化妆品禁用原料目录》（2021年第74号），包括氢醌、激素类等。收录数量不能替代对具体条目的核对。</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2019年</div>
-        <div class="timeline-text">EGF（表皮生长因子）等细胞因子禁止用于化妆品</div>
+        <div class="timeline-date">2026年7月1日</div>
+        <div class="timeline-text">《汞及其化合物》修订标准实施，取消原有眼部产品有机汞防腐剂例外。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019年监管问答</div>
+        <div class="timeline-text">人寡肽-1（EGF）不得作为化妆品原料；寡肽-1是不同物质，不应混淆。</div>
       </div>
     </div>
-    <p style="font-size:.85em;color:var(--gray-600);margin-top:12px">消费者可通过国家药监局官网（nmpa.gov.cn）查询产品注册/备案信息。</p>
+    <p class="claim-evidence"><span class="claim-sources"><a href="https://www.nmpa.gov.cn/xxgk/ggtg/hzhpggtg/jmhzhptg/20210528174051160.html" target="_blank" rel="noopener noreferrer">禁用原料目录</a><a href="https://www.nifdc.org.cn/directory/web/nifdc/bshff/hzhpbzh/hzhpbzhtzgg/202605201425242049203.html" target="_blank" rel="noopener noreferrer">2026年汞标准</a><a href="https://yjj.beijing.gov.cn/yjj/zwgk20/gg17/1694879/index.html" target="_blank" rel="noopener noreferrer">EGF监管问答</a></span>（均核对 2026-07-29）</p>
   </div>
 
   <div class="card">
@@ -915,8 +952,8 @@
     <table>
       <tr><th>成分</th><th>功能</th><th>风险</th><th>说明</th></tr>
       <tr><td><strong>乙醇 / 变性乙醇</strong></td><td>促渗、清爽肤感、溶剂</td><td class="risk-mid">干皮/敏感肌刺痛</td><td>油皮友好，干皮慎。排在成分表前5位说明浓度不低。</td></tr>
-      <tr><td><strong>香精 (Parfum)</strong></td><td>改善气味</td><td class="risk-mid">最常见致敏原</td><td>无香配方更安全。欧盟列了26种需标注的香精过敏原。</td></tr>
-      <tr><td><strong>苯氧乙醇</strong></td><td>防腐剂</td><td class="risk-low">极少数刺激</td><td>法定浓度≤1%，通常安全，比MIT/甲醛释放体温和得多。</td></tr>
+      <tr><td><strong>香精 (Parfum)</strong></td><td>改善气味</td><td class="risk-mid">部分香料可致敏</td><td>“无香”不等于零致敏风险。欧盟2023/1545新增56种需单独标示的香精过敏原，并设过渡期，不应继续只写“26种”。 <a href="https://eur-lex.europa.eu/eli/reg/2023/1545/oj/eng" target="_blank" rel="noopener noreferrer">欧盟原文（核对 2026-07-29）</a></td></tr>
+      <tr><td><strong>苯氧乙醇</strong></td><td>防腐剂</td><td>需看浓度与个体耐受</td><td>欧盟作为防腐剂时成品最高1%；法规限量不等于对所有个体零刺激，也不能跨成分宣称“温和得多”。 <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02009R1223-20240424" target="_blank" rel="noopener noreferrer">欧盟化妆品法规 Annex V（核对 2026-07-29）</a></td></tr>
     </table>
     <p style="font-size:.85em;color:var(--gray-600);margin-top:8px">以上成分在绝大多数护肤品中可见。关键看浓度和整体配方搭配，而非单一成分就能判断产品好坏。</p>
   </div>
@@ -924,12 +961,10 @@
   <div class="card">
     <h3>🆘 过敏/刺激应急处理</h3>
     <ol style="margin-left:20px;font-size:.92em;line-height:2">
-      <li><strong>立即停用</strong>可疑产品</li>
-      <li>温和清水洁面（不用洁面产品）</li>
-      <li><strong>冷敷镇静</strong>（冰毛巾/冷藏喷雾）</li>
-      <li>使用含 <strong>泛醇 + 积雪草</strong> 的修复产品</li>
-      <li>避免日晒，使用 <strong>纯物理防晒</strong></li>
-      <li><strong>就医：</strong>症状持续加重、大面积红肿、渗出</li>
+      <li>停用新近添加的可疑化妆品；若涉及处方药，不要自行停药，应联系开药医生。</li>
+      <li>用清水轻柔冲洗，避免摩擦、热敷、冰块直接接触皮肤及继续叠加酸类、维A类、香精或其他新产品。</li>
+      <li>红肿、疼痛、渗出、水疱或症状持续加重时尽快就医；呼吸困难、面唇舌肿胀或全身反应应立即寻求急救。</li>
+      <li>恢复期防晒应以避免暴晒、遮挡和选择本人可耐受的合规成品为主，不限定“纯物理”。</li>
     </ol>
   </div>
 </section>
@@ -962,7 +997,7 @@
 
   <div class="info-box">
     <strong>💡 判断思路</strong>
-    <p style="margin-top:6px">成分表前几位通常决定产品质地；活性成分（如烟酰胺、377）即使排名不在最前，只要达到有效浓度即可。辅助成分本身不可怕，但敏感肌应重点关注香精、酒精等潜在刺激物。</p>
+    <p style="margin-top:6px">成分表顺序只能提供有限的相对含量线索，不能单独判断质地、有效浓度或功效。活性成分和辅助成分都应结合完整配方、用量、成品证据与个人耐受评估。</p>
   </div>
 </section>
 
@@ -972,7 +1007,7 @@
   <p style="margin-bottom:16px;color:var(--gray-600)">共收录 <strong id="allCount">—</strong> 种成分，按分类排列。点击行查看详情。</p>
   <div class="card" style="padding:0;overflow:hidden">
     <table id="allTable" style="margin:0">
-      <thead><tr><th style="width:30%">成分</th><th style="width:12%">分类</th><th style="width:10%">风险</th><th>功效简介</th></tr></thead>
+      <thead><tr><th style="width:30%">成分</th><th style="width:12%">分类</th><th style="width:14%">结论证据</th><th>审慎表述与来源</th></tr></thead>
       <tbody id="allTableBody"><tr><td colspan="4" style="text-align:center;padding:20px;color:var(--gray-600)">加载中…</td></tr></tbody>
     </table>
   </div>
