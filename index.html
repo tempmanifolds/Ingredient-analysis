@@ -42,7 +42,7 @@
   </div>
 
   <div id="searchResults" hidden>
-    <h3 style="margin-bottom:12px">搜索结果</h3>
+    <h3 class="search-results-title">搜索结果</h3>
     <div id="searchResultList"></div>
   </div>
 
@@ -98,7 +98,7 @@
       <div class="pairing">
         <div class="pair-card pair-bad">
           <div class="pair-title">⚠ 可能增加刺激或需看配方</div>
-          <table style="font-size:.82em">
+          <table class="compact-table">
             <tr><th>A</th><th>B</th><th>后果</th></tr>
             <tr><td>蓝铜胜肽</td><td>低pH酸类</td><td>稳定性取决于具体配方，不能一概判定失活</td></tr>
             <tr><td>视黄醇</td><td>果酸/水杨酸</td><td>同一时段叠加可能增加刺激</td></tr>
@@ -107,7 +107,7 @@
         </div>
         <div class="pair-card pair-good">
           <div class="pair-title">✅ 常见搭配示例</div>
-          <table style="font-size:.82em">
+          <table class="compact-table">
             <tr><th>A</th><th>B</th><th>增效原理</th></tr>
             <tr><td>烟酰胺</td><td>视黄醇</td><td>修复屏障减少刺激</td></tr>
             <tr><td>VC</td><td>VE</td><td>抗氧化1+1>2</td></tr>
@@ -205,11 +205,11 @@
 <!-- ==================== ALL INGREDIENTS ==================== -->
 <section class="section" id="all">
   <h2 class="section-title">📋 全部成分总表</h2>
-  <p style="margin-bottom:16px;color:var(--gray-600)">共收录 <strong id="allCount">—</strong> 种成分，按分类排列。点击行查看详情。</p>
-  <div class="card" style="padding:0;overflow:hidden">
-    <table id="allTable" style="margin:0">
-      <thead><tr><th style="width:30%">成分</th><th style="width:12%">分类</th><th style="width:14%">结论证据</th><th>审慎表述与来源</th></tr></thead>
-      <tbody id="allTableBody"><tr><td colspan="4" style="text-align:center;padding:20px;color:var(--gray-600)">加载中…</td></tr></tbody>
+  <p class="all-table-intro">共收录 <strong id="allCount">—</strong> 种成分，按分类排列。点击行查看详情。</p>
+  <div class="card all-table-card">
+    <table id="allTable">
+      <thead><tr><th class="ingredient-column">成分</th><th class="category-column">分类</th><th class="evidence-column">结论证据</th><th>审慎表述与来源</th></tr></thead>
+      <tbody id="allTableBody"><tr><td class="loading-cell" colspan="4">加载中…</td></tr></tbody>
     </table>
   </div>
 </section>

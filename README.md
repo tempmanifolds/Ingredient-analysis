@@ -26,6 +26,14 @@ npm run validate
 npm run build
 ```
 
+首次克隆后运行一次以下命令，可启用仓库内置的提交前校验：
+
+```powershell
+npm run setup:hooks
+```
+
+启用后，每次提交都会自动运行 `npm run validate`；GitHub Actions 还会在推送和拉取请求中再次校验。
+
 ## GitHub Pages
 
 推送到 GitHub 后，在仓库的 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。推送到 `main` 或 `master` 后，工作流会先校验数据和相对路径，再发布 `dist/` 中的静态文件。

@@ -8,7 +8,7 @@ const requiredFiles = [
   'index.html', 'about.html', '404.html', 'robots.txt', '.nojekyll',
   'css/main.css', 'js/app.js', 'js/config.js', 'js/render.js', 'js/search.js', 'js/pinyin.js',
   'data/ingredients.json', 'data/sources.json', 'scripts/generate-pinyin.mjs',
-  'legacy/护肤品成分研究报告.html', '.github/workflows/pages.yml',
+  'legacy/护肤品成分研究报告.html', '.github/workflows/pages.yml', '.githooks/pre-commit',
 ];
 
 function fail(message) {
@@ -31,6 +31,19 @@ for (const source of sourceData.sources || []) {
   if (!/^https:\/\//.test(source.url || '')) fail(`${source.id} 的链接必须使用 HTTPS。`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt || '')) fail(`${source.id} 缺少有效 checkedAt。`);
 }
+const expectedReportSourceIds = [
+  ...Array.from({ length: 15 }, (_, index) => `EU-${String(index + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 13 }, (_, index) => `US-${String(index + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 18 }, (_, index) => `P-${String(index + 1).padStart(2, '0')}`),
+];
+for (const reportId of expectedReportSourceIds) {
+  const sourceId = sourceData.reportSourceMap?.[reportId];
+  if (!sourceId) fail(`F07 缺少审查报告来源映射：${reportId}`);
+  else if (!sourceIds.has(sourceId)) fail(`F07 的 ${reportId} 映射到未定义来源：${sourceId}`);
+}
+for (const reportId of Object.keys(sourceData.reportSourceMap || {})) {
+  if (!expectedReportSourceIds.includes(reportId)) fail(`F07 存在未知审查报告来源编号：${reportId}`);
+}
 const allowedCategories = new Set(['moisture', 'whitening', 'antiaging', 'acne', 'repair', 'sunscreen', 'cleanse', 'safety', 'base']);
 
 if (!Array.isArray(ingredients)) fail('ingredients 必须是数组。');
@@ -40,14 +53,25 @@ if (!data.categoryMetadata || Object.keys(data.categoryMetadata).length !== allo
 
 const ids = new Set();
 const names = new Set();
+const inciNames = new Set();
 for (const [index, item] of ingredients.entries()) {
   const label = `第 ${index + 1} 条`;
+  for (const field of ['id', 'inci', 'nameZh', 'aliases', 'categories', 'functions', 'summary', 'evidence', 'regulation', 'cautions', 'updatedAt']) {
+    if (!Object.hasOwn(item, field)) fail(`${label} 缺少 schema 字段：${field}`);
+  }
   if (!/^[a-z]+-\d{3}$/.test(item.id || '')) fail(`${label} 的 id 不符合稳定格式：${item.id}`);
   if (ids.has(item.id)) fail(`重复 id：${item.id}`);
   ids.add(item.id);
   if (!item.nameZh?.trim()) fail(`${label} 缺少 nameZh。`);
   if (names.has(item.nameZh)) fail(`重复中文名：${item.nameZh}`);
   names.add(item.nameZh);
+  if (item.inci !== null && typeof item.inci !== 'string') fail(`${item.id} 的 inci 必须是字符串或 null。`);
+  if (typeof item.inci === 'string') {
+    if (!item.inci.trim()) fail(`${item.id} 的 inci 不得是空字符串；未确认时使用 null。`);
+    const normalizedInci = item.inci.trim().toLowerCase();
+    if (inciNames.has(normalizedInci)) fail(`重复 INCI：${item.inci}`);
+    inciNames.add(normalizedInci);
+  }
   if (!Array.isArray(item.aliases)) fail(`${item.id} 的 aliases 必须是数组。`);
   if (!Array.isArray(item.categories) || !item.categories.length) fail(`${item.id} 缺少 categories。`);
   for (const category of item.categories || []) {
@@ -55,6 +79,8 @@ for (const [index, item] of ingredients.entries()) {
   }
   if (!item.categories?.includes(item.targetSection)) fail(`${item.id} 的 targetSection 不在 categories 中。`);
   if (!item.summary?.trim()) fail(`${item.id} 缺少 summary。`);
+  if (!Array.isArray(item.functions) || !item.functions.length || item.functions.some((value) => typeof value !== 'string' || !value.trim())) fail(`${item.id} 的 functions 必须是非空字符串数组。`);
+  if (!Array.isArray(item.cautions) || item.cautions.some((value) => typeof value !== 'string' || !value.trim())) fail(`${item.id} 的 cautions 必须是字符串数组。`);
   if ('legacyRisk' in item) fail(`${item.id} 仍保留单一风险总分。`);
   if ('pinyinInitials' in item) fail(`${item.id} 仍保留手工拼音字段。`);
   if (!item.safetyProfile || !Object.hasOwn(item.safetyProfile, 'irritationPotential') || !Object.hasOwn(item.safetyProfile, 'sensitization')) {
@@ -96,11 +122,16 @@ if (categoryCounts.sunscreen !== 4) fail(`防晒多标签计数应为 4，实际
 if (categoryCounts.safety !== 11) fail(`安全多标签计数应为 11，实际为 ${categoryCounts.safety}。`);
 
 const searchMatches = (query, id) => ingredients.some((item) => {
-  const searchText = [item.nameZh, ...item.aliases, item.summary].join(' ').toLowerCase();
+  const searchText = [item.nameZh, item.inci, ...item.aliases, item.summary].filter(Boolean).join(' ').toLowerCase();
   return item.id === id && (searchText.includes(query) || (pinyinInitialsById[item.id] || '').split(' ').some((value) => value.startsWith(query)));
 });
 if (!searchMatches('yxa', 'whitening-001')) fail('拼音搜索 yxa 未命中烟酰胺记录。');
 if (!searchMatches('tmzs', 'moisture-001')) fail('拼音搜索 tmzs 未命中透明质酸记录。');
+for (const item of ingredients) {
+  if (!searchMatches(item.nameZh.toLowerCase(), item.id)) fail(`${item.id} 无法用中文名搜索。`);
+  if (!item.targetSection || !allowedCategories.has(item.targetSection)) fail(`${item.id} 的深链接没有有效目标分类。`);
+  if (!/^#ingredient\/[a-z]+-\d{3}$/.test(`#ingredient/${item.id}`)) fail(`${item.id} 无法生成稳定深链接。`);
+}
 
 const categoryIndex = Object.fromEntries([...allowedCategories].map((category, index) => [category, index]));
 const sorted = [...ingredients].sort((a, b) => {
@@ -122,6 +153,7 @@ for (const htmlFile of ['index.html', 'about.html', '404.html']) {
 }
 
 const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+if (/\sstyle=["']/i.test(indexHtml)) fail('F04 要求 index.html 不再保留内联 style。');
 if (!indexHtml.includes('id="overviewIngredientCount">—</div>')) fail('首页成分总数应使用加载前占位符。');
 if (!indexHtml.includes('id="overviewEvidenceCount">—</div>')) fail('首页证据分级数量应由数据动态生成。');
 if (!indexHtml.includes('id="overviewSourceCount">—</div>')) fail('首页可靠来源数量应由数据动态生成。');
@@ -132,6 +164,8 @@ if (!fs.readFileSync(path.join(root, 'js', 'app.js'), 'utf8').includes("fetch('.
 if ((indexHtml.match(/data-category-ingredients=/g) || []).length !== allowedCategories.size) fail('九个分类未全部改为数据挂载点。');
 if (indexHtml.includes('class="accordion-item')) fail('index.html 仍含手写成分详情，单一数据源尚未落地。');
 if (!indexHtml.includes('<script type="module" src="./js/app.js"></script>')) fail('页面脚本未使用模块化入口。');
+const preCommitHook = fs.readFileSync(path.join(root, '.githooks', 'pre-commit'), 'utf8');
+if (!preCommitHook.includes('npm run validate')) fail('F03 的提交前钩子未执行 npm run validate。');
 
 for (const jsFile of ['js/app.js', 'js/render.js', 'js/search.js']) {
   const source = fs.readFileSync(path.join(root, jsFile), 'utf8');

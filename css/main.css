@@ -58,9 +58,17 @@ a:hover { text-decoration: underline; }
 
 /* Tables */
 table { width: 100%; border-collapse: collapse; font-size: .9em; margin: 12px 0; }
+.compact-table { font-size: .82em; }
 th { background: var(--gray-100); font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid var(--gray-200); color: var(--gray-700); }
 td { padding: 10px 12px; border-bottom: 1px solid var(--gray-100); }
 tr:hover td { background: var(--primary-light); }
+.all-table-intro { margin-bottom: 16px; color: var(--gray-600); }
+.all-table-card { padding: 0; overflow: hidden; }
+#allTable { margin: 0; }
+.ingredient-column { width: 30%; }
+.category-column { width: 12%; }
+.evidence-column { width: 14%; }
+.loading-cell { text-align: center; padding: 20px; color: var(--gray-600); }
 .risk-high { color: var(--danger); font-weight: 600; }
 .risk-mid { color: var(--warning); font-weight: 600; }
 .risk-low { color: var(--success); font-weight: 600; }
@@ -70,6 +78,7 @@ tr:hover td { background: var(--primary-light); }
 .search-box input { width: 100%; padding: 14px 48px 14px 20px; border: 2px solid var(--gray-200); border-radius: var(--radius); font-size: 1em; outline: none; transition: border-color .2s; background: #fff; }
 .search-box input:focus { border-color: var(--primary); }
 .search-box .search-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-600); width: 20px; height: 20px; }
+.search-results-title { margin-bottom: 12px; }
 
 /* Stats row */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px; }

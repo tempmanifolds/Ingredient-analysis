@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
+    "setup:hooks": "git config core.hooksPath .githooks",
     "generate:pinyin": "node scripts/generate-pinyin.mjs",
     "validate": "node scripts/generate-pinyin.mjs --check && node scripts/validate.mjs",
     "build": "npm run generate:pinyin && node scripts/prepare-pages.mjs"
