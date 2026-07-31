@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-30",
-  "expectedCount": 128,
+  "updatedAt": "2026-07-31",
+  "expectedCount": 159,
   "ingredients": [
     {
       "id": "moisture-001",
@@ -4216,6 +4216,1165 @@
         "sensitization": null,
         "specialPopulations": []
       }
+    },
+    {
+      "id": "sunscreen-003",
+      "inci": "Ethylhexyl Methoxycinnamate",
+      "nameZh": "甲氧基肉桂酸乙基己酯",
+      "aliases": [
+        "OMC",
+        "EHMC",
+        "octinoxate",
+        "甲氧基肉桂酸辛酯",
+        "奥克立林酯"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（UVB 为主）"
+      ],
+      "summary": "以吸收 UVB 波段为主的有机防晒剂，是全球使用最广的 UVB 滤剂之一。单独使用时光稳定性有限，成品的实际防护范围、光稳定性与耐水性取决于完整复配与实测，不能由这一条推断成品的 SPF 或 PA 值。",
+      "evidence": {
+        "level": "strong",
+        "summary": "作为 UVB 吸收剂的用途与限量有官方法规和 SCCS 安全评估支持；成品防护力仍须以整品实测为准。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "SCCS-EHMC-2025",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：Regulation (EC) No 1223/2009 附录 VI 第 12 项准用紫外线吸收剂，即用型产品中最高 10%；SCCS/1671/24（2025-06-26 通过）认为在防晒产品及面部、手部、唇部产品中最高 10% 使用安全，儿童安全边际亦足够，同时记录其在体外与体内具有雌激素样活性和弱抗雄激素活性。美国：属于 FDA 尚未作出 GRASE 阳性判定、要求补充安全数据的防晒活性成分之一，目前在 deemed final order 下按既有 OTC 专论条件继续销售。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "SCCS-EHMC-2025",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "SCCS 记录的“内分泌活性”是危害识别层面的实验观察，其同一份意见的结论仍是按限量使用安全；不宜据此单条判定成品不安全。",
+        "“FDA 要求补充数据”表示证据不足以作出阳性 GRASE 判定，不等于已判定不安全。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-004",
+      "inci": "Drometrizole Trisiloxane",
+      "nameZh": "甲酚曲唑三硅氧烷",
+      "aliases": [
+        "Mexoryl XL",
+        "麦色滤XL",
+        "drometrizole trisiloxane"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（UVA/UVB）"
+      ],
+      "summary": "含硅氧烷结构的广谱有机防晒剂，兼具 UVB 与 UVA 吸收，亲油、易与硅油体系相容。它在欧盟等法域获准使用，但未进入美国 OTC 防晒专论，因此“欧洲配方”与“美版配方”的防晒剂组合常有差异。",
+      "evidence": {
+        "level": "moderate",
+        "summary": "准用身份与最高浓度有欧盟法规支持；跨法域可得性差异明确。单一滤剂不能代表成品防护表现。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 16 项准用紫外线吸收剂，即用型产品中最高 15%。美国：不在 OTC 防晒专论的活性成分清单中，不能作为 OTC 防晒活性成分在美国上市。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "未列入美国 OTC 专论只反映监管路径差异，不能读作“已被美国判定为不安全”。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-005",
+      "inci": "Terephthalylidene Dicamphor Sulfonic Acid",
+      "nameZh": "对苯二亚甲基二樟脑磺酸",
+      "aliases": [
+        "Mexoryl SX",
+        "麦色滤SX",
+        "ecamsule",
+        "依莰舒"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（UVA 为主）"
+      ],
+      "summary": "水溶性樟脑磺酸类 UVA 吸收剂，常与油溶性滤剂搭配以覆盖水相。它在欧盟等法域按准用防晒剂管理，在美国长期只能通过新药申请（NDA）路径用于特定产品，而不在 OTC 防晒专论内。",
+      "evidence": {
+        "level": "moderate",
+        "summary": "准用身份与最高浓度有欧盟法规支持；其在成品中的 UVA 贡献仍取决于浓度与整体复配。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER",
+          "PUBMED-UVA-FILTERS-2010",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 7 项准用紫外线吸收剂，即用型产品中最高 10%（以酸计）。美国：不在 OTC 防晒专论活性成分清单中。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-006",
+      "inci": "Diethylamino Hydroxybenzoyl Hexyl Benzoate",
+      "nameZh": "二乙氨羟苯甲酰基苯甲酸己酯",
+      "aliases": [
+        "DHHB",
+        "Uvinul A Plus",
+        "二乙氨基羟苯甲酰基苯甲酸己酯"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（长波 UVA）"
+      ],
+      "summary": "长波 UVA 吸收剂，吸收峰位于 UVA1 区间，光稳定性较好，常用于替代或补足阿伏苯宗的 UVA 覆盖。近年的监管关注点是原料中的邻苯二甲酸二正己酯（DnHexP）杂质，属于原料纯度控制问题，而不是该滤剂本身的固有属性。",
+      "evidence": {
+        "level": "strong",
+        "summary": "准用身份、最高浓度与杂质控制条件均有欧盟法规和 SCCS 意见支持；成品 UVA 防护仍须实测。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "SCCS-DHHB-2025",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 28 项准用紫外线吸收剂，即用型产品中最高 10%。SCCS/1678/25（2025-06-30 定稿）认为在 DnHexP 杂质不超过 0.026%（260 ppm）的前提下最高 10% 安全，并建议将 1 ppm 作为该杂质的目标控制水平。美国：不在 OTC 防晒专论活性成分清单中。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "SCCS-DHHB-2025",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "DnHexP 是原料合成带入的杂质，取决于供应商与工艺；不能仅凭成分表出现 DHHB 就判断某件成品的杂质水平。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-007",
+      "inci": "Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine",
+      "nameZh": "双-乙基己氧苯酚甲氧苯基三嗪",
+      "aliases": [
+        "Tinosorb S",
+        "bemotrizinol",
+        "BEMT",
+        "贝美三嗪醇"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（广谱 UVA/UVB）"
+      ],
+      "summary": "广谱三嗪类有机防晒剂，同时覆盖 UVB 与 UVA，光稳定性较好，在配方中也常用于提升体系整体的光稳定性。2026 年 6 月成为美国二十余年来首个被纳入 OTC 防晒专论的新活性成分。",
+      "evidence": {
+        "level": "strong",
+        "summary": "欧盟准用限量与美国 GRASE 判定均有官方文件支持；对具体成品仍须以实测 SPF/UVA 标识为准。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-BEMOTRIZINOL-2026",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 25 项准用紫外线吸收剂，即用型产品中最高 10%。美国：FDA 于 2026-06-09 发布最终行政命令 OTC000039，将 bemotrizinol 纳入 OTC 防晒专论，最高 6%，判定为对成人及 6 个月以上儿童 GRASE；这是自 1990 年代末以来专论新增的首个防晒活性成分。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-BEMOTRIZINOL-2026"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "欧盟 10% 与美国 6% 是两套独立的法域上限，同一支产品在不同市场的合规浓度可能不同。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-008",
+      "inci": "Ethylhexyl Triazone",
+      "nameZh": "乙基己基三嗪酮",
+      "aliases": [
+        "Uvinul T 150",
+        "EHT",
+        "辛基三嗪酮",
+        "octyl triazone"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（UVB）"
+      ],
+      "summary": "分子量较大的三嗪类 UVB 吸收剂，单位质量吸光效率高、光稳定性好，因此常以较低添加量用于提升 SPF。它不提供长波 UVA 防护，成品的 UVA 能力需由其他滤剂承担。",
+      "evidence": {
+        "level": "moderate",
+        "summary": "准用身份与最高浓度有欧盟法规支持；“高效”属于滤剂效率描述，不能直接换算为成品防护倍数。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 15 项准用紫外线吸收剂，即用型产品中最高 5%。美国：不在 OTC 防晒专论活性成分清单中。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "它只覆盖 UVB；成分表里出现它不能推断该产品的 UVA 防护水平。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "sunscreen-009",
+      "inci": "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol",
+      "nameZh": "亚甲基双-苯并三唑基四甲基丁基酚",
+      "aliases": [
+        "Tinosorb M",
+        "bisoctrizole",
+        "MBBT",
+        "亚甲基双苯并三唑基四甲基丁基酚"
+      ],
+      "categories": [
+        "sunscreen"
+      ],
+      "functions": [
+        "紫外线吸收剂（广谱 UVA/UVB）"
+      ],
+      "summary": "以微粒分散体形式使用的广谱有机滤剂，兼有吸收与散射作用，覆盖 UVB 与 UVA。因为以颗粒形态存在，配方中的分散稳定性与粒径控制会影响外观和防护表现。",
+      "evidence": {
+        "level": "moderate",
+        "summary": "准用身份与最高浓度有欧盟法规支持；颗粒形态带来的防护贡献取决于分散状态，不能从成分名推断。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
+        ]
+      },
+      "regulation": {
+        "jurisdiction": "EU/US",
+        "status": "allowed-with-limits",
+        "summary": "欧盟：附录 VI 第 23 项准用紫外线吸收剂，即用型产品中最高 10%。美国：不在 OTC 防晒专论活性成分清单中。",
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-SUNSCREEN-ORDER"
+        ],
+        "checkedAt": "2026-07-31"
+      },
+      "cautions": [
+        "欧盟附录 VI 对该滤剂的准用条件按具体条目文本执行，纳米形态另有单独的管理要求；本条记录的是非纳米条目的上限。",
+        "中国以《化妆品安全技术规范》表5 的准用防晒剂目录＋限量方式管理防晒剂；本条未逐项核对该表中的中国限量，选购国内产品时应以官方最新文本和成品标签为准。"
+      ],
+      "targetSection": "sunscreen",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "moisture-016",
+      "inci": "Caprylyl Glycol",
+      "nameZh": "辛甘醇",
+      "aliases": [
+        "1,2-辛二醇",
+        "caprylyl glycol",
+        "octane-1,2-diol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿",
+        "肤感调节",
+        "防腐增效"
+      ],
+      "summary": "小分子二元醇，兼作保湿剂和防腐增效剂，常与苯氧乙醇等搭配以降低传统防腐剂用量。它本身不是护肤活性物，出现在成分表不构成功效证据。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "配方功能有资料支持；不能把该原料单独外推为护肤功效或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "“无传统防腐剂”是整个防腐体系的属性，不能由单一原料判断。"
+      ],
+      "targetSection": "moisture",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "moisture-017",
+      "inci": "Dipropylene Glycol",
+      "nameZh": "双丙甘醇",
+      "aliases": [
+        "DPG",
+        "dipropylene glycol"
+      ],
+      "categories": [
+        "moisture"
+      ],
+      "functions": [
+        "保湿",
+        "溶剂",
+        "肤感调节"
+      ],
+      "summary": "常用多元醇溶剂兼保湿剂，可帮助溶解防晒剂等油溶性原料并改善铺展性。与丙二醇同属丙二醇系列，但两者是不同原料，刺激性讨论不应互相套用。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "moisture",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "antiaging-014",
+      "inci": "Tocopheryl Acetate",
+      "nameZh": "生育酚乙酸酯",
+      "aliases": [
+        "维生素E乙酸酯",
+        "VE乙酸酯",
+        "vitamin E acetate",
+        "醋酸生育酚"
+      ],
+      "categories": [
+        "antiaging"
+      ],
+      "functions": [
+        "抗氧化",
+        "配方稳定"
+      ],
+      "summary": "维生素 E 的乙酸酯型式，比游离生育酚更稳定，常用于保护配方中的油相与防晒剂。作为酯型，需在皮肤内被酯酶水解为生育酚才具备抗氧化活性，这一转化在人体皮肤中的效率仍有争议，因此不能把它等同于外用维生素 E 的功效证据。",
+      "evidence": {
+        "level": "limited",
+        "summary": "抗氧化与配方稳定的配方角色合理；酯型在人体皮肤中的转化效率与外用抗老功效证据有限，不能与游离生育酚划等号。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "个别人对维生素 E 类原料有接触性皮炎报告；这属于个体差异，不构成对该原料的普遍风险判断。"
+      ],
+      "targetSection": "antiaging",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "cleanse-017",
+      "inci": "Sodium Cocoyl Sarcosinate",
+      "nameZh": "椰油酰肌氨酸钠",
+      "aliases": [
+        "sodium cocoyl sarcosinate",
+        "肌氨酸表活"
+      ],
+      "categories": [
+        "cleanse"
+      ],
+      "functions": [
+        "表面活性剂",
+        "润湿分散"
+      ],
+      "summary": "肌氨酸类阴离子表面活性剂。在洗护品中作清洁与起泡成分；在防晒等驻留型乳液中通常以很低比例用作润湿/分散助剂，帮助粉体或滤剂分散，这时它的角色与“洗面奶表活”不同。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述；同一原料在淋洗类与驻留类中的用量与作用不同，不能互相外推。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "cleanse",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "safety-012",
+      "inci": "Chlorphenesin",
+      "nameZh": "氯苯甘醚",
+      "aliases": [
+        "chlorphenesin",
+        "3-(4-氯苯氧基)丙-1,2-二醇"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "functions": [
+        "防腐剂"
+      ],
+      "summary": "含氯苯氧基结构的防腐剂，常与苯氧乙醇等搭配组成防腐体系。欧盟按附录 V 准用防腐剂管理并规定最高浓度，具体数值与适用范围应以官方最新附录 V 文本为准；本条未逐项核对该限量。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "防腐功能描述有资料支持；本次未核对到可直接引用的官方限量原文，因此不记录成分级法规限量结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS",
+          "EU-COSMETICS-CONSOLIDATED-2026"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "本条没有记录已核对的具体限量数字；需要合规判断时请查阅欧盟附录 V 与中国《化妆品安全技术规范》表4 的最新文本。",
+        "“含防腐剂”本身不是风险结论；防腐体系的安全性取决于种类、浓度与整体配方。"
+      ],
+      "targetSection": "safety",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-040",
+      "inci": "Aqua",
+      "nameZh": "水",
+      "aliases": [
+        "水",
+        "aqua",
+        "purified water"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "溶剂",
+        "配方基质"
+      ],
+      "summary": "配方的连续相与溶剂，在多数水基产品中占比最高。排在成分表第一位只说明它含量最高，与产品好坏、活性物浓度或“注水”与否没有直接关系。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-041",
+      "inci": "Isocetyl Stearate",
+      "nameZh": "异鲸蜡醇硬脂酸酯",
+      "aliases": [
+        "isocetyl stearate"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "柔润剂",
+        "溶剂"
+      ],
+      "summary": "支链酯类柔润剂，可溶解油溶性防晒剂并改善铺展与肤感，主要影响质地而非功效。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-042",
+      "inci": "Triethanolamine",
+      "nameZh": "三乙醇胺",
+      "aliases": [
+        "TEA",
+        "triethanolamine",
+        "trolamine"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "pH 调节剂",
+        "中和剂"
+      ],
+      "summary": "碱性中和剂，常用于中和卡波姆、脂肪酸或酸性防晒剂以形成稳定体系。欧盟对其用途与最高浓度设有限制条件，并关注与亚硝基化体系共存时生成亚硝胺的可能；具体条款以官方最新附录 III 文本为准，本条未逐项核对该限量。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "本条没有记录已核对的具体限量数字；需要合规判断时请查阅欧盟附录 III 与中国《化妆品安全技术规范》表3 的最新文本。"
+      ],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-043",
+      "inci": "Stearic Acid",
+      "nameZh": "硬脂酸",
+      "aliases": [
+        "stearic acid",
+        "十八烷酸"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂前体",
+        "增稠剂",
+        "柔润剂"
+      ],
+      "summary": "饱和脂肪酸，与碱中和后形成皂基乳化体系，也用于调节稠度与肤感。它是皮肤屏障脂质的成员之一，但配方里作为乳化/增稠原料使用时不宜按“补充屏障脂质”解读。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-044",
+      "inci": "Palmitic Acid",
+      "nameZh": "棕榈酸",
+      "aliases": [
+        "palmitic acid",
+        "十六烷酸"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂前体",
+        "增稠剂"
+      ],
+      "summary": "与硬脂酸同类的饱和脂肪酸，常与其搭配调节皂基体系的稠度与铺展性；同样不宜单独按屏障脂质功效解读。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-045",
+      "inci": "Cetyl Alcohol",
+      "nameZh": "鲸蜡醇",
+      "aliases": [
+        "cetyl alcohol",
+        "十六醇",
+        "棕榈醇"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "增稠剂",
+        "乳化稳定剂",
+        "柔润剂"
+      ],
+      "summary": "脂肪醇，用于增稠与稳定乳液。它属于脂肪醇而非乙醇类溶剂，不具有乙醇的挥发与脱脂特性，两者不应混为一谈。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-046",
+      "inci": "Potassium Cetyl Phosphate",
+      "nameZh": "鲸蜡醇磷酸酯钾",
+      "aliases": [
+        "potassium cetyl phosphate"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂"
+      ],
+      "summary": "阴离子磷酸酯乳化剂，在防晒配方中常用于稳定高油相和滤剂体系，有助于成膜均匀。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-047",
+      "inci": "Glyceryl Stearate",
+      "nameZh": "甘油硬脂酯",
+      "aliases": [
+        "glyceryl stearate",
+        "单甘酯",
+        "GMS"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂",
+        "柔润剂"
+      ],
+      "summary": "非离子乳化剂与共乳化剂，常与 PEG-100 硬脂酸酯组成经典乳化对，决定乳液的稳定性与厚重感。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-048",
+      "inci": "PEG-100 Stearate",
+      "nameZh": "PEG-100硬脂酸酯",
+      "aliases": [
+        "PEG-100 stearate",
+        "聚乙二醇-100硬脂酸酯"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂"
+      ],
+      "summary": "水溶性非离子乳化剂，常与甘油硬脂酯配对使用。PEG 类原料的关注点是原料级别的杂质控制（如二噁烷残留），属于原料规格问题，不能由成分名判断某件成品的杂质水平。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "PEG 类原料的杂质讨论针对的是原料纯度与工艺，不等于该成分本身有毒性结论。"
+      ],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-049",
+      "inci": "Aluminum Hydroxide",
+      "nameZh": "氢氧化铝",
+      "aliases": [
+        "aluminum hydroxide",
+        "aluminium hydroxide"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "粉体包覆剂",
+        "遮光剂"
+      ],
+      "summary": "常作为二氧化钛等无机粉体的表面包覆层，用于降低粉体的光催化活性并改善分散。它在配方中通常是粉体的附属成分，而不是独立添加的活性物。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-050",
+      "inci": "Iron Oxides",
+      "nameZh": "氧化铁(CI 77491/77492/77499)",
+      "aliases": [
+        "CI 77491",
+        "CI 77492",
+        "CI 77499",
+        "CI77491",
+        "CI77492",
+        "CI77499",
+        "iron oxides",
+        "氧化铁红",
+        "氧化铁黄",
+        "氧化铁黑"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "着色剂"
+      ],
+      "summary": "红、黄、黑三种氧化铁着色剂，在带润色的防晒中用于调出接近肤色的色调，同时对可见光有一定遮挡。它们按准用着色剂目录管理，作用是上色而不是护肤。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-051",
+      "inci": "Tromethamine",
+      "nameZh": "氨丁三醇",
+      "aliases": [
+        "tromethamine",
+        "TRIS",
+        "三羟甲基氨基甲烷",
+        "trometamol"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "pH 调节剂",
+        "中和剂"
+      ],
+      "summary": "常见碱性中和剂，用于中和卡波姆或酸性防晒剂，使体系达到目标 pH 并保持增稠效果。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-052",
+      "inci": "Isononyl Isononanoate",
+      "nameZh": "异壬酸异壬酯",
+      "aliases": [
+        "isononyl isononanoate",
+        "INI"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "柔润剂",
+        "溶剂"
+      ],
+      "summary": "轻质支链酯，铺展快、油腻感低，常用于溶解防晒剂并让高滤剂含量的配方保持清爽肤感。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-053",
+      "inci": "Silica",
+      "nameZh": "硅石",
+      "aliases": [
+        "silica",
+        "二氧化硅"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "吸油剂",
+        "流变调节剂",
+        "肤感调节"
+      ],
+      "summary": "多孔或球形二氧化硅粉体，用于吸附油脂、减少泛光、改善涂抹时的顺滑度。这里的作用是控油与肤感，与防晒无关。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-054",
+      "inci": "C14-22 Alcohols",
+      "nameZh": "C14-22醇",
+      "aliases": [
+        "C14-22 alcohols",
+        "C14-22醇"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化稳定剂",
+        "增稠剂"
+      ],
+      "summary": "长链脂肪醇混合物，常与 C12-20 烷基葡糖苷组成糖苷类乳化体系，用于稳定乳液并提供柔润肤感。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-055",
+      "inci": "Diisopropyl Sebacate",
+      "nameZh": "癸二酸二异丙酯",
+      "aliases": [
+        "diisopropyl sebacate",
+        "DIS"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "柔润剂",
+        "溶剂"
+      ],
+      "summary": "低黏度酯类，对多种有机防晒剂有较好溶解力，可帮助高滤剂配方避免结晶并保持轻薄质地。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-056",
+      "inci": "Ammonium Acryloyldimethyltaurate/VP Copolymer",
+      "nameZh": "丙烯酰二甲基牛磺酸铵/VP共聚物",
+      "aliases": [
+        "AVP共聚物",
+        "Aristoflex AVC"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "增稠剂",
+        "乳化稳定剂"
+      ],
+      "summary": "预中和的合成聚合物增稠剂，耐电解质、可快速形成稳定凝胶，常用于防晒乳的流变控制与成膜均匀性。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-057",
+      "inci": "C12-20 Alkyl Glucoside",
+      "nameZh": "C12-20烷基葡糖苷",
+      "aliases": [
+        "C12-20 alkyl glucoside"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂"
+      ],
+      "summary": "糖苷类非离子乳化剂，用于驻留型乳液的 O/W 乳化，与洗面奶里的癸基葡糖苷等清洁用糖苷属于同一化学家族但用途不同。烷基糖苷是已知的接触过敏原家族，个体反应仍需按具体产品判断。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [
+        "烷基糖苷家族存在接触过敏报告；这是家族层面的提示，不能据此预测某个人对某件成品的反应。"
+      ],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
+    },
+    {
+      "id": "base-058",
+      "inci": "Sodium Methyl Stearoyl Taurate",
+      "nameZh": "甲基硬脂酰基牛磺酸钠",
+      "aliases": [
+        "sodium methyl stearoyl taurate"
+      ],
+      "categories": [
+        "base"
+      ],
+      "functions": [
+        "乳化剂",
+        "分散剂"
+      ],
+      "summary": "牛磺酸盐类阴离子乳化/分散剂，常用于帮助防晒剂或粉体在水相中稳定分散。",
+      "evidence": {
+        "level": "insufficient",
+        "summary": "仅支持配方功能描述，不能把该原料单独外推为护肤功效、产品档次或成品安全结论。",
+        "sourceIds": [
+          "EU-COSING-FUNCTIONS"
+        ]
+      },
+      "regulation": null,
+      "cautions": [],
+      "targetSection": "base",
+      "updatedAt": "2026-07-31",
+      "safetyProfile": {
+        "irritationPotential": null,
+        "sensitization": null,
+        "specialPopulations": []
+      }
     }
   ],
   "categoryMetadata": {
@@ -4294,6 +5453,19 @@
         ],
         "sourceIds": [
           "FDA-SUNSCREEN-USE"
+        ]
+      },
+      {
+        "title": "防晒剂的法域差异怎么读",
+        "paragraphs": [
+          "同一个防晒剂在不同法域的准用状态和上限可以完全不同。欧盟用 Regulation (EC) No 1223/2009 附录 VI 的准用清单加最高浓度管理；美国走 OTC 药品专论路径，专论中的活性成分远少于欧盟，2026 年 6 月 FDA 才通过最终行政命令 OTC000039 新增 bemotrizinol（最高 6%），是自 1990 年代末以来的第一个；中国则按《化妆品安全技术规范》表5 的准用防晒剂目录加限量管理。",
+          "因此“美国没批”通常反映的是监管路径与数据提交方式的差异，不能读作“已被判定不安全”；反过来，某个滤剂被某法域准用，也不代表任意浓度、任意剂型都合规。本站未逐项核对表5 中各防晒剂的中国限量，涉及国内合规判断时应查阅官方最新文本。"
+        ],
+        "sourceIds": [
+          "EU-ANNEX-VI-UV-FILTERS",
+          "FDA-BEMOTRIZINOL-2026",
+          "FDA-SUNSCREEN-ORDER",
+          "CN-NMPA-STSC-2015"
         ]
       }
     ]

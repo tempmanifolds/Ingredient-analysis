@@ -537,6 +537,46 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29589387/",
       "type": "review",
       "checkedAt": "2026-07-30"
+    },
+    {
+      "id": "EU-ANNEX-VI-UV-FILTERS",
+      "title": "Regulation (EC) No 1223/2009 Annex VI：欧盟准用紫外线吸收剂清单及最高浓度",
+      "publisher": "European Commission CosIng",
+      "url": "https://ec.europa.eu/growth/tools-databases/cosing/reference/annexes/list/VI",
+      "type": "regulation",
+      "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "SCCS-EHMC-2025",
+      "title": "Opinion on Ethylhexyl Methoxycinnamate (EHMC), SCCS/1671/24（2025-06-26 通过）",
+      "publisher": "SCCS",
+      "url": "https://health.ec.europa.eu/publications/sccs-opinion-ethylhexyl-methoxycinnamate-ehmc-cas-no-5466-77-383834-59-7-ec-no-226-775-7629-661-9_en",
+      "type": "opinion",
+      "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "SCCS-DHHB-2025",
+      "title": "Scientific Advice on the safety of Diethylamino Hydroxybenzoyl Hexyl Benzoate (DHHB), SCCS/1678/25 Final",
+      "publisher": "SCCS",
+      "url": "https://health.ec.europa.eu/document/download/0bb2a0be-ba7c-4a1f-96df-d57d18c1316f_en?filename=sccs_o_299.pdf",
+      "type": "opinion",
+      "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "FDA-BEMOTRIZINOL-2026",
+      "title": "FDA Expands Sunscreen Options for the First Time in 20 Years：bemotrizinol 最终行政命令 OTC000039（2026-06-09）",
+      "publisher": "FDA",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-expands-sunscreen-options-first-time-20-years",
+      "type": "regulation",
+      "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "CN-NMPA-STSC-2015",
+      "title": "关于发布《化妆品安全技术规范（2015年版）》的公告（2015年第268号）：防晒剂、防腐剂、着色剂按准用目录管理",
+      "publisher": "国家药监局",
+      "url": "https://www.nmpa.gov.cn/hzhp/hzhpfgwj/hzhpgzwj/20151223120001986.html",
+      "type": "regulation",
+      "checkedAt": "2026-07-31"
     }
   ]
 }

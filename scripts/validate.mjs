@@ -118,8 +118,8 @@ for (const guides of Object.values(data.categoryGuides || {})) {
 }
 
 const categoryCounts = Object.fromEntries([...allowedCategories].map((category) => [category, ingredients.filter((item) => item.categories.includes(category)).length]));
-if (categoryCounts.sunscreen !== 4) fail(`防晒多标签计数应为 4，实际为 ${categoryCounts.sunscreen}。`);
-if (categoryCounts.safety !== 11) fail(`安全多标签计数应为 11，实际为 ${categoryCounts.safety}。`);
+if (categoryCounts.sunscreen !== 11) fail(`防晒多标签计数应为 11，实际为 ${categoryCounts.sunscreen}。`);
+if (categoryCounts.safety !== 12) fail(`安全多标签计数应为 12，实际为 ${categoryCounts.safety}。`);
 
 const searchMatches = (query, id) => ingredients.some((item) => {
   const searchText = [item.nameZh, item.inci, ...item.aliases, item.summary].filter(Boolean).join(' ').toLowerCase();
@@ -223,6 +223,14 @@ const requiredTaskBSources = [
 ];
 for (const sourceId of requiredTaskBSources) {
   if (!sourceIds.has(sourceId)) fail(`任务 B 缺少必要来源：${sourceId}`);
+}
+
+const requiredSunscreenSources = [
+  'EU-ANNEX-VI-UV-FILTERS', 'SCCS-EHMC-2025', 'SCCS-DHHB-2025',
+  'FDA-BEMOTRIZINOL-2026', 'CN-NMPA-STSC-2015',
+];
+for (const sourceId of requiredSunscreenSources) {
+  if (!sourceIds.has(sourceId)) fail(`新增防晒剂缺少必要来源：${sourceId}`);
 }
 
 const ingredientById = new Map(ingredients.map((item) => [item.id, item]));
